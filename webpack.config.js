@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable no-undef */
 require('babel-polyfill');
 require('fetch-ponyfill');
 const HtmlWebpackPlugin = require('html-webpack-plugin');

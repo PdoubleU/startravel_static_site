@@ -1,0 +1,11 @@
+{
+    "title": "Patterns library for project Star Travel Wroclaw",
+    "source": "./src/style/components/",
+    "destination": "./docs/",
+    "css": [
+        "../dist/style.bundle.css"
+    ],
+    "js": [
+        "../dist/main.bundle.js"
+    ]
+}

@@ -1,0 +1,28 @@
+//import style library to normalize all diffirences may show up in diffirent browsers:
+@import '../../node_modules/normalize-scss/sass/_normalize.scss';
+
+@import './components/nav-top.scss';
+
+//root style block has box-sizing set to border-box to avoid unexpected behaviour for box elements:
+:root{
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+//calc() method in font size assures that the font size will be respond on each window size change
+    font-size: calc(.8em + 1vw);
+    line-height: 1.4;
+}
+html{
+    position:relative;
+    min-height: 100%;
+  }
+body{
+//    background-color: $primary-bkg-color;
+//removes from body initial margin and padding
+    margin: 0;
+    padding: 0;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}

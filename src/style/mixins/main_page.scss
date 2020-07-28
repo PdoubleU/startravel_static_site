@@ -1,0 +1,14 @@
+@import '../../../node_modules/normalize-scss/sass/_normalize.scss';
+
+
+@mixin main__page($bkg_color) {
+    display: flex;
+    margin: auto;
+    width: 100vw;
+    height: 100vh;
+    background-color: $bkg_color;
+    font-size: 2rem;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,16 @@
+@import '../../../node_modules/normalize-scss/sass/_normalize.scss';
+
+.header__top--fixed {
+    position: fixed;
+    width: 100vw;
+    background-color: white;
+}
+.top-nav__items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    & > li {
+        text-decoration: none;
+        list-style: none;
+    }
+}

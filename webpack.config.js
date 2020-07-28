@@ -34,16 +34,28 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: ['style-loader',
+        use: [
+          {
+            loader: 'style-loader'
+          },
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
-            options: {
-              url: false,
-            },
           },
-          'postcss-loader',
-          'sass-loader'],
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              config: {
+                path: './postcss.config.js'
+              }
+            }
+          },
+          {
+            loader: 'sass-loader'
+          },
+
+        ],
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,

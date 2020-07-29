@@ -41,13 +41,14 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
+            options: { url: false}
           },
           {
             loader: 'postcss-loader',
             options: {
               sourceMap: true,
               config: {
-                path: './postcss.config.js'
+                path: 'postcss.config.js'
               }
             }
           },

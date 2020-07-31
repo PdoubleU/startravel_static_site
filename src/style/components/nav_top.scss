@@ -1,5 +1,6 @@
 @import '../../../node_modules/normalize-scss/sass/_normalize.scss';
 @import '../variables/variables.scss';
+@import '../mixins/nav_button.scss';
 
 .header__top--fixed {
     position: fixed;
@@ -14,5 +15,37 @@
     & > li {
         text-decoration: none;
         list-style: none;
+    }
+}
+
+@media (min-width: 720px) {
+    .header__top--fixed {
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2em;
+        width: 100%;
+        background-color: white;
+        z-index: $index_top_navabr;
+    }
+    .top-nav__items {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        & > li {
+            @include top-nav__button(red, white);
+            text-decoration: none;
+            list-style: none;
+            padding: .6em .9em;
+        }
+        & > li + li {
+            margin: 0 0 0 1em;
+        }
+        & > li > a {
+            all: unset;
+        }
     }
 }

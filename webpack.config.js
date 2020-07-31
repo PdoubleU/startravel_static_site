@@ -10,8 +10,8 @@ module.exports = {
   entry: [
     'babel-polyfill',
     'fetch-ponyfill',
-    './src/js/main.js',
-    './src/style/main.scss',
+    './src/js/index.js',
+    './src/style/index.scss',
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),

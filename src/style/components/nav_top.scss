@@ -1,8 +1,9 @@
 @import '../../../node_modules/normalize-scss/sass/_normalize.scss';
 @import '../variables/variables.scss';
+
 .header__top--fixed {
     position: fixed;
-    width: 100vw;
+    width: 100%;
     background-color: white;
     z-index: $index_top_navabr;
 }

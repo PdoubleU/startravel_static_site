@@ -1,0 +1,70 @@
+@import '../../../node_modules/normalize-scss/sass/_normalize.scss';
+@import '../mixins/main_page.scss';
+
+
+.main {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    scrollbar-width: none;
+}
+
+.main__page--one {
+    @include main__page(darkgrey);
+}
+.main__page--two {
+    @include main__page(rgb(100, 100, 100));
+}
+.main__page--three {
+    @include main__page(grey);
+}
+
+.outer-wrapper {
+    width: 100%;
+    height: 100vh;
+}
+
+.inner-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+@media (pointer: fine) and (min-width: 780px) {
+    .main {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .main__page--one {
+        @include main__page(darkgrey);
+    }
+    .main__page--two {
+        @include main__page(rgb(100, 100, 100));
+    }
+    .main__page--three {
+        @include main__page(grey);
+    }
+
+    .outer-wrapper {
+        width: 100vh;
+        height: 100vw;
+        transform: rotate(-90deg) translateX(-100vh);
+        transform-origin: top left;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        position: absolute;
+        scrollbar-width: none;
+    }
+
+    .inner-wrapper {
+        display: flex;
+        flex-direction: row;
+        width: 300vw;
+        transform: rotate(90deg) translateY(-100vh);
+        transform-origin: top left;
+    }
+}
+
+

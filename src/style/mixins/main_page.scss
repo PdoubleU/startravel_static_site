@@ -4,7 +4,7 @@
 @mixin main__page($bkg_color) {
     display: flex;
     margin: auto;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-color: $bkg_color;
     font-size: 2rem;

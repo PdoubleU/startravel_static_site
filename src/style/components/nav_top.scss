@@ -8,14 +8,11 @@
     background-color: white;
     z-index: $index_top_navabr;
 }
+
 .top-nav__items {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    & > li {
-        text-decoration: none;
-        list-style: none;
-    }
 }
 
 @media (min-width: 720px) {
@@ -36,10 +33,7 @@
         flex-direction: row;
         flex-wrap: nowrap;
         & > li {
-            @include top-nav__button(red, white);
-            text-decoration: none;
-            list-style: none;
-            padding: .6em .9em;
+            @include top-nav-btn-model(grey, white);
         }
         & > li + li {
             margin: 0 0 0 1em;

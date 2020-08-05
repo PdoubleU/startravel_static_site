@@ -1,12 +1,45 @@
 @import '../../../node_modules/normalize-scss/sass/_normalize.scss';
 
+//Button - top navigation
+//
+//Custom navigation button, can be used in other parts on website.
+//
+//Usage:
+//
+//* `@include top-nav-btn-model($bkg_color, $font_color);`
+//
+//Parameters:
+//
+//* `$bkg_color`  - color for the button's background
+//* `$font_color` - color for the font inside the button
+//
+//~
+//
+//Markup:
+//<li class="button-model"><a href='#home'>Strona główna</a></li>
+//
+//Styleguide Mixins.Elements
 
-@mixin top-nav__button($bkg_color, $font_color) {
+@mixin top-nav-btn-model($bkg_color, $font_color) {
     margin: auto;
+    width: fit-content;
     background-color: $bkg_color;
     color: $font_color;
     font-weight: bold;
-    font-size: .8rem;
+    font-size: .6rem;
     text-transform: uppercase;
     cursor: pointer;
+    padding: .6em 1.2em;
+    & > *,
+        a:visited,
+        a:link,
+        a:link:active,
+        a:visited:active {
+        text-decoration: none;
+        list-style: none;
+        color: $font_color;
+    }
+}
+.button-model {
+    @include top-nav-btn-model(grey, wheat);
 }

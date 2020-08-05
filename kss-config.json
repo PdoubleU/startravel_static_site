@@ -1,6 +1,10 @@
 {
     "title": "Patterns library for project Star Travel Wroclaw",
-    "source": "./src/style/components/",
+    "source": [
+        "./src/style/components/",
+        "./src/style/mixins/",
+        "./src/style/variables"
+        ],
     "destination": "./docs/",
     "css": [
         "../dist/style.bundle.css"

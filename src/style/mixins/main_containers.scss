@@ -1,0 +1,13 @@
+@import '../../../node_modules/normalize-scss/sass/_normalize.scss';
+
+@mixin main_container {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    & .element--one,
+      .element--two,
+      .element--three {
+            align-items: center;
+            justify-content: center;
+        }
+    }

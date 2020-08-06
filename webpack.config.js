@@ -77,8 +77,20 @@ module.exports = {
       filename: 'style.bundle.css',
     }),
     new HtmlWebpackPlugin({
-      title: 'index.html',
       template: './src/index.html',
+      filename: 'index.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/subpages/poland.html',
+      filename: './subpages/poland.html'
+    }),
+        new HtmlWebpackPlugin({
+      template: './src/subpages/czechia.html',
+      filename: './subpages/czechia.html'
+    }),
+        new HtmlWebpackPlugin({
+      template: './src/subpages/germany.html',
+      filename: './subpages/germany.html'
     }),
   ],
 };

@@ -2,6 +2,21 @@
 @import '../variables/variables.scss';
 @import '../mixins/nav_button.scss';
 
+//Button menu - mobile devices
+//
+//**This button shows only on smaller screens. It looks like a rounded burger-button.**
+//**Animation coded only in css. Below example shows item in absoulute position as is used in project.**  
+//
+//Markup:
+//        <input type="checkbox" class="menu-open" name="menu-open" id="menu-open" href="#" aria-label="open menu"></input>
+//          <label class="menu-btn kss" for="menu-open">
+//               <span class="menu-btn__box">
+//                   <span class="menu-btn__inner"></span>
+//              </span>
+//         </label>
+//
+//Styleguide Buttons.Menu button
+
 .menu-open {
     display: none;
 }
@@ -60,7 +75,6 @@
     top: .5em;
     left: 0;
 }
-
 .menu-open:checked + .menu-btn .menu-btn__inner::before{
     transform: translateY(.5em) rotate(45deg);
 }
@@ -73,7 +87,6 @@
 .menu-open:checked + .menu-btn {
     background-color: greenyellow;
 }
-
 .header__top--inner {
     display: none;
 }

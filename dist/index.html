@@ -1,1 +1,86 @@
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Document</title><link href="style.bundle.css" rel="stylesheet"></head><body><header class="header__top"><input type="checkbox" class="menu-open" name="menu-open" id="menu-open" href="#" aria-label="open menu"><label class="menu-btn" for="menu-open"><span class="menu-btn__box"><span class="menu-btn__inner"></span></span></label><div class="header__top--inner"><div class="logo">#LOGO#</div><nav class="top-nav"><ul class="top-nav__items"><li class="top-nav__button"><a href="#home">Strona główna</a></li><li class="top-nav__button"><a href="#trips">Wycieczki</a></li><li class="top-nav__button"><a href="#info">Informacje o Nas</a></li><li class="top-nav__button"><a href="#about_us">O nas</a></li></ul></nav></div></header><div class="outer-wrapper"><div class="inner-wrapper"><main class="main"><article class="main__page--one" id="home"><div class="container container-front"><div class="element--one">Main background picture with company's logo</div><div class="element--two">two</div><div class="element--three">Carouselle with current trips</div></div></article><article class="main__page--two" id="trips"><div class="container container-middle"><div class="element--one">Poland</div><div class="element--two">Czechia</div><div class="element--three">Germany</div></div></article><article class="main__page--three" id="info"><div class="container container-end"><div class="element--one">How do we prepare trips</div><div class="element--two">Be safe during journey</div><div class="element--three">Transportation services</div></div></article></main><footer class="footer" id="about_us"><div class="footer-content"><article class="footer-art"><p>Some sample content here.<br>Some sample content here.</p></article><article class="footer-art"><p>Some sample content here.<br>Some sample content here.</p></article><article class="footer-art"><p>Some sample content here.<br>Some sample content here.</p></article><article class="footer-art"><p>Some sample content here.<br>Some sample content here.</p></article><article class="footer-art"><p>Some sample content here.<br>Some sample content here.</p></article><article class="footer-art"><p>Some sample content here.<br>Some sample content here.</p></article></div><div class="signature"><p>Website author: Piotr Witasik / PdoubleU &copy; 2020</p></div></footer></div></div><script src="main.bundle.js"></script></body></html>
+Html Webpack Plugin:
+<pre>
+  Error: html-webpack-plugin could not minify the generated output.
+  In production mode the html minifcation is enabled by default.
+  If you are not generating a valid html output please disable it manually.
+  You can do so by adding the following setting to your HtmlWebpackPlugin config:
+  |
+  |    minify: false
+  |
+  See https://github.com/jantimon/html-webpack-plugin#options for details.
+  For parser dedicated bugs please create an issue here:
+  https://danielruf.github.io/html-minifier-terser/
+  Parse Error: <div class="header__top--inner"
+              <div class="logo">LOGO</div>
+              <nav class="top-nav">
+                  <ul class="top-nav__items">
+                      <li class="top-nav__button"><a href='#home'>Strona główna</a></li>
+                      <li class="top-nav__button"><a href='#trips'>Wycieczki</a></li>
+                      <li class="top-nav__button"><a href='#info'>Informacje o Nas</a></li>
+                      <li class="top-nav__button"><a href='#about_us'>O nas</a></li>
+                  </ul>
+              </nav>
+          </div>
+      </header>
+      <div class="outer-wrapper">
+          <div class="inner-wrapper">
+              <main class="main">
+                  <article class="main__page--one" id="home">
+                      <div class="container container-front">
+                          <div class="element--one">Main background picture with company's logo</div>
+                          <div class="element--two">two</div>
+                          <div class="element--three">Carouselle with current trips</div>
+                      </div>
+                  </article>
+                  <article class="main__page--two" id="trips">
+                      <div class="container container-middle">
+                          <div class="element--one">Poland</div>
+                          <div class="element--two">Czechia</div>
+                          <div class="element--three">Germany</div>
+                      </div>
+                  </article>
+                  <article class="main__page--three" id="info">
+                      <div class="container container-end">
+                          <div class="element--one">How do we prepare trips</div>
+                          <div class="element--two">Be safe during journey</div>
+                          <div class="element--three">Transportation services</div>
+                      </div>
+                  </article>
+              </main>
+              <footer class="footer" id="about_us">
+                  <div class="footer-content">
+                      <article class="footer-art"><p>Some sample content here.<br> Some sample content here.</p>  </article>
+                      <article class="footer-art"><p>Some sample content here.<br> Some sample content here.</p>  </article>
+                      <article class="footer-art"><p>Some sample content here.<br> Some sample content here.</p>  </article>
+                      <article class="footer-art"><p>Some sample content here.<br> Some sample content here.</p>  </article>
+                      <article class="footer-art"><p>Some sample content here.<br> Some sample content here.</p>  </article>
+                      <article class="footer-art"><p>Some sample content here.<br> Some sample content here.</p>  </article>
+                  </div>
+                  <div class="signature">
+                      <p>Website author: Piotr Witasik / PdoubleU &copy; 2020</p>
+                  </div>
+              </footer>
+          </div>
+      </div>
+  <script src="main.bundle.js"></script></body>
+  </html>
+  
+  - htmlparser.js:244 new HTMLParser
+    [startravel]/[html-minifier-terser]/src/htmlparser.js:244:13
+  
+  - htmlminifier.js:993 minify
+    [startravel]/[html-minifier-terser]/src/htmlminifier.js:993:3
+  
+  - htmlminifier.js:1354 Object.exports.minify
+    [startravel]/[html-minifier-terser]/src/htmlminifier.js:1354:16
+  
+  - index.js:993 HtmlWebpackPlugin.minifyHtml
+    [startravel]/[html-webpack-plugin]/index.js:993:46
+  
+  - index.js:422 HtmlWebpackPlugin.postProcessHtml
+    [startravel]/[html-webpack-plugin]/index.js:422:40
+  
+  - index.js:247 
+    [startravel]/[html-webpack-plugin]/index.js:247:25
+  
+</pre>

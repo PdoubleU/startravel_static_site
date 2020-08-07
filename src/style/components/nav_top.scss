@@ -2,21 +2,84 @@
 @import '../variables/variables.scss';
 @import '../mixins/nav_button.scss';
 
-.header__top--fixed {
+.menu-open {
+    display: none;
+}
+.menu-btn {
     position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    top: 50%;
+    left: 100%;
+    margin-top: -1.5em;
+    margin-left: -4em;
+    background: whitesmoke;
+    border-radius: 100%;
+    width: 3em;
+    height: 3em;
+}
+.menu-btn__box{
+    width: 1.5em;
+    height: 1.5em;
+    display: flex;
+    position: relative;
+    float: right;
+    background-color: transparent;
+    padding: 0;
+}
+.menu-btn__inner{
     width: 100%;
-    background-color: white;
-    z-index: $index_top_navabr;
+    height: 0.2rem;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    transition: background-color .1s .08s ease-in-out;
+}
+.menu-btn__inner::before,
+.menu-btn__inner::after{
+    content: '';
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 0.2rem;
+    background-color: black;
+    position: absolute;
+    transition: transform .1s .05s ease-in-out;
+}
+.menu-btn__inner::before{
+    top: -.5em;
+    left: 0;
+}
+.menu-btn__inner::after{
+    top: .5em;
+    left: 0;
 }
 
-.top-nav__items {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+.menu-open:checked + .menu-btn .menu-btn__inner::before{
+    transform: translateY(.5em) rotate(45deg);
+}
+.menu-open:checked + .menu-btn .menu-btn__inner::after{
+    transform: translateY(-.5em) rotate(-45deg);
+}
+.menu-open:checked + .menu-btn .menu-btn__inner {
+    background: transparent;
+}
+.menu-open:checked + .menu-btn {
+    background-color: greenyellow;
+}
+
+.header__top--inner {
+    display: none;
 }
 
 @media (min-width: 720px) {
-    .header__top--fixed {
+    .header__top--inner {
         position: fixed;
         display: flex;
         flex-direction: row;
@@ -43,3 +106,4 @@
         }
     }
 }
+

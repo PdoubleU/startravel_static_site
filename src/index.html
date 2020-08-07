@@ -5,18 +5,26 @@
     <title>Document</title>
 </head>
 <body>
-    <header class="header__top--fixed">
-         <div class="logo">#LOGO#</div>
-         <nav class="top-nav">
-             <ul class="top-nav__items">
-                <li class="top-nav__button"><a href='#home'>Strona główna</a></li>
-                <li class="top-nav__button"><a href='#trips'>Wycieczki</a></li>
-                <li class="top-nav__button"><a href='#info'>Informacje o Nas</a></li>
-                <li class="top-nav__button"><a href='#about_us'>Ciekawostki</a></li>
-                <li class="top-nav__button"><a href='#'>Napisz do Nas</a></li>
-             </ul>
-         </nav>
+    <header class="header__top">
+        <input type="checkbox" class="menu-open" name="menu-open" id="menu-open" href="#" aria-label="open menu"></input>
+            <label class="menu-btn" for="menu-open">
+                <span class="menu-btn__box">
+                    <span class="menu-btn__inner"></span>
+                </span>
+            </label>
+        <div class="header__top--inner">
+            <div class="logo">#LOGO#</div>
+            <nav class="top-nav">
+                <ul class="top-nav__items">
+                    <li class="top-nav__button"><a href='#home'>Strona główna</a></li>
+                    <li class="top-nav__button"><a href='#trips'>Wycieczki</a></li>
+                    <li class="top-nav__button"><a href='#info'>Informacje o Nas</a></li>
+                    <li class="top-nav__button"><a href='#about_us'>O nas</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
+
     <div class="outer-wrapper">
         <div class="inner-wrapper">
             <main class="main">

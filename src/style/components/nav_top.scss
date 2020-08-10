@@ -1,11 +1,12 @@
 @import '../../../node_modules/normalize-scss/sass/_normalize.scss';
 @import '../variables/variables.scss';
 @import '../mixins/nav_button.scss';
+@import '../mixins/mobile_menu_btn.scss';
 
 //Button menu - mobile devices
 //
 //**This button shows only on smaller screens. It looks like a rounded burger-button.**
-//**Animation coded only in css. Below example shows item in absoulute position as is used in project.**  
+//**Animation coded only in css. Below example shows item in absoulute position as is used in project.**
 //
 //Markup:
 //        <input type="checkbox" class="menu-open" name="menu-open" id="menu-open" href="#" aria-label="open menu"></input>
@@ -17,6 +18,18 @@
 //
 //Styleguide Buttons.Menu button
 
+.header__top {
+    background-color: transparent;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    top: 50%;
+    left: 100%;
+    margin-top: -1.5em;
+    margin-left: -4em;
+}
 .menu-open {
     display: none;
 }
@@ -34,6 +47,7 @@
     border-radius: 100%;
     width: 3em;
     height: 3em;
+    z-index: $mobile-menu-sgl-btn;
 }
 .menu-btn__box{
     width: 1.5em;
@@ -84,14 +98,50 @@
 .menu-open:checked + .menu-btn .menu-btn__inner {
     background: transparent;
 }
-.menu-open:checked + .menu-btn {
-    background-color: greenyellow;
-}
 .header__top--inner {
     display: none;
+    background-color: transparent;
+}
+.menu-open:checked ~ .header__top--inner {
+    display: inline;
+    position: absolute;
+    & > .logo {
+        display: none;
+    }
+}
+.menu-open:checked ~ .header__top--inner > .top-nav > .top-nav__items {
+    background: transparent;
+    transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
+    & > li {
+        @include menu_single_btn(green, white);
+    }
+    & > li:nth-child(3) {
+        transition-duration: 150ms;
+        transform: translate3d(0.08361px, -104.99997px, 0);
+    }
+    & > li > a {
+        all: unset;
+    }
+}
+.top-nav__items > li:nth-child(3) {
+    transition-duration: 180ms;
 }
 
 @media (min-width: 720px) {
+    .header__top {
+        background-color: transparent;
+        position: fixed;
+        display: inline;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        top: auto;
+        left: auto;
+        z-index: $mobile-menu-sgl-btn;
+    }
+    .menu-btn {
+        display: none;
+    }
     .header__top--inner {
         position: fixed;
         display: flex;
@@ -103,6 +153,12 @@
         width: 100%;
         background-color: white;
         z-index: $index_top_navabr;
+    }
+    .mobile-logo {
+        display: none;
+    }
+    .logo {
+        display: inline;
     }
     .top-nav__items {
         display: flex;

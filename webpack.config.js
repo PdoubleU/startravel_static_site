@@ -84,11 +84,11 @@ module.exports = {
       template: './src/subpages/poland.html',
       filename: './subpages/poland.html'
     }),
-        new HtmlWebpackPlugin({
+    new HtmlWebpackPlugin({
       template: './src/subpages/czechia.html',
       filename: './subpages/czechia.html'
     }),
-        new HtmlWebpackPlugin({
+    new HtmlWebpackPlugin({
       template: './src/subpages/germany.html',
       filename: './subpages/germany.html'
     }),

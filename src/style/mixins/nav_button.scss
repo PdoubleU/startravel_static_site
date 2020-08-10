@@ -30,13 +30,13 @@
     text-transform: uppercase;
     cursor: pointer;
     padding: .6em 1.2em;
+    list-style: none;
     & > a,
         a:visited,
         a:link,
         a:link:active,
         a:visited:active {
         text-decoration: none;
-        list-style: none;
         color: $font_color;
     }
 }

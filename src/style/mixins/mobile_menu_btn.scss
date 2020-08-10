@@ -1,0 +1,24 @@
+@import '../../../node_modules/normalize-scss/sass/_normalize.scss';
+
+@mixin menu_single_btn ($bkg_color, $font_color) {
+    margin: auto;
+    padding: .6em 1.2em;
+    border-radius: 100%;
+    width: 4.5em;
+    height: 4.5em;
+    background-color: $bkg_color;
+    color: $font_color;
+    font-weight: bold;
+    font-size: .8rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    list-style: none;
+    & > a,
+        a:visited,
+        a:link,
+        a:link:active,
+        a:visited:active {
+        text-decoration: none;
+        color: $font_color;
+    }
+}

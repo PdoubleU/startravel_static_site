@@ -17,6 +17,9 @@
 //         </label>
 //
 //Styleguide Buttons.Menu button
+.nav-desktop {
+    display: none;
+}
 
 .header__top {
     background-color: transparent;
@@ -38,7 +41,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0;
     top: 50%;
     left: 100%;
     margin-top: -1.5em;
@@ -98,36 +100,47 @@
 .menu-open:checked + .menu-btn .menu-btn__inner {
     background: transparent;
 }
-.header__top--inner {
-    display: none;
-    background-color: transparent;
-}
-.menu-open:checked ~ .header__top--inner {
+.menu-open:checked ~ .top-nav {
     display: inline;
     position: absolute;
-    & > .logo {
-        display: none;
-    }
 }
-.menu-open:checked ~ .header__top--inner > .top-nav > .top-nav__items {
+.menu-open:checked ~ .top-nav > .top-nav__items {
     background: transparent;
     transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
     & > li {
         @include menu_single_btn(green, white);
     }
-    & > li:nth-child(3) {
+    & > li:nth-child(1) {
         transition-duration: 150ms;
-        transform: translate3d(0.08361px, -104.99997px, 0);
+        transform: translate3d(0.08361px, -75.99997px, 0);
+    }
+    & > li:nth-child(2) {
+        transition-duration: 120ms;
+        transform: translate3d(0.08361px, -150.99997px, 0);
+    }
+    & > li:nth-child(3) {
+        transition-duration: 170ms;
+        transform: translate3d(0.08361px, -225.99997px, 0);
+    }
+    & > li:nth-child(4) {
+        transition-duration: 170ms;
+        transform: translate3d(0.08361px, 75.99997px, 0);
     }
     & > li > a {
         all: unset;
     }
+}
+.top-nav__items > li {
+    @include menu_single_btn(grey, white);
 }
 .top-nav__items > li:nth-child(3) {
     transition-duration: 180ms;
 }
 
 @media (min-width: 720px) {
+    .nav-mobile {
+        display: none;
+    }
     .header__top {
         background-color: transparent;
         position: fixed;
@@ -142,7 +155,7 @@
     .menu-btn {
         display: none;
     }
-    .header__top--inner {
+    .nav-desktop {
         position: fixed;
         display: flex;
         flex-direction: row;
@@ -154,13 +167,10 @@
         background-color: white;
         z-index: $index_top_navabr;
     }
-    .mobile-logo {
-        display: none;
-    }
     .logo {
         display: inline;
     }
-    .top-nav__items {
+    .top-nav__items--dskt {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;

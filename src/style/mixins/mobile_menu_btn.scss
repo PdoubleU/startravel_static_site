@@ -1,11 +1,15 @@
 @import '../../../node_modules/normalize-scss/sass/_normalize.scss';
 
 @mixin menu_single_btn ($bkg_color, $font_color) {
-    margin: auto;
+    position: fixed;
+    top: 50%;
+    left: 100%;
+    margin-top: -1.5rem;
+    margin-left: -4rem;
     padding: .6em 1.2em;
     border-radius: 100%;
-    width: 4.5em;
-    height: 4.5em;
+    width: 3rem;
+    height: 3rem;
     background-color: $bkg_color;
     color: $font_color;
     font-weight: bold;

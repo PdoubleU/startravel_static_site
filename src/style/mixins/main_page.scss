@@ -1,11 +1,11 @@
 @import '../../../node_modules/normalize-scss/sass/_normalize.scss';
 
 
-@mixin main__page($bkg_color) {
+@mixin main__page($bkg_color, $height) {
     display: flex;
     margin: auto;
     width: 100%;
-    height: 100vh;
+    height: $height;
     background-color: $bkg_color;
     font-size: 1.2rem;
     font-weight: bold;

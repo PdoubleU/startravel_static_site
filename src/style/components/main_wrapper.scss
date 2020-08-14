@@ -18,13 +18,13 @@
     scrollbar-width: none;
 }
 .main__page--one {
-    @include main__page(darkgrey);
+    @include main__page(darkgrey, 100vw);
 }
 .main__page--two {
-    @include main__page(rgb(100, 100, 100));
+    @include main__page(rgb(100, 100, 100), 100vw);
 }
 .main__page--three {
-    @include main__page(grey);
+    @include main__page(grey, 100vw);
 }
 
 
@@ -37,13 +37,13 @@
     }
 
     .main__page--one {
-        @include main__page(darkgrey);
+        @include main__page(darkgrey, 100vh);
     }
     .main__page--two {
-        @include main__page(rgb(100, 100, 100));
+        @include main__page(rgb(100, 100, 100), 100vh);
     }
     .main__page--three {
-        @include main__page(grey);
+        @include main__page(grey, 100vh);
     }
 
     .outer-wrapper {

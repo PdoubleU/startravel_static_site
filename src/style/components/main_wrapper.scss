@@ -28,14 +28,13 @@
 }
 
 
-
 @media (pointer: fine) and (min-width: 780px) {
     .main {
         width: 100%;
+        grid-column: 1 / 4;
         display: flex;
         flex-direction: row;
     }
-
     .main__page--one {
         @include main__page(darkgrey, 100vh);
     }
@@ -45,7 +44,6 @@
     .main__page--three {
         @include main__page(grey, 100vh);
     }
-
     .outer-wrapper {
         width: 100vh;
         height: 100vw;
@@ -56,10 +54,10 @@
         position: absolute;
         scrollbar-width: none;
     }
-
     .inner-wrapper {
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-rows: 100%;
+        grid-template-columns: 25% 25% 25% 25%;
         width: 400vw;
         transform: rotate(90deg) translateY(-100vh);
         transform-origin: top left;
@@ -127,10 +125,7 @@
         & .element--three {
         grid-column: 3 / 4;
         }
-
     }
-
-
 }
 
 

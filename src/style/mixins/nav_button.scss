@@ -21,7 +21,7 @@
 //Styleguide Mixins.Elements
 
 @mixin top-nav-btn-model($bkg_color, $font_color) {
-    margin: auto;
+    margin: 0;
     width: fit-content;
     background-color: $bkg_color;
     color: $font_color;

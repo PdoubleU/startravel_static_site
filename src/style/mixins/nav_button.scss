@@ -21,16 +21,10 @@
 //Styleguide Mixins.Elements
 
 @mixin top-nav-btn-model($bkg_color, $font_color) {
-    margin: 0;
-    width: fit-content;
-    background-color: $bkg_color;
-    color: $font_color;
-    font-weight: bold;
-    font-size: .6rem;
-    text-transform: uppercase;
     cursor: pointer;
-    padding: .6em 1.2em;
     list-style: none;
+    display: flex;
+    justify-content: center;
     & > a,
         a:visited,
         a:link,
@@ -38,6 +32,14 @@
         a:visited:active {
         text-decoration: none;
         color: $font_color;
+        padding: .8em 1.2em;
+        margin: 0;
+        width: fit-content;
+        background-color: $bkg_color;
+        color: $font_color;
+        font-weight: bold;
+        font-size: .6rem;
+        text-transform: uppercase;
     }
 }
 .button-model {

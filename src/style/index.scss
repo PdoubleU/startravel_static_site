@@ -1,9 +1,9 @@
 //import style library to normalize all diffirences may show up in diffirent browsers:
 @import '../../node_modules/normalize-scss/sass/_normalize.scss';
-
 @import './components/main_wrapper.scss';
 @import './components/nav_top.scss';
 @import './components/footer.scss';
+@import './components/main_slider.scss';
 
 //root style block has box-sizing set to border-box to avoid unexpected behaviour for box elements:
 :root{

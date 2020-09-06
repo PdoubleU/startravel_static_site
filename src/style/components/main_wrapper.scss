@@ -49,6 +49,7 @@
     }
     & .element--three {
         grid-row: 2 / 3;
+        padding: 0;
         background: blueviolet;
     }
 }

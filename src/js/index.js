@@ -1,1 +1,1 @@
-console.log("test");
+import { Slider } from "./components/slider.js";

@@ -1,0 +1,55 @@
+@import '../../../node_modules/normalize-scss/sass/_normalize.scss';
+@import '../variables/variables.scss';
+
+.poland > .main__page--one,
+.germany > .main__page--one,
+.czechia > .main__page--one {
+        height: 100vh;
+        margin-bottom: .06rem;
+    }
+.poland > .main__page--two {
+        margin-bottom: .06rem;
+    }
+.poland > .main__page--three {
+        margin-bottom: .06rem;
+    }
+
+.poland :nth-child(1)> .container,
+.germany :nth-child(1)> .container,
+.czechia :nth-child(1)> .container {
+    grid-template-columns: 100%;
+    grid-template-rows: 2fr 1fr;
+    & .element--one {
+        grid-row: 1 / 2;
+        font-size: 2rem;
+        color: $white;
+    }
+    & .element--two {
+        grid-row: 2 / 3;
+        background: lightcoral;
+    }
+}
+.poland :nth-child(2) > .container :nth-child(1) {
+    background: url('./assets/imgs/large/ksiaz.jpg');
+    background-size: cover;
+    background-position: center center;
+    font: $white;
+    font-size: 2rem;
+}
+
+@media (pointer: fine) and (min-width: 780px) {
+    .poland > .main__page--one > .container,
+    .germany > .main__page--one > .container,
+    .czechia > .main__page--one > .container {
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 100%;
+        & .element--one {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+        & .element--two {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+        }
+    }
+}

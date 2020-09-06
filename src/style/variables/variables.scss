@@ -1,10 +1,12 @@
 @import '../../../node_modules/normalize-scss/sass/_normalize.scss';
 
-//list of variables used in project
-//z-index list:
+//list of variables used in project:
 
+//z-index list:
 $index_top_navabr: 100;
 $mobile-menu-sgl-btn: 90;
 
-//colours
+//colours:
 $bkg-colour: hsl(50, 25, 40);
+$white: hsl(90, 10, 95);
+$color-mobile-menu-bkg-btn: hsla(40, 40, 90, .8);

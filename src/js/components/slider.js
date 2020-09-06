@@ -1,10 +1,9 @@
 class Slider {
     constructor(elemSelector, opts) {
         const defaultOpts = {
-            pauseTime : 0,
+            pauseTime : 8000,
             prevText : "<",
             nextText : ">",
-            generateDots : true,
             generatePrevNext : true
         };
         this.options = Object.assign({}, defaultOpts, opts);
@@ -17,7 +16,6 @@ class Slider {
 
         this.prev = null; //przycisk prev
         this.next = null; //przycisk next
-        this.dots = [];
 
         this.generateSlider();
         this.changeSlide(this.currentSlide);
@@ -113,43 +111,8 @@ class Slider {
         nav.appendChild(this.next);
         this.slider.appendChild(nav);
     }
-
-    createDots() {
-        const ulDots = document.createElement("ul");
-        ulDots.classList.add("slider-dots");
-        ulDots.setAttribute("aria-label", "Slider pagination");
-
-        //tworzymy pętlę w ilości liczby slajdów
-        for (let i=0; i<this.slides.length; i++) {
-            //każdorazowo tworzymy LI wraz z buttonem
-            //każdy button po kliknięciu zmieni slajd
-            //za pomocą metody changeSlide()
-
-            const li = document.createElement("li");
-            li.classList.add("slider-dots-element");
-
-            const btn = document.createElement("button");
-            btn.classList.add("slider-dots-button");
-            btn.type = "button";
-            btn.innerText = i+1;
-            btn.setAttribute("aria-label", "Set slide "+(i+1));
-
-            btn.addEventListener("click", () => this.changeSlide(i));
-
-            li.appendChild(btn);
-
-            ulDots.appendChild(li);
-            this.dots.push(li);
-        }
-        this.slider.appendChild(ulDots);
-    }
 }
 
-new Slider('#slider1', opts1);
-const opts1 = {
-    pauseTime: 0,
-    prevText: "<",
-    nextText: ">"
-}
+new Slider('#slider1');
 
 export default {Slider};

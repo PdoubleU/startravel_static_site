@@ -112,7 +112,7 @@
 .top-nav__items {
     transition-timing-function: cubic-bezier(0.8, 0, 0.64, 1.9);
     & > :nth-child(1) {
-        @include menu_single_btn(green, white);
+        @include menu_single_btn($color-mobile-menu-bkg-btn, white);
         top: 50%;
         left: 100%;
         margin-top: -1.5em;
@@ -121,7 +121,7 @@
         transform: translate3d(-4em, 6.6em, 0);
     }
     & > :nth-child(2) {
-        @include menu_single_btn(green, white);
+        @include menu_single_btn($color-mobile-menu-bkg-btn, white);
         top: 50%;
         left: 100%;
         margin-top: -1.5em;
@@ -130,7 +130,7 @@
         transform: translate3d(-4em, -3.3em, 0);
     }
     & > :nth-child(3) {
-        @include menu_single_btn(green, white);
+        @include menu_single_btn($color-mobile-menu-bkg-btn, white);
         top: 50%;
         left: 100%;
         margin-top: -1.5em;
@@ -139,7 +139,7 @@
         transform: translate3d(-4em, -6.6em, 0);
     }
     & > :nth-child(4) {
-        @include menu_single_btn(green, white);
+        @include menu_single_btn($color-mobile-menu-bkg-btn, white);
         top: 50%;
         left: 100%;
         margin-top: -1.5em;
@@ -151,7 +151,6 @@
 .menu-open:checked ~ .top-nav > .top-nav__items {
     transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
     & > :nth-child(1) {
-        @include menu_single_btn(green, white);
         top: 50%;
         left: 100%;
         margin-top: -1.5em;
@@ -160,7 +159,6 @@
         transform: translate3d(-4em, 6.6em, 0);
     }
     & > :nth-child(2) {
-        @include menu_single_btn(green, white);
         top: 50%;
         left: 100%;
         margin-top: -1.5em;
@@ -169,7 +167,6 @@
         transform: translate3d(-4em, -3.3em, 0);
     }
     & > :nth-child(3) {
-        @include menu_single_btn(green, white);
         top: 50%;
         left: 100%;
         margin-top: -1.5em;
@@ -178,7 +175,6 @@
         transform: translate3d(-4em, -6.6em, 0);
     }
     & > :nth-child(4) {
-        @include menu_single_btn(green, white);
         top: 50%;
         left: 100%;
         margin-top: -1.5em;
@@ -228,7 +224,7 @@
         flex-wrap: nowrap;
         margin: .6em;
         & > li {
-            @include top-nav-btn-model(grey, white);
+            @include top-nav-btn-model($color-mobile-menu-bkg-btn, white);
         }
         & > li + li {
             margin: 0 0 0 1em;

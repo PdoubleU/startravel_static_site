@@ -41,7 +41,9 @@
     }
     & .element--one {
         grid-row: 1 / 2;
-        background: grey;
+        background: url('./assets/imgs/large/main_image.jpg');
+        background-size: cover;
+        background-position: center center;
     }
     & .element--two {
         grid-row: 3 / 4;

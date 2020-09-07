@@ -21,10 +21,7 @@
     @include main__page(wheat, 200vh);
     margin-bottom: .06rem;
 }
-.main__page--two {
-    @include main__page(wheat, 100vh);
-    margin-bottom: .06rem;
-}
+.main__page--two,
 .main__page--three {
     @include main__page(wheat, 100vh);
     margin-bottom: .06rem;
@@ -66,13 +63,13 @@
         display: flex;
     }
     & .element--one {
-    grid-row: 1 / 2;
+        grid-row: 1 / 2;
     }
     & .element--two {
-    grid-row: 2 / 3;
+        grid-row: 2 / 3;
     }
     & .element--three {
-    grid-row: 3 / 4;
+        grid-row: 3 / 4;
     }
 }
 .container-end{
@@ -99,18 +96,15 @@
 
 @media (pointer: fine) and (min-width: 780px) {
     .main {
-        width: 100%;
-        grid-column: 1 / 4;
+        width: fit-content;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
         display: flex;
         flex-direction: row;
         margin: 0;
     }
-    .main__page--one {
-        @include main__page(wheat, 100vh);
-    }
-    .main__page--two {
-        @include main__page(wheat, 100vh);
-    }
+    .main__page--one,
+    .main__page--two,
     .main__page--three {
         @include main__page(wheat, 100vh);
     }
@@ -127,8 +121,8 @@
     .inner-wrapper {
         display: grid;
         grid-template-rows: 100%;
-        grid-template-columns: 25% 25% 25% 25%;
-        width: 400vw;
+        grid-template-columns: 75% 25%;
+        width: fit-content;
         transform: rotate(90deg) translateY(-100vh);
         transform-origin: top left;
     }

@@ -5,20 +5,18 @@
 .germany > .main__page--one,
 .czechia > .main__page--one {
         height: 100vh;
-        margin-bottom: .06rem;
     }
-.poland > .main__page--two {
-        margin-bottom: .06rem;
-    }
-.poland > .main__page--three {
-        margin-bottom: .06rem;
+.poland > .main__page--two,
+.germany > .main__page--two,
+.czechia > .main__page--two {
+        height: fit-content;
     }
 
 .poland :nth-child(1)> .container,
 .germany :nth-child(1)> .container,
 .czechia :nth-child(1)> .container {
     grid-template-columns: 100%;
-    grid-template-rows: 2fr 1fr;
+    grid-template-rows: 1fr;
     & .element--one {
         grid-row: 1 / 2;
         font-size: 2rem;
@@ -27,6 +25,22 @@
     & .element--two {
         grid-row: 2 / 3;
         background: lightcoral;
+    }
+}
+.poland :nth-child(2) > .container-middle,
+.germany :nth-child(2) > .container-middle,
+.czechia :nth-child(2) > .container-middle {
+    height: fit-content;
+    grid-template-rows: none;
+    grid-template-columns: 100%;
+    grid-auto-rows: minmax(25vh, 30vh);
+    gap: .06rem;
+    & > * {
+        background-color: rgb(140, 179, 81);
+        color: white;
+        padding: .5em;
+        display: flex;
+        grid-row: auto;
     }
 }
 .poland :nth-child(2) > .container :nth-child(1) {
@@ -38,9 +52,15 @@
 }
 
 @media (pointer: fine) and (min-width: 780px) {
-    .poland > .main__page--one > .container,
-    .germany > .main__page--one > .container,
-    .czechia > .main__page--one > .container {
+    .poland > .main__page--one,
+    .germany > .main__page--one,
+    .czechia > .main__page--one {
+        width: 100vw;
+    }
+    .poland > .main__page--one > .container-front,
+    .germany > .main__page--one > .container-front,
+    .czechia > .main__page--one > .container-front {
+        width: 100vw;
         grid-template-columns: 2fr 1fr;
         grid-template-rows: 100%;
         & .element--one {
@@ -49,6 +69,24 @@
         }
         & .element--two {
             grid-column: 2 / 3;
+            grid-row: 1 / 2;
+        }
+    }
+    .poland :nth-child(2) > .container-middle,
+    .germany :nth-child(2) > .container-middle,
+    .czechia :nth-child(2) > .container-middle {
+        height: 100vh;
+        width: fit-content;
+        grid-auto-rows: unset;
+        grid-template-rows: 100%;
+        grid-template-columns: unset;
+        grid-auto-columns: minmax(30vw, 33vw);
+        gap: .06rem;
+        & > * {
+            background-color: rgb(140, 179, 81);
+            color: white;
+            padding: .5em;
+            display: flex;
             grid-row: 1 / 2;
         }
     }

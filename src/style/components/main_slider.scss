@@ -71,7 +71,7 @@
 
 /* elementy pojedynczego slajdu */
 .slider .element-title {
-    color:#fff;
+    color:$second-font;
     font-family: sans-serif;
     position: relative;
     left:-3rem;
@@ -84,12 +84,12 @@
     font-family: "Roboto Condensed", sans-serif;
 }
 .slider .element-text {
-    color:#fff;
+    color:$second-font;
     position: relative;
     left:-3rem;
     opacity:0;
     font-size:1.5rem;
-    color:rgba(255,255,255,.6);
+    color:$mobile-menu-sgl-btn;
     padding-left:4rem;
     padding-right:4rem;
     text-align: center;
@@ -167,7 +167,7 @@
     width:100%;
     height:100%;
     font-size: 1.2rem;
-    color: $bkg-colour;
+    color: $main-bkg;
     text-indent: 0;
     transform: translate(-50%, -50%);
 }
@@ -215,7 +215,7 @@
     box-shadow:inset 0 0 0 2px rgba(255,255,255,0.5);
 }
 .slider-dots-element-active .slider-dots-button:before {
-    background: #fff;
+    background: $main-bkg;
     transform:translate(-50%, -50%) scale(1.2);
 }
 .slider-dots-button:focus {

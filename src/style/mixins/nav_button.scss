@@ -1,4 +1,5 @@
 @import '../../../node_modules/normalize-scss/sass/_normalize.scss';
+@import '../variables/variables.scss';
 
 //Button - top navigation
 //
@@ -21,8 +22,6 @@
 //Styleguide Mixins.Elements
 
 @mixin top-nav-btn-model($bkg_color, $font_color) {
-    cursor: pointer;
-    list-style: none;
     display: flex;
     justify-content: center;
     & > a,
@@ -30,17 +29,16 @@
         a:link,
         a:link:active,
         a:visited:active {
-        text-decoration: none;
-        color: $font_color;
-        padding: .8em 1.2em;
-        margin: 0;
-        width: fit-content;
-        background-color: $bkg_color;
-        font-weight: bold;
-        font-size: .6rem;
-        text-transform: uppercase;
+            color: $font_color;
+            padding: .8em 1.2em;
+            margin: 0;
+            width: fit-content;
+            background: $bkg_color;
+            font-weight: bold;
+            font-size: .6rem;
+            text-transform: uppercase;
     }
 }
 .button-model {
-    @include top-nav-btn-model(grey, wheat);
+    @include top-nav-btn-model($main-bkg, $second-font);
 }

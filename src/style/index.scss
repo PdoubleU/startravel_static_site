@@ -30,3 +30,12 @@ body{
 *::after {
     box-sizing: inherit;
 }
+
+a,
+a:visited,
+a:link,
+a:link:active,
+a:visited:active  {
+    all: unset;
+    cursor: pointer;
+}

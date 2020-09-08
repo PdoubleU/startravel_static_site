@@ -1,12 +1,12 @@
 class Slider {
     constructor(elemSelector, opts) {
-        const defaultOpts = {
+        const DEFAULT_OPTS = {
             pauseTime : 8000,
             prevText : "<",
             nextText : ">",
             generatePrevNext : true
         };
-        this.options = Object.assign({}, defaultOpts, opts);
+        this.options = Object.assign({}, DEFAULT_OPTS, opts);
         this.sliderSelector = elemSelector;
         this.currentSlide = 0; //aktualny slide
         this.time = null; //tutaj będziemy podczepiać setTimeout
@@ -25,25 +25,21 @@ class Slider {
         //pobieramy element który zamienimy na slider
         this.slider = document.querySelector(this.sliderSelector);
         this.slider.classList.add("slider");
-
         //tworzymy kontener dla slajdów
-        const slidesCnt = document.createElement("div");
-        slidesCnt.classList.add("slider-slides-cnt");
-
+        const SLIDES_CNT = document.createElement("div");
+        SLIDES_CNT.classList.add("slider-slides-cnt");
         //pobieramy element slajdów
         this.slides = this.slider.children;
-
         //to jest żywa kolekcja, więc przy przeniesieniu każdego slajdu
         //jej długość maleje
         while (this.slides.length) {
             this.slides[0].classList.add("slider-slide");
-            slidesCnt.appendChild(this.slides[0]);
+            SLIDES_CNT.appendChild(this.slides[0]);
         }
-        this.slides = slidesCnt.querySelectorAll(".slider-slide");
-        this.slider.appendChild(slidesCnt);
+        this.slides = SLIDES_CNT.querySelectorAll(".slider-slide");
+        this.slider.appendChild(SLIDES_CNT);
 
         if (this.options.generatePrevNext) this.createPrevNext();
-        if (this.options.generateDots) this.createDots();
     }
 
     slidePrev() {
@@ -62,26 +58,18 @@ class Slider {
         this.changeSlide(this.currentSlide);
     }
 
-    changeSlide(index) {
+    changeSlide(i) {
         this.slides.forEach(slide => {
             slide.classList.remove("slider-slide-active");
             slide.setAttribute("aria-hidden", true);
         });
 
         //dodajemy ją tylko wybranemu
-        this.slides[index].classList.add("slider-slide-active");
-        this.slides[index].setAttribute("aria-hidden", false);
-
-        //podobny manewr robimy dla kropek
-        if (this.options.generateDots) {
-            this.dots.forEach(dot => {
-                dot.classList.remove("slider-dots-element-active");
-            });
-            this.dots[index].classList.add("slider-dots-element-active");
-        }
+        this.slides[i].classList.add("slider-slide-active");
+        this.slides[i].setAttribute("aria-hidden", false);
 
         //aktualny slide przestawiamy na wybrany
-        this.currentSlide = index;
+        this.currentSlide = i;
 
         if (this.options.pauseTime !== 0) {
             clearInterval(this.time);
@@ -104,15 +92,15 @@ class Slider {
         this.next.classList.add("slider-button-next");
         this.next.addEventListener("click", this.slideNext.bind(this));
 
-        const nav = document.createElement("div");
-        nav.classList.add("slider-nav");
-        nav.setAttribute("aria-label", "Slider prev next");
-        nav.appendChild(this.prev);
-        nav.appendChild(this.next);
-        this.slider.appendChild(nav);
+        const NAV = document.createElement("div");
+        NAV.classList.add("slider-nav");
+        NAV.setAttribute("aria-label", "Slider prev next");
+        NAV.appendChild(this.prev);
+        NAV.appendChild(this.next);
+        this.slider.appendChild(NAV);
     }
 }
 
-new Slider('#slider1');
+new Slider('#slider');
 
 export default {Slider};

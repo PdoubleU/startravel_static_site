@@ -1,6 +1,7 @@
 @import '../../../node_modules/normalize-scss/sass/_normalize.scss';
 @import '../mixins/main_page.scss';
 @import '../mixins/main_containers.scss';
+@import '../variables/variables.scss';
 
 .outer-wrapper {
     width: 100%;
@@ -16,14 +17,15 @@
     display: flex;
     flex-direction: column;
     scrollbar-width: none;
+    background: $main-bkg;
 }
 .main__page--one {
-    @include main__page(wheat, 200vh);
+    @include main__page($main-bkg, 200vh);
     margin-bottom: .06rem;
 }
 .main__page--two,
 .main__page--three {
-    @include main__page(wheat, 100vh);
+    @include main__page($main-bkg, 100vh);
     margin-bottom: .06rem;
 }
 .container-front{
@@ -31,8 +33,8 @@
     grid-template-columns: 100%;
     grid-template-rows: 50% 25% 25%;
     & > * {
-        background-color: rgb(78, 92, 57);
-        color: black;
+        background-color: $second-bkg;
+        color: $main-font;
         padding: .5em;
         display: flex;
     }
@@ -44,12 +46,12 @@
     }
     & .element--two {
         grid-row: 3 / 4;
-        background: lightcoral;
+        background: $second-bkg;
     }
     & .element--three {
         grid-row: 2 / 3;
         padding: 0;
-        background: blueviolet;
+        background: $second-bkg;
     }
 }
 .container-middle{
@@ -57,8 +59,8 @@
     grid-template-rows: repeat(3, 1fr);
     gap: .06rem;
     & > * {
-        background-color: rgb(140, 179, 81);
-        color: white;
+        background-color: $second-bkg;
+        color: $main-font;
         padding: .5em;
         display: flex;
     }
@@ -77,8 +79,7 @@
     grid-template-rows: repeat(3, 1fr);
     gap: .06rem;
     & > * {
-        background-color: rgb(152, 67, 155);
-        color: white;
+        background-color: $second-bkg;
         padding: .5em;
         display: flex;
     }
@@ -106,7 +107,7 @@
     .main__page--one,
     .main__page--two,
     .main__page--three {
-        @include main__page(wheat, 100vh);
+        @include main__page($main-bkg, 100vh);
     }
     .outer-wrapper {
         width: 100vh;
@@ -133,8 +134,8 @@
         gap: .06rem;
         margin: 0 .06rem 0 0;
         & > * {
-            background-color: rgb(78, 92, 57);
-            color: black;
+            background: $main-bkg;
+            color: $second-font;
             padding: .5em;
             display: flex;
         }
@@ -145,6 +146,7 @@
         & .element--two {
             grid-column: 2 / 3;
             grid-row: 1 / 2;
+            color: $main-font;
         }
         & .element--three {
             grid-column: 2 / 3;
@@ -157,8 +159,8 @@
         gap: .06rem;
         margin: 0 .06rem 0 0;
         & > * {
-            background-color: rgb(140, 179, 81);
-            color: white;
+            background: $second-bkg;
+            color: $main-font;
             padding: .5em;
             display: flex;
         }
@@ -181,8 +183,8 @@
         gap: .06rem;
         margin: 0 .06rem 0 0;
         & > * {
-            background-color: rgb(152, 67, 155);
-            color: white;
+            background: $second-bkg;
+            color: $main-font;
             padding: .5em;
             display: flex;
         }

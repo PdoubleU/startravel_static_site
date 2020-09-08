@@ -20,11 +20,10 @@
     & .element--one {
         grid-row: 1 / 2;
         font-size: 2rem;
-        color: $white;
+        color: $second-font;
     }
     & .element--two {
         grid-row: 2 / 3;
-        background: lightcoral;
     }
 }
 .poland :nth-child(2) > .container-middle,
@@ -36,8 +35,8 @@
     grid-auto-rows: minmax(25vh, 30vh);
     gap: .06rem;
     & > * {
-        background-color: rgb(140, 179, 81);
-        color: white;
+        background-color: $second-bkg;
+        color: $main-font;
         padding: .5em;
         display: flex;
         grid-row: auto;
@@ -47,7 +46,6 @@
     background: url('./assets/imgs/large/ksiaz.jpg');
     background-size: cover;
     background-position: center center;
-    font: $white;
     font-size: 2rem;
 }
 
@@ -83,8 +81,8 @@
         grid-auto-columns: minmax(30vw, 33vw);
         gap: .06rem;
         & > * {
-            background-color: rgb(140, 179, 81);
-            color: white;
+            background-color: $second-bkg;
+            color: $main-font;
             padding: .5em;
             display: flex;
             grid-row: 1 / 2;

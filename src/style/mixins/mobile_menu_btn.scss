@@ -3,8 +3,6 @@
 @mixin menu_single_btn ($bkg_color, $font_color) {
     display: flex;
     position: fixed;
-    cursor: pointer;
-    list-style: none;
     & > a,
         a:visited,
         a:link,
@@ -13,10 +11,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            text-decoration: none;
             color: $font_color;
             margin: 0;
-            background-color: $bkg_color;
+            background: $bkg_color;
             font-weight: bold;
             text-transform: uppercase;
             height: 4em;

@@ -6,21 +6,23 @@ class FillContent {
         };
         this.options = Object.assign({}, DEFAULT_OPTS, opts);
         this.selector = classNameSelector;
-        this.file = null;
-        this.country = null;
-        this.randomNo = null;
+        this.file = this.options.file;
+        this.country = this.options.country;
+        this.randomNo = null
 
         this.generateHTMLTags();
     }
     generateHTMLTags() {
+        if(document.getElementById(this.selector) == undefined) {
+            return 0;
+        }
         var element = document.getElementById(this.selector);
-        element.classList.add("red_box");
+        element.classList.add('red_box');
     }
-
 }
 
-new FillContent("logo");
+new FillContent('germany');
+new FillContent('poland');
+new FillContent('czechia');
 
 export default {FillContent};
-
-

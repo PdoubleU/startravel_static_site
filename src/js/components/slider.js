@@ -17,6 +17,11 @@ class Slider {
         this.prev = null; //przycisk prev
         this.next = null; //przycisk next
 
+        //check if the currently loaded subpage has correct identifier - if not, stop the code
+        if(document.querySelector(this.sliderSelector) == undefined) {
+            return 0;
+        }
+
         this.generateSlider();
         this.changeSlide(this.currentSlide);
     }

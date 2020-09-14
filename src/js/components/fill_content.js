@@ -1,10 +1,10 @@
 class FillContent {
-    constructor(classNameSelector, opts) {
-        const DEFAULT_OPTS = {
+    constructor(classNameSelector, options) {
+        const DEFAULT_OPTIONS = {
             country : "pl",
             _path: '../json/offer-pl.json'
         };
-        this.options = Object.assign({}, DEFAULT_OPTS, opts);
+        this.options = Object.assign({}, DEFAULT_OPTIONS, options);
         this.selector = classNameSelector;
         this.country = this.options.country;
         this.path = this.options._path;
@@ -14,13 +14,32 @@ class FillContent {
     }
     generateHTMLTags(counter, objJSON, selector, country) {
         for (let i = 0; i < counter; i++){
-            var newContent = objJSON[country][i].title;
-            const CONTENT_ELEM = document.createElement("div");
-            CONTENT_ELEM.classList.add('element');
-            var Content_text = document.createTextNode(newContent);
-            CONTENT_ELEM.appendChild(Content_text);
-            var element = document.getElementById(selector);
-            element.appendChild(CONTENT_ELEM);
+            var newTitle = objJSON[country][i].title;
+            var newContent = objJSON[country][i].content;
+            var newPrice = objJSON[country][i].price;
+            var grip = document.getElementById(selector);
+
+            const CONTENT_CONTAINER = document.createElement('article');
+            CONTENT_CONTAINER.classList.add('element-' + [i]);
+            grip.appendChild(CONTENT_CONTAINER);
+
+            const CONTENT_TITLE = document.createElement('h4');
+            CONTENT_TITLE.classList.add('title');
+            var title_text = document.createTextNode(newTitle);
+            CONTENT_TITLE.appendChild(title_text);
+            grip.children[i].appendChild(CONTENT_TITLE);
+
+            const CONTENT_TEXT = document.createElement('p');
+            CONTENT_TEXT.classList.add('description');
+            var descr_text = document.createTextNode(newContent);
+            CONTENT_TEXT.appendChild(descr_text);
+            grip.children[i].appendChild(CONTENT_TEXT);
+
+            const CONTENT_PRICE = document.createElement('p');
+            CONTENT_PRICE.classList.add('price');
+            var content_price = document.createTextNode(newPrice);
+            CONTENT_PRICE.appendChild(content_price);
+            grip.children[i].appendChild(CONTENT_PRICE);
         }
     }
     loadData(callback){

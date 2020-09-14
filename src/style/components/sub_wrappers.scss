@@ -42,12 +42,6 @@
         grid-row: auto;
     }
 }
-.poland :nth-child(2) > .container :nth-child(1) {
-    background: url('./assets/imgs/large/ksiaz.jpg');
-    background-size: cover;
-    background-position: center center;
-    font-size: 2rem;
-}
 
 @media (pointer: fine) and (min-width: 780px) {
     .poland > .main__page--one,

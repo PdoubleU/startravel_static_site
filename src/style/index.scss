@@ -5,6 +5,7 @@
 @import './components/footer.scss';
 @import './components/main_slider.scss';
 @import './components/sub_wrappers.scss';
+@import './components/subpage_articles.scss';
 
 //root style block has box-sizing set to border-box to avoid unexpected behaviour for box elements:
 :root{
@@ -38,12 +39,4 @@ a:link:active,
 a:visited:active  {
     all: unset;
     cursor: pointer;
-}
-
-
-//TEST - HAS TO BE REMOVED
-
-.main.poland.red_box {
-    background: red;
-    color: green;
 }

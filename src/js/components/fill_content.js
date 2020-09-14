@@ -20,7 +20,7 @@ class FillContent {
             var grip = document.getElementById(selector);
 
             const CONTENT_CONTAINER = document.createElement('article');
-            CONTENT_CONTAINER.classList.add('element-' + [i]);
+            CONTENT_CONTAINER.classList = 'element ' + [i];
             grip.appendChild(CONTENT_CONTAINER);
 
             const CONTENT_TITLE = document.createElement('h4');

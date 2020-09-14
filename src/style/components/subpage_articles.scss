@@ -1,0 +1,15 @@
+@import '../../../node_modules/normalize-scss/sass/_normalize.scss';
+@import '../variables/variables.scss';
+
+.element {
+    display: flexbox;
+    flex-direction: row;
+    text-transform: uppercase;
+    font-size: .8rem;
+}
+
+@media (pointer: fine) and (min-width: 780px) {
+    .element {
+        flex-direction: column;
+    }
+}

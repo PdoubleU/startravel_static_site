@@ -1,8 +1,7 @@
-let width = window.innerWidth;
 let grip = document.getElementsByClassName('main');
 
 export default function scroll() {
-
+    let width = window.innerWidth;
     if (width <= 780){
         var SCRL_BTN = document.createElement('button');
         SCRL_BTN.className = 'scroll_btn';

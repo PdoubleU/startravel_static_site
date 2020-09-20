@@ -13,6 +13,7 @@ class Slider {
         this.slider = null;
         this.elem = null;
         this.slides = null;
+        this.randomCountry = ['pl', 'de', 'cz'];
 
         this.prev = null; //przycisk prev
         this.next = null; //przycisk next
@@ -21,9 +22,22 @@ class Slider {
         if(document.querySelector(this.sliderSelector) == undefined) {
             return 0;
         }
-
+        this.generateListOfSlides();
         this.generateSlider();
         this.changeSlide(this.currentSlide);
+    }
+
+    generateListOfSlides() {
+        for (var i = 0; i < 5 ; i++) {
+            var grip = document.querySelector(this.sliderSelector);
+            const SLIDE_ARTCL = document.createElement('article');
+            SLIDE_ARTCL.className = 'element';
+            const SLIDE_CONT = document.createElement('h5');
+            var title = document.createTextNode('sample text' + [i]);
+            SLIDE_CONT.appendChild(title);
+            const SLIDE = SLIDE_ARTCL.appendChild(SLIDE_CONT);
+            grip.appendChild(SLIDE);
+        }
     }
 
     generateSlider() {
@@ -54,7 +68,7 @@ class Slider {
         }
         this.changeSlide(this.currentSlide);
     }
-
+    // w tej funkcji będzie modyfikacja treści slajdu!!
     slideNext() {
         this.currentSlide++;
         if (this.currentSlide > this.slides.length - 1) {
@@ -99,7 +113,7 @@ class Slider {
 
         const NAV = document.createElement("div");
         NAV.classList.add("slider-nav");
-        NAV.setAttribute("aria-label", "Slider prev next");
+        NAV.setAttribute("aria-label", "slider prev next");
         NAV.appendChild(this.prev);
         NAV.appendChild(this.next);
         this.slider.appendChild(NAV);

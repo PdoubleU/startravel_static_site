@@ -32,7 +32,7 @@ class Slider {
             var grip = document.querySelector(this.sliderSelector);
             const SLIDE_ARTCL = document.createElement('article');
             SLIDE_ARTCL.className = 'element';
-            const SLIDE_CONT = document.createElement('h5');
+            const SLIDE_CONT = document.createElement('h3');
             var title = document.createTextNode('sample text' + [i]);
             SLIDE_CONT.appendChild(title);
             const SLIDE = SLIDE_ARTCL.appendChild(SLIDE_CONT);

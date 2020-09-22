@@ -3,7 +3,6 @@
 
 @mixin main__page($bkg_color, $height) {
     display: flex;
-    margin: 0;
     width: 100%;
     height: $height;
     background-color: $bkg_color;

@@ -100,7 +100,7 @@
             padding: 0;
             grid-template-columns: repeat(4, 25%);
             grid-template-rows: 100%;
-            grid-gap: .06rem;
+            gap: .06rem;
             background: $second-bkg;
             justify-content: center;
             align-content: center;

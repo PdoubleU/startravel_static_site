@@ -1,6 +1,8 @@
 let checkbox = document.getElementById('menu-open');
-let trigger = document.getElementById('go_home');
+let trigger = document.getElementsByClassName('top-nav__button mobile');
 
-export var close_mobile = () => console.log('horra!');
+export var close_mobile = () => checkbox.checked = false;
 
-trigger.addEventListener('click', close_mobile);
+[...trigger].forEach(element => {
+    element.addEventListener('click', close_mobile);
+});

@@ -3,7 +3,7 @@ var isButton = false;
 
 export function scroll() {
         var scroll_btn = document.getElementsByClassName('scroll_btn');
-        if (scroll_btn == undefined) {return 0;}
+        if (isButton == false) {return 0;}
         if (window.scrollY > 500) {
             scroll_btn[0].classList.add('scroll_btn--active');
         }

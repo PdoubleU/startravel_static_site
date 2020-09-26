@@ -7,6 +7,7 @@
 @import './components/sub_wrappers.scss';
 @import './components/subpage_articles.scss';
 @import './components/scrl_up_btn.scss';
+@import './components/form.scss';
 
 //root style block has box-sizing set to border-box to avoid unexpected behaviour for box elements:
 :root{
@@ -17,8 +18,7 @@
     line-height: 1.4;
 
 }
-html{
-    position:relative;
+html {
     min-height: 100%;
   }
 body{
@@ -40,4 +40,8 @@ a:link:active,
 a:visited:active  {
     all: unset;
     cursor: pointer;
+}
+
+button {
+    appearance: none; // fix the strange behaviour on iOS' devices
 }

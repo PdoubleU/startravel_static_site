@@ -24,11 +24,13 @@
 @mixin top-nav-btn-model($bkg_color, $font_color) {
     display: flex;
     justify-content: center;
+    text-align: center;
     & > a,
         a:visited,
         a:link,
         a:link:active,
         a:visited:active {
+            min-width: 9vw;
             color: $font_color;
             padding: .8em 1.2em;
             width: fit-content;

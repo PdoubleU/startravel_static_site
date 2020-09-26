@@ -97,6 +97,7 @@
 
 @media (pointer: fine) and (min-width: 780px) {
     .main {
+        position: relative;
         width: fit-content;
         grid-column: 1 / 2;
         grid-row: 1 / 2;

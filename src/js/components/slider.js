@@ -122,4 +122,4 @@ class Slider {
 
 new Slider('#slider');
 
-export default {Slider};
+export default Slider;

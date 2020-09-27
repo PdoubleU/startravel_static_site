@@ -1,7 +1,7 @@
 let grip = document.getElementsByClassName('main');
 var isButton = false;
 
-export function scroll() {
+export const scroll = () => {
         var scroll_btn = document.getElementsByClassName('scroll_btn');
         if (isButton == false) {return 0;}
         if (window.scrollY > 500) {
@@ -19,7 +19,7 @@ export function scroll() {
                                 }
 
 }
-export function createButton() {
+export const createButton = () => {
     if (isButton === true) {return 0;}
     var width = window.innerWidth;
     if (width <= 780 ) {

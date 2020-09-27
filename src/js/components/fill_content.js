@@ -51,7 +51,7 @@ class FillContent {
         var selector = this.selector;
         var country = this.country;
         xhr.open('GET', _path, true);
-        xhr.onload = function() {
+        xhr.onload = () => {
             if(xhr.status === 200) {
                 var response = JSON.parse(xhr.responseText);
                 return callback(5, response, selector, country);

@@ -21,25 +21,33 @@
 //
 //Styleguide Mixins.Elements
 
-@mixin top-nav-btn-model($bkg_color, $font_color) {
+@mixin top-nav-btn-model($bkg_color, $hover_color_bkg, $font_color, $hover_color_font, $hover_color_border) {
     display: flex;
     justify-content: center;
     text-align: center;
+    border: solid .05rem $bkg_color;
+    background: $bkg_color;
+    color: $font_color;
+    transition: all .2s ease-in-out;
+    &:hover {
+        color: $hover_color_font;
+        background: $hover_color_bkg;
+        border-radius: .2rem;
+        border-color: $hover_color_border;
+    }
     & > a,
         a:visited,
         a:link,
         a:link:active,
         a:visited:active {
             min-width: 9vw;
-            color: $font_color;
             padding: .8em 1.2em;
             width: fit-content;
-            background: $bkg_color;
             font-weight: bold;
             font-size: .6rem;
             text-transform: uppercase;
     }
 }
 .button-model {
-    @include top-nav-btn-model($main-bkg, $second-font);
+    @include top-nav-btn-model($main-bkg, $hoover-bkg, $main-font, $font-hoover, $border-menu-btn-hoover);
 }

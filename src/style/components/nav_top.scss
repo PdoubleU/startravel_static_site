@@ -222,7 +222,7 @@
         flex-wrap: nowrap;
         margin: .6em;
         & > li {
-            @include top-nav-btn-model($color-mobile-menu-bkg-btn, $main-bkg);
+            @include top-nav-btn-model($color-mobile-menu-bkg-btn, $hoover-bkg, $main-font, $main-font, $border-menu-btn-hoover);
         }
         & > li + li {
             margin: 0 0 0 1em;

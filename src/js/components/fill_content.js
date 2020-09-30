@@ -14,10 +14,10 @@ class FillContent {
     }
     generateHTMLTags(counter, objJSON, selector, country) {
         for (let i = 0; i < counter; i++){
-            var newTitle = objJSON[country][i].title;
-            var newContent = objJSON[country][i].content;
-            var newPrice = objJSON[country][i].price;
-            var grip = document.getElementById(selector);
+            let newTitle = objJSON[country][i].title;
+            let newContent = objJSON[country][i].content;
+            let newPrice = objJSON[country][i].price;
+            let grip = document.getElementById(selector);
 
             const CONTENT_CONTAINER = document.createElement('article');
             CONTENT_CONTAINER.classList = 'element ' + [i];
@@ -25,19 +25,19 @@ class FillContent {
 
             const CONTENT_TITLE = document.createElement('h4');
             CONTENT_TITLE.classList.add('title');
-            var title_text = document.createTextNode(newTitle);
+            let title_text = document.createTextNode(newTitle);
             CONTENT_TITLE.appendChild(title_text);
             grip.children[i].appendChild(CONTENT_TITLE);
 
             const CONTENT_TEXT = document.createElement('p');
             CONTENT_TEXT.classList.add('description');
-            var descr_text = document.createTextNode(newContent);
+            let descr_text = document.createTextNode(newContent);
             CONTENT_TEXT.appendChild(descr_text);
             grip.children[i].appendChild(CONTENT_TEXT);
 
             const CONTENT_PRICE = document.createElement('p');
             CONTENT_PRICE.classList.add('price');
-            var content_price = document.createTextNode(newPrice);
+            let content_price = document.createTextNode(newPrice);
             CONTENT_PRICE.appendChild(content_price);
             grip.children[i].appendChild(CONTENT_PRICE);
         }
@@ -46,14 +46,14 @@ class FillContent {
         if(document.getElementById(this.selector) == undefined) {
             return 0;
         }
-        var xhr = new XMLHttpRequest();
-        var _path = this.path;
-        var selector = this.selector;
-        var country = this.country;
+        let xhr = new XMLHttpRequest();
+        let _path = this.path;
+        let selector = this.selector;
+        let country = this.country;
         xhr.open('GET', _path, true);
         xhr.onload = () => {
             if(xhr.status === 200) {
-                var response = JSON.parse(xhr.responseText);
+                let response = JSON.parse(xhr.responseText);
                 return callback(5, response, selector, country);
             }
         }

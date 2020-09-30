@@ -28,12 +28,12 @@ class Slider {
     }
 
     generateListOfSlides() {
-        for (var i = 0; i < 5 ; i++) {
-            var grip = document.querySelector(this.sliderSelector);
+        for (let i = 0; i < 5 ; i++) {
+            let grip = document.querySelector(this.sliderSelector);
             const SLIDE_ARTCL = document.createElement('article');
             SLIDE_ARTCL.className = 'element';
             const SLIDE_CONT = document.createElement('h3');
-            var title = document.createTextNode('sample text' + [i]);
+            let title = document.createTextNode('sample text' + [i]);
             SLIDE_CONT.appendChild(title);
             const SLIDE = SLIDE_ARTCL.appendChild(SLIDE_CONT);
             grip.appendChild(SLIDE);

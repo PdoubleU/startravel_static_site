@@ -1,4 +1,4 @@
-let grip = document.getElementsByClassName('main');
+const grip = document.getElementsByClassName('main');
 let isButton = false;
 
 export const scroll = () => {

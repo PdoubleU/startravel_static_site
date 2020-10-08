@@ -1,0 +1,51 @@
+@import '../variables/variables.scss';
+@import '../mixins/general_btn.scss';
+
+
+.bar_gdpr {
+    position: fixed;
+    display: flex;
+    opacity: 0;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: .8rem 1.2rem;
+    left: auto;
+    bottom: 2.2rem;
+    width: 100%;
+    background: $second-bkg;
+    color: $main-font;
+    font-size: .8rem;
+    box-shadow: 0em -.04em .09em $main-bkg;
+    transform: translateY(50%);
+    transition: opacity .5s linear;
+    z-index: $index_top_navabr;
+    & > p {
+        margin:  .5em .5em;
+    } * + * {
+        margin: 0em 0em 1em;
+    }
+}
+.bar_gdpr--active {
+    transition: opacity 1s linear;
+    opacity: 1;
+}
+.button_gdpr {
+    @include general_btn($second-bkg, $main-bkg, $main-font, $second-font, $second-font);
+    font-size: .675rem;
+    padding: .3em .6em;
+    margin: 0;
+    &:hover {
+        transition: .2s ease-in-out;
+    }
+    button {
+        appearance: none;
+    }
+}
+
+@media (min-width: 40rem) {
+    .bar_gdpr {
+        bottom: 1.6rem;
+    }
+}

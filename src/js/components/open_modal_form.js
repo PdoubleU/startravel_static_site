@@ -45,7 +45,7 @@ class ModalWindow {
     }
 }
 
-let openTrigger = document.getElementsByClassName('open-form');
+const openTrigger = document.getElementsByClassName('open-form');
 
 openTrigger[0].onclick = () => {
     new ModalWindow('form');

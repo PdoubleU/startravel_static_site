@@ -10,7 +10,12 @@ export const SHOW_GDPR_BAR = () => {
 };
 
 export const OPEN_GDPR = () => {
-  new ModalWindow('gdpr_info');
+  let GDPR_Info = new ModalWindow('gdpr_info',
+                                  {
+                                    button: false
+                                  });
+  GDPR_Info.button = false;
+  console.log(GDPR_Info.button);
 }
 
 window.onload(setTimeout(SHOW_GDPR_BAR, 3000));

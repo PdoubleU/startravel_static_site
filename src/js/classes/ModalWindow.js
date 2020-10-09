@@ -1,6 +1,11 @@
 export class ModalWindow {
     constructor(id, options){
+        const DEFAULT_OPTIONS = {
+            button: true,
+        };
         this.id = id;
+        this.options = Object.assign({}, DEFAULT_OPTIONS, options);
+        this.button = this.options.button;
 
         this.generateHTMLTags();
     }
@@ -13,22 +18,22 @@ export class ModalWindow {
 
         const MODAL_CONTAINER = document.createElement('div');
         MODAL_CONTAINER.classList.add('modal');
-        MODAL_CONTAINER.classList.add('form');
+        MODAL_CONTAINER.classList.add(this.id);
         grip[0].lastChild.appendChild(MODAL_CONTAINER);
 
         const MODAL_BACKDROP = document.createElement('div');
         MODAL_BACKDROP.classList.add('modal_backdrop');
-        MODAL_BACKDROP.classList.add('form');
+        MODAL_BACKDROP.classList.add(this.id);
         grip[0].lastChild.children[0].appendChild(MODAL_BACKDROP);
 
         const MODAL_BODY = document.createElement('div');
         MODAL_BODY.classList.add('modal_body');
-        MODAL_BODY.classList.add('form');
+        MODAL_BODY.classList.add(this.id);
         grip[0].lastChild.children[0].appendChild(MODAL_BODY);
 
         const ACTION_BTN = document.createElement('button');
         ACTION_BTN.classList.add('modal_btn');
-        ACTION_BTN.classList.add('form');
+        ACTION_BTN.classList.add(this.id);
         ACTION_BTN.appendChild(document.createTextNode('Wyślij'));
         grip[0].lastChild.children[0].lastChild.appendChild(ACTION_BTN);
 
@@ -37,10 +42,12 @@ export class ModalWindow {
         MODAL_CONTENT.appendChild(document.createTextNode('here will be form'));
         grip[0].lastChild.children[0].lastChild.appendChild(MODAL_CONTENT);
 
-        const CLOSE_BTN = document.createElement('button');
-        CLOSE_BTN.classList.add('modal_close');
-        CLOSE_BTN.classList.add('form');
-        grip[0].lastChild.children[0].lastChild.appendChild(CLOSE_BTN);
-        CLOSE_BTN.onclick = () => {MODAL_ARTICLE.remove()};
+        if (this.button == true) {
+            const CLOSE_BTN = document.createElement('button');
+            CLOSE_BTN.classList.add('modal_close');
+            CLOSE_BTN.classList.add(this.id);
+            grip[0].lastChild.children[0].lastChild.appendChild(CLOSE_BTN);
+            CLOSE_BTN.onclick = () => {MODAL_ARTICLE.remove()};
+        }
     }
 }

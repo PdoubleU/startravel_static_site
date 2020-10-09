@@ -2,8 +2,7 @@
 
 @mixin general_btn ($bkg_color, $hover_color_bkg, $font_color, $hover_color_font, $hover_color_border) {
     cursor: pointer;
-    display: inline-block;
-    border: 0;
+    display: flexbox;
     padding: .6rem 1.2rem;
     letter-spacing: .12rem;
     min-height: 1.8rem;
@@ -11,13 +10,10 @@
     border: solid .1rem $bkg_color;
     background: $bkg_color;
     color: $font_color;
-    transition: all .2s ease-in-out;
     &:hover {
         color: $hover_color_font;
-        background-color: $hover_color_bkg;
+        background: $hover_color_bkg;
         border-radius: .3rem;
-    }
-    @media (min-width: 780px){
-        -moz-transition: none;
+        transition: all .2s ease-in-out;
     }
 }

@@ -1,7 +1,7 @@
-const grip = document.getElementsByClassName('main');
+const GRIP = document.getElementsByClassName('main');
 let isButton = false;
 
-export const scroll = () => {
+export const SCROLL = () => {
         let scroll_btn = document.getElementsByClassName('scroll_btn');
         if (isButton == false) {return 0;}
         if (window.scrollY > 500) {
@@ -19,7 +19,7 @@ export const scroll = () => {
                                 }
 
 }
-export const createButton = () => {
+export const CREATE_BUTTON = () => {
     if (isButton === true) {return 0;}
     let width = window.innerWidth;
     if (width <= 780 ) {
@@ -27,9 +27,9 @@ export const createButton = () => {
         let SCRL_BTN = document.createElement('button');
         SCRL_BTN.className = 'scroll_btn';
         SCRL_BTN.setAttribute('aria-label', 'scroll up button');
-        grip[0].appendChild(SCRL_BTN);
+        GRIP[0].appendChild(SCRL_BTN);
     }
 }
-window.onresize = createButton;
-window.onload = createButton;
-window.onscroll = scroll;
+window.onresize = CREATE_BUTTON;
+window.onload = CREATE_BUTTON;
+window.onscroll = SCROLL;

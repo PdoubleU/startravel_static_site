@@ -22,8 +22,8 @@ export const OPEN_GDPR = () => {
                                     action: 'accept',
                                     buttonNamePl: 'Akceptuję wszystko',
                                     buttonNameEn: 'Accept all',
+                                    _path: './json/gdpr_content.json'
                                   });
-  GDPR_Info.button = false;
 }
 
 window.onload(setTimeout(SHOW_GDPR_BAR, 3000));

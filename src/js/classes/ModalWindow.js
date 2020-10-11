@@ -4,7 +4,8 @@ export class ModalWindow {
                 button: true,
                 action: 'submit',
                 buttonNamePl: 'Wyślij',
-                buttonNameEn: 'Submit'
+                buttonNameEn: 'Submit',
+                _path: ''
             };
         this.id = id;
         this.options = Object.assign({}, DEFAULT_OPTIONS, options);
@@ -12,13 +13,22 @@ export class ModalWindow {
         this.action = this.options.action;
         this.btnNamePl = this.options.buttonNamePl;
         this.btnNameEn = this.options.buttonNameEn;
+        this.path = this.options._path;
 
+        this.loadData(this.generateContent);
         this.generateHTMLTags();
         this.action_btn();
     }
+
+    generateContent(response, language) {
+        let grip = document.getElementsByTagName('body');
+        const MODAL_CONTENT = document.createElement('div');
+        MODAL_CONTENT.classList.add('content-container');
+        MODAL_CONTENT.innerHTML = response['gdpr_' + language];
+        grip[0].lastChild.children[0].lastChild.appendChild(MODAL_CONTENT);
+    }
     generateHTMLTags() {
         let grip = document.getElementsByTagName('body');
-
         const MODAL_ARTICLE = document.createElement('article');
         MODAL_ARTICLE.id = 'modal_' + this.id;
         grip[0].appendChild(MODAL_ARTICLE);
@@ -44,11 +54,6 @@ export class ModalWindow {
         ACTION_BTN.appendChild(document.createTextNode((window.sessionStorage.getItem('language') == 'polish') ? this.btnNamePl : this.btnNameEn));
         grip[0].lastChild.children[0].lastChild.appendChild(ACTION_BTN);
 
-        const MODAL_CONTENT = document.createElement('div');
-        MODAL_CONTENT.classList.add('content-container');
-        MODAL_CONTENT.appendChild(document.createTextNode('here will be form'));
-        grip[0].lastChild.children[0].lastChild.appendChild(MODAL_CONTENT);
-
         if (this.button == true) {
             const CLOSE_BTN = document.createElement('button');
             CLOSE_BTN.classList.add('modal_close');
@@ -68,7 +73,6 @@ export class ModalWindow {
                 case 'accept':
                     document.getElementById('modal_' + this.id).remove();
                     window.sessionStorage.setItem('gdpr', 'confirmed');
-                    console.log(window.sessionStorage);
                     break;
                 default:
                     console.log('Sorry, an error occured. Please reload browser');
@@ -77,5 +81,19 @@ export class ModalWindow {
         }
 
         ACTION_BTN[0].onclick = ACCEPT_GDPR;
+    }
+
+    loadData(callback){
+        let xhr = new XMLHttpRequest();
+        let _path = this.path;
+        let language = window.sessionStorage.getItem('language');
+        xhr.open('GET', _path, true);
+        xhr.onload = () => {
+            if(xhr.status === 200) {
+                let response = JSON.parse(xhr.responseText);
+                return callback(response, language);
+                }
+            }
+        xhr.send(null);
     }
 }

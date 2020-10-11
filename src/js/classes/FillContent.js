@@ -9,6 +9,7 @@ export class FillContent {
         this.country = this.options.country;
         this.path = this.options._path;
         this.data = null;
+        this.noOfElementsToGenerate = 5;
 
         this.loadData(this.generateHTMLTags);
     }
@@ -50,11 +51,12 @@ export class FillContent {
         let _path = this.path;
         let selector = this.selector;
         let country = this.country;
+        let noOfElements = this.noOfElementsToGenerate;
         xhr.open('GET', _path, true);
         xhr.onload = () => {
             if(xhr.status === 200) {
                 let response = JSON.parse(xhr.responseText);
-                return callback(5, response, selector, country);
+                return callback(noOfElements, response, selector, country);
             }
         }
         xhr.send(null);

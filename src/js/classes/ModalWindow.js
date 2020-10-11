@@ -1,13 +1,20 @@
 export class ModalWindow {
     constructor(id, options){
         const DEFAULT_OPTIONS = {
-            button: true,
-        };
+                button: true,
+                action: 'submit',
+                buttonNamePl: 'Wyślij',
+                buttonNameEn: 'Submit'
+            };
         this.id = id;
         this.options = Object.assign({}, DEFAULT_OPTIONS, options);
         this.button = this.options.button;
+        this.action = this.options.action;
+        this.btnNamePl = this.options.buttonNamePl;
+        this.btnNameEn = this.options.buttonNameEn;
 
         this.generateHTMLTags();
+        this.action_btn();
     }
     generateHTMLTags() {
         let grip = document.getElementsByTagName('body');
@@ -32,9 +39,9 @@ export class ModalWindow {
         grip[0].lastChild.children[0].appendChild(MODAL_BODY);
 
         const ACTION_BTN = document.createElement('button');
-        ACTION_BTN.classList.add('modal_btn');
+        ACTION_BTN.classList.add('action_btn');
         ACTION_BTN.classList.add(this.id);
-        ACTION_BTN.appendChild(document.createTextNode('Wyślij'));
+        ACTION_BTN.appendChild(document.createTextNode((window.sessionStorage.getItem('language') == 'polish') ? this.btnNamePl : this.btnNameEn));
         grip[0].lastChild.children[0].lastChild.appendChild(ACTION_BTN);
 
         const MODAL_CONTENT = document.createElement('div');
@@ -49,5 +56,26 @@ export class ModalWindow {
             grip[0].lastChild.children[0].lastChild.appendChild(CLOSE_BTN);
             CLOSE_BTN.onclick = () => {MODAL_ARTICLE.remove()};
         }
+    }
+    action_btn(){
+        const ACTION_BTN = document.getElementsByClassName('action_btn');
+
+        const ACCEPT_GDPR = () =>{
+            switch(this.action) {
+                case 'submit':
+
+                    break;
+                case 'accept':
+                    document.getElementById('modal_' + this.id).remove();
+                    window.sessionStorage.setItem('gdpr', 'confirmed');
+                    console.log(window.sessionStorage);
+                    break;
+                default:
+                    console.log('Sorry, an error occured. Please reload browser');
+                    break;
+            }
+        }
+
+        ACTION_BTN[0].onclick = ACCEPT_GDPR;
     }
 }

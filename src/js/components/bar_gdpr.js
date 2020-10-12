@@ -1,18 +1,17 @@
 import { ModalWindow } from '../classes/ModalWindow.js';
 
-const GDPR_IS_CONFIRMED = window.sessionStorage.getItem('gdpr');
 const OPEN_GDPR_BTN = document.getElementById('gdpr_read');
 const ACCEPT_GDPR_BTN = document.getElementById('gdpr_accept');
 
 export const SHOW_GDPR_BAR = () => {
-  if(GDPR_IS_CONFIRMED === 'unconfirmed') {
+  if(window.localStorage.getItem('gdpr') === 'unconfirmed') {
     document.getElementById('bar_gdpr').classList.toggle('bar_gdpr--active');
   }
 };
 
 export const HIDE_GDPR_BAR = () => {
   document.getElementById('bar_gdpr').classList.remove('bar_gdpr--active');
-  window.sessionStorage.setItem('gdpr', 'confirmed');
+  window.localStorage.setItem('gdpr', 'confirmed');
   setTimeout(() => {
     document.getElementById('bar_gdpr').remove();
   }, 1000);

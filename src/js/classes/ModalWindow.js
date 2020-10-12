@@ -90,7 +90,7 @@ export class ModalWindow {
     loadData(callback){
         let xhr = new XMLHttpRequest();
         let _path = this.path;
-        let language = window.sessionStorage.getItem('language');
+        let language = window.localStorage.getItem('language');
         xhr.open('GET', _path, true);
         xhr.onload = () => {
             if(xhr.status === 200) {

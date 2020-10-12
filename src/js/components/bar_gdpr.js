@@ -13,19 +13,22 @@ export const SHOW_GDPR_BAR = () => {
 export const HIDE_GDPR_BAR = () => {
   document.getElementById('bar_gdpr').classList.remove('bar_gdpr--active');
   window.sessionStorage.setItem('gdpr', 'confirmed');
+  setTimeout(() => {
+    document.getElementById('bar_gdpr').remove();
+  }, 1000);
 }
 
 export const OPEN_GDPR = () => {
-  let GDPR_Info = new ModalWindow('gdpr_info',
-                                  {
-                                    button: false,
-                                    action: 'accept',
-                                    buttonNamePl: 'Akceptuję wszystko',
-                                    buttonNameEn: 'Accept all',
-                                    _path: './json/gdpr_content.json'
-                                  });
+  new ModalWindow('gdpr_info',
+                      {
+                        button: false,
+                        action: 'accept',
+                        buttonNamePl: 'Akceptuję wszystko',
+                        buttonNameEn: 'Accept all',
+                        _path: './json/gdpr_content.json'
+                      });
 }
 
-window.onload(setTimeout(SHOW_GDPR_BAR, 3000));
+window.onload = setTimeout(SHOW_GDPR_BAR, 3000);
 OPEN_GDPR_BTN.onclick = OPEN_GDPR;
 ACCEPT_GDPR_BTN.onclick = HIDE_GDPR_BAR;

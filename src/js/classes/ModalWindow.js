@@ -72,6 +72,10 @@ export class ModalWindow {
                     break;
                 case 'accept':
                     document.getElementById('modal_' + this.id).remove();
+                    document.getElementById('bar_gdpr').classList.remove('bar_gdpr--active');
+                    setTimeout(() => {
+                        document.getElementById('bar_gdpr').remove()}
+                        , 1000);
                     window.sessionStorage.setItem('gdpr', 'confirmed');
                     break;
                 default:

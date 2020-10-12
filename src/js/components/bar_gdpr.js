@@ -29,6 +29,6 @@ export const OPEN_GDPR = () => {
                       });
 }
 
-window.onload = setTimeout(SHOW_GDPR_BAR, 3000);
+window.addEventListener("load", () => {setTimeout(SHOW_GDPR_BAR, 3000)});
 OPEN_GDPR_BTN.onclick = OPEN_GDPR;
 ACCEPT_GDPR_BTN.onclick = HIDE_GDPR_BAR;

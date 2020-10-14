@@ -10,6 +10,7 @@
 @import './components/form.scss';
 @import './components/modal_window.scss';
 @import './components/bar_gdpr.scss';
+@import './components/reveal_txt.scss';
 //root style block has box-sizing set to border-box to avoid unexpected behaviour for box elements:
 :root{
     box-sizing: border-box;
@@ -17,7 +18,6 @@
 //calc() method in font size assures that the font size will be respond on each window size change
     font-size: calc(.6rem + 1vw);
     line-height: 1.4;
-
 }
 html {
     min-height: 100%;

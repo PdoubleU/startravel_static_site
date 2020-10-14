@@ -31,12 +31,12 @@ export class Slider {
         for (let i = 0; i < 5 ; i++) {
             let grip = document.querySelector(this.sliderSelector);
             const SLIDE_ARTCL = document.createElement('article');
-            SLIDE_ARTCL.className = 'element';
+            SLIDE_ARTCL.classList.add('element', 'text');
             const SLIDE_CONT = document.createElement('h3');
             let title = document.createTextNode('sample text' + [i]);
             SLIDE_CONT.appendChild(title);
-            const SLIDE = SLIDE_ARTCL.appendChild(SLIDE_CONT);
-            grip.appendChild(SLIDE);
+            SLIDE_ARTCL.appendChild(SLIDE_CONT);
+            grip.appendChild(SLIDE_ARTCL);
         }
     }
 

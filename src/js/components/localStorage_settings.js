@@ -6,3 +6,5 @@ export const CHECK_STORAGE = () => {
         window.localStorage.setItem('language', 'polish');
     }
 }
+
+window.onload = CHECK_STORAGE;

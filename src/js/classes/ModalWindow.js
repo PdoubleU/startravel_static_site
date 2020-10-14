@@ -51,7 +51,7 @@ export class ModalWindow {
         const ACTION_BTN = document.createElement('button');
         ACTION_BTN.classList.add('action_btn');
         ACTION_BTN.classList.add(this.id);
-        ACTION_BTN.appendChild(document.createTextNode((window.sessionStorage.getItem('language') == 'polish') ? this.btnNamePl : this.btnNameEn));
+        ACTION_BTN.appendChild(document.createTextNode((window.localStorage.getItem('language') == 'polish') ? this.btnNamePl : this.btnNameEn));
         grip[0].lastChild.children[0].lastChild.appendChild(ACTION_BTN);
 
         if (this.button == true) {

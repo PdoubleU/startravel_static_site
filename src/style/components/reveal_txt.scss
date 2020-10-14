@@ -1,0 +1,103 @@
+@import '../../../node_modules/normalize-scss/sass/_normalize.scss';
+@import '../variables/variables.scss';
+
+.reveal{
+    position: relative;
+    overflow: hidden;
+    display: block;
+    line-height: 1.2;
+    background-color: none;
+}
+
+.reveal::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    animation-name: a-ltr-after;
+    animation-timing-function: cubic-bezier(.77,0,.18,1);
+    animation-fill-mode: forwards;
+    transform: translateX(-101%);
+}
+
+.reveal::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: none;
+    animation-name: a-ltr-after;
+    animation-timing-function: cubic-bezier(.77,0,.18,1);
+    animation-fill-mode: forwards;
+    transform: translateX(0);
+}
+
+._0::before,
+._0::after {
+    animation-duration: .8s;
+}
+
+._1::before,
+._1::after {
+    animation-duration: 1s;
+}
+
+._2::before,
+._2::after {
+    animation-duration: 1.2s;
+}
+
+._3::before,
+._3::after {
+    animation-duration: 1.4s;
+}
+
+._4::before,
+._4::after {
+    animation-duration: 1.6s;
+}
+
+._5::before,
+._5::after {
+    animation-duration: 1.8s;
+}
+
+._6::before,
+._6::after {
+    animation-duration: 2s;
+}
+
+._7::before,
+._7::after {
+    animation-duration: 2.2s;
+}
+
+._8::before,
+._8::after {
+    animation-duration: 2.4s;
+}
+
+._9::before,
+._9::after {
+    animation-duration: 2s;
+}
+
+.reveal:nth-of-type(n)::before,
+.reveal:nth-of-type(n)::after{
+    animation-delay: 1.2s;
+}
+
+@keyframes a-ltr-after{
+    0% {transform: translateX(-100%)}
+    100% {transform: translateX(101%)}
+}
+
+@keyframes a-ltr-before{
+    0% {transform: translateX(0)}
+    100% {transform: translateX(200%)}
+}

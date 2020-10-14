@@ -33,6 +33,7 @@ export class Slider {
             const SLIDE_ARTCL = document.createElement('article');
             SLIDE_ARTCL.classList.add('element', 'text');
             const SLIDE_CONT = document.createElement('h3');
+            SLIDE_CONT.classList.add('slider-title');
             let title = document.createTextNode('sample text' + [i]);
             SLIDE_CONT.appendChild(title);
             SLIDE_ARTCL.appendChild(SLIDE_CONT);

@@ -5,4 +5,5 @@ import * as barFunctions from "./components/bar_gdpr.js";
 import { MAIN_SLIDER } from "./components/mainSlider.js";
 import { CHECK_STORAGE } from "./components/localStorage_settings.js";
 import * as reveal from "./components/reveal_txt.js";
+import * as fillContent from "./components/fill_content.js";
 

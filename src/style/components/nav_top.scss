@@ -32,12 +32,19 @@
     margin-left: -4em;
     z-index: $mobile-menu-sgl-btn;
 }
+.nav-mobile > .logo {
+    position: fixed;
+    font-size: 2rem;
+    top: 0;
+    right: .8em;
+}
 .menu-open {
     display: none;
 }
 .menu-btn {
     position: fixed;
     display: flex;
+    cursor: pointer;
     align-items: center;
     justify-content: center;
     top: 50%;
@@ -213,7 +220,7 @@
         background-color: transparent;
         z-index: $index_top_navabr;
     }
-    .logo {
+    .logo--dskt {
         display: inline;
     }
     .top-nav__items--dskt {

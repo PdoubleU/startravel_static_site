@@ -7,4 +7,4 @@ export const CHECK_STORAGE = () => {
     }
 }
 
-window.onload = CHECK_STORAGE;
+window.onload = CHECK_STORAGE();

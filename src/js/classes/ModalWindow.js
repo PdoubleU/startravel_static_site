@@ -76,14 +76,13 @@ export class ModalWindow {
                     setTimeout(() => {
                         document.getElementById('bar_gdpr').remove()}
                         , 1000);
-                    window.sessionStorage.setItem('gdpr', 'confirmed');
+                    window.localStorage.setItem('gdpr', 'confirmed');
                     break;
                 default:
                     console.log('Sorry, an error occured. Please reload browser');
                     break;
             }
         }
-
         ACTION_BTN[0].onclick = ACCEPT_GDPR;
     }
 

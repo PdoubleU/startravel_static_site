@@ -44,5 +44,6 @@ a:visited:active  {
 }
 
 button {
+    cursor: pointer;
     appearance: none; // fix the strange behaviour on iOS' devices
 }

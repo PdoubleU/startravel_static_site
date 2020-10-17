@@ -1,0 +1,47 @@
+@import '../../../node_modules/normalize-scss/sass/_normalize.scss';
+@import '../variables/variables.scss';
+@import '../mixins/general_btn.scss';
+
+.contact_form_header {
+    font-size: 1.2rem;
+}
+
+.contact_form {
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1rem;
+    & > .sub_btn {
+        @include general_btn($second-bkg, $main-bkg, $main-font, $second-font, $second-font);
+        padding: unset;
+    }
+}
+label {
+    margin-top: 1em;
+}
+
+textarea {
+    width: 100%;
+    min-height: 4em;
+    resize: vertical;
+    font-size: inherit;
+    font-family: inherit;
+    border: 1px solid $main-font;
+    margin-bottom: 1em;
+}
+input {
+    height: 2em;
+    font-size: inherit;
+    appearance: none;
+    border: 1px solid $main-font;
+}
+
+@media (min-width:  43.75em){
+    .contact_form {
+        width: 50vw;
+        font-size: .8rem;
+    }
+    textarea {
+        width: 100%;
+    }
+}

@@ -1,7 +1,9 @@
 export class ModalWindow {
     constructor(id, options){
         const DEFAULT_OPTIONS = {
-                button: true,
+                content: 'form',
+                closeBtn: true,
+                actionBtn: true,
                 action: 'submit',
                 buttonNamePl: 'Wyślij',
                 buttonNameEn: 'Submit',
@@ -9,7 +11,9 @@ export class ModalWindow {
             };
         this.id = id;
         this.options = Object.assign({}, DEFAULT_OPTIONS, options);
-        this.button = this.options.button;
+        this.content = this.options.content;
+        this.closeBtn = this.options.closeBtn;
+        this.actionBtn = this.options.actionBtn;
         this.action = this.options.action;
         this.btnNamePl = this.options.buttonNamePl;
         this.btnNameEn = this.options.buttonNameEn;
@@ -24,7 +28,7 @@ export class ModalWindow {
         let grip = document.getElementsByTagName('body');
         const MODAL_CONTENT = document.createElement('div');
         MODAL_CONTENT.classList.add('content-container');
-        MODAL_CONTENT.innerHTML = response['gdpr_' + language];
+        MODAL_CONTENT.innerHTML = response[language];
         grip[0].lastChild.children[0].lastChild.appendChild(MODAL_CONTENT);
     }
     generateHTMLTags() {
@@ -48,13 +52,20 @@ export class ModalWindow {
         MODAL_BODY.classList.add(this.id);
         grip[0].lastChild.children[0].appendChild(MODAL_BODY);
 
-        const ACTION_BTN = document.createElement('button');
-        ACTION_BTN.classList.add('action_btn');
-        ACTION_BTN.classList.add(this.id);
-        ACTION_BTN.appendChild(document.createTextNode((window.localStorage.getItem('language') == 'polish') ? this.btnNamePl : this.btnNameEn));
-        grip[0].lastChild.children[0].lastChild.appendChild(ACTION_BTN);
+        if (this.actionBtn) {
+            const ACTION_BTN = document.createElement('button');
+            ACTION_BTN.classList.add('action_btn');
+            ACTION_BTN.classList.add(this.id);
+            ACTION_BTN.appendChild(document.createTextNode(
+                (window.localStorage.getItem('language') == 'polish')
+                ?
+                this.btnNamePl
+                :
+                this.btnNameEn));
+            grip[0].lastChild.children[0].lastChild.appendChild(ACTION_BTN);
+        }
 
-        if (this.button == true) {
+        if (this.closeBtn) {
             const CLOSE_BTN = document.createElement('button');
             CLOSE_BTN.classList.add('modal_close');
             CLOSE_BTN.classList.add(this.id);

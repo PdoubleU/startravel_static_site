@@ -21,7 +21,9 @@ export class ModalWindow {
 
         this.loadData(this.generateContent);
         this.generateHTMLTags();
-        this.action_btn();
+        if(this.actionBtn) {
+            this.action_btn();
+        }
     }
 
     generateContent(response, language) {
@@ -99,7 +101,8 @@ export class ModalWindow {
 
     loadData(callback){
         let xhr = new XMLHttpRequest();
-        let _path = this.path;
+        let isSubpage = (document.getElementById('main_page')) ? true : false;
+        let _path = (isSubpage) ? '.' + this.path : '..' + this.path;
         let language = window.localStorage.getItem('language');
         xhr.open('GET', _path, true);
         xhr.onload = () => {

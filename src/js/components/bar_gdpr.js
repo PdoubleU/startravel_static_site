@@ -28,7 +28,7 @@ export const OPEN_GDPR = () => {
                         action: 'accept',
                         buttonNamePl: 'Akceptuję wszystko',
                         buttonNameEn: 'Accept all',
-                        _path: './json/gdpr_content.json'
+                        _path: '/json/gdpr_content.json'
                       });
 }
 

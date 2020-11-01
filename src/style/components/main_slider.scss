@@ -1,23 +1,18 @@
 @import '../variables/variables.scss';
 
-.slide {
+.slide.title {
     opacity: 0;
     position: relative;
-    transition:2s all;
+    transition: 2s all;
     z-index: 0;
-}
-.slide .title {
     left: -2rem;
-    opacity: 0;
+    font-size: 2rem;
+    color: $second-font;
 }
-
-.slide.active {
+.slide.title.active{
     opacity: 1;
     z-index: 1;
-}
-.slide.active .title {
     left: 0;
-    opacity: 1;
 }
 .slider {
     position: relative;
@@ -26,7 +21,7 @@
     background-color: #fff;
     z-index: 1;
 }
-.slider-slides-cnt > .slider-slide > .slider-title {
+.slider-slides-cnt > .slider-slide > .slide.title {
     background: transparent;
 }
 

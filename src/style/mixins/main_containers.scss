@@ -7,7 +7,8 @@
     & .element--one,
       .element--two,
       .element--three {
-            align-items: center;
-            justify-content: center;
+            align-items: flex-end;
+            justify-content: baseline;
+            padding-left: .5em;
         }
     }

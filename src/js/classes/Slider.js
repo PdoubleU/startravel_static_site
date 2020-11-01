@@ -33,7 +33,8 @@ export class Slider {
             const SLIDE_ARTCL = document.createElement('article');
             SLIDE_ARTCL.classList.add('element', 'text');
             const SLIDE_CONT = document.createElement('h3');
-            SLIDE_CONT.classList.add('slider-title');
+            SLIDE_CONT.classList.add('slide');
+            SLIDE_CONT.classList.add('title');
             let title = document.createTextNode('sample text' + [i]);
             SLIDE_CONT.appendChild(title);
             SLIDE_ARTCL.appendChild(SLIDE_CONT);
@@ -81,11 +82,13 @@ export class Slider {
     changeSlide(i) {
         this.slides.forEach(slide => {
             slide.classList.remove("slider-slide-active");
+            slide.children[0].classList.remove("active");
             slide.setAttribute("aria-hidden", true);
         });
 
         //dodajemy ją tylko wybranemu
         this.slides[i].classList.add("slider-slide-active");
+        this.slides[i].children[0].classList.add('active');
         this.slides[i].setAttribute("aria-hidden", false);
 
         //aktualny slide przestawiamy na wybrany

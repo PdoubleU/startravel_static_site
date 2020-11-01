@@ -32,21 +32,24 @@
     @include main_container;
     grid-template-columns: 100%;
     grid-template-rows: 50% 25% 25%;
+    font-size: 2rem;
     & > * {
         background-color: $second-bkg;
-        color: $main-font;
-        padding: .5em;
         display: flex;
     }
     & .element--one {
         grid-row: 1 / 2;
         background: url('./assets/imgs/large/main_image.jpg');
         background-size: cover;
+        color: $second-font;
         background-position: center center;
     }
     & .element--two {
         grid-row: 3 / 4;
         background: $second-bkg;
+    }
+    & .element--two.sub {
+        font-size: 1.2rem;
     }
     & .element--three {
         grid-row: 2 / 3;
@@ -58,10 +61,10 @@
     @include main_container;
     grid-template-rows: repeat(3, 1fr);
     gap: .06rem;
-    & > * {
+    font-size: 2rem;
+    & * {
         background-color: $second-bkg;
         color: $main-font;
-        padding: .5em;
         display: flex;
     }
     & .element--one {
@@ -73,11 +76,13 @@
     & .element--three {
         grid-row: 3 / 4;
     }
+
 }
 .container-end{
     @include main_container;
     grid-template-rows: repeat(3, 1fr);
     gap: .06rem;
+    font-size: 2rem;
     & > * {
         background-color: $second-bkg;
         padding: .5em;

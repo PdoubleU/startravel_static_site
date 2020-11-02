@@ -37,21 +37,21 @@
         background-color: $second-bkg;
         display: flex;
     }
-    & .element--one {
+    & > .element--one {
         grid-row: 1 / 2;
         background: url('./assets/imgs/large/main_image.jpg');
         background-size: cover;
         color: $second-font;
-        background-position: center center;
+        background-position: center;
     }
-    & .element--two {
+    & > .element--two {
         grid-row: 3 / 4;
         background: $second-bkg;
     }
-    & .element--two.sub {
+    & > .element--two.sub {
         font-size: 1.2rem;
     }
-    & .element--three {
+    & > .element--three {
         grid-row: 2 / 3;
         padding: 0;
         background: $second-bkg;
@@ -62,19 +62,28 @@
     grid-template-rows: repeat(3, 1fr);
     gap: .06rem;
     font-size: 2rem;
-    & * {
+    & > * {
         background-color: $second-bkg;
-        color: $main-font;
+        color: $second-font;
         display: flex;
     }
-    & .element--one {
+    & > .element--one {
         grid-row: 1 / 2;
+        background: $second-bkg;
+        transition: background 1s ease;
+
     }
-    & .element--two {
+
+    & > .element--two {
         grid-row: 2 / 3;
+        background: $second-bkg;
+        transition: background 1s ease;
     }
-    & .element--three {
+
+    & > .element--three {
         grid-row: 3 / 4;
+        background: $second-bkg;
+        transition: background 1s ease;
     }
 
 }
@@ -88,17 +97,16 @@
         padding: .5em;
         display: flex;
     }
-    & .element--one {
+    & >.element--one {
     grid-row: 1 / 2;
     }
-    & .element--two {
+    & >.element--two {
     grid-row: 2 / 3;
     }
-    & .element--three {
+    & >.element--three {
     grid-row: 3 / 4;
     }
 }
-
 
 @media (pointer: fine) and (min-width: 780px) {
     .main {
@@ -146,16 +154,16 @@
             padding: .5em;
             display: flex;
         }
-        & .element--one {
+        & >.element--one {
             grid-column: 1 / 2;
             grid-row: 1 / 3;
         }
-        & .element--two {
+        & >.element--two {
             grid-column: 2 / 3;
             grid-row: 1 / 2;
             color: $main-font;
         }
-        & .element--three {
+        & >.element--three {
             grid-column: 2 / 3;
             grid-row: 2 / 3;
         }
@@ -171,17 +179,35 @@
             padding: .5em;
             display: flex;
         }
-        & .element--one {
+        & >.element--one {
             grid-column: 1 / 2;
             grid-row: 1 / 4;
         }
-        & .element--two {
+        & >.element--two {
             grid-column: 2 / 3;
             grid-row: 1 / 4;
         }
-        & .element--three {
+        & >.element--three {
             grid-column: 3 / 4;
             grid-row: 1 / 4;
+        }
+        & > .element--one:hover {
+            background: url('./assets/imgs/large/castle.jpg');
+            background-size: cover;
+            background-position: center;
+            transition: background 2s;
+        }
+        & > .element--two:hover {
+            background: url('./assets/imgs/large/ck.jpg');
+            background-size: cover;
+            background-position: center;
+            transition: background 2s;
+        }
+        & > .element--three:hover {
+            background: url('./assets/imgs/large/ksiaz.jpg');
+            background-size: cover;
+            background-position: center;
+            transition: background 2s;
         }
     }
     .container-end{
@@ -194,15 +220,15 @@
             padding: .5em;
             display: flex;
         }
-        & .element--one {
+        & >.element--one {
             grid-column: 1 / 2;
             grid-row: 1 / 4;
         }
-        & .element--two {
+        & >.element--two {
             grid-column: 2 / 3;
             grid-row: 1 / 4;
         }
-        & .element--three {
+        & >.element--three {
             grid-column: 3 / 4;
             grid-row: 1 / 4;
         }

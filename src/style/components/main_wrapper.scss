@@ -59,33 +59,37 @@
 }
 .container-middle{
     @include main_container;
-    grid-template-rows: repeat(3, 1fr);
+    // grid-template-rows: repeat(3, 1fr);
     gap: .06rem;
     font-size: 2rem;
-    & > * {
+    & > a {
         background-color: $second-bkg;
         color: $second-font;
         display: flex;
     }
     & > .element--one {
         grid-row: 1 / 2;
-        background: $second-bkg;
-        transition: background 1s ease;
-
+        background: url('./assets/imgs/large/castle.jpg');
+        background-size: cover;
+        background-position: center;
+        padding-left: 0;
     }
 
     & > .element--two {
         grid-row: 2 / 3;
-        background: $second-bkg;
-        transition: background 1s ease;
+        background: url('./assets/imgs/large/ck.jpg');
+        background-size: cover;
+        background-position: center;
+        padding-left: 0;
     }
 
     & > .element--three {
         grid-row: 3 / 4;
-        background: $second-bkg;
-        transition: background 1s ease;
+        background: url('./assets/imgs/large/ksiaz.jpg');
+        background-size: cover;
+        background-position: center;
+        padding-left: 0;
     }
-
 }
 .container-end{
     @include main_container;
@@ -168,46 +172,27 @@
             grid-row: 2 / 3;
         }
     }
-    .container-middle{
+    .container.container-middle{
         @include main_container;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 10fr;
+        grid-template-columns: 1fr 1fr 1fr;
         gap: .06rem;
         margin-right: .06rem;
-        & > * {
+        /* & > a {
             background: $second-bkg;
             color: $main-font;
             padding: .5em;
             display: flex;
         }
-        & >.element--one {
-            grid-column: 1 / 2;
-            grid-row: 1 / 4;
+        */
+        & .element--one {
+            grid-column: 1;
         }
-        & >.element--two {
-            grid-column: 2 / 3;
-            grid-row: 1 / 4;
+        & .element--two {
+            grid-column: 2;
         }
-        & >.element--three {
-            grid-column: 3 / 4;
-            grid-row: 1 / 4;
-        }
-        & > .element--one:hover {
-            background: url('./assets/imgs/large/castle.jpg');
-            background-size: cover;
-            background-position: center;
-            transition: background 2s;
-        }
-        & > .element--two:hover {
-            background: url('./assets/imgs/large/ck.jpg');
-            background-size: cover;
-            background-position: center;
-            transition: background 2s;
-        }
-        & > .element--three:hover {
-            background: url('./assets/imgs/large/ksiaz.jpg');
-            background-size: cover;
-            background-position: center;
-            transition: background 2s;
+        & .element--three {
+            grid-column: 3;
         }
     }
     .container-end{

@@ -4,11 +4,11 @@
     display: grid;
     width: 100vw;
     height: 100%;
-    & .element--one,
-      .element--two,
-      .element--three {
+    & > .element--one,
+        .element--two,
+        .element--three {
             align-items: flex-end;
             justify-content: baseline;
-            padding-left: 1em;
+            padding-left: 1.2em;
         }
     }

@@ -59,7 +59,7 @@
 }
 .container-middle{
     @include main_container;
-    // grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     gap: .06rem;
     font-size: 2rem;
     & > a {
@@ -172,31 +172,34 @@
             grid-row: 2 / 3;
         }
     }
-    .container.container-middle{
+    .container-middle {
         @include main_container;
-        grid-template-rows: 10fr;
+        grid-template-rows: 1fr;
         grid-template-columns: 1fr 1fr 1fr;
         gap: .06rem;
         margin-right: .06rem;
-        /* & > a {
+        & > a {
             background: $second-bkg;
             color: $main-font;
             padding: .5em;
             display: flex;
         }
-        */
-        & .element--one {
+        & >.element--one {
             grid-column: 1;
+            grid-row: 1;
         }
-        & .element--two {
+        & >.element--two {
             grid-column: 2;
+            grid-row: 1;
         }
-        & .element--three {
+        & >.element--three {
             grid-column: 3;
+            grid-row: 1;
         }
     }
     .container-end{
         @include main_container;
+        grid-template-rows: 1fr;
         grid-template-columns: repeat(3, 1fr);
         gap: .06rem;
         & > * {
@@ -206,16 +209,16 @@
             display: flex;
         }
         & >.element--one {
-            grid-column: 1 / 2;
-            grid-row: 1 / 4;
+            grid-column: 1;
+            grid-row: 1;
         }
         & >.element--two {
-            grid-column: 2 / 3;
-            grid-row: 1 / 4;
+            grid-column: 2;
+            grid-row: 1;
         }
         & >.element--three {
-            grid-column: 3 / 4;
-            grid-row: 1 / 4;
+            grid-column: 3;
+            grid-row: 1;
         }
     }
 }

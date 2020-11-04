@@ -1,6 +1,7 @@
 @import '../../../node_modules/normalize-scss/sass/_normalize.scss';
 @import '../mixins/main_page.scss';
 @import '../mixins/main_containers.scss';
+@import '../mixins/general_btn.scss';
 @import '../variables/variables.scss';
 
 .outer-wrapper {
@@ -47,7 +48,15 @@
     & > .element--two {
         grid-row: 3 / 4;
         background: $second-bkg;
-    }
+        flex-direction: row;
+        justify-content: space-between;
+        & > .get-contact {
+            position: relative;
+            margin-bottom: 2.4em;
+            margin-right: 2.2em;
+            @include general_btn(grey, $hoover-bkg, $main-font, $font-hoover, $border-menu-btn-hoover)
+            }
+        }
     & > .element--two.sub {
         font-size: 1.2rem;
     }
@@ -57,6 +66,7 @@
         background: $second-bkg;
     }
 }
+
 .container-middle{
     @include main_container;
     grid-template-rows: repeat(3, 1fr);
@@ -65,14 +75,12 @@
     & > a {
         background-color: $second-bkg;
         color: $second-font;
-        display: flex;
     }
     & > .element--one {
         grid-row: 1 / 2;
         background: url('./assets/imgs/large/castle.jpg');
         background-size: cover;
         background-position: center;
-        padding-left: 0;
     }
 
     & > .element--two {
@@ -80,7 +88,6 @@
         background: url('./assets/imgs/large/ck.jpg');
         background-size: cover;
         background-position: center;
-        padding-left: 0;
     }
 
     & > .element--three {
@@ -88,7 +95,6 @@
         background: url('./assets/imgs/large/ksiaz.jpg');
         background-size: cover;
         background-position: center;
-        padding-left: 0;
     }
 }
 .container-end{
@@ -96,10 +102,8 @@
     grid-template-rows: repeat(3, 1fr);
     gap: .06rem;
     font-size: 2rem;
-    & > * {
+    & > div {
         background-color: $second-bkg;
-        padding: .5em;
-        display: flex;
     }
     & >.element--one {
     grid-row: 1 / 2;
@@ -155,7 +159,6 @@
         & > * {
             background: $main-bkg;
             color: $second-font;
-            padding: .5em;
             display: flex;
         }
         & >.element--one {
@@ -166,10 +169,12 @@
             grid-column: 2 / 3;
             grid-row: 1 / 2;
             color: $main-font;
+            font-size: 1.2rem;
         }
         & >.element--three {
             grid-column: 2 / 3;
             grid-row: 2 / 3;
+            padding: 0;
         }
     }
     .container-middle {

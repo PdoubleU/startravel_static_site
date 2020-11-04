@@ -9,6 +9,11 @@
     font-size: 2rem;
     color: $second-font;
 }
+@media (min-width: 780px) {
+    .slide.title {
+        font-size: 1.2rem;
+    }
+}
 .slide.title.active{
     opacity: 1;
     z-index: 1;

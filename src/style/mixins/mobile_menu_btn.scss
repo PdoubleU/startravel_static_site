@@ -6,7 +6,6 @@
     & > a,
         a:visited,
         a:link,
-        a:link:active,
         a:visited:active {
             display: flex;
             align-items: center;
@@ -18,5 +17,8 @@
             height: 4em;
             width: 10em;
             font-size: .7rem;
+        }
+        a:link:active {
+            transform: scale(0.95);
         }
 }

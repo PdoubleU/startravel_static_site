@@ -29,6 +29,14 @@
     @include main__page($main-bkg, 100vh);
     margin-bottom: .06rem;
 }
+@media (orientation: landscape) {
+    .main__page--two,
+    .main__page--three {
+        @include main__page($main-bkg, 200vh);
+        margin-bottom: .06rem;
+    }
+}
+
 .container-front{
     @include main_container;
     grid-template-columns: 100%;
@@ -116,7 +124,7 @@
     }
 }
 
-@media (pointer: fine) and (min-width: 780px) {
+@media (pointer: fine) and (min-width: 46.41rem) {
     .main {
         position: relative;
         width: fit-content;

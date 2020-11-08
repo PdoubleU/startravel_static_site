@@ -190,7 +190,7 @@
     }
 }
 
-@media (min-width: 40rem) {
+@media (min-width: 37.71rem) {
     .nav-mobile {
         display: none;
     }
@@ -222,6 +222,7 @@
     }
     .logo--dskt {
         display: inline;
+        font-size: inherit;
     }
     .top-nav__items--dskt {
         display: flex;

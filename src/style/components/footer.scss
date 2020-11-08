@@ -1,4 +1,6 @@
 @import '../variables/variables.scss';
+@import '../../../node_modules/normalize-scss/sass/_normalize.scss';
+@import '../mixins/general_btn.scss';
 
 .footer {
     display: flex;
@@ -66,14 +68,17 @@
     margin: 0 auto;
     height: 0;
 }
+.open-form {
+    @include general_btn( $second-bkg, $main-bkg, $main-font, $second-font, $second-font);
+}
 .signature {
     width: 100%;
     text-align: center;
     background: $second-bkg;
-    font-size: .6rem;
+    font-size: .8rem;
 }
 
-@media (min-width: 46.41rem) {
+@media (min-width: 52rem) {
     .footer {
         min-height: unset;
         width: 100vw;

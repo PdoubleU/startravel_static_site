@@ -1,7 +1,0 @@
-@import '../../../node_modules/normalize-scss/sass/_normalize.scss';
-@import '../variables/variables.scss';
-@import '../mixins/general_btn.scss';
-
-.open-form {
-    @include general_btn( $second-bkg, $main-bkg, $main-font, $second-font, $second-font);
-}

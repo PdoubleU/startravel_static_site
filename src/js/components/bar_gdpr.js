@@ -24,7 +24,7 @@ export const OPEN_GDPR = () => {
   new ModalWindow('gdpr_info',
                       {
                         content: 'gdpr',
-                        button: false,
+                        closeBtn: false,
                         action: 'accept',
                         buttonNamePl: 'Akceptuję wszystko',
                         buttonNameEn: 'Accept all',

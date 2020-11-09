@@ -33,7 +33,6 @@
     grid-template-rows: none;
     grid-template-columns: 100%;
     grid-auto-rows: minmax(25vh, 30vh);
-    gap: .06rem;
     & > * {
         background-color: $second-bkg;
         color: $main-font;
@@ -73,7 +72,6 @@
         grid-template-rows: 100%;
         grid-template-columns: unset;
         grid-auto-columns: minmax(30vw, 33vw);
-        gap: .06rem;
         & > * {
             background-color: $second-bkg;
             color: $main-font;

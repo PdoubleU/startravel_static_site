@@ -22,18 +22,15 @@
 }
 .main__page--one {
     @include main__page($main-bkg, 200vh);
-    margin-bottom: .06rem;
 }
 .main__page--two,
 .main__page--three {
     @include main__page($main-bkg, 100vh);
-    margin-bottom: .06rem;
 }
 @media (orientation: landscape) {
     .main__page--two,
     .main__page--three {
         @include main__page($main-bkg, 200vh);
-        margin-bottom: .06rem;
     }
 }
 
@@ -78,7 +75,6 @@
 .container-middle{
     @include main_container;
     grid-template-rows: repeat(3, 1fr);
-    gap: .06rem;
     font-size: 2rem;
     & > a {
         background-color: $second-bkg;
@@ -108,7 +104,6 @@
 .container-end{
     @include main_container;
     grid-template-rows: repeat(3, 1fr);
-    gap: .06rem;
     font-size: 2rem;
     & > div {
         background-color: $second-bkg;
@@ -152,7 +147,6 @@
         display: grid;
         grid-template-rows: 100%;
         grid-template-columns: 75% 25%;
-        gap: .06rem;
         background-color: $main-bkg;
         width: fit-content;
         transform: rotate(90deg) translateY(-100vh);
@@ -162,8 +156,6 @@
         @include main_container;
         grid-template-columns: 2fr 1fr;
         grid-template-rows: 1fr 1fr;
-        gap: .06rem;
-        margin-right: .06rem;
         & > * {
             background: $main-bkg;
             color: $second-font;
@@ -189,8 +181,6 @@
         @include main_container;
         grid-template-rows: 1fr;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: .06rem;
-        margin-right: .06rem;
         & > a {
             background: $second-bkg;
             color: $main-font;
@@ -241,11 +231,9 @@
         @include main_container;
         grid-template-rows: 1fr;
         grid-template-columns: repeat(3, 1fr);
-        gap: .06rem;
         & > * {
             background: $second-bkg;
             color: $main-font;
-            padding: .5em;
             display: flex;
         }
         & >.element--one {
@@ -269,15 +257,18 @@
         background: var(--bkgUrl);
         background-size: cover;
         background-position: center;
+        z-index: 2;
         opacity: 0;
     }
     50% {
         opacity: .5;
         transform: scale(1.02);
+        z-index: 2;
     }
     to {
         opacity: 1;
         background-position: center;
+        z-index: 2;
     }
 }
 

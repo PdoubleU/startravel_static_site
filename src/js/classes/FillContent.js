@@ -1,3 +1,5 @@
+import { ModalWindow } from "./ModalWindow.js";
+
 export class FillContent {
     constructor(classNameSelector, options) {
         const DEFAULT_OPTIONS = {
@@ -15,6 +17,7 @@ export class FillContent {
     }
     generateHTMLTags(counter, objJSON, selector, country) {
         for (let i = 0; i < counter; i++){
+            let DESCRIPTION_BTN = document.getElementsByClassName('description');
             let newTitle = objJSON[country][i].title;
             let newContent = objJSON[country][i].content;
             let newPrice = objJSON[country][i].price;
@@ -30,17 +33,15 @@ export class FillContent {
             CONTENT_TITLE.appendChild(title_text);
             grip.children[i].appendChild(CONTENT_TITLE);
 
-            const CONTENT_TEXT = document.createElement('p');
+            const CONTENT_TEXT = document.createElement('button');
             CONTENT_TEXT.classList.add('description');
-            let descr_text = document.createTextNode(newContent);
-            CONTENT_TEXT.appendChild(descr_text);
             grip.children[i].appendChild(CONTENT_TEXT);
 
-            const CONTENT_PRICE = document.createElement('p');
-            CONTENT_PRICE.classList.add('price');
-            let content_price = document.createTextNode(newPrice);
-            CONTENT_PRICE.appendChild(content_price);
-            grip.children[i].appendChild(CONTENT_PRICE);
+            DESCRIPTION_BTN[i].onclick = () => { new ModalWindow('form', {
+                                                actionBtn: false,
+                                                _path: "/json/form_content.json"
+                                                })
+                                            }
         }
     }
     loadData(callback){

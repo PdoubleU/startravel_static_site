@@ -3,9 +3,9 @@
 @mixin general_btn ($bkg_color, $hover_color_bkg, $font_color, $hover_color_font, $hover_color_border) {
     cursor: pointer;
     display: flexbox;
-    padding: .4rem 1rem;
+    padding: .2rem .8rem;
     letter-spacing: .1rem;
-    min-height: 1.2rem;
+    min-height: 1rem;
     text-transform: uppercase;
     border: solid .1rem $bkg_color;
     background: $bkg_color;

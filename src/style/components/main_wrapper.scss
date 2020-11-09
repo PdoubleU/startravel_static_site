@@ -3,6 +3,7 @@
 @import '../mixins/main_containers.scss';
 @import '../mixins/general_btn.scss';
 @import '../variables/variables.scss';
+@import '../keyframes/keyframes.scss';
 
 .outer-wrapper {
     width: 100%;
@@ -58,7 +59,6 @@
         & > .get-contact {
             position: relative;
             margin-bottom: 2.4em;
-            margin-right: 2.2em;
             @include general_btn(grey, $hoover-bkg, $main-font, $font-hoover, $border-menu-btn-hoover)
             }
         }
@@ -194,7 +194,8 @@
             &:hover {
                 --bkgUrl: url('./assets/imgs/large/castle.jpg');
                 background:url('./assets/imgs/large/castle.jpg');
-                animation: animatedBackground .8s linear;
+                color: $second-font;
+                animation: animatedBackground .6s linear;
                 transition: background .6s;
                 background-size: cover;
                 background-position: center;
@@ -207,8 +208,9 @@
             &:hover {
                 --bkgUrl: url('./assets/imgs/large/ck.jpg');
                 background: url('./assets/imgs/large/ck.jpg');
-                animation: animatedBackground .8s linear;
-                transition: background .6s;
+                color: $second-font;
+                animation: animatedBackground .6s linear;
+                transition: background .6s, color .6s;
                 background-size: cover;
                 background-position: center;
             }
@@ -220,7 +222,8 @@
             &:hover {
                 --bkgUrl: url('./assets/imgs/large/ksiaz.jpg');
                 background: url('./assets/imgs/large/ksiaz.jpg');
-                animation: animatedBackground .8s linear;
+                color: $second-font;
+                animation: animatedBackground .6s linear;
                 transition: background .6s;
                 background-size: cover;
                 background-position: center;
@@ -250,27 +253,5 @@
         }
     }
 }
-
-
-@keyframes animatedBackground {
-    from {
-        background: var(--bkgUrl);
-        background-size: cover;
-        background-position: center;
-        z-index: 2;
-        opacity: 0;
-    }
-    50% {
-        opacity: .5;
-        transform: scale(1.02);
-        z-index: 2;
-    }
-    to {
-        opacity: 1;
-        background-position: center;
-        z-index: 2;
-    }
-}
-
 
 

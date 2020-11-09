@@ -7,6 +7,9 @@
     text-transform: uppercase;
     font-size: .8rem;
 }
+.description {
+    min-height: 2em;
+}
 
 @media (pointer: fine) and (min-width: 52rem) {
     .element {

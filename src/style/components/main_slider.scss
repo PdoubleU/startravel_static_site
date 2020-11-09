@@ -81,6 +81,20 @@
     opacity: 1;
     z-index: 1;
 }
+.slider-button-next {
+    margin-right: 2.2em;
+}
+.slider-button-prev {
+    margin-left: 2.2rem;
+}
+@media (min-width: 37.71rem) {
+    .slider-button-next {
+        margin-right: 2.2em;
+    }
+    .slider-button-prev {
+        margin-left: 1.2rem;
+    }
+}
 .slider-button-prev,
 .slider-button-next {
     cursor: pointer;

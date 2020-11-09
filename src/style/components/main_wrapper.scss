@@ -198,16 +198,43 @@
             display: flex;
         }
         & >.element--one {
+            background: $second-bkg;
             grid-column: 1;
             grid-row: 1;
+            &:hover {
+                --bkgUrl: url('./assets/imgs/large/castle.jpg');
+                background:url('./assets/imgs/large/castle.jpg');
+                animation: animatedBackground .8s linear;
+                transition: background .6s;
+                background-size: cover;
+                background-position: center;
+            }
         }
         & >.element--two {
+            background: $second-bkg;
             grid-column: 2;
             grid-row: 1;
+            &:hover {
+                --bkgUrl: url('./assets/imgs/large/ck.jpg');
+                background: url('./assets/imgs/large/ck.jpg');
+                animation: animatedBackground .8s linear;
+                transition: background .6s;
+                background-size: cover;
+                background-position: center;
+            }
         }
         & >.element--three {
+            background: $second-bkg;
             grid-column: 3;
             grid-row: 1;
+            &:hover {
+                --bkgUrl: url('./assets/imgs/large/ksiaz.jpg');
+                background: url('./assets/imgs/large/ksiaz.jpg');
+                animation: animatedBackground .8s linear;
+                transition: background .6s;
+                background-size: cover;
+                background-position: center;
+            }
         }
     }
     .container-end{
@@ -235,5 +262,24 @@
         }
     }
 }
+
+
+@keyframes animatedBackground {
+    from {
+        background: var(--bkgUrl);
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+    }
+    50% {
+        opacity: .5;
+        transform: scale(1.02);
+    }
+    to {
+        opacity: 1;
+        background-position: center;
+    }
+}
+
 
 

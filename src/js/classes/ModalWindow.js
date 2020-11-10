@@ -7,7 +7,8 @@ export class ModalWindow {
                 action: 'submit',
                 buttonNamePl: 'Wyślij',
                 buttonNameEn: 'Submit',
-                _path: ''
+                _path: '',
+                description: []
             };
         this.id = id;
         this.options = Object.assign({}, DEFAULT_OPTIONS, options);
@@ -18,11 +19,17 @@ export class ModalWindow {
         this.btnNamePl = this.options.buttonNamePl;
         this.btnNameEn = this.options.buttonNameEn;
         this.path = this.options._path;
+        this.description = this.options.description;
 
-        this.loadData(this.generateContent);
+        if (this.content == 'form' || this.content == 'gdpr') {
+            this.loadData(this.generateContent);
+        }
         this.generateHTMLTags();
         if(this.actionBtn) {
             this.action_btn();
+        }
+        if (this.content == 'description') {
+            this.loadDescription();
         }
     }
 
@@ -112,5 +119,18 @@ export class ModalWindow {
                 }
             }
         xhr.send(null);
+    }
+
+    loadDescription() {
+        let grip = document.getElementsByTagName('body');
+        const MODAL_CONTENT = document.createElement('div');
+        const MODAL_PRICE = document.createElement('div');
+        MODAL_CONTENT.classList.add('content-container');
+        MODAL_CONTENT.innerHTML = this.description[0];
+        MODAL_PRICE.classList.add('price-container');
+        MODAL_PRICE.innerHTML = this.description[1];
+
+        grip[0].lastChild.children[0].lastChild.appendChild(MODAL_CONTENT);
+        grip[0].lastChild.children[0].lastChild.appendChild(MODAL_PRICE);
     }
 }

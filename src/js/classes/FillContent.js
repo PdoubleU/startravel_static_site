@@ -18,9 +18,9 @@ export class FillContent {
     generateHTMLTags(counter, objJSON, selector, country) {
         for (let i = 0; i < counter; i++){
             let DESCRIPTION_BTN = document.getElementsByClassName('description');
-            let newTitle = objJSON[country][i].title;
-            let newContent = objJSON[country][i].content;
-            let newPrice = objJSON[country][i].price;
+            let title = objJSON[country][i].title;
+            let content = objJSON[country][i].content;
+            let price = objJSON[country][i].price;
             let grip = document.getElementById(selector);
 
             const CONTENT_CONTAINER = document.createElement('article');
@@ -29,7 +29,7 @@ export class FillContent {
 
             const CONTENT_TITLE = document.createElement('h4');
             CONTENT_TITLE.classList.add('title');
-            let title_text = document.createTextNode(newTitle);
+            let title_text = document.createTextNode(title);
             CONTENT_TITLE.appendChild(title_text);
             grip.children[i].appendChild(CONTENT_TITLE);
 
@@ -38,8 +38,9 @@ export class FillContent {
             grip.children[i].appendChild(CONTENT_TEXT);
 
             DESCRIPTION_BTN[i].onclick = () => { new ModalWindow('form', {
+                                                content: 'description',
                                                 actionBtn: false,
-                                                _path: "/json/form_content.json"
+                                                description: [ content, price ]
                                                 })
                                             }
         }

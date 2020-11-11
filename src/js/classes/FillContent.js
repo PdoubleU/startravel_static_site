@@ -30,8 +30,7 @@ export class FillContent {
 
             const CONTENT_TITLE = document.createElement('h4');
             CONTENT_TITLE.classList.add('title');
-            let title_text = document.createTextNode(title);
-            CONTENT_TITLE.appendChild(title_text);
+            CONTENT_TITLE.innerHTML = title;
             grip.children[i].appendChild(CONTENT_TITLE);
 
             const CONTENT_TEXT = document.createElement('button');
@@ -41,8 +40,11 @@ export class FillContent {
 
             DESCRIPTION_BTN[i].onclick = () => { new ModalWindow('form', {
                                                 content: 'description',
-                                                actionBtn: false,
-                                                description: [ content, price ]
+                                                actionBtn: true,
+                                                description: [ content, price ],
+                                                action: 'contact',
+                                                _path: "/json/form_content.json",
+                                                formIsHidden: true
                                                 })
                                             }
         }

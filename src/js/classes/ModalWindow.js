@@ -8,7 +8,8 @@ export class ModalWindow {
                 buttonNamePl: 'Wyślij',
                 buttonNameEn: 'Submit',
                 _path: '',
-                description: []
+                description: [],
+                formIsHidden: false
             };
         this.id = id;
         this.options = Object.assign({}, DEFAULT_OPTIONS, options);
@@ -20,6 +21,7 @@ export class ModalWindow {
         this.btnNameEn = this.options.buttonNameEn;
         this.path = this.options._path;
         this.description = this.options.description;
+        this.formIsHidden = this.options.formIsHidden;
 
         if (this.content == 'form' || this.content == 'gdpr') {
             this.loadData(this.generateContent);
@@ -30,15 +32,19 @@ export class ModalWindow {
         }
         if (this.content == 'description') {
             this.loadDescription();
+            this.loadData(this.generateContent);
         }
     }
 
-    generateContent(response, language) {
+    generateContent(response, language, formClassName, isHidden) {
         let grip = document.getElementsByTagName('body');
         const MODAL_CONTENT = document.createElement('div');
         MODAL_CONTENT.classList.add('content-container');
+        (formClassName !== '') ? MODAL_CONTENT.classList.add(formClassName) : { return: 0 };
         MODAL_CONTENT.innerHTML = response[language];
         grip[0].lastChild.children[0].lastChild.appendChild(MODAL_CONTENT);
+        let elem = document.getElementsByClassName('content-container form');
+        (isHidden) ? elem[0].style.display = 'none' : { return: 1 };
     }
     generateHTMLTags() {
         let grip = document.getElementsByTagName('body');
@@ -85,7 +91,7 @@ export class ModalWindow {
     action_btn(){
         const ACTION_BTN = document.getElementsByClassName('action_btn');
 
-        const ACCEPT_GDPR = () =>{
+        const ACTION = () =>{
             switch(this.action) {
                 case 'submit':
 
@@ -98,12 +104,17 @@ export class ModalWindow {
                         , 1000);
                     window.localStorage.setItem('gdpr', 'confirmed');
                     break;
+                case 'contact':
+                    let elem = document.getElementsByClassName('content-container form');
+                    console.log(elem[0].style.display);
+                    (elem[0].style.display == 'flex') ? elem[0].style.display = 'none' : elem[0].style.display = 'flex';
+                    break;
                 default:
                     console.log('Sorry, an error occured. Please reload browser');
                     break;
             }
         }
-        ACTION_BTN[0].onclick = ACCEPT_GDPR;
+        ACTION_BTN[0].onclick = ACTION;
     }
 
     loadData(callback){
@@ -111,11 +122,13 @@ export class ModalWindow {
         let isSubpage = (document.getElementById('main_page')) ? true : false;
         let _path = (isSubpage) ? '.' + this.path : '..' + this.path;
         let language = window.localStorage.getItem('language');
+        let formClassName = (this.content == 'description') ? 'form' : '';
+        let isHidden = this.formIsHidden;
         xhr.open('GET', _path, true);
         xhr.onload = () => {
             if(xhr.status === 200) {
                 let response = JSON.parse(xhr.responseText);
-                return callback(response, language);
+                return callback(response, language, formClassName, isHidden);
                 }
             }
         xhr.send(null);
@@ -126,6 +139,7 @@ export class ModalWindow {
         const MODAL_CONTENT = document.createElement('div');
         const MODAL_PRICE = document.createElement('div');
         MODAL_CONTENT.classList.add('content-container');
+        MODAL_CONTENT.classList.add('description');
         MODAL_CONTENT.innerHTML = this.description[0];
         MODAL_PRICE.classList.add('price-container');
         MODAL_PRICE.innerHTML = this.description[1];

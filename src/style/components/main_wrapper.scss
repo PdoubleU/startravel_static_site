@@ -8,11 +8,13 @@
 .outer-wrapper {
     width: 100%;
     height: auto;
+    scrollbar-width: none;
 }
 .inner-wrapper {
     display: flex;
     flex-direction: column;
     width: 100%;
+    scrollbar-width: none;
 }
 .main {
     width: auto;
@@ -20,6 +22,9 @@
     flex-direction: column;
     scrollbar-width: none;
     background: $main-bkg;
+}
+body::-webkit-scrollbar {
+    display: none;
 }
 .main__page--one {
     @include main__page($main-bkg, 200vh);
@@ -120,6 +125,9 @@
 }
 
 @media (pointer: fine) and (min-width: 52rem) {
+    body::-webkit-scrollbar {
+        display: none;
+    }
     .main {
         position: relative;
         width: fit-content;

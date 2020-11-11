@@ -4,14 +4,15 @@ export class FillContent {
     constructor(classNameSelector, options) {
         const DEFAULT_OPTIONS = {
             country : "pl",
-            _path: '../json/offer-pl.json'
+            _path: '../json/offer-pl.json',
+            elementsToGenerate: 5
         };
         this.options = Object.assign({}, DEFAULT_OPTIONS, options);
         this.selector = classNameSelector;
         this.country = this.options.country;
         this.path = this.options._path;
         this.data = null;
-        this.noOfElementsToGenerate = 5;
+        this.noOfElementsToGenerate = this.options.elementsToGenerate;
 
         this.loadData(this.generateHTMLTags);
     }
@@ -35,6 +36,7 @@ export class FillContent {
 
             const CONTENT_TEXT = document.createElement('button');
             CONTENT_TEXT.classList.add('description');
+            (window.localStorage.getItem('language') == 'polish') ? CONTENT_TEXT.innerHTML = 'Sprawdź szczegóły' : CONTENT_TEXT.innerHTML = 'Read more';
             grip.children[i].appendChild(CONTENT_TEXT);
 
             DESCRIPTION_BTN[i].onclick = () => { new ModalWindow('form', {

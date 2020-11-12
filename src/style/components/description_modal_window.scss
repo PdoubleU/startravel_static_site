@@ -1,0 +1,57 @@
+@import '../../../node_modules/normalize-scss/sass/_normalize.scss';
+@import '../variables/variables.scss';
+@import '../mixins/general_btn.scss';
+
+
+
+.modal_body.description {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr .3fr;
+}
+
+.content-container.description {
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+.price-container {
+    grid-row: 2 / 3;
+    display: flex;
+    justify-content: center;
+}
+.action_btn.description {
+    grid-row: 3 / 4;
+    z-index: 500;
+}
+.cost {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 4rem;
+}
+.cost > span {
+    margin-top: 0;
+}
+.cost-currency {
+    font-size: 2rem;
+}
+.cost-integer {
+    font-size: 4rem;
+}
+.cost-decimal {
+    font-size: 2rem;
+    align-self: flex-start;
+}
+.modal_body.description > .content-container.form {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    background-color: grey;
+    top: calc(100%-110%);
+    width: 100%;
+    height: 0%;
+    transition: height .6s ease-in-out;
+}

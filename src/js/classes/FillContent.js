@@ -38,7 +38,7 @@ export class FillContent {
             (window.localStorage.getItem('language') == 'polish') ? CONTENT_TEXT.innerHTML = 'Sprawdź szczegóły' : CONTENT_TEXT.innerHTML = 'Read more';
             grip.children[i].appendChild(CONTENT_TEXT);
 
-            DESCRIPTION_BTN[i].onclick = () => { new ModalWindow('form', {
+            DESCRIPTION_BTN[i].onclick = () => { new ModalWindow('description', {
                                                 content: 'description',
                                                 actionBtn: true,
                                                 description: [ content, price ],

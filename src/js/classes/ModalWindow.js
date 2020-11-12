@@ -23,12 +23,12 @@ export class ModalWindow {
         this.description = this.options.description;
         this.formIsHidden = this.options.formIsHidden;
 
-        if (this.content == 'form' || this.content == 'gdpr') {
-            this.loadData(this.generateContent);
-        }
         this.generateHTMLTags();
         if(this.actionBtn) {
             this.action_btn();
+        }
+        if (this.content == 'form' || this.content == 'gdpr') {
+            this.loadData(this.generateContent);
         }
         if (this.content == 'description') {
             this.loadDescription();
@@ -44,7 +44,7 @@ export class ModalWindow {
         MODAL_CONTENT.innerHTML = response[language];
         grip[0].lastChild.children[0].lastChild.appendChild(MODAL_CONTENT);
         let elem = document.getElementsByClassName('content-container form');
-        (isHidden) ? elem[0].style.display = 'none' : { return: 1 };
+        (isHidden) ? elem[0].style.height = '0%' : { return: 1 };
     }
     generateHTMLTags() {
         let grip = document.getElementsByTagName('body');
@@ -106,8 +106,7 @@ export class ModalWindow {
                     break;
                 case 'contact':
                     let elem = document.getElementsByClassName('content-container form');
-                    console.log(elem[0].style.display);
-                    (elem[0].style.display == 'flex') ? elem[0].style.display = 'none' : elem[0].style.display = 'flex';
+                    (elem[0].style.height == '110%') ? elem[0].style.height = '0%' : elem[0].style.height = '110%';
                     break;
                 default:
                     console.log('Sorry, an error occured. Please reload browser');

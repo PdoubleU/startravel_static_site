@@ -26,7 +26,9 @@ export const CREATE_BUTTON = () => {
         isButton =  true;
         let SCRL_BTN = document.createElement('button');
         SCRL_BTN.className = 'scroll_btn';
-        SCRL_BTN.setAttribute('aria-label', 'scroll up button');
+        SCRL_BTN.setAttribute('aria-label', 'Przewiń do góry');
+        SCRL_BTN.setAttribute('tabindex', '0');
+        SCRL_BTN.setAttribute('title', 'Przewiń do góry');
         GRIP[0].appendChild(SCRL_BTN);
     }
 }

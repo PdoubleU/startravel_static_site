@@ -20,8 +20,7 @@
 .scroll_btn--active {
     display: inline-block;
     animation: shake 2s linear;
-    &:hover,
-     :focus {
+    &:focus {
          background: $hoover-bkg;
      }
 }

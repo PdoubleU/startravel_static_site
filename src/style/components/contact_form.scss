@@ -28,12 +28,20 @@ textarea {
     font-family: inherit;
     border: 1px solid $main-font;
     margin-bottom: 1em;
+    &:hover,
+    &:focus {
+         box-shadow: 0.07rem .07rem .1rem $main-bkg;
+     }
 }
 input {
     height: 2em;
     font-size: inherit;
     appearance: none;
     border: 1px solid $main-font;
+    &:hover,
+    &:focus {
+         box-shadow: 0.07rem .07rem .1rem $main-bkg;
+    }
 }
 
 @media (min-width:  37.71rem){

@@ -22,7 +22,8 @@
     z-index: $index_top_navabr;
     & > p {
         margin:  .5em .5em;
-    } * + * {
+    }
+    & * + * {
         margin: 0em 0em 1em;
     }
 }

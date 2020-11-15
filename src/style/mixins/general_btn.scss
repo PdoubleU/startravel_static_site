@@ -10,10 +10,16 @@
     border: solid .1rem $bkg_color;
     background: $bkg_color;
     color: $font_color;
-    &:hover {
+    outline: none;
+    &:hover{
         color: $hover_color_font;
         background: $hover_color_bkg;
         border-radius: .3rem;
         transition: all .2s ease-in-out;
+    }
+    &:focus {
+        color: $hover_color_font;
+        background: $hover_color_bkg;
+        border-radius: .3rem;
     }
 }

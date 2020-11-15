@@ -60,13 +60,13 @@
     background: $second-bkg;
     box-shadow: 0.07rem .07rem .1rem $main-bkg;
     border-radius: 100%;
-    width: 3rem;
-    height: 3rem;
+    width: 4rem;
+    height: 4rem;
     z-index: $mobile-menu-sgl-btn;
 }
 .menu-btn__box{
-    width: 1.5em;
-    height: 1.5em;
+    width: 2em;
+    height: 2em;
     display: flex;
     position: relative;
     float: right;

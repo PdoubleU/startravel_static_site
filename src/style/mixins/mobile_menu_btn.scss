@@ -3,6 +3,11 @@
 @mixin menu_single_btn ($bkg_color, $font_color) {
     display: flex;
     position: fixed;
+    outline: none;
+    &:hover,
+     :focus {
+        transform: scale(0.95);
+     }
     & > a,
         a:visited,
         a:link,
@@ -17,8 +22,5 @@
             height: 4em;
             width: 10em;
             font-size: .7rem;
-        }
-        a:link:active {
-            transform: scale(0.95);
         }
 }

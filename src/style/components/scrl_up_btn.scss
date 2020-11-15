@@ -6,11 +6,12 @@
     background-color: $second-bkg;
     box-shadow: 0.07rem .07rem .1rem $main-bkg;
     border-radius: 100%;
-    width: 3rem;
-    height: 3rem;
+    width: 4rem;
+    height: 4rem;
     border: none;
     bottom: 2rem;
     right: 1rem;
+    outline: none;
     z-index: $mobile-menu-sgl-btn;
     & > img {
         max-height: 1.3rem;
@@ -19,6 +20,10 @@
 .scroll_btn--active {
     display: inline-block;
     animation: shake 2s linear;
+    &:hover,
+     :focus {
+         background: $hoover-bkg;
+     }
 }
 
 @keyframes shake {

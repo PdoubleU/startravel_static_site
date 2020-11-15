@@ -14,9 +14,9 @@ export class FillContent {
         this.data = null;
         this.noOfElementsToGenerate = this.options.elementsToGenerate;
 
-        this.loadData(this.generateHTMLTags);
+        this.loadData(this.generateHTMLTags, this.loadModalWindow);
     }
-    generateHTMLTags(counter, objJSON, selector, country) {
+    generateHTMLTags(counter, objJSON, selector, country, loadModal) {
         for (let i = 0; i < counter; i++){
             let DESCRIPTION_BTN = document.getElementsByClassName('description');
             let title = objJSON[country][i].title;
@@ -38,21 +38,23 @@ export class FillContent {
             (window.localStorage.getItem('language') == 'polish') ? CONTENT_TEXT.innerHTML = 'Sprawdź szczegóły' : CONTENT_TEXT.innerHTML = 'Read more';
             grip.children[i].appendChild(CONTENT_TEXT);
 
-            DESCRIPTION_BTN[i].onclick = () => { new ModalWindow('description', {
-                                                content: 'description',
-                                                actionBtn: true,
-                                                description: [ content, price ],
-                                                action: 'contact',
-                                                _path: "/json/form_content.json",
-                                                formIsHidden: true
-                                                })
-                                            }
+            DESCRIPTION_BTN[i].onclick = () => loadModal(content, price);
         }
     }
-    loadData(callback){
-        if(document.getElementById(this.selector) == undefined) {
-            return 0;
-        }
+
+    loadModalWindow(content, price){
+            new ModalWindow('description', {
+                                        content: 'description',
+                                        actionBtn: true,
+                                        description: [ content, price ],
+                                        action: 'contact',
+                                        _path: "/json/form_content.json",
+                                        formIsHidden: true
+                                        });
+    }
+
+
+    loadData(callback, loadModal){
         let xhr = new XMLHttpRequest();
         let _path = this.path;
         let selector = this.selector;
@@ -62,7 +64,7 @@ export class FillContent {
         xhr.onload = () => {
             if(xhr.status === 200) {
                 let response = JSON.parse(xhr.responseText);
-                return callback(noOfElements, response, selector, country);
+                callback(noOfElements, response, selector, country, loadModal);
             }
         }
         xhr.send(null);

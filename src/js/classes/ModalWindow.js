@@ -85,7 +85,7 @@ export class ModalWindow {
             CLOSE_BTN.classList.add('modal_close');
             CLOSE_BTN.classList.add(this.id);
             grip[0].lastChild.children[0].lastChild.appendChild(CLOSE_BTN);
-            CLOSE_BTN.onclick = () => {MODAL_ARTICLE.remove()};
+            CLOSE_BTN.onclick = () => MODAL_ARTICLE.remove();
         }
     }
     action_btn(){

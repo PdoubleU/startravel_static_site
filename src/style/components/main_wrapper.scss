@@ -64,7 +64,7 @@ body::-webkit-scrollbar {
         & > .get-contact {
             position: relative;
             margin-bottom: 2.4em;
-            @include general_btn(grey, $hoover-bkg, $main-font, $font-hoover, $border-menu-btn-hoover)
+            @include general_btn($second-bkg, $hoover-bkg, $main-font, $second-font, $main-border, $shadow-color-main);
             }
         }
     & > .element--two.sub {

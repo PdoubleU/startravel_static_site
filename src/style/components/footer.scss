@@ -69,7 +69,7 @@
     height: 0;
 }
 .open-form {
-    @include general_btn( $second-bkg, $main-bkg, $main-font, $second-font, $second-font);
+    @include general_btn( $second-bkg, $hoover-bkg, $main-font, $font-hoover, $second-border, transparent);
 }
 .signature {
     width: 100%;

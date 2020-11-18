@@ -32,7 +32,7 @@
     opacity: 1;
 }
 .button_gdpr {
-    @include general_btn($second-bkg, $main-bkg, $main-font, $second-font, $second-font);
+    @include general_btn($second-bkg, $hoover-bkg, $main-font, $second-font, $main-border, $shadow-color-main);
     font-size: .675rem;
     padding: .3em .6em;
     margin: 0;

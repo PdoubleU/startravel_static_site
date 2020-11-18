@@ -226,6 +226,10 @@
     .logo--dskt {
         display: inline;
         font-size: inherit;
+        & img {
+            max-width: 11vw;
+            height: auto;
+        }
     }
     .top-nav--dskt {
         display: flex;
@@ -233,7 +237,7 @@
         flex-wrap: nowrap;
         margin: .6em;
         & > div {
-            @include top-nav-btn-model($color-mobile-menu-bkg-btn, $hoover-bkg, $main-font, $main-font, $border-menu-btn-hoover);
+            @include top-nav-btn-model($second-bkg, $hoover-bkg, $main-font, $font-hoover, $main-border, $shadow-color-main);
         }
         & > div + div {
             margin: 0 0 0 1em;

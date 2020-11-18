@@ -1,6 +1,7 @@
 @import '../../../node_modules/normalize-scss/sass/_normalize.scss';
 @import '../variables/variables.scss';
 @import '../mixins/general_btn.scss';
+@import '../mixins/nav_button.scss';
 
 
 
@@ -54,4 +55,8 @@
     width: 100%;
     height: 0%;
     transition: height .6s ease-in-out;
+}
+article > button.description {
+    @include top-nav-btn-model($second-bkg, $hoover-bkg, $main-font, $font-hoover, $main-border, $shadow-color-main);
+    min-height: 3rem;
 }

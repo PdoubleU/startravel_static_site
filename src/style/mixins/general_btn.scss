@@ -2,7 +2,7 @@
 
 @mixin general_btn ($bkg_color, $hover_color_bkg, $font_color, $hover_color_font, $border_color, $shadow_color) {
     cursor: pointer;
-    display: flexbox;
+    display: flex;
     padding: .2rem .8rem;
     letter-spacing: .1rem;
     min-height: 1rem;

@@ -1,50 +1,18 @@
 @import '../variables/variables.scss';
+@import '../mixins/general_btn.scss';
+@import '../keyframes/keyframes.scss';
 
 .scroll_btn {
+    @include general_btn($second-bkg, $hoover-bkg, $main-font, $hoover-bkg, $main-border, $shadow-color-main);
     position: fixed;
     display: none;
-    background-color: $second-bkg;
-    box-shadow: 0.07rem .07rem .1rem $main-bkg;
-    border-radius: 100%;
     width: 4rem;
     height: 4rem;
-    border: none;
     bottom: 2rem;
     right: 1rem;
-    outline: none;
     z-index: $mobile-menu-sgl-btn;
-    & > img {
-        max-height: 1.3rem;
-    }
 }
 .scroll_btn--active {
     display: inline-block;
-    animation: shake 2s linear;
-    &:focus {
-         background: $hoover-bkg;
-     }
-}
-
-@keyframes shake {
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-    10%,
-    30%,
-    50%,
-    70% {
-        transform: translateY(-0.3em);
-    }
-    20%,
-    40%,
-    60% {
-        transform: translateY(0);
-    }
-    80% {
-        transform: translateY(0);
-    }
-    90% {
-        transform: translateY(-0.2em);
-    }
+    animation: shake_btn 2s linear;
 }

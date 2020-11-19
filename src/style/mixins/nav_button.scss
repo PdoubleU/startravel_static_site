@@ -44,12 +44,11 @@
     & > a,
         a:visited,
         a:link,
-        a:visited:active {
-            min-width: 9vw;
+        a:visited {
+            min-width: 8vw;
             padding: .05em .6em;
-            width: fit-content;
             font-weight: bold;
-            font-size: .6rem;
+            font-size: inherit;
             text-transform: uppercase;
     }
 }

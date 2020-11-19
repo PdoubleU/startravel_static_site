@@ -65,6 +65,8 @@ body::-webkit-scrollbar {
             position: relative;
             margin-bottom: 2.4em;
             @include general_btn($second-bkg, $hoover-bkg, $main-font, $second-font, $main-border, $shadow-color-main);
+            height: 3em;
+            width: 3em;
             }
         }
     & > .element--two.sub {

@@ -1,7 +1,7 @@
 @import '../../../node_modules/normalize-scss/sass/_normalize.scss';
 @import '../variables/variables.scss';
 @import '../mixins/nav_button.scss';
-@import '../mixins/mobile_menu_btn.scss';
+@import '../mixins/general_btn.scss';
 
 //Button menu - mobile devices
 //
@@ -21,7 +21,7 @@
     display: none;
 }
 
-.header__top {
+.header_top {
     position: fixed;
     display: flex;
     align-items: center;
@@ -34,9 +34,13 @@
 }
 .nav-mobile > .logo {
     position: fixed;
-    font-size: 2rem;
-    top: 0;
+    font-size: 1rem;
+    top: 1em;
     right: .8em;
+    & img {
+        max-width: 4rem;
+        height: auto;
+    }
 }
 .menu-open {
     height: 1rem;
@@ -48,22 +52,18 @@
     background: transparent;
 }
 .menu-btn {
+    @include general_btn($second-bkg, $hoover-bkg, $main-font, $hoover-bkg, $main-border, $shadow-color-main);
     position: fixed;
     display: flex;
-    cursor: pointer;
     align-items: center;
     justify-content: center;
     top: 50%;
     left: 100%;
     margin-top: -2.1em;
     margin-left: -5em;
-    background: $second-bkg;
-    box-shadow: 0.07rem .07rem .1rem $main-bkg;
-    border-radius: 100%;
     width: 4rem;
     height: 4rem;
     z-index: $mobile-menu-sgl-btn;
-    outline: none;
 }
 .menu-btn__box{
     width: 2em;
@@ -118,78 +118,71 @@
     flex-direction: column;
     position: absolute;
 }
+.menu-open:checked ~ .menu-btn {
+    transform: scale(.8);
+}
 .top-nav {
+    font-size: 1rem;
     transition-timing-function: cubic-bezier(0.8, 0, 0.64, 1.9);
     & > :nth-child(1) {
-        @include menu_single_btn($color-mobile-menu-bkg-btn, $main-bkg);
+        @include top-nav-btn-model($second-bkg, $hoover-bkg, $main-font, $font-hoover, $main-border, $shadow-color-main);
         top: 50%;
         left: 100%;
-        margin-top: -1.5em;
-        margin-left: 10em;
+        margin-top: -1.5rem;
+        margin-left: 8rem;
         transition-duration: 150ms;
-        transform: translate3d(-4em, 6.6em, 0);
+        transform: translate3d(.8rem, 0, 0);
     }
     & > :nth-child(2) {
-        @include menu_single_btn($color-mobile-menu-bkg-btn, $main-bkg);
+        @include top-nav-btn-model($second-bkg, $hoover-bkg, $main-font, $font-hoover, $main-border, $shadow-color-main);
         top: 50%;
         left: 100%;
-        margin-top: -1.5em;
-        margin-left: 10em;
+        margin-top: -1.5rem;
+        margin-left: 8rem;
         transition-duration: 100ms;
-        transform: translate3d(-4em, -3.3em, 0);
+        transform: translate3d(.8rem, 0, 0);
     }
     & > :nth-child(3) {
-        @include menu_single_btn($color-mobile-menu-bkg-btn, $main-bkg);
+        @include top-nav-btn-model($second-bkg, $hoover-bkg, $main-font, $font-hoover, $main-border, $shadow-color-main);
         top: 50%;
         left: 100%;
-        margin-top: -1.5em;
-        margin-left: 10em;
+        margin-top: -1.5rem;
+        margin-left: 8rem;
         transition-duration: 170ms;
-        transform: translate3d(-4em, -6.6em, 0);
+        transform: translate3d(.8rem, 0, 0);
     }
     & > :nth-child(4) {
-        @include menu_single_btn($color-mobile-menu-bkg-btn, $main-bkg);
+        @include top-nav-btn-model($second-bkg, $hoover-bkg, $main-font, $font-hoover, $main-border, $shadow-color-main);
         top: 50%;
         left: 100%;
-        margin-top: -1.5em;
-        margin-left: 10em;
+        margin-top: -1.5rem;
+        margin-left: 8rem;
         transition-duration: 210ms;
-        transform: translate3d(-4em, 3.3em, 0);
+        transform: translate3d(.8rem, 0, 0);
     }
 }
 .menu-open:checked ~ .top-nav {
+    font-size: 1rem;
     transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
     & > :nth-child(1) {
-        top: 50%;
-        left: 100%;
-        margin-top: -1.5em;
-        margin-left: -8em;
+        margin-left: -9em;
         transition-duration: 150ms;
-        transform: translate3d(-4em, 6.6em, 0);
+        transform: translate3d(.8em, 4.3em, 5em);
     }
     & > :nth-child(2) {
-        top: 50%;
-        left: 100%;
-        margin-top: -1.5em;
-        margin-left: -8em;
+        margin-left: -9em;
         transition-duration: 100ms;
-        transform: translate3d(-4em, -3.3em, 0);
+        transform: translate3d(.8em, -3.8em, 0);
     }
     & > :nth-child(3) {
-        top: 50%;
-        left: 100%;
-        margin-top: -2em;
-        margin-left: -8em;
+        margin-left: -9em;
         transition-duration: 170ms;
-        transform: translate3d(-4em, -6.6em, 0);
+        transform: translate3d(.8em, -9.2em, 0);
     }
     & > :nth-child(4) {
-        top: 50%;
-        left: 100%;
-        margin-top: -2em;
-        margin-left: -8em;
+        margin-left: -9em;
         transition-duration: 180ms;
-        transform: translate3d(-4em, 3.3em, 0);
+        transform: translate3d(.8em, 2em, 0);
     }
 }
 
@@ -197,7 +190,7 @@
     .nav-mobile {
         display: none;
     }
-    .header__top {
+    .header_top {
         background-color: transparent;
         position: fixed;
         display: inline;
@@ -236,6 +229,7 @@
         flex-direction: row;
         flex-wrap: nowrap;
         margin: .6em;
+        font-size: .6rem;
         & > div {
             @include top-nav-btn-model($second-bkg, $hoover-bkg, $main-font, $font-hoover, $main-border, $shadow-color-main);
         }

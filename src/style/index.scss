@@ -15,7 +15,7 @@
 //root style block has box-sizing set to border-box to avoid unexpected behaviour for box elements:
 :root{
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Huelvetica', sans-serif;
 //calc() method in font size assures that the font size will be respond on each window size change
     font-size: calc(.7rem + 1vw);
     line-height: 1.2;

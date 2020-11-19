@@ -42,11 +42,18 @@
         transform: scale(0.98);
         }
     & > a,
+        a:active,
         a:visited,
         a:link,
-        a:visited {
-            min-width: 8vw;
+        a:visited:active,
+        a:link:active {
+            min-width: 100%;
+            @media (min-width: 52rem) {
+                min-width: 8vw;
+            }
             padding: .05em .6em;
+            background: none;
+            box-shadow: none;
             font-weight: bold;
             font-size: inherit;
             text-transform: uppercase;

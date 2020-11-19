@@ -131,7 +131,6 @@
         margin-top: -1.5rem;
         margin-left: 8rem;
         transition-duration: 150ms;
-        transform: translate3d(.8rem, 0, 0);
     }
     & > :nth-child(2) {
         @include top-nav-btn-model($second-bkg, $hoover-bkg, $main-font, $font-hoover, $main-border, $shadow-color-main);
@@ -140,7 +139,6 @@
         margin-top: -1.5rem;
         margin-left: 8rem;
         transition-duration: 100ms;
-        transform: translate3d(.8rem, 0, 0);
     }
     & > :nth-child(3) {
         @include top-nav-btn-model($second-bkg, $hoover-bkg, $main-font, $font-hoover, $main-border, $shadow-color-main);
@@ -149,7 +147,6 @@
         margin-top: -1.5rem;
         margin-left: 8rem;
         transition-duration: 170ms;
-        transform: translate3d(.8rem, 0, 0);
     }
     & > :nth-child(4) {
         @include top-nav-btn-model($second-bkg, $hoover-bkg, $main-font, $font-hoover, $main-border, $shadow-color-main);
@@ -158,7 +155,6 @@
         margin-top: -1.5rem;
         margin-left: 8rem;
         transition-duration: 210ms;
-        transform: translate3d(.8rem, 0, 0);
     }
 }
 .menu-open:checked ~ .top-nav {
@@ -167,22 +163,34 @@
     & > :nth-child(1) {
         margin-left: -9em;
         transition-duration: 150ms;
-        transform: translate3d(.8em, 4.3em, 5em);
+        transform: translate3d(.8em, 4.3em, 0);
+        &:active {
+            transform: translate3d(.8em, 4.3em, 0) scale(.98);
+        }
     }
     & > :nth-child(2) {
         margin-left: -9em;
         transition-duration: 100ms;
         transform: translate3d(.8em, -3.8em, 0);
+        &:active {
+            transform: translate3d(.8em, -3.8em, 0) scale(.98);
+        }
     }
     & > :nth-child(3) {
         margin-left: -9em;
         transition-duration: 170ms;
         transform: translate3d(.8em, -9.2em, 0);
+        &:active {
+            transform: translate3d(.8em, -9.2em, 0) scale(.98);
+        }
     }
     & > :nth-child(4) {
         margin-left: -9em;
         transition-duration: 180ms;
         transform: translate3d(.8em, 2em, 0);
+        &:active {
+            transform: translate3d(.8em, 2em, 0) scale(.98);
+        }
     }
 }
 

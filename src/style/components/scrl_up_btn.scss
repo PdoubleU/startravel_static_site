@@ -6,11 +6,15 @@
     @include general_btn($second-bkg, $hoover-bkg, $main-font, $hoover-bkg, $main-border, $shadow-color-main);
     position: fixed;
     display: none;
-    width: 4rem;
-    height: 4rem;
-    bottom: 2rem;
+    width: 3rem;
+    height: 3rem;
+    bottom: 1rem;
     right: 1rem;
     z-index: $mobile-menu-sgl-btn;
+    @media (min-width: 52rem) {
+        height: 2rem;
+        width: 2rem;
+    }
 }
 .scroll_btn--active {
     display: inline-block;

@@ -72,7 +72,7 @@ body::-webkit-scrollbar {
     & > .element--two.sub {
         font-size: 1.2rem;
     }
-    & > .element--three {
+    & > .element--three, .element--three:active {
         grid-row: 2 / 3;
         padding: 0;
         background: $second-bkg;
@@ -181,7 +181,7 @@ body::-webkit-scrollbar {
             color: $main-font;
             font-size: 1.2rem;
         }
-        & >.element--three {
+        & >.element--three, .element--three:active {
             grid-column: 2 / 3;
             grid-row: 2 / 3;
             padding: 0;
@@ -195,15 +195,14 @@ body::-webkit-scrollbar {
             background: $second-bkg;
             color: $main-font;
             padding: .5em;
-            display: flex;
-        }
+            }
         & >.element--one {
             background: $second-bkg;
             grid-column: 1;
             grid-row: 1;
-            &:hover {
+            &:hover{
                 --bkgUrl: url('./assets/imgs/large/castle.jpg');
-                background:url('./assets/imgs/large/castle.jpg');
+                background: var(--bkgUrl);
                 color: $second-font;
                 animation: animatedBackground .6s linear;
                 transition: background .6s;
@@ -217,7 +216,7 @@ body::-webkit-scrollbar {
             grid-row: 1;
             &:hover {
                 --bkgUrl: url('./assets/imgs/large/ck.jpg');
-                background: url('./assets/imgs/large/ck.jpg');
+                background: var(--bkgUrl);
                 color: $second-font;
                 animation: animatedBackground .6s linear;
                 transition: background .6s, color .6s;
@@ -231,7 +230,7 @@ body::-webkit-scrollbar {
             grid-row: 1;
             &:hover {
                 --bkgUrl: url('./assets/imgs/large/ksiaz.jpg');
-                background: url('./assets/imgs/large/ksiaz.jpg');
+                background: var(--bkgUrl);
                 color: $second-font;
                 animation: animatedBackground .6s linear;
                 transition: background .6s;

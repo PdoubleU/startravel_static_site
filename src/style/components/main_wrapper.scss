@@ -191,6 +191,7 @@ body::-webkit-scrollbar {
         @include main_container;
         grid-template-rows: 1fr;
         grid-template-columns: 1fr 1fr 1fr;
+        background: $second-bkg;
         & > a {
             background: $second-bkg;
             color: $main-font;
@@ -209,6 +210,9 @@ body::-webkit-scrollbar {
                 background-size: cover;
                 background-position: center;
             }
+            &:hover:active {
+                transform: scale(.99);
+            }
         }
         & >.element--two {
             background: $second-bkg;
@@ -223,6 +227,9 @@ body::-webkit-scrollbar {
                 background-size: cover;
                 background-position: center;
             }
+            &:hover:active {
+                transform: scale(.99);
+            }
         }
         & >.element--three {
             background: $second-bkg;
@@ -236,6 +243,9 @@ body::-webkit-scrollbar {
                 transition: background .6s;
                 background-size: cover;
                 background-position: center;
+            }
+            &:hover:active {
+                transform: scale(.99);
             }
         }
     }

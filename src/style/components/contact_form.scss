@@ -15,7 +15,6 @@
     margin-bottom: 0;
     & > .sub_btn {
         @include general_btn($second-bkg, $hoover-bkg, $main-font, $font-hoover, $main-border, $shadow-color-main);
-        padding: unset;
     }
 }
 label {

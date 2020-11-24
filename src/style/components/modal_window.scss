@@ -62,9 +62,11 @@
     overflow-y: scroll;
 }
 .action_btn {
-    @include general_btn($second-bkg, $main-bkg, $main-font, $second-font, $second-font, $shadow-color-main);
+    align-self: center;
+    justify-self: center;
+    font-size: 1rem;
+    @include general_btn($second-bkg, $hoover-bkg, $main-font, $font-hoover, $main-font, $shadow-color-main);
     margin-top: .6em;
-    padding: unset;
 }
 
 

@@ -56,7 +56,3 @@
     height: 0%;
     transition: height .6s ease-in-out;
 }
-article > button.description {
-    @include top-nav-btn-model($second-bkg, $hoover-bkg, $main-font, $font-hoover, $main-border, $shadow-color-main);
-    min-height: 3rem;
-}

@@ -65,8 +65,25 @@ body::-webkit-scrollbar {
             position: relative;
             margin-bottom: 2.4em;
             @include general_btn($second-bkg, $hoover-bkg, $main-font, $second-font, $main-border, $shadow-color-main);
+            align-self: flex-end;
             height: 3em;
             width: 3em;
+            &:before {
+                content:">";
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                left: calc(50% + .045rem);
+                right: auto;
+                top: calc(50% + .07rem);
+                width:100%;
+                height:100%;
+                font-size: 1.2rem;
+                color: $main-bkg;
+                text-indent: 0;
+                transform: translate(-50%, -50%) rotate(90deg);
+                }
             }
         }
     & > .element--two.sub {
@@ -189,6 +206,25 @@ body::-webkit-scrollbar {
             grid-row: 1 / 2;
             color: $main-font;
             font-size: 1.2rem;
+            > .get-contact {
+                min-width: 2rem;
+                min-height: 2rem;
+                &:before {
+                    content:">";
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    left: 50%;
+                    right: auto;
+                    top: calc(50% - .05rem);
+                    width:100%;
+                    height:100%;
+                    font-size: 1.2rem;
+                    text-indent: 0;
+                    transform: translate(-50%, -50%);
+                    }
+            }
         }
         & >.element--three, .element--three:active {
             grid-column: 2 / 3;

@@ -3,10 +3,14 @@
 @mixin general_btn ($bkg_color, $hover_color_bkg, $font_color, $hover_color_font, $border_color, $shadow_color) {
     cursor: pointer;
     display: flex;
-    padding: .2rem .8rem;
+    align-self: center;
+    padding: .2rem 1.2rem;
     letter-spacing: .1rem;
     min-height: 1rem;
+    width: fit-content;
     text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
     border: solid .1rem $border_color;
     background: $bkg_color;
     color: $font_color;

@@ -237,6 +237,7 @@ body::-webkit-scrollbar {
         grid-template-rows: 1fr;
         grid-template-columns: 1fr 1fr 1fr;
         background: $second-bkg;
+        color: $main-font;
         & > a {
             background: $second-bkg;
             color: $main-font;

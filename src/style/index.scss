@@ -15,7 +15,7 @@
 //root style block has box-sizing set to border-box to avoid unexpected behaviour for box elements:
 :root{
     box-sizing: border-box;
-    font-family: 'Huelvetica', sans-serif;
+    font-family: $text-font, 'Huelvetica', sans-serif;
 //calc() method in font size assures that the font size will be respond on each window size change
     font-size: calc(.7rem + 1vw);
     line-height: 1.2;
@@ -24,12 +24,15 @@ html {
     min-height: 100%;
   }
 body{
-//    background-color: $primary-bkg-color;
+//background-color: $primary-bkg-color;
 //removes from body initial margin and padding
     margin: 0;
     padding: 0;
 }
-
+h1, h2, h3, h4, h5, h6 {
+    font-family: $header-font;
+    font-size: 1.2rem;
+}
 *,
 *::before,
 *::after {

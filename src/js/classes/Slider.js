@@ -2,8 +2,6 @@ export class Slider {
     constructor(elemSelector, opts) {
         const DEFAULT_OPTS = {
             pauseTime : 8000,
-            prevText : "<",
-            nextText : ">",
             generatePrevNext : true
         };
         this.options = Object.assign({}, DEFAULT_OPTS, opts);
@@ -103,14 +101,12 @@ export class Slider {
     createPrevNext() {
         this.prev = document.createElement("button");
         this.prev.type = "button";
-        this.prev.innerText = this.options.prevText;
         this.prev.classList.add("slider-button");
         this.prev.classList.add("slider-button-prev");
         this.prev.addEventListener("click", this.slidePrev.bind(this));
 
         this.next = document.createElement("button");
         this.next.type = "button";
-        this.next.innerText = this.options.nextText;
         this.next.classList.add("slider-button");
         this.next.classList.add("slider-button-next");
         this.next.addEventListener("click", this.slideNext.bind(this));

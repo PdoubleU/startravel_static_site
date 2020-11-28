@@ -7,5 +7,4 @@ export const REVEAL_TXT = () => {
     }
 }
 
-
 window.onload = REVEAL_TXT;

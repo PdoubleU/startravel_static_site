@@ -12,7 +12,6 @@ export const SHOW_GDPR_BAR = () => {
 };
 
 export const HIDE_GDPR_BAR = () => {
-  console.log('error');
   document.getElementById('bar_gdpr').classList.remove('bar_gdpr--active');
   window.localStorage.setItem('gdpr', 'confirmed');
   setTimeout(() => {

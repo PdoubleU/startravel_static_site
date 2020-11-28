@@ -2,6 +2,7 @@
 
 @mixin general_btn ($bkg_color, $hover_color_bkg, $font_color, $hover_color_font, $border_color, $shadow_color) {
     cursor: pointer;
+    font-weight: lighter;
     display: flex;
     align-self: center;
     padding: .2rem 1.2rem;
@@ -10,7 +11,7 @@
     width: fit-content;
     justify-content: center;
     align-items: center;
-    border: solid .1rem $border_color;
+    border: solid .05rem $border_color;
     background: $bkg_color;
     color: $font_color;
     outline: none;

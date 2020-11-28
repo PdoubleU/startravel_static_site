@@ -47,6 +47,8 @@ export class FillContent {
                                         content: 'description',
                                         actionBtn: true,
                                         description: [ content, price ],
+                                        buttonNamePl: 'Zarezerwuj!',
+                                        buttonNameEn: 'Book!',
                                         action: 'contact',
                                         _path: "/json/form_content.json",
                                         formIsHidden: true

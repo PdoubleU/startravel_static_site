@@ -5,8 +5,9 @@
     position: relative;
     overflow: hidden;
     display: block;
-    line-height: 1.2;
     background-color: transparent;
+    min-height: fit-content;
+    line-height: 1.8;
 }
 
 .reveal::after{

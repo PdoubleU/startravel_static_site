@@ -22,6 +22,7 @@ export class ModalWindow {
         this.path = this.options._path;
         this.description = this.options.description;
         this.formIsHidden = this.options.formIsHidden;
+        this.language = window.localStorage.getItem('language');
 
         this.generateHTMLTags();
         if(this.actionBtn) {
@@ -72,7 +73,7 @@ export class ModalWindow {
             ACTION_BTN.classList.add('action_btn');
             ACTION_BTN.classList.add(this.id);
             ACTION_BTN.appendChild(document.createTextNode(
-                (window.localStorage.getItem('language') == 'polish')
+                (this.language == 'polish')
                 ?
                 this.btnNamePl
                 :
@@ -104,10 +105,18 @@ export class ModalWindow {
                         , 1000);
                     window.localStorage.setItem('gdpr', 'confirmed');
                     break;
+
                 case 'contact':
                     let elem = document.getElementsByClassName('content-container form');
                     (elem[0].style.height == '110%') ? elem[0].style.height = '0%' : elem[0].style.height = '110%';
+
+                    let toggleBtn = document.getElementsByClassName('action_btn description');
+                    (this.laungage == 'polish') ?
+                    ((toggleBtn[0].textContent == 'Zarezerwuj!') ? toggleBtn[0].textContent = 'Wróć do opisu' : toggleBtn[0].textContent = 'Zarezerwuj!')
+                    :
+                    ((toggleBtn[0].textContent == 'Book!') ? toggleBtn[0].textContent = 'Return' : toggleBtn[0].textContent = 'Book!')
                     break;
+
                 default:
                     console.log('Sorry, an error occured. Please reload browser');
                     break;
@@ -120,7 +129,7 @@ export class ModalWindow {
         let xhr = new XMLHttpRequest();
         let isSubpage = (document.getElementById('main_page')) ? true : false;
         let _path = (isSubpage) ? '.' + this.path : '..' + this.path;
-        let language = window.localStorage.getItem('language');
+        let language = this.language;
         let formClassName = (this.content == 'description') ? 'form' : '';
         let isHidden = this.formIsHidden;
         xhr.open('GET', _path, true);

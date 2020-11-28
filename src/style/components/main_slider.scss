@@ -127,7 +127,7 @@
 }
 .slider-button-prev:before,
 .slider-button-next:before {
-    content:"<";
+    content:"\003C";
     display: flex;
     justify-content: center;
     align-items: center;
@@ -137,13 +137,13 @@
     top: calc(50% - .05rem);
     width:100%;
     height:100%;
-    font-size: 1.2rem;
+    font-size: .8rem;
     color: $main-bkg;
     text-indent: 0;
     transform: translate(-50%, -50%);
 }
 .slider-button-next:before {
-    content: ">";
+    content: "\003E";
     transform: translate(-50%, -50%);
     right: calc(-50% - 1px);
     left: auto;

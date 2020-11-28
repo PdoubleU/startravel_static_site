@@ -13,6 +13,7 @@
 @import './components/contact_form.scss';
 @import './components/description_modal_window.scss';
 //root style block has box-sizing set to border-box to avoid unexpected behaviour for box elements:
+
 :root{
     box-sizing: border-box;
     font-family: $text-font, 'Huelvetica', sans-serif;
@@ -31,6 +32,8 @@ body{
     padding: 0;
 }
 h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
     font-family: $header-font;
     font-size: 1.4rem;
     font-weight: bolder;
@@ -54,3 +57,5 @@ button {
     cursor: pointer;
     appearance: none; // fix the strange behaviour on iOS' devices
 }
+
+

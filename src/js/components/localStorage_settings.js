@@ -3,7 +3,7 @@ export const CHECK_STORAGE = () => {
         return 0;
     } else {
         window.localStorage.setItem('gdpr', 'unconfirmed');
-        window.localStorage.setItem('language', 'polish');
+        window.localStorage.setItem('language', 'english');
     }
 }
 

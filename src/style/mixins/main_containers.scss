@@ -11,9 +11,8 @@
         .element--two:active,
         .element--three:active {
             align-items: flex-end;
-            justify-content: baseline;
-            padding-left: 1.2rem;
-            padding-right: 1.2rem;
+            justify-content: flex-start;
+            padding: 1.4rem;
             display: flex;
         }
     }

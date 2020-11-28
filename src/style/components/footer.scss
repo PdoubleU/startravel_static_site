@@ -70,6 +70,10 @@
 }
 .open-form {
     @include general_btn( $second-bkg, $hoover-bkg, $main-font, $font-hoover, $second-border, transparent);
+    padding: .4rem 1.2rem;
+    & > p  {
+        margin: 0;
+    }
 }
 .signature {
     width: 100%;

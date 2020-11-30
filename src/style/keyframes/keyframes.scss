@@ -1,5 +1,14 @@
 @import '../variables/variables.scss';
 
+@keyframes backgroundRollDown {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+
 @keyframes animatedBackground {
     from {
         color: $second-font;

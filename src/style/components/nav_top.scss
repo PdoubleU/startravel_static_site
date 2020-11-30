@@ -2,6 +2,7 @@
 @import '../variables/variables.scss';
 @import '../mixins/nav_button.scss';
 @import '../mixins/general_btn.scss';
+@import '../keyframes/keyframes.scss';
 
 //Button menu - mobile devices
 //
@@ -131,7 +132,7 @@ input.menu-open {
         margin-top: -1.5rem;
         margin-left: 8rem;
         transition-duration: 150ms;
-        transform: translate3d(0, 3.7rem, 0);
+        transform: translate3d(0, 2.7rem, 0);
     }
     & > :nth-child(2) {
         @include top-nav-btn-model($second-bkg, $hoover-bkg, $main-font, $font-hoover, $main-border, $shadow-color-main);
@@ -140,7 +141,7 @@ input.menu-open {
         margin-top: -1.5rem;
         margin-left: 8rem;
         transition-duration: 100ms;
-        transform: translate3d(0, -4.7rem, 0);
+        transform: translate3d(0, -3.6rem, 0);
     }
     & > :nth-child(3) {
         @include top-nav-btn-model($second-bkg, $hoover-bkg, $main-font, $font-hoover, $main-border, $shadow-color-main);
@@ -149,14 +150,14 @@ input.menu-open {
         margin-top: -1.5rem;
         margin-left: 8rem;
         transition-duration: 170ms;
-        transform: translate3d(0, -10.8rem, 0);
+        transform: translate3d(0, -10rem, 0);
     }
     & > :nth-child(4) {
         @include top-nav-btn-model($second-bkg, $hoover-bkg, $main-font, $font-hoover, $main-border, $shadow-color-main);
         margin-top: -1.5rem;
         margin-left: 8rem;
         transition-duration: 210ms;
-        transform: translate3d(0, .9rem, 0);
+        transform: translate3d(0, .2rem, 0);
     }
 }
 .menu-open:checked ~ .top-nav {
@@ -165,33 +166,33 @@ input.menu-open {
     & > :nth-child(1) {
         margin-left: -9em;
         transition-duration: 150ms;
-        transform: translate3d(.8em, 3.7rem, 0);
+        transform: translate3d(.8em, 2.7rem, 0);
         &:active {
-            transform: translate3d(.8em, 3.7rem, 0) scale(.98);
+            transform: translate3d(.8em, 2.7rem, 0) scale(.98);
         }
     }
     & > :nth-child(2) {
         margin-left: -9em;
         transition-duration: 100ms;
-        transform: translate3d(.8em, -4.65rem, 0);
+        transform: translate3d(.8em, -3.6rem, 0);
         &:active {
-            transform: translate3d(.8em, -4.65rem, 0) scale(.98);
+            transform: translate3d(.8em, -3.6rem, 0) scale(.98);
         }
     }
     & > :nth-child(3) {
         margin-left: -9em;
         transition-duration: 170ms;
-        transform: translate3d(.8em, -10.75rem, 0);
+        transform: translate3d(.8em, -10rem, 0);
         &:active {
-            transform: translate3d(.8em, -10.75rem, 0) scale(.98);
+            transform: translate3d(.8em, -10rem, 0) scale(.98);
         }
     }
     & > :nth-child(4) {
         margin-left: -9em;
         transition-duration: 180ms;
-        transform: translate3d(.8em, .9rem, 0);
+        transform: translate3d(.8em, .2rem, 0);
         &:active {
-            transform: translate3d(.8em, .9rem, 0) scale(.98);
+            transform: translate3d(.8em, .2rem, 0) scale(.98);
         }
     }
 }
@@ -242,10 +243,25 @@ input.menu-open {
         font-size: .6rem;
         & > div {
             @include top-nav-btn-model($second-bkg, $hoover-bkg, $main-font, $font-hoover, $main-border, $shadow-color-main);
+            position: relative;
+            &:hover {
+                color: $second-font;
+                transition: color 300ms linear;
+                & .background-roll-down {
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                    background: $main-bkg;
+                    transition: width 300ms linear;
+                    animation: backgroundRollDown 300ms ease-in;
+                }
+            }
         }
         & > div + div {
             margin: 0 0 0 1em;
         }
+
     }
+
 }
 

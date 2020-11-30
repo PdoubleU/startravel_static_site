@@ -26,21 +26,13 @@
     display: flex;
     justify-content: center;
     text-align: center;
-    background: $bkg_color;
+    background: transparent;
     color: $font_color;
-    transition: all .2s ease-in-out;
     border: solid .05rem $border_color;
     outline: none;
-    &:hover,
-     :focus {
-        box-shadow: 0.07rem .07rem .1rem $shadow_color;
-        color: $hover_color_font;
-        background: $hover_color_bkg;
-    }
     &:active{
-        box-shadow: none;
-        background-color: $bkg_color;
         transform: scale(0.98);
+        transition: transform .2s linear;
         }
     & > a,
         a:active,
@@ -52,11 +44,12 @@
             @media (min-width: 37.71rem) {
                 min-width: 8vw;
             }
-            padding: .05em .6em;
+            //padding: .05em .6em;
             background: none;
             box-shadow: none;
             font-size: inherit;
             font-weight: normal;
+            position: relative;
     }
 }
 

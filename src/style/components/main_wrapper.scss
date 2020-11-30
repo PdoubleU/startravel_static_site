@@ -4,6 +4,7 @@
 @import '../mixins/general_btn.scss';
 @import '../variables/variables.scss';
 @import '../keyframes/keyframes.scss';
+@import '../mixins/general_arrow_btn.scss';
 
 .outer-wrapper {
     width: 100%;
@@ -70,65 +71,13 @@ body::-webkit-scrollbar {
             & > .text {
                     margin-left: 0;
                 }
-            & > .get-contact {
-                    position: relative;
-                    height: 2rem;
-                    width: 2rem;
-                > .get-contact {
-                    &--top,
-                    &--bottom {
-                        position: absolute;
-                        background: $hoover-bkg;
-                        height: .08rem;
-                        width: 1rem;
-                        left: 0.2rem;
-                        &:after {
-                            background-color: $main-font;
-                            content: '';
-                            height: 100%;
-                            position: absolute;
-                            top: 0;
-                            transition: all .1s;
-                        }
-                    }
-                    &--top {
-                        transform: rotate(45deg);
-                        transform-origin: bottom right;
-                        &:after {
-                            left: 100%;
-                            right: 0;
-                            transition-delay: 0s;
-                        }
-                    }
-                    &--bottom {
-                        transform: rotate(-45deg);
-                        transform-origin: top right;
-                        &:after {
-                            left: 0;
-                            right: 100%;
-                            transition-delay: .1s;
-                        }
+            & > .arrow-class {
+                   @include general_arrow_btn($hoover-bkg, $main-bkg);
+                   &:active,
+                    :focus {
+                        transform: scale(.9);
                     }
                 }
-                &:hover {
-                > .get-contact {
-                        &--top:after {
-                            border: transparent;
-                            left: 0;
-                            transition-delay: .1s;
-                        }
-                        &--bottom:after {
-                            border: transparent;
-                            right: 0;
-                            transition-delay: 0s;
-                        }
-                    }
-                }
-                &:active,
-                &:focus {
-                    transform: scale(0.9);
-                }
-            }
         }
     }
     & > .element--two.sub {

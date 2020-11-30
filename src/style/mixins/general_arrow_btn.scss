@@ -1,0 +1,62 @@
+@import '../../../node_modules/normalize-scss/sass/_normalize.scss';
+@import '../variables/variables.scss';
+
+@mixin general_arrow_btn($main-bkg, $second-bkg) {
+    position: relative;
+    height: 2rem;
+    width: 2rem;
+    > .arrow-class {
+    &--top,
+    &--bottom {
+        position: absolute;
+        background: $main-bkg;
+        height: .08rem;
+        width: 1rem;
+        left: 0.4rem;
+        &:after {
+            background-color: $second-bkg;
+            content: '';
+            height: 100%;
+            position: absolute;
+            top: 0;
+            transition: all .1s;
+        }
+    }
+    &--top {
+        transform: rotate(45deg);
+        transform-origin: bottom right;
+        &:after {
+            left: 100%;
+            right: 0;
+            transition-delay: 0s;
+        }
+    }
+    &--bottom {
+        transform: rotate(-45deg);
+        transform-origin: top right;
+        &:after {
+            left: 0;
+            right: 100%;
+            transition-delay: .1s;
+        }
+    }
+    }
+    &:hover {
+    > .arrow-class {
+        &--top:after {
+            border: transparent;
+            left: 0;
+            transition-delay: .1s;
+        }
+        &--bottom:after {
+            border: transparent;
+            right: 0;
+            transition-delay: 0s;
+        }
+    }
+    }
+    &:active,
+    &:focus {
+        outline: none;
+    }
+}

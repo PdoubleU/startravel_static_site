@@ -99,16 +99,31 @@ export class Slider {
     }
 
     createPrevNext() {
+        this.innerTop = document.createElement("div");
+        this.innerBottom = document.createElement("div");
+        this.innerTop.classList.add('arrow-class--top');
+        this.innerBottom.classList.add('arrow-class--bottom');
+        this.cpyTopOne = this.innerTop.cloneNode(true);
+        this.cpyBottomOne = this.innerBottom.cloneNode(true);
+        this.cpyTopTwo = this.innerTop.cloneNode(true);
+        this.cpyBottomTwo = this.innerBottom.cloneNode(true);
+
         this.prev = document.createElement("button");
         this.prev.type = "button";
         this.prev.classList.add("slider-button");
         this.prev.classList.add("slider-button-prev");
+        this.prev.classList.add("arrow-class");
+        this.prev.appendChild(this.cpyTopTwo);
+        this.prev.appendChild(this.cpyBottomTwo);
         this.prev.addEventListener("click", this.slidePrev.bind(this));
 
         this.next = document.createElement("button");
         this.next.type = "button";
         this.next.classList.add("slider-button");
         this.next.classList.add("slider-button-next");
+        this.next.classList.add("arrow-class");
+        this.next.appendChild(this.cpyTopOne);
+        this.next.appendChild(this.cpyBottomOne);
         this.next.addEventListener("click", this.slideNext.bind(this));
 
         const NAV = document.createElement("div");

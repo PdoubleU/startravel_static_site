@@ -44,7 +44,6 @@
             @media (min-width: 37.71rem) {
                 min-width: 8vw;
             }
-            //padding: .05em .6em;
             background: none;
             box-shadow: none;
             font-size: inherit;
@@ -52,8 +51,6 @@
             position: relative;
     }
 }
-
-
 
 .button-model {
     @include top-nav-btn-model($main-bkg, $hoover-bkg, $main-font, $font-hoover, $border-menu-btn-hoover, $shadow-color-main);

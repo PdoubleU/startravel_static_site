@@ -132,7 +132,7 @@ input.menu-open {
         margin-top: -1.5rem;
         margin-left: 8rem;
         transition-duration: 150ms;
-        transform: translate3d(0, 2.7rem, 0);
+        transform: translate3d(0, 2.8rem, 0);
     }
     & > :nth-child(2) {
         @include top-nav-btn-model($second-bkg, $hoover-bkg, $main-font, $font-hoover, $main-border, $shadow-color-main);
@@ -157,7 +157,7 @@ input.menu-open {
         margin-top: -1.5rem;
         margin-left: 8rem;
         transition-duration: 210ms;
-        transform: translate3d(0, .2rem, 0);
+        transform: translate3d(0, .7rem, 0);
     }
 }
 .menu-open:checked ~ .top-nav {
@@ -166,9 +166,9 @@ input.menu-open {
     & > :nth-child(1) {
         margin-left: -9em;
         transition-duration: 150ms;
-        transform: translate3d(.8em, 2.7rem, 0);
+        transform: translate3d(.8em, 2.8rem, 0);
         &:active {
-            transform: translate3d(.8em, 2.7rem, 0) scale(.98);
+            transform: translate3d(.8em, 2.8rem, 0) scale(.98);
         }
     }
     & > :nth-child(2) {
@@ -190,9 +190,9 @@ input.menu-open {
     & > :nth-child(4) {
         margin-left: -9em;
         transition-duration: 180ms;
-        transform: translate3d(.8em, .2rem, 0);
+        transform: translate3d(.8em, .7rem, 0);
         &:active {
-            transform: translate3d(.8em, .2rem, 0) scale(.98);
+            transform: translate3d(.8em, .7rem, 0) scale(.98);
         }
     }
 }
@@ -250,7 +250,8 @@ input.menu-open {
                 & .background-roll-down {
                     position: absolute;
                     height: 100%;
-                    width: 100%;
+                    width: calc(100% + .4rem);
+                    margin-left: -.2rem;
                     background: $main-bkg;
                     transition: width 300ms linear;
                     animation: backgroundRollDown 300ms ease-in;

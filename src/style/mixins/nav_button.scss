@@ -26,7 +26,7 @@
     display: flex;
     justify-content: center;
     text-align: center;
-    background: transparent;
+    background: $bkg_color;
     color: $font_color;
     border: solid .05rem $border_color;
     outline: none;
@@ -40,9 +40,10 @@
         a:link,
         a:visited:active,
         a:link:active {
-            min-width: 100%;
+            margin: 0 .2rem;
+            min-width: 7vw;
             @media (min-width: 37.71rem) {
-                min-width: 8vw;
+                min-width: 9vw;
             }
             background: none;
             box-shadow: none;

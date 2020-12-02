@@ -110,6 +110,7 @@
     top: 50%;
     left: 1%;
     right: 1%;
+    transform: translateY(-50%);
     @media (min-width: 52rem) {
         width: 2rem;
         height: 2rem;
@@ -121,13 +122,13 @@
 .slider-button-next.arrow-class {
     &:active,
      :focus {
-        transform: scale(.9);
+        transform: translateY(-50%) scale(.9);
     }
 }
 .slider-button-prev.arrow-class {
-    transform: rotate(180deg);
+    transform: translateY(-50%) rotate(180deg);
     &:active,
      :focus {
-         transform: rotate(180deg) scale(.9);
+         transform: translateY(-50%) rotate(180deg) scale(.9);
      }
 }

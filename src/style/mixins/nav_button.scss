@@ -39,7 +39,8 @@
         a:visited,
         a:link,
         a:visited:active,
-        a:link:active {
+        a:link:active,
+        button {
             margin: 0 .2rem;
             min-width: 7vw;
             @media (min-width: 37.71rem) {

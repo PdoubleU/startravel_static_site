@@ -17,12 +17,10 @@
     outline: none;
     &:hover,
     &:focus {
-        box-shadow: 0.07rem .07rem .1rem $shadow_color;
         background-color: $hover_color_bkg;
         transition: all .2s ease-in-out;
     }
     &:active {
-        box-shadow: none;
         background-color: $bkg_color;
         transform: scale(0.98);
     }

@@ -1,7 +1,6 @@
 @import '../../../node_modules/normalize-scss/sass/_normalize.scss';
 @import '../mixins/main_page.scss';
 @import '../mixins/main_containers.scss';
-@import '../mixins/general_btn.scss';
 @import '../variables/variables.scss';
 @import '../keyframes/keyframes.scss';
 @import '../mixins/general_arrow_btn.scss';
@@ -72,10 +71,11 @@ body::-webkit-scrollbar {
                     margin-left: 0;
                 }
             & > .arrow-class {
-                   @include general_arrow_btn($hoover-bkg, $main-bkg);
+                   @include general_arrow_btn($font-hover, $main-bkg);
+                   transform: rotate(90deg);
                    &:active,
                     :focus {
-                        transform: scale(.9);
+                        transform: rotate(90deg) scale(.9);
                     }
                 }
         }
@@ -202,6 +202,17 @@ body::-webkit-scrollbar {
             & > .container-inner {
                     & > .text span {
                         font-size: 1rem;
+                    }
+                    & > .arrow-class {
+                        transform: rotate(0deg);
+                        > .arrow-class {
+                        &--top,
+                        &--bottom {
+                                height: .08rem;
+                                width: 1rem;
+                                left: .4rem;
+                            }
+                        }
                     }
             }
         }

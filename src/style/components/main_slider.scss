@@ -1,6 +1,5 @@
 @import '../../../node_modules/normalize-scss/sass/_normalize.scss';
 @import '../variables/variables.scss';
-@import '../mixins/general_btn.scss';
 @import '../mixins/general_arrow_btn.scss';
 
 .slide.title {
@@ -85,10 +84,25 @@
     z-index: 1;
 }
 .slider-button-next {
-    margin-right: 2.2em;
+    right: 1rem;
+    left: auto;
+    &.arrow-class {
+        &:active,
+         :focus {
+            transform: translateY(-50%) scale(.9);
+        }
+    }
 }
 .slider-button-prev {
-    margin-left: 2.2rem;
+    left: 1rem;
+    right: auto;
+    &.arrow-class {
+        transform: translateY(-50%) rotate(180deg);
+        &:active,
+         :focus {
+             transform: translateY(-50%) rotate(180deg) scale(.9);
+         }
+    }
 }
 @media (min-width: 37.71rem) {
     .slider-button-next {
@@ -98,37 +112,50 @@
         margin-left: 1.2rem;
     }
 }
+//fix difference between center arrow in buttons caused by transform: rotate)
+.slider-button-prev.arrow-class {
+    > .arrow-class {
+        &--top,
+        &--bottom {
+            margin-top: -.1rem;
+            @media (min-width: 37.71rem) {
+                margin-top: -.06rem;
+            }
+        }
+    }
+}
 .slider-button-prev,
 .slider-button-next {
-    @include general_arrow_btn($second-bkg, $main-bkg);
+    @include general_arrow_btn($font-hover, $main-bkg);
+    > .arrow-class {
+        &--top,
+        &--bottom {
+            background: $main-bkg;
+            width: 1.5rem;
+            left: .6rem;
+        }
+    }
+    @media (min-width: 37.71rem) {
+        > .arrow-class {
+            &--top,
+            &--bottom {
+                background: $font-hover;
+                left: .4rem;
+                height: .08rem;
+                width: 1rem;
+            }
+        }
+    }
     width: 3rem;
     height: 3rem;
     z-index: 2;
     position: absolute;
     overflow:hidden;
-    background: $opacity-bkg;
+    background: $alt-hover-btn;
     top: 50%;
-    left: 1%;
-    right: 1%;
     transform: translateY(-50%);
-    @media (min-width: 52rem) {
+    @media (min-width: 37.71rem) {
         width: 2rem;
         height: 2rem;
     }
-}
-.slider-button-next {
-    left: auto;
-}
-.slider-button-next.arrow-class {
-    &:active,
-     :focus {
-        transform: translateY(-50%) scale(.9);
-    }
-}
-.slider-button-prev.arrow-class {
-    transform: translateY(-50%) rotate(180deg);
-    &:active,
-     :focus {
-         transform: translateY(-50%) rotate(180deg) scale(.9);
-     }
 }

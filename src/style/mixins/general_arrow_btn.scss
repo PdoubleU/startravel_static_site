@@ -10,9 +10,9 @@
     &--bottom {
         position: absolute;
         background: $main-bkg;
-        height: .08rem;
-        width: 1rem;
-        left: 0.4rem;
+        height: .15rem;
+        width: 2rem;
+        left: -.4rem;
         &:after {
             background-color: $second-bkg;
             content: '';

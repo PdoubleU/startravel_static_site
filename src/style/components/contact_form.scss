@@ -14,7 +14,7 @@
     font-size: 1rem;
     margin-bottom: 0;
     & > .sub_btn {
-        @include general_btn($second-bkg, $hoover-bkg, $main-font, $font-hoover, $main-border, $shadow-color-main);
+        @include general_btn($second-bkg, $hover-bkg, $main-font, $font-hover, $main-border, $shadow-color-main);
     }
 }
 label {

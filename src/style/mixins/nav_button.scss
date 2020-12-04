@@ -55,5 +55,5 @@
 }
 
 .button-model {
-    @include top-nav-btn-model($main-bkg, $hoover-bkg, $main-font, $font-hoover, $border-menu-btn-hoover, $shadow-color-main);
+    @include top-nav-btn-model($main-bkg, $hover-bkg, $main-font, $font-hover, $border-menu-btn-hoover, $shadow-color-main);
 }

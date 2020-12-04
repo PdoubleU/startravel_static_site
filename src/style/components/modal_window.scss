@@ -65,7 +65,7 @@
     align-self: center;
     justify-self: center;
     font-size: 1rem;
-    @include general_btn($second-bkg, $hoover-bkg, $main-font, $font-hoover, $main-font, $shadow-color-main);
+    @include general_btn($second-bkg, $hover-bkg, $main-font, $font-hover, $main-font, $shadow-color-main);
     margin-top: .6em;
 }
 

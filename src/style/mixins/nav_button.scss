@@ -42,7 +42,7 @@
         a:link:active,
         button {
             margin: 0 .2rem;
-            min-width: 7vw;
+            width: 100%;
             @media (min-width: 37.71rem) {
                 min-width: 9vw;
             }

@@ -205,6 +205,10 @@ body::-webkit-scrollbar {
                     }
                     & > .arrow-class {
                         transform: rotate(0deg);
+                        &:active,
+                         :focus {
+                            transform: rotate(0deg) scale(.9);
+                        }
                         > .arrow-class {
                         &--top,
                         &--bottom {

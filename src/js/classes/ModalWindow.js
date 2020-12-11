@@ -107,14 +107,16 @@ export class ModalWindow {
                     break;
 
                 case 'contact':
-                    let elem = document.getElementsByClassName('content-container form');
-                    (elem[0].style.height == '110%') ? elem[0].style.height = '0%' : elem[0].style.height = '110%';
+                    let elem = document.getElementsByClassName('content-container form')[0];
+                    (elem.style.height == '110%') ? elem.style.height = '0%' : elem.style.height = '110%';
 
-                    let toggleBtn = document.getElementsByClassName('action_btn description');
-                    (this.laungage == 'polish') ?
-                    ((toggleBtn[0].textContent == 'Zarezerwuj!') ? toggleBtn[0].textContent = 'Wróć do opisu' : toggleBtn[0].textContent = 'Zarezerwuj!')
-                    :
-                    ((toggleBtn[0].textContent == 'Book!') ? toggleBtn[0].textContent = 'Return' : toggleBtn[0].textContent = 'Book!')
+                    let toggleBtn = document.getElementsByClassName('action_btn description')[0];
+                    if (this.laungage == 'polish') {
+                        (toggleBtn.textContent == 'Zarezerwuj!') ? toggleBtn.textContent = 'Wróć do opisu' : toggleBtn.textContent = 'Zarezerwuj!'
+                    }
+                    else {
+                        (toggleBtn.textContent == 'Book!') ? toggleBtn.textContent = 'Return' : toggleBtn.textContent = 'Book!'
+                    }
                     break;
 
                 default:

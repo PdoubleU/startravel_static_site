@@ -1,6 +1,6 @@
 @import '../../../node_modules/normalize-scss/sass/_normalize.scss';
 
-@mixin general_btn ($bkg_color, $hover_color_bkg, $font_color, $hover_color_font, $border_color, $shadow_color) {
+@mixin general_btn ($bkg_color, $hover_color_bkg, $font_color, $hover_color_font, $border_color, $alt-border) {
     cursor: pointer;
     font-weight: lighter;
     display: flex;
@@ -16,13 +16,14 @@
     color: $font_color;
     outline: none;
     transition: all .2s ease-in-out;
-    &:hover,
-    &:focus {
+    &:hover {
         background-color: $hover_color_bkg;
         color: $hover_color_font;
+        border-color: $alt-border;
     }
     &:active {
         background-color: $bkg_color;
+        color: $font_color;
         transform: scale(0.98);
     }
 }

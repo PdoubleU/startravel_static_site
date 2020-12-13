@@ -32,12 +32,10 @@ export class ModalWindow {
         if (this.content == 'description') {
             this.loadDescription();
             this.loadData(this.generateContent);
+        }
+        if(this.actionBtn) {
             this.action_btn();
         }
-        /*if(this.actionBtn) {
-            this.action_btn();
-        }
-        */
     }
 
     generateContent(response, language, formClassName, isHidden) {
@@ -48,11 +46,6 @@ export class ModalWindow {
         MODAL_CONTENT.innerHTML = response[language];
         grip.lastChild.children[0].lastChild.appendChild(MODAL_CONTENT);
         let elem = document.getElementsByClassName('content-container form')[0];
-        //this part needs to be change
-        const TOGGLE_BTN = document.getElementsByClassName('action_btn description')[0];
-        let cpy = TOGGLE_BTN.cloneNode(true);
-        elem.appendChild(cpy);
-        //end
         (isHidden) ? elem.style.height = '0%' : { return: 1 };
     }
     generateHTMLTags() {
@@ -98,7 +91,7 @@ export class ModalWindow {
         }
     }
     action_btn(){
-        const ACTION_BTN = document.getElementsByClassName('action_btn description');
+        const ACTION_BTN = document.getElementsByClassName('action_btn');
 
         const ACTION = () =>{
             switch(this.action) {

@@ -31,6 +31,18 @@
     background-color:white;
     overflow: auto;
 }
+.modal_body.gdpr_info {
+    & h3 {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    & h4 {
+        font-size: .8rem;
+    }
+    & p {
+        font-size: .6rem;
+    }
+}
 .modal_close {
     display: flex;
     position: absolute;
@@ -66,6 +78,9 @@
     justify-self: center;
     font-size: 1rem;
     @include general_btn($second-bkg, $alt-hover-bkg, $main-font, $second-font, $main-border, $shadow-color-main);
+    &.gdpr_info {
+        padding: .8rem 1.2rem;
+    }
     margin-top: .6em;
 }
 
@@ -94,5 +109,8 @@
         left: 90%;
         margin-top: -1rem;
         margin-left: -1.2rem;
+    }
+    .action_btn {
+        font-size: .8rem;
     }
 }

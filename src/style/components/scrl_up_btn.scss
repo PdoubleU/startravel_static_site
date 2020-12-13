@@ -3,7 +3,7 @@
 @import '../keyframes/keyframes.scss';
 
 .scroll_btn {
-    @include general_btn($second-bkg, $hover-bkg, $main-font, $hover-bkg, $main-border, $shadow-color-main);
+    @include general_btn($second-bkg, $second-bkg, $main-font, $hover-bkg, $main-border, $shadow-color-main);
     position: fixed;
     display: none;
     width: 3rem;

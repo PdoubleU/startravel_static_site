@@ -244,17 +244,21 @@ input.menu-open {
         & > div {
             @include top-nav-btn-model($second-bkg, $hover-bkg, $main-font, $font-hover, $main-border, $shadow-color-main);
             position: relative;
+            transition: all 300ms linear;
+            & .background-roll-down {
+                position: absolute;
+                height: 100%;
+                width: 0%;
+                margin-left: -.2rem;
+                background: $second-bkg;
+                transition: all 300ms;
+            }
             &:hover {
                 color: $second-font;
-                transition: color 300ms linear;
                 & .background-roll-down {
-                    position: absolute;
-                    height: 100%;
-                    width: calc(100% + .4rem);
-                    margin-left: -.2rem;
                     background: $main-bkg;
-                    transition: width 300ms linear;
                     animation: backgroundRollDown 300ms ease-in;
+                    width: calc(100% + .4rem);
                 }
             }
         }

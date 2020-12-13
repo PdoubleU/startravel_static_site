@@ -25,9 +25,7 @@ export class ModalWindow {
         this.language = window.localStorage.getItem('language');
 
         this.generateHTMLTags();
-        if(this.actionBtn) {
-            this.action_btn();
-        }
+
         if (this.content == 'form' || this.content == 'gdpr') {
             this.loadData(this.generateContent);
         }
@@ -35,17 +33,25 @@ export class ModalWindow {
             this.loadDescription();
             this.loadData(this.generateContent);
         }
+        if(this.actionBtn) {
+            this.action_btn();
+        }
     }
 
     generateContent(response, language, formClassName, isHidden) {
-        let grip = document.getElementsByTagName('body');
+        let grip = document.getElementsByTagName('body')[0];
         const MODAL_CONTENT = document.createElement('div');
         MODAL_CONTENT.classList.add('content-container');
         (formClassName !== '') ? MODAL_CONTENT.classList.add(formClassName) : { return: 0 };
         MODAL_CONTENT.innerHTML = response[language];
-        grip[0].lastChild.children[0].lastChild.appendChild(MODAL_CONTENT);
-        let elem = document.getElementsByClassName('content-container form');
-        (isHidden) ? elem[0].style.height = '0%' : { return: 1 };
+        grip.lastChild.children[0].lastChild.appendChild(MODAL_CONTENT);
+        let elem = document.getElementsByClassName('content-container form')[0];
+        //this part needs to be change
+        const TOGGLE_BTN = document.getElementsByClassName('action_btn description')[0];
+        let cpy = TOGGLE_BTN.cloneNode(true);
+        elem.appendChild(cpy);
+        //end
+        (isHidden) ? elem.style.height = '0%' : { return: 1 };
     }
     generateHTMLTags() {
         let grip = document.getElementsByTagName('body');
@@ -90,7 +96,7 @@ export class ModalWindow {
         }
     }
     action_btn(){
-        const ACTION_BTN = document.getElementsByClassName('action_btn');
+        const ACTION_BTN = document.getElementsByClassName('action_btn description');
 
         const ACTION = () =>{
             switch(this.action) {

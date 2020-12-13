@@ -32,10 +32,12 @@ export class ModalWindow {
         if (this.content == 'description') {
             this.loadDescription();
             this.loadData(this.generateContent);
-        }
-        if(this.actionBtn) {
             this.action_btn();
         }
+        /*if(this.actionBtn) {
+            this.action_btn();
+        }
+        */
     }
 
     generateContent(response, language, formClassName, isHidden) {

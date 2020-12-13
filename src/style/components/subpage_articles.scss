@@ -8,7 +8,7 @@
     font-size: .8rem;
 }
 article > button.description {
-    @include general_btn($second-bkg, $hover-bkg, $main-font, $font-hover, $main-font, $shadow-color-main);
+    @include general_btn($second-bkg, $alt-hover-bkg, $main-font, $second-font, $main-border, $shadow-color-main);
     min-height: 2rem;
 }
 

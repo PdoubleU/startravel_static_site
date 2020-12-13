@@ -14,7 +14,7 @@
     font-size: 1rem;
     margin-bottom: 0;
     & > .sub_btn {
-        @include general_btn($second-bkg, $hover-bkg, $main-font, $font-hover, $main-border, $shadow-color-main);
+        @include general_btn($second-bkg, $alt-hover-bkg, $main-font, $second-font, $main-border, $shadow-color-main);
     }
 }
 label {
@@ -48,8 +48,6 @@ input {
         min-height: 1rem;
     }
 }
-
-
 
 @media (min-width:  37.71rem){
     .contact_form {

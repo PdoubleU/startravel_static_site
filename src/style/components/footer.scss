@@ -77,7 +77,7 @@
     height: 0;
 }
 .open-form {
-    @include general_btn( $second-bkg, $hover-bkg, $main-font, $font-hover, $second-border, transparent);
+    @include general_btn($second-bkg, $alt-hover-bkg, $main-font, $second-font, $main-border, $shadow-color-main);
     padding: .4rem 1.2rem;
     & > p  {
         margin: 0;

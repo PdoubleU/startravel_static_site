@@ -2,18 +2,30 @@
 @import '../variables/variables.scss';
 @import '../mixins/general_btn.scss';
 
-.element {
-    display: flexbox;
+article.element > span {
+    display: flex;
+    justify-content: space-between;
     flex-direction: row;
     font-size: .8rem;
+    width: 100%;
+    border: .02rem solid $main-bkg;
+    & > h4 {
+        max-width: 80%;
+        margin-top: -1rem;
+        background: $second-bkg;
+        padding: .2rem .8rem;
+    }
 }
-article > button.description {
+article.element > span >  button.description {
     @include general_btn($second-bkg, $alt-hover-bkg, $main-font, $second-font, $main-border, $shadow-color-main);
+    margin-bottom: -1rem;
     min-height: 2rem;
 }
 
 @media (pointer: fine) and (min-width: 52rem) {
-    .element {
+    article.element > span {
         flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 }

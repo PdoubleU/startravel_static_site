@@ -73,11 +73,9 @@
         grid-template-columns: unset;
         grid-auto-columns: minmax(30vw, 33vw);
         & > * {
-            background-color: $second-bkg;
+            background: $second-bkg;
             color: $main-font;
-            padding: 3rem .5rem 2rem .5rem;
-            display: flex;
-            justify-content: space-between;
+            padding: 4rem 2rem 3rem 2rem;
             grid-row: 1 / 2;
         }
     }

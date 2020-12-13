@@ -25,19 +25,21 @@ export class FillContent {
             let grip = document.getElementById(selector);
 
             const CONTENT_CONTAINER = document.createElement('article');
-            CONTENT_CONTAINER.classList = 'element ';
+            const SPAN = document.createElement('span');
+            CONTENT_CONTAINER.classList = 'element';
             CONTENT_CONTAINER.id = title.toLowerCase();
+            CONTENT_CONTAINER.appendChild(SPAN);
             grip.appendChild(CONTENT_CONTAINER);
 
             const CONTENT_TITLE = document.createElement('h4');
             CONTENT_TITLE.classList.add('title');
             CONTENT_TITLE.innerHTML = title;
-            grip.children[i].appendChild(CONTENT_TITLE);
+            grip.children[i].children[0].appendChild(CONTENT_TITLE);
 
             const CONTENT_TEXT = document.createElement('button');
             CONTENT_TEXT.classList.add('description');
             (window.localStorage.getItem('language') == 'polish') ? CONTENT_TEXT.innerHTML = 'Sprawdź szczegóły' : CONTENT_TEXT.innerHTML = 'Read more';
-            grip.children[i].appendChild(CONTENT_TEXT);
+            grip.children[i].children[0].appendChild(CONTENT_TEXT);
 
             DESCRIPTION_BTN[i].onclick = () => loadModal(content, price);
         }

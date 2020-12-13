@@ -6,51 +6,74 @@ export class Slider {
         };
         this.options = Object.assign({}, DEFAULT_OPTS, opts);
         this.sliderSelector = elemSelector;
-        this.currentSlide = 0; //aktualny slide
-        this.time = null; //tutaj będziemy podczepiać setTimeout
+        this.currentSlide = 0;
+        this.time = null;
         this.slider = null;
         this.elem = null;
         this.slides = null;
-        this.randomCountry = ['pl', 'de', 'cz'];
+        this.language = window.localStorage.getItem('language');
 
-        this.prev = null; //przycisk prev
-        this.next = null; //przycisk next
+        this.prev = null;
+        this.next = null;
 
         //check if the currently loaded subpage has correct identifier - if not, stop the code
         if(document.querySelector(this.sliderSelector) == undefined) {
             return 0;
         }
-        this.generateListOfSlides();
+
+        this.loadData(this.generateListOfSlides)
         this.generateSlider();
         this.changeSlide(this.currentSlide);
+
     }
 
-    generateListOfSlides() {
+    loadData(callback){
+        let xhr = new XMLHttpRequest();
+        let _path = (this.language == 'polish') ? './json/offer-pl.json' : './json/offer-en.json';
+        let sliderSel = this.sliderSelector;
+        xhr.open('GET', _path, false);
+        xhr.onload = () => {
+            if(xhr.status === 200) {
+                let response = JSON.parse(xhr.responseText);
+                return callback(response, sliderSel);
+                }
+            }
+        xhr.send(null);
+    }
+
+    generateListOfSlides(objJSON, sliderSel) {
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        let country = ['poland', 'germany', 'czechia'];
+        let grip = document.querySelector(sliderSel);
         for (let i = 0; i < 5 ; i++) {
-            let grip = document.querySelector(this.sliderSelector);
+            let randomCountry = country[getRandomInt(0, 2)];
+            console.log(randomCountry);
+            let title = objJSON[randomCountry][i].title;
+            console.log(i);
             const SLIDE_ARTCL = document.createElement('article');
-            SLIDE_ARTCL.classList.add('element', 'text');
-            const SLIDE_CONT = document.createElement('h3');
-            SLIDE_CONT.classList.add('slide');
-            SLIDE_CONT.classList.add('title');
-            let title = document.createTextNode('sample text' + [i]);
-            SLIDE_CONT.appendChild(title);
+            SLIDE_ARTCL.classList.add('element');
+            const SLIDE_CONT = document.createElement('a');
+            const SPAN = document.createElement('span');
+            SLIDE_CONT.href = 'subpages/' + randomCountry + '.html';
+            SLIDE_CONT.classList.add('slide', 'title', 'text');
+            let name = document.createTextNode(title);
+            SPAN.appendChild(name);
+            SLIDE_CONT.appendChild(SPAN);
             SLIDE_ARTCL.appendChild(SLIDE_CONT);
             grip.appendChild(SLIDE_ARTCL);
         }
     }
 
     generateSlider() {
-        //pobieramy element który zamienimy na slider
         this.slider = document.querySelector(this.sliderSelector);
         this.slider.classList.add("slider");
-        //tworzymy kontener dla slajdów
         const SLIDES_CNT = document.createElement("div");
         SLIDES_CNT.classList.add("slider-slides-cnt");
-        //pobieramy element slajdów
         this.slides = this.slider.children;
-        //to jest żywa kolekcja, więc przy przeniesieniu każdego slajdu
-        //jej długość maleje
         while (this.slides.length) {
             this.slides[0].classList.add("slider-slide");
             SLIDES_CNT.appendChild(this.slides[0]);
@@ -68,7 +91,6 @@ export class Slider {
         }
         this.changeSlide(this.currentSlide);
     }
-    // w tej funkcji będzie modyfikacja treści slajdu!!
     slideNext() {
         this.currentSlide++;
         if (this.currentSlide > this.slides.length - 1) {
@@ -84,12 +106,10 @@ export class Slider {
             slide.setAttribute("aria-hidden", true);
         });
 
-        //dodajemy ją tylko wybranemu
         this.slides[i].classList.add("slider-slide-active");
         this.slides[i].children[0].classList.add('active');
         this.slides[i].setAttribute("aria-hidden", false);
 
-        //aktualny slide przestawiamy na wybrany
         this.currentSlide = i;
 
         if (this.options.pauseTime !== 0) {

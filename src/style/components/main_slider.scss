@@ -3,19 +3,20 @@
 @import '../mixins/general_arrow_btn.scss';
 
 .slide.title {
+    text-align: center;
+    max-width: 50%;
     opacity: 0;
     position: relative;
     transition: 2s all;
     z-index: 0;
     left: -2rem;
-    font-size: 2rem;
     color: $second-font;
-}
-@media (min-width: 37.71rem) {
-    .slide.title {
+    font-size: 2rem;
+    @media (min-width: 37.71rem) {
         font-size: 1.2rem;
     }
 }
+
 .slide.title.active{
     opacity: 1;
     z-index: 1;
@@ -28,7 +29,8 @@
     background-color: #fff;
     z-index: 1;
 }
-.slider-slides-cnt > .slider-slide > .slide.title {
+.slider-slides-cnt > .slider-slide > .slide.title,
+.slider-slides-cnt > .slider-slide > .slide.title > .reveal {
     background: transparent;
 }
 

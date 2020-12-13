@@ -3,7 +3,7 @@ import { ModalWindow } from "./ModalWindow.js";
 export class FillContent {
     constructor(classNameSelector, options) {
         const DEFAULT_OPTIONS = {
-            country : "pl",
+            country : "poland",
             _path: '../json/offer-pl.json',
             elementsToGenerate: 5
         };
@@ -25,7 +25,8 @@ export class FillContent {
             let grip = document.getElementById(selector);
 
             const CONTENT_CONTAINER = document.createElement('article');
-            CONTENT_CONTAINER.classList = 'element ' + [i];
+            CONTENT_CONTAINER.classList = 'element ';
+            CONTENT_CONTAINER.id = title.toLowerCase();
             grip.appendChild(CONTENT_CONTAINER);
 
             const CONTENT_TITLE = document.createElement('h4');

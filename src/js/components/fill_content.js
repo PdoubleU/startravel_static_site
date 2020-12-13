@@ -10,7 +10,7 @@ else
     switch(element[0].id) {
         case 'content-de':
             new FillContent('content-de', {
-                country : "de",
+                country : "germany",
                 _path: '../json/offer-pl.json',
                 elementsToGenerate: 5
             });
@@ -18,7 +18,7 @@ else
 
         case 'content-pl':
             new FillContent('content-pl',{
-                country : "pl",
+                country : "poland",
                 _path: '../json/offer-pl.json',
                 elementsToGenerate: 5
             });
@@ -26,7 +26,7 @@ else
 
         case 'content-cz':
             new FillContent('content-cz',{
-                country : "cz",
+                country : "czechia",
                 _path: '../json/offer-pl.json',
                 elementsToGenerate: 5
             });

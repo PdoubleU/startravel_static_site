@@ -50,7 +50,12 @@ body::-webkit-scrollbar {
         display: flex;
     }
     & > .element--one {
+        padding: 2rem;
         grid-row: 1 / 2;
+    }
+    & > .element--one > span {
+        width: 100%;
+        height: 100%;
         background: url('./assets/imgs/small/main_image.jpg');
         background-size: cover;
         color: $second-font;
@@ -61,14 +66,19 @@ body::-webkit-scrollbar {
         background: $second-bkg;
         display: flex;
         align-items: flex-end;
+        padding: 0 2rem 0;
         & > .container-inner {
             display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: flex-end;
+            flex-direction: column-reverse;
+            align-items: center;
             width: 100%;
+            height: 100%;
+            border: .02rem solid $main-bkg;
             & > .text {
-                    margin-left: 0;
+                    margin-bottom: -1rem;
+                    margin-top: 1rem;
+                    background: $second-bkg;
+                    padding: .2rem .8rem;
                 }
             & > .arrow-class {
                    @include general_arrow_btn($font-hover, $main-bkg);
@@ -85,18 +95,33 @@ body::-webkit-scrollbar {
     }
     & > .element--three, .element--three:active {
         grid-row: 2 / 3;
-        padding: 0;
         background: $second-bkg;
+        padding: 0 2rem 2rem;
     }
 }
 
-.container-middle{
+.container-middle {
     @include main_container;
     grid-template-rows: repeat(3, 1fr);
-    font-size: 3rem;
     color: $second-font;
-    & > .element--one, .element--one:active {
+    & > span {
+        background: $second-bkg;
+    }
+    & > span > a > h3 {
+        font-size: 2rem;
+        padding: .2rem .8rem;
+    }
+    & > :nth-child(1) {
         grid-row: 1 / 2;
+        padding: 2rem 2rem 0 2rem;
+    }
+    & > .element--one > a,
+      > .element--one:active > a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
         background: url('./assets/imgs/small/castle.jpg');
         background-size: cover;
         background-position: center;
@@ -104,9 +129,17 @@ body::-webkit-scrollbar {
             filter: grayscale(100%);
         }
     }
-
-    & > .element--two, .element--two:active {
+    & > :nth-child(2) {
         grid-row: 2 / 3;
+        padding: 2rem 2rem 0 2rem;
+    }
+    & > .element--two > a,
+      > .element--two:active > a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
         background: url('./assets/imgs/small/ck.jpg');
         background-size: cover;
         background-position: center;
@@ -114,9 +147,17 @@ body::-webkit-scrollbar {
             filter: grayscale(100%);
         }
     }
-
-    & > .element--three, .element--three:active {
+    & > :nth-child(3) {
         grid-row: 3 / 4;
+        padding: 2rem;
+    }
+    & > .element--three > a,
+      > .element--three:active > a  {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
         background: url('./assets/imgs/small/ksiaz.jpg');
         background-size: cover;
         background-position: center;
@@ -184,21 +225,25 @@ body::-webkit-scrollbar {
         grid-template-columns: 2fr 1fr;
         grid-template-rows: 1fr 1fr;
         & > * {
-            background: $main-bkg;
-            color: $second-font;
+            background: $second-bkg;
+            color: $main-font;
             display: flex;
         }
-        & >.element--one {
+        & > .element--one, .element--one:active {
             grid-column: 1 / 2;
             grid-row: 1 / 3;
+            padding: 4rem 0 2.5rem 2rem;
+        }
+        & > .element--one > span {
             background: url('./assets/imgs/large/main_image.jpg');
             background-size: cover;
             background-position: center;
         }
-        & >.element--two {
+        & > .element--two {
             grid-column: 2 / 3;
             grid-row: 1 / 2;
             color: $main-font;
+            padding: 4rem 2rem 0 2rem;
             & > .container-inner {
                     & > .text span {
                         font-size: 1rem;
@@ -223,7 +268,7 @@ body::-webkit-scrollbar {
         & >.element--three, .element--three:active {
             grid-column: 2 / 3;
             grid-row: 2 / 3;
-            padding: 0;
+            padding: 2rem 2rem 2.5rem 2rem;
         }
     }
     .container-middle {
@@ -232,15 +277,18 @@ body::-webkit-scrollbar {
         grid-template-columns: 1fr 1fr 1fr;
         background: $second-bkg;
         color: $main-font;
-        & > a {
+        & > span {
             background: $second-bkg;
             color: $main-font;
-            padding: .5em;
             }
-        & >.element--one.desktop {
+        & > .element--one.desktop {
             background: $second-bkg;
             grid-column: 1;
             grid-row: 1;
+            padding: 4rem 2rem 2.5rem 0;
+        }
+        & > .element--one.desktop > a {
+
             &:hover{
                 --bkgUrl: url('./assets/imgs/large/castle.jpg');
                 background: var(--bkgUrl);
@@ -258,6 +306,10 @@ body::-webkit-scrollbar {
             background: $second-bkg;
             grid-column: 2;
             grid-row: 1;
+            padding: 4rem 2rem 2.5rem 0;
+        }
+        & >.element--two.desktop > a {
+
             &:hover {
                 --bkgUrl: url('./assets/imgs/large/ck.jpg');
                 background: var(--bkgUrl);
@@ -275,6 +327,10 @@ body::-webkit-scrollbar {
             background: $second-bkg;
             grid-column: 3;
             grid-row: 1;
+            padding: 4rem 2rem 2.5rem 0;
+        }
+        & >.element--three.desktop > a {
+
             &:hover {
                 --bkgUrl: url('./assets/imgs/large/ksiaz.jpg');
                 background: var(--bkgUrl);

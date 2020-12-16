@@ -19,7 +19,7 @@
     font-family: $text-font, 'Huelvetica', sans-serif;
     font-weight: lighter;
 //calc() method in font size assures that the font size will be respond on each window size change
-    font-size: calc(.7rem + 1vw);
+    font-size: calc(.5rem + 1vw);
     line-height: 1.2;
 }
 html {

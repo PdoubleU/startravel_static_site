@@ -21,22 +21,22 @@
     display: flex;
     flex-direction: column;
     scrollbar-width: none;
-    background: $main-bkg;
+    background: $second-bkg;
 }
 body::-webkit-scrollbar {
     display: none;
 }
 .main__page--one {
-    @include main__page($main-bkg, 200vh);
+    @include main__page($second-bkg, 200vh);
 }
 .main__page--two,
 .main__page--three {
-    @include main__page($main-bkg, 100vh);
+    @include main__page($second-bkg, 100vh);
 }
 @media (orientation: landscape) {
     .main__page--two,
     .main__page--three {
-        @include main__page($main-bkg, 200vh);
+        @include main__page($second-bkg, 200vh);
     }
 }
 
@@ -50,7 +50,7 @@ body::-webkit-scrollbar {
         display: flex;
     }
     & > .element--one {
-        padding: 2rem;
+        padding: 1rem;
         grid-row: 1 / 2;
     }
     & > .element--one > span {
@@ -66,7 +66,8 @@ body::-webkit-scrollbar {
         background: $second-bkg;
         display: flex;
         align-items: flex-end;
-        padding: 0 2rem 0;
+        justify-content: center;
+        padding: 0 1rem 0;
         & > .container-inner {
             display: flex;
             flex-direction: column-reverse;
@@ -79,6 +80,7 @@ body::-webkit-scrollbar {
                     margin-top: 1rem;
                     background: $second-bkg;
                     padding: .2rem .8rem;
+                    text-align: center;
                 }
             & > .arrow-class {
                    @include general_arrow_btn($font-hover, $main-bkg);
@@ -96,7 +98,7 @@ body::-webkit-scrollbar {
     & > .element--three, .element--three:active {
         grid-row: 2 / 3;
         background: $second-bkg;
-        padding: 0 2rem 2rem;
+        padding: 0 1rem 1rem;
     }
 }
 
@@ -113,7 +115,7 @@ body::-webkit-scrollbar {
     }
     & > :nth-child(1) {
         grid-row: 1 / 2;
-        padding: 2rem 2rem 0 2rem;
+        padding: 1rem 1rem 0 1rem;
     }
     & > .element--one > a,
       > .element--one:active > a {
@@ -131,7 +133,7 @@ body::-webkit-scrollbar {
     }
     & > :nth-child(2) {
         grid-row: 2 / 3;
-        padding: 2rem 2rem 0 2rem;
+        padding: 1rem 1rem 0 1rem;
     }
     & > .element--two > a,
       > .element--two:active > a {
@@ -149,7 +151,7 @@ body::-webkit-scrollbar {
     }
     & > :nth-child(3) {
         grid-row: 3 / 4;
-        padding: 2rem;
+        padding: 1rem;
     }
     & > .element--three > a,
       > .element--three:active > a  {
@@ -170,17 +172,32 @@ body::-webkit-scrollbar {
     @include main_container;
     grid-template-rows: repeat(3, 1fr);
     font-size: 3rem;
-    & > div {
-        background-color: $second-bkg;
+    background: $second-bkg;
+    & > div > span {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        border: .02rem solid $main-bkg;
+        & > h3 {
+            padding: .2rem .8rem;
+            margin-bottom: -1rem;
+            background: $second-bkg;
+        }
     }
     & >.element--one {
-    grid-row: 1 / 2;
+        padding: 0 1rem;
+        grid-row: 1 / 2;
+
     }
     & >.element--two {
-    grid-row: 2 / 3;
+        padding: 1rem 1rem 0;
+        grid-row: 2 / 3;
     }
     & >.element--three {
-    grid-row: 3 / 4;
+        padding: 1rem 1rem 1rem;
+        grid-row: 3 / 4;
     }
 }
 
@@ -210,12 +227,15 @@ body::-webkit-scrollbar {
         overflow-x: hidden;
         position: absolute;
         scrollbar-width: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
     }
     .inner-wrapper {
         display: grid;
         grid-template-rows: 100%;
         grid-template-columns: 75% 25%;
-        background-color: $main-bkg;
+        background-color: $second-bkg;
         width: fit-content;
         transform: rotate(90deg) translateY(-100vh);
         transform-origin: top left;
@@ -232,7 +252,7 @@ body::-webkit-scrollbar {
         & > .element--one, .element--one:active {
             grid-column: 1 / 2;
             grid-row: 1 / 3;
-            padding: 4rem 0 2.5rem 2rem;
+            padding: 3.5rem 0 2rem 2rem;
         }
         & > .element--one > span {
             background: url('./assets/imgs/large/main_image.jpg');
@@ -243,7 +263,7 @@ body::-webkit-scrollbar {
             grid-column: 2 / 3;
             grid-row: 1 / 2;
             color: $main-font;
-            padding: 4rem 2rem 0 2rem;
+            padding: 3.5rem 2rem 0 2rem;
             & > .container-inner {
                     & > .text span {
                         font-size: 1rem;
@@ -268,7 +288,7 @@ body::-webkit-scrollbar {
         & >.element--three, .element--three:active {
             grid-column: 2 / 3;
             grid-row: 2 / 3;
-            padding: 2rem 2rem 2.5rem 2rem;
+            padding: 2rem 2rem 2rem 2rem;
         }
     }
     .container-middle {
@@ -285,7 +305,7 @@ body::-webkit-scrollbar {
             background: $second-bkg;
             grid-column: 1;
             grid-row: 1;
-            padding: 4rem 2rem 2.5rem 0;
+            padding: 3.5rem 2rem 2rem 0;
         }
         & > .element--one.desktop > a {
 
@@ -306,7 +326,7 @@ body::-webkit-scrollbar {
             background: $second-bkg;
             grid-column: 2;
             grid-row: 1;
-            padding: 4rem 2rem 2.5rem 0;
+            padding: 3.5rem 2rem 2rem 0;
         }
         & >.element--two.desktop > a {
 
@@ -327,7 +347,7 @@ body::-webkit-scrollbar {
             background: $second-bkg;
             grid-column: 3;
             grid-row: 1;
-            padding: 4rem 2rem 2.5rem 0;
+            padding: 3.5rem 2rem 2rem 0;
         }
         & >.element--three.desktop > a {
 
@@ -349,22 +369,35 @@ body::-webkit-scrollbar {
         @include main_container;
         grid-template-rows: 1fr;
         grid-template-columns: repeat(3, 1fr);
-        & > * {
-            background: $second-bkg;
-            color: $main-font;
+        & > div > span {
+            height: 100%;
+            width: 100%;
             display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            border: .02rem solid $main-bkg;
+            & > h3 {
+                width: 80%;
+                text-align: center;
+                padding: .2rem .8rem;
+                margin-bottom: -1rem;
+                background: $second-bkg;
+            }
         }
         & >.element--one {
             grid-column: 1;
             grid-row: 1;
+            padding: 3.5rem 2rem 2rem 0;
         }
         & >.element--two {
             grid-column: 2;
             grid-row: 1;
+            padding: 3.5rem 2rem 2rem 0;
         }
         & >.element--three {
             grid-column: 3;
             grid-row: 1;
+            padding: 3.5rem 2rem 2rem 0;
         }
     }
 }

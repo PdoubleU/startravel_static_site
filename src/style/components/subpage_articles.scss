@@ -5,10 +5,13 @@
 article.element > span {
     display: flex;
     justify-content: space-between;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     font-size: .8rem;
     width: 100%;
     border: .02rem solid $main-bkg;
+    background: $second-bkg;
     & > h4 {
         max-width: 80%;
         margin-top: -1rem;
@@ -18,14 +21,13 @@ article.element > span {
 }
 article.element > span >  button.description {
     @include general_btn($second-bkg, $alt-hover-bkg, $main-font, $second-font, $main-border, $shadow-color-main);
-    margin-bottom: -1rem;
+    margin-bottom: 1rem;
     min-height: 2rem;
 }
 
 @media (pointer: fine) and (min-width: 52rem) {
-    article.element > span {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+    article.element > span >  button.description {
+        margin-bottom: -1rem;
+        min-height: 2rem;
     }
 }

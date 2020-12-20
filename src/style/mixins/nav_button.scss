@@ -28,7 +28,7 @@
     text-align: center;
     background: $bkg_color;
     color: $font_color;
-    border: solid .05rem $border_color;
+    border: solid $btn-border-width $border_color;
     outline: none;
     &:active{
         transform: scale(0.98);
@@ -48,7 +48,6 @@
             }
             background: none;
             box-shadow: none;
-            font-size: inherit;
             font-weight: normal;
             position: relative;
     }

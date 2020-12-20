@@ -11,7 +11,7 @@
     width: fit-content;
     justify-content: center;
     align-items: center;
-    border: solid .05rem $border_color;
+    border: solid $btn-border-width $border_color;
     background: $bkg_color;
     color: $font_color;
     outline: none;

@@ -33,14 +33,25 @@
 }
 .modal_body.gdpr_info {
     & h3 {
-        font-size: 1rem;
+        font-size: 1.2rem;
         margin-bottom: 1rem;
     }
     & h4 {
-        font-size: .8rem;
+        font-size: 1rem;
     }
     & p {
-        font-size: .6rem;
+        font-size: .8rem;
+    }
+    @media (min-width: 52rem) {
+        & h3 {
+            font-size: 1rem;
+        }
+        & h4 {
+            font-size: .8rem;
+        }
+        & p {
+            font-size: .6rem;
+        }
     }
 }
 .modal_close {
@@ -93,7 +104,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        font-size: .675rem;
+        font-size: .8rem;
         padding: 1.5em 2em;
         overflow-y: scroll;
     }

@@ -11,9 +11,9 @@
     z-index: 0;
     left: -2rem;
     color: $second-font;
-    font-size: 2rem;
-    @media (min-width: 37.71rem) {
-        font-size: 1.2rem;
+    font-size: 2.4rem;
+    @media (min-width: 52rem) {
+        font-size: 1.4rem;
     }
 }
 
@@ -88,7 +88,7 @@
 
 .slider-button-next {
     right: 1rem;
-    @media (min-width: 37.71rem) {
+    @media (min-width: 52rem) {
         right: -2rem;
     }
     left: auto;
@@ -101,7 +101,7 @@
 }
 .slider-button-prev {
     left: 1rem;
-    @media (min-width: 37.71rem) {
+    @media (min-width: 52rem) {
         left: -2rem;
     }
     right: auto;
@@ -113,7 +113,7 @@
          }
     }
 }
-@media (min-width: 37.71rem) {
+@media (min-width: 52rem) {
     .slider-button-next {
         margin-right: 1.2rem;
     }
@@ -127,7 +127,7 @@
         &--top,
         &--bottom {
             margin-top: -.1rem;
-            @media (min-width: 37.71rem) {
+            @media (min-width: 52rem) {
                 margin-top: -.06rem;
             }
         }
@@ -144,7 +144,7 @@
             left: .6rem;
         }
     }
-    @media (min-width: 37.71rem) {
+    @media (min-width: 52rem) {
         > .arrow-class {
             &--top,
             &--bottom {
@@ -161,12 +161,12 @@
     position: absolute;
     overflow:hidden;
     background: $alt-hover-btn;
-    @media (min-width: 37.71rem) {
+    @media (min-width: 52rem) {
         background: $second-bkg;
     }
     top: 50%;
     transform: translateY(-50%);
-    @media (min-width: 37.71rem) {
+    @media (min-width: 52rem) {
         width: 2rem;
         height: 2rem;
     }

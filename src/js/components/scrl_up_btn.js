@@ -25,10 +25,19 @@ export const CREATE_BUTTON = () => {
     if (width <= 780 ) {
         isButton =  true;
         let SCRL_BTN = document.createElement('button');
+        let ARROW_TOP = document.createElement('div');
+        let ARROW_BOTTOM = document.createElement('div');
+        let ARROW_CONTAINER = document.createElement('div');
+        ARROW_TOP.className = 'arrow-class--top';
+        ARROW_BOTTOM.className = 'arrow-class--bottom';
+        ARROW_CONTAINER.className = 'arrow-class';
         SCRL_BTN.className = 'scroll_btn';
         SCRL_BTN.setAttribute('aria-label', 'Przewiń do góry');
         SCRL_BTN.setAttribute('tabindex', '0');
         SCRL_BTN.setAttribute('title', 'Przewiń do góry');
+        ARROW_CONTAINER.appendChild(ARROW_TOP);
+        ARROW_CONTAINER.appendChild(ARROW_BOTTOM);
+        SCRL_BTN.appendChild(ARROW_CONTAINER);
         GRIP[0].appendChild(SCRL_BTN);
     }
 }

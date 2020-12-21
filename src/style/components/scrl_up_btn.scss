@@ -1,6 +1,7 @@
 @import '../variables/variables.scss';
 @import '../mixins/general_btn.scss';
 @import '../keyframes/keyframes.scss';
+@import '../mixins/general_arrow_btn.scss';
 
 .scroll_btn {
     @include general_btn($second-bkg, $second-bkg, $main-font, $hover-bkg, $main-border, $shadow-color-main);
@@ -11,11 +12,27 @@
     bottom: 1rem;
     right: 1rem;
     z-index: $mobile-menu-sgl-btn;
+    &:active {
+        transform: none;
+    }
+    & > .arrow-class {
+        @include general_arrow_btn($font-hover, $main-bkg);
+        height: 1.5rem;
+        width: 1.5rem;
+        left: .2rem;
+        bottom: .2rem;
+        transform: rotate(-90deg);
+        &:active,
+         :focus {
+             transform: rotate(-90deg);
+         }
+    }
     @media (min-width: 52rem) {
         height: 2rem;
         width: 2rem;
     }
 }
+
 .scroll_btn--active {
     display: inline-block;
     animation: shake_btn 2s linear;

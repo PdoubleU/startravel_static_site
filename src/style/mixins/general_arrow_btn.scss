@@ -5,13 +5,13 @@
     position: relative;
     height: 2rem;
     width: 2rem;
-    > .arrow-class {
+    >.arrow-class {
     &--top,
     &--bottom {
         position: absolute;
         background: $main-bkg;
         height: .15rem;
-        width: 2rem;
+        width: 100%;
         left: -.4rem;
         &:after {
             background-color: $second-bkg;

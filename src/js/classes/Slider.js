@@ -51,9 +51,7 @@ export class Slider {
         let grip = document.querySelector(sliderSel);
         for (let i = 0; i < 5 ; i++) {
             let randomCountry = country[getRandomInt(0, 2)];
-            console.log(randomCountry);
             let title = objJSON[randomCountry][i].title;
-            console.log(i);
             const SLIDE_ARTCL = document.createElement('article');
             SLIDE_ARTCL.classList.add('element');
             const SLIDE_CONT = document.createElement('a');

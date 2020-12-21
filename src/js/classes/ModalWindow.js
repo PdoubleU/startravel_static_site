@@ -121,7 +121,7 @@ export class ModalWindow {
                     break;
 
                 default:
-                    console.log('Sorry, an error occured. Please reload browser');
+                    void 0;
                     break;
             }
         }

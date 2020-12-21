@@ -12,6 +12,7 @@ article.element > span {
     width: 100%;
     border: $border-width solid $main-bkg;
     background: $second-bkg;
+    box-shadow: $shadow-box;
     & > h4 {
         font-size: 1.4rem;
         max-width: 80%;

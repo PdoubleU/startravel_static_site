@@ -56,10 +56,13 @@ body::-webkit-scrollbar {
     & > .element--one > span {
         width: 100%;
         height: 100%;
+        padding: 0 .05rem .05rem 0;
         background: url('./assets/imgs/small/main_image.jpg');
         background-size: cover;
         color: $second-font;
         background-position: center;
+        box-shadow: $shadow-box;
+        z-index: 10;
     }
     & > .element--two {
         grid-row: 3 / 4;
@@ -75,6 +78,8 @@ body::-webkit-scrollbar {
             width: 100%;
             height: 100%;
             border: $border-width solid $main-bkg;
+            box-shadow: $shadow-box;
+            z-index: 9;
             & > .text {
                     font-size: 2rem;
                     margin-bottom: -1rem;
@@ -128,6 +133,8 @@ body::-webkit-scrollbar {
         background: url('./assets/imgs/small/castle.jpg');
         background-size: cover;
         background-position: center;
+        box-shadow: $shadow-box;
+        z-index: 10;
         &:active {
             filter: grayscale(100%);
         }
@@ -146,6 +153,8 @@ body::-webkit-scrollbar {
         background: url('./assets/imgs/small/ck.jpg');
         background-size: cover;
         background-position: center;
+        box-shadow: $shadow-box;
+        z-index: 9;
         &:active {
             filter: grayscale(100%);
         }
@@ -164,6 +173,8 @@ body::-webkit-scrollbar {
         background: url('./assets/imgs/small/ksiaz.jpg');
         background-size: cover;
         background-position: center;
+        box-shadow: $shadow-box;
+        z-index: 8;
         &:active {
             filter: grayscale(100%);
         }
@@ -181,6 +192,7 @@ body::-webkit-scrollbar {
         justify-content: center;
         align-items: flex-end;
         border: $border-width solid $main-bkg;
+        box-shadow: $shadow-box;
         & > h3 {
             font-size: 2rem;
             padding: .2rem .8rem;
@@ -191,7 +203,6 @@ body::-webkit-scrollbar {
     & >.element--one {
         padding: 1rem 1rem 0;
         grid-row: 1 / 2;
-
     }
     & >.element--two {
         padding: 1rem 1rem 0;

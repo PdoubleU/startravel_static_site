@@ -54,7 +54,13 @@
     grid-template-rows: none;
     grid-template-columns: 100%;
     grid-auto-rows: minmax(25vh, 30vh);
+    @media (orientation: landscape) {
+        grid-auto-rows: 100vh;
+    }
     & > * {
+        @media (orientation: landscape) {
+            min-height: 100vh;
+        }
         background: $second-bkg;
         color: $main-font;
         padding: .5em;

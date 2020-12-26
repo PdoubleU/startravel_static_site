@@ -6,455 +6,462 @@
 @import '../mixins/general_arrow_btn.scss';
 
 .outer-wrapper {
-    width: 100%;
-    height: auto;
-    scrollbar-width: none;
+	width: 100%;
+	height: auto;
+	scrollbar-width: none;
 }
 .inner-wrapper {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    scrollbar-width: none;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	scrollbar-width: none;
 }
 .main {
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    scrollbar-width: none;
-    background: $second-bkg;
+	width: auto;
+	display: flex;
+	flex-direction: column;
+	scrollbar-width: none;
+	background: $second-bkg;
 }
 body::-webkit-scrollbar {
-    display: none;
+	display: none;
 }
 .main__page--one {
-    @include main__page($second-bkg, 200vh);
+	@include main__page($second-bkg, 200vh);
 }
 .main__page--two,
 .main__page--three {
-    @include main__page($second-bkg, 100vh);
+	@include main__page($second-bkg, 100vh);
 }
 @media (orientation: landscape) {
-    .main__page--two,
-    .main__page--three {
-        @include main__page($second-bkg, 200vh);
-    }
+	.main__page--two,
+	.main__page--three {
+		@include main__page($second-bkg, 200vh);
+	}
 }
 
-.container-front{
-    @include main_container;
-    grid-template-columns: 100%;
-    grid-template-rows: 50% 30% 20%;
-    font-size: 3rem;
-    & > * {
-        background-color: $second-bkg;
-        display: flex;
-    }
-    & > .element--one {
-        padding: 1rem;
-        grid-row: 1 / 2;
-    }
-    & > .element--one > span {
-        width: 100%;
-        height: 100%;
-        padding: 0 .05rem .05rem 0;
-        background: url('./assets/imgs/small/main_image.jpg');
-        background-size: cover;
-        color: $second-font;
-        background-position: center;
-        box-shadow: $shadow-box;
-        z-index: 10;
-    }
-    & > .element--two {
-        position: relative;
-        grid-row: 3 / 4;
-        background: $second-bkg;
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        padding: 0 1rem 0;
-        & > .container-inner {
-            display: flex;
-            flex-direction: column-reverse;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-            border: $border-width solid $main-bkg;
-            box-shadow: $shadow-box;
-            z-index: 9;
-            & > .text {
-                    font-size: 2rem;
-                    margin-bottom: -1rem;
-                    margin-top: 1rem;
-                    background: $second-bkg;
-                    padding: .2rem .8rem;
-                    text-align: center;
-                }
-            & > .arrow-class {
-                   @include general_arrow_btn($font-hover, $main-bkg);
-                   transform: rotate(90deg);
-                   &:active,
-                    :focus {
-                        transform: rotate(90deg) scale(.9);
-                    }
-                }
-            & > .social_media_box {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translateX(-50%) translateY(-50%);
-                display: grid;
-                grid-template-rows: repeat(2, 1fr);
-                grid-template-columns: repeat(2, 1fr);
-                @media (min-width: 36rem) {
-                    grid-template-rows: 1fr;
-                    grid-template-columns: repeat(4, 1fr);
-                }
-                gap: 3rem 4rem;
-                & > a {
-                    width: 3rem;
-                    height: 3rem;
-                    & > .icon {
-                        width: 3rem;
-                    }
-                    }
-                }
-            }
-        }
-    & > .element--two.sub {
-        font-size: 1.8rem;
-    }
-    & > .element--three, .element--three:active {
-        grid-row: 2 / 3;
-        background: $second-bkg;
-        padding: 0 1rem 1rem;
-    }
+.container-front {
+	@include main_container;
+	grid-template-columns: 100%;
+	grid-template-rows: 50% 30% 20%;
+	font-size: 3rem;
+	& > * {
+		background-color: $second-bkg;
+		display: flex;
+	}
+	& > .element--one {
+		padding: 1rem;
+		grid-row: 1 / 2;
+	}
+	& > .element--one > span {
+		width: 100%;
+		height: 100%;
+		padding: 0 .05rem .05rem 0;
+		background: url('./assets/imgs/small/main_image.jpg');
+		background-size: cover;
+		color: $second-font;
+		background-position: center;
+		box-shadow: $shadow-box;
+		z-index: 10;
+	}
+	& > .element--two {
+		position: relative;
+		grid-row: 3 / 4;
+		background: $second-bkg;
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+		padding: 0 1rem 0;
+		& > .container-inner {
+			display: flex;
+			flex-direction: column-reverse;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+			height: 100%;
+			border: $border-width solid $main-bkg;
+			box-shadow: $shadow-box;
+			z-index: 9;
+			& > .text {
+				font-size: 2rem;
+				margin-bottom: -1rem;
+				margin-top: .5rem;
+				background: $second-bkg;
+				padding: .2rem .8rem;
+				text-align: center;
+			}
+
+			& > .social_media_box {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translateX(-50%) translateY(-50%);
+				display: grid;
+				grid-template-rows: 1fr;
+				grid-template-columns: repeat(5, 1fr);
+				@media (min-width: 52rem) {
+					grid-template-rows: repeat(3, 1fr);
+					grid-template-columns: repeat(2, 1fr);
+				}
+				gap: 0rem 2rem;
+				& > a {
+					width: 3rem;
+					height: 3rem;
+					& > .icon {
+						width: 3rem;
+					}
+				}
+				& > .arrow-class {
+					grid-column: auto;
+					grid-row: auto;
+					@include general_arrow_btn($font-hover, $main-bkg);
+					transform: rotate(90deg);
+					&:active,
+					&:focus {
+						transform: rotate(90deg) scale(.9);
+					}
+				}
+			}
+		}
+	}
+	& > .element--two.sub {
+		font-size: 1.8rem;
+	}
+	& > .element--three,
+	.element--three:active {
+		grid-row: 2 / 3;
+		background: $second-bkg;
+		padding: 0 1rem 1rem;
+	}
 }
 
 .container-middle {
-    @include main_container;
-    grid-template-rows: repeat(3, 1fr);
-    color: $second-font;
-    & > span {
-        background: $second-bkg;
-    }
-    & > span > a > h3 {
-        font-size: 3rem;
-        padding: .2rem .8rem;
-    }
-    & > :nth-child(1) {
-        grid-row: 1 / 2;
-        padding: 1rem 1rem 0 1rem;
-    }
-    & > .element--one > a,
-      > .element--one:active > a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        background: url('./assets/imgs/small/castle.jpg');
-        background-size: cover;
-        background-position: center;
-        box-shadow: $shadow-box;
-        z-index: 10;
-        &:active {
-            filter: grayscale(100%);
-        }
-    }
-    & > :nth-child(2) {
-        grid-row: 2 / 3;
-        padding: 1rem 1rem 0 1rem;
-    }
-    & > .element--two > a,
-      > .element--two:active > a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        background: url('./assets/imgs/small/ck.jpg');
-        background-size: cover;
-        background-position: center;
-        box-shadow: $shadow-box;
-        z-index: 9;
-        &:active {
-            filter: grayscale(100%);
-        }
-    }
-    & > :nth-child(3) {
-        grid-row: 3 / 4;
-        padding: 1rem 1rem 0;
-    }
-    & > .element--three > a,
-      > .element--three:active > a  {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        background: url('./assets/imgs/small/ksiaz.jpg');
-        background-size: cover;
-        background-position: center;
-        box-shadow: $shadow-box;
-        z-index: 8;
-        &:active {
-            filter: grayscale(100%);
-        }
-    }
+	@include main_container;
+	grid-template-rows: repeat(3, 1fr);
+	color: $second-font;
+	& > span {
+		background: $second-bkg;
+	}
+	& > span > a > h3 {
+		font-size: 3rem;
+		padding: .2rem .8rem;
+	}
+	& > :nth-child(1) {
+		grid-row: 1 / 2;
+		padding: 1rem 1rem 0 1rem;
+	}
+	& > .element--one > a,
+	> .element--one:active > a {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		background: url('./assets/imgs/small/castle.jpg');
+		background-size: cover;
+		background-position: center;
+		box-shadow: $shadow-box;
+		z-index: 10;
+		&:active {
+			filter: grayscale(100%);
+		}
+	}
+	& > :nth-child(2) {
+		grid-row: 2 / 3;
+		padding: 1rem 1rem 0 1rem;
+	}
+	& > .element--two > a,
+	> .element--two:active > a {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		background: url('./assets/imgs/small/ck.jpg');
+		background-size: cover;
+		background-position: center;
+		box-shadow: $shadow-box;
+		z-index: 9;
+		&:active {
+			filter: grayscale(100%);
+		}
+	}
+	& > :nth-child(3) {
+		grid-row: 3 / 4;
+		padding: 1rem 1rem 0;
+	}
+	& > .element--three > a,
+	> .element--three:active > a {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		background: url('./assets/imgs/small/ksiaz.jpg');
+		background-size: cover;
+		background-position: center;
+		box-shadow: $shadow-box;
+		z-index: 8;
+		&:active {
+			filter: grayscale(100%);
+		}
+	}
 }
-.container-end{
-    @include main_container;
-    grid-template-rows: repeat(3, 1fr);
-    font-size: 1.8rem;
-    background: $second-bkg;
-    & > div > span {
-        height: 100%;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        border: $border-width solid $main-bkg;
-        box-shadow: $shadow-box;
-        & > h3 {
-            font-size: 2rem;
-            padding: .2rem .8rem;
-            margin-bottom: -1rem;
-            background: $second-bkg;
-        }
-    }
-    & >.element--one {
-        padding: 1rem 1rem 0;
-        grid-row: 1 / 2;
-    }
-    & >.element--two {
-        padding: 1rem 1rem 0;
-        grid-row: 2 / 3;
-    }
-    & >.element--three {
-        padding: 1rem 1rem 0;
-        margin-bottom: 1rem;
-        grid-row: 3 / 4;
-    }
+.container-end {
+	@include main_container;
+	grid-template-rows: repeat(3, 1fr);
+	font-size: 1.8rem;
+	background: $second-bkg;
+	& > div > span {
+		height: 100%;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+		border: $border-width solid $main-bkg;
+		box-shadow: $shadow-box;
+		& > h3 {
+			font-size: 2rem;
+			padding: .2rem .8rem;
+			margin-bottom: -1rem;
+			background: $second-bkg;
+		}
+	}
+	& > .element--one {
+		padding: 1rem 1rem 0;
+		grid-row: 1 / 2;
+	}
+	& > .element--two {
+		padding: 1rem 1rem 0;
+		grid-row: 2 / 3;
+	}
+	& > .element--three {
+		padding: 1rem 1rem 0;
+		margin-bottom: 1rem;
+		grid-row: 3 / 4;
+	}
 }
 
 @media (pointer: fine) and (min-width: 52rem) {
-    body::-webkit-scrollbar {
-        display: none;
-    }
-    .main {
-        position: relative;
-        width: fit-content;
-        grid-column: 1 / 2;
-        grid-row: 1 / 2;
-        display: flex;
-        flex-direction: row;
-    }
-    .main__page--one,
-    .main__page--two,
-    .main__page--three {
-        @include main__page($main-bkg, 100vh);
-    }
-    .outer-wrapper {
-        width: 100vh;
-        height: 100vw;
-        transform: rotate(-90deg) translateX(-100vh);
-        transform-origin: top left;
-        overflow-y: scroll;
-        overflow-x: hidden;
-        position: absolute;
-        scrollbar-width: none;
-        &::-webkit-scrollbar {
-            display: none;
-        }
-    }
-    .inner-wrapper {
-        display: grid;
-        grid-template-rows: 100%;
-        grid-template-columns: 75% 25%;
-        background-color: $second-bkg;
-        width: fit-content;
-        transform: rotate(90deg) translateY(-100vh);
-        transform-origin: top left;
-    }
-    .container-front{
-        @include main_container;
-        grid-template-columns: 2fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        & > * {
-            background: $second-bkg;
-            color: $main-font;
-            display: flex;
-        }
-        & > .element--one, .element--one:active {
-            grid-column: 1 / 2;
-            grid-row: 1 / 3;
-            padding: 3.5rem 0 2rem 2rem;
-        }
-        & > .element--one > span {
-            background: url('./assets/imgs/large/main_image.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-        & > .element--two {
-            grid-column: 2 / 3;
-            grid-row: 1 / 2;
-            color: $main-font;
-            padding: 3.5rem 2rem 0 2rem;
-            & > .container-inner {
-                border-width: $border-width-desktop;
-                    & > .text span {
-                        font-size: 1rem;
-                    }
-                    & > .arrow-class {
-                        transform: rotate(0deg);
-                        &:active,
-                         :focus {
-                            transform: rotate(0deg) scale(.9);
-                        }
-                        > .arrow-class {
-                        &--top,
-                        &--bottom {
-                                height: .08rem;
-                                width: 1rem;
-                                left: .4rem;
-                            }
-                        }
-                    }
-                    & > .social_media_box {
-                        top: calc(50% + 1rem);
-                        grid-template-rows: repeat(2, 1fr);
-                        grid-template-columns: repeat(2, 1fr);
-                        gap: 2rem 3rem;
-                        & > a {
-                            width: 2rem;
-                            height: 2rem;
-                            & > .icon {
-                                width: 2rem;
-                            }
-                        }
-                    }
-            }
-        }
-        & >.element--three, .element--three:active {
-            grid-column: 2 / 3;
-            grid-row: 2 / 3;
-            padding: 2rem 2rem 2rem 2rem;
-        }
-    }
-    .container-middle {
-        @include main_container;
-        grid-template-rows: 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
-        background: $second-bkg;
-        color: $main-font;
-        & > span {
-            background: $second-bkg;
-            color: $main-font;
-            & > a > h3 {
-                font-size: 2rem;
-                }
-            }
-        & > .element--one.desktop {
-            background: $second-bkg;
-            grid-column: 1;
-            grid-row: 1;
-            padding: 3.5rem 2rem 2rem 0;
-        }
-        & > .element--one.desktop > a {
+	body::-webkit-scrollbar {
+		display: none;
+	}
+	.main {
+		position: relative;
+		width: fit-content;
+		grid-column: 1 / 2;
+		grid-row: 1 / 2;
+		display: flex;
+		flex-direction: row;
+	}
+	.main__page--one,
+	.main__page--two,
+	.main__page--three {
+		@include main__page($main-bkg, 100vh);
+	}
+	.outer-wrapper {
+		width: 100vh;
+		height: 100vw;
+		transform: rotate(-90deg) translateX(-100vh);
+		transform-origin: top left;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		position: absolute;
+		scrollbar-width: none;
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
+	.inner-wrapper {
+		display: grid;
+		grid-template-rows: 100%;
+		grid-template-columns: 75% 25%;
+		background-color: $second-bkg;
+		width: fit-content;
+		transform: rotate(90deg) translateY(-100vh);
+		transform-origin: top left;
+	}
+	.container-front {
+		@include main_container;
+		grid-template-columns: 2fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		& > * {
+			background: $second-bkg;
+			color: $main-font;
+			display: flex;
+		}
+		& > .element--one,
+		.element--one:active {
+			grid-column: 1 / 2;
+			grid-row: 1 / 3;
+			padding: 3.5rem 0 2rem 2rem;
+		}
+		& > .element--one > span {
+			background: url('./assets/imgs/large/main_image.jpg');
+			background-size: cover;
+			background-position: center;
+		}
+		& > .element--two {
+			grid-column: 2 / 3;
+			grid-row: 1 / 2;
+			color: $main-font;
+			padding: 3.5rem 2rem 0 2rem;
+			& > .container-inner {
+				border-width: $border-width-desktop;
+				padding-top: 3rem;
+				& > .text span {
+					font-size: 1rem;
+				}
 
-            &:hover{
-                --bkgUrl: url('./assets/imgs/large/castle.jpg');
-                background: var(--bkgUrl);
-                color: $second-font;
-                animation: animatedBackground .6s linear;
-                transition: background .6s;
-                background-size: cover;
-                background-position: center;
-            }
-            &:hover:active {
-                transform: scale(.99);
-            }
-        }
-        & >.element--two.desktop {
-            background: $second-bkg;
-            grid-column: 2;
-            grid-row: 1;
-            padding: 3.5rem 2rem 2rem 0;
-        }
-        & >.element--two.desktop > a {
-
-            &:hover {
-                --bkgUrl: url('./assets/imgs/large/ck.jpg');
-                background: var(--bkgUrl);
-                color: $second-font;
-                animation: animatedBackground .6s linear;
-                transition: background .6s, color .6s;
-                background-size: cover;
-                background-position: center;
-            }
-            &:hover:active {
-                transform: scale(.99);
-            }
-        }
-        & >.element--three.desktop {
-            background: $second-bkg;
-            grid-column: 3;
-            grid-row: 1;
-            padding: 3.5rem 2rem 2rem 0;
-        }
-        & >.element--three.desktop > a {
-
-            &:hover {
-                --bkgUrl: url('./assets/imgs/large/ksiaz.jpg');
-                background: var(--bkgUrl);
-                color: $second-font;
-                animation: animatedBackground .6s linear;
-                transition: background .6s;
-                background-size: cover;
-                background-position: center;
-            }
-            &:hover:active {
-                transform: scale(.99);
-            }
-        }
-    }
-    .container-end{
-        @include main_container;
-        grid-template-rows: 1fr;
-        grid-template-columns: repeat(3, 1fr);
-        & > div > span {
-            height: 100%;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            border-width: $border-width-desktop;
-            & > h3 {
-                font-size: 1.4rem;
-                width: 80%;
-                text-align: center;
-                padding: .2rem .8rem;
-                margin-bottom: -1rem;
-                background: $second-bkg;
-            }
-        }
-        & >.element--one {
-            grid-column: 1;
-            grid-row: 1;
-            padding: 3.5rem 2rem 2rem 0;
-        }
-        & >.element--two {
-            grid-column: 2;
-            grid-row: 1;
-            padding: 3.5rem 2rem 2rem 0;
-        }
-        & >.element--three {
-            grid-column: 3;
-            grid-row: 1;
-            padding: 3.5rem 2rem 2rem 0;
-            margin-bottom: 0;
-        }
-    }
+				& > .social_media_box {
+					top: calc(50% + 1rem);
+					grid-template-rows: repeat(2, 1fr);
+					grid-template-columns: repeat(2, 1fr);
+					gap: 1rem 2rem;
+					& > a {
+						width: 2rem;
+						height: 2rem;
+						& > .icon {
+							width: 2rem;
+						}
+					}
+					& > .arrow-class {
+						grid-column: 1 / 3;
+						grid-row: 3 / 4;
+						justify-self: center;
+						transform: rotate(0deg);
+						&:active,
+						&:focus {
+							transform: rotate(0deg) scale(.9);
+						}
+						> .arrow-class {
+							&--top,
+							&--bottom {
+								height: .08rem;
+								width: 1rem;
+								left: .4rem;
+							}
+						}
+					}
+				}
+			}
+		}
+		& > .element--three,
+		.element--three:active {
+			grid-column: 2 / 3;
+			grid-row: 2 / 3;
+			padding: 2rem 2rem 2rem 2rem;
+		}
+	}
+	.container-middle {
+		@include main_container;
+		grid-template-rows: 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
+		background: $second-bkg;
+		color: $main-font;
+		& > span {
+			background: $second-bkg;
+			color: $main-font;
+			& > a > h3 {
+				font-size: 2rem;
+			}
+		}
+		& > .element--one.desktop {
+			background: $second-bkg;
+			grid-column: 1;
+			grid-row: 1;
+			padding: 3.5rem 2rem 2rem 0;
+		}
+		& > .element--one.desktop > a {
+			&:hover {
+				--bkgUrl: url('./assets/imgs/large/castle.jpg');
+				background: var(--bkgUrl);
+				color: $second-font;
+				animation: animatedBackground .6s linear;
+				transition: background .6s;
+				background-size: cover;
+				background-position: center;
+			}
+			&:hover:active {
+				transform: scale(.99);
+			}
+		}
+		& > .element--two.desktop {
+			background: $second-bkg;
+			grid-column: 2;
+			grid-row: 1;
+			padding: 3.5rem 2rem 2rem 0;
+		}
+		& > .element--two.desktop > a {
+			&:hover {
+				--bkgUrl: url('./assets/imgs/large/ck.jpg');
+				background: var(--bkgUrl);
+				color: $second-font;
+				animation: animatedBackground .6s linear;
+				transition: background .6s, color .6s;
+				background-size: cover;
+				background-position: center;
+			}
+			&:hover:active {
+				transform: scale(.99);
+			}
+		}
+		& > .element--three.desktop {
+			background: $second-bkg;
+			grid-column: 3;
+			grid-row: 1;
+			padding: 3.5rem 2rem 2rem 0;
+		}
+		& > .element--three.desktop > a {
+			&:hover {
+				--bkgUrl: url('./assets/imgs/large/ksiaz.jpg');
+				background: var(--bkgUrl);
+				color: $second-font;
+				animation: animatedBackground .6s linear;
+				transition: background .6s;
+				background-size: cover;
+				background-position: center;
+			}
+			&:hover:active {
+				transform: scale(.99);
+			}
+		}
+	}
+	.container-end {
+		@include main_container;
+		grid-template-rows: 1fr;
+		grid-template-columns: repeat(3, 1fr);
+		& > div > span {
+			height: 100%;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: flex-end;
+			border-width: $border-width-desktop;
+			& > h3 {
+				font-size: 1.4rem;
+				width: 80%;
+				text-align: center;
+				padding: .2rem .8rem;
+				margin-bottom: -1rem;
+				background: $second-bkg;
+			}
+		}
+		& > .element--one {
+			grid-column: 1;
+			grid-row: 1;
+			padding: 3.5rem 2rem 2rem 0;
+		}
+		& > .element--two {
+			grid-column: 2;
+			grid-row: 1;
+			padding: 3.5rem 2rem 2rem 0;
+		}
+		& > .element--three {
+			grid-column: 3;
+			grid-row: 1;
+			padding: 3.5rem 2rem 2rem 0;
+			margin-bottom: 0;
+		}
+	}
 }
-
-

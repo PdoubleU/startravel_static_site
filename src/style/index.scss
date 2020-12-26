@@ -14,68 +14,71 @@
 @import './components/description_modal_window.scss';
 //root style block has box-sizing set to border-box to avoid unexpected behaviour for box elements:
 
-:root{
-    box-sizing: border-box;
-    font-family: $text-font, 'Huelvetica', sans-serif;
-    font-weight: lighter;
-//calc() method in font size assures that the font size will be respond on each window size change
-    font-size: calc(.5rem + 1vw);
-    line-height: 1.2;
+:root {
+	box-sizing: border-box;
+	font-family: $text-font, 'Huelvetica', sans-serif;
+	font-weight: lighter;
+	//calc() method in font size assures that the font size will be respond on each window size change
+	font-size: calc(.5rem + 1vw);
+	line-height: 1.2;
 }
 html {
-    min-height: 100%;
-  }
-body{
-//background-color: $primary-bkg-color;
-//removes from body initial margin and padding
-    margin: 0;
-    padding: 0;
+	min-height: 100%;
 }
-h1, h2, h3, h4, h5, h6 {
-    padding: 0;
-    margin: 0;
-    font-family: $header-font;
-    font-size: 1.4rem;
-    font-weight: bolder;
+body {
+	//background-color: $primary-bkg-color;
+	//removes from body initial margin and padding
+	margin: 0;
+	padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	padding: 0;
+	margin: 0;
+	font-family: $header-font;
+	font-size: 1.4rem;
+	font-weight: bolder;
 }
 *,
 *::before,
 *::after {
-    box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 a,
 a:visited,
 a:link,
 a:link:active,
-a:visited:active  {
-    all: unset;
-    cursor: pointer;
+a:visited:active {
+	all: unset;
+	cursor: pointer;
 }
 
 button {
-    border: none;
-    margin: 0;
-    padding: 0;
-    width: auto;
-    overflow: visible;
-    background: transparent;
-    /* inherit font & color from ancestor */
-    color: inherit;
-    font: inherit;
-    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
-    line-height: normal;
-    /* Corrects font smoothing for webkit */
-    -webkit-font-smoothing: inherit;
-    -moz-osx-font-smoothing: inherit;
-    /* Corrects inability to style clickable `input` types in iOS */
-    appearance: none;
-    /* Remove excess padding and border in Firefox 4+ */
-    cursor: pointer;
-    &::-moz-focus-inner {
-        border: 0;
-        padding: 0;
-    }
+	border: none;
+	margin: 0;
+	padding: 0;
+	width: auto;
+	overflow: visible;
+	background: transparent;
+	/* inherit font & color from ancestor */
+	color: inherit;
+	font: inherit;
+	/* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+	line-height: normal;
+	/* Corrects font smoothing for webkit */
+	-webkit-font-smoothing: inherit;
+	-moz-osx-font-smoothing: inherit;
+	/* Corrects inability to style clickable `input` types in iOS */
+	appearance: none;
+	/* Remove excess padding and border in Firefox 4+ */
+	cursor: pointer;
+	&::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}
 }
-
-

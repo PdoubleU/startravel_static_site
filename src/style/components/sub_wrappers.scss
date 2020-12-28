@@ -4,152 +4,153 @@
 .poland > .main__page--one,
 .germany > .main__page--one,
 .czechia > .main__page--one {
-        height: 100vh;
-    }
+	height: 100vh;
+}
 .poland > .main__page--two,
 .germany > .main__page--two,
 .czechia > .main__page--two {
-        height: fit-content;
-    }
+	height: fit-content;
+}
 
-.poland :nth-child(1)> .container-front,
-.germany :nth-child(1)> .container-front,
-.czechia :nth-child(1)> .container-front {
-    grid-template-columns: 100%;
-    grid-template-rows: 1fr;
-    & .element--one {
-        grid-row: 1 / 2;
-        font-size: 2rem;
-        color: $second-font;
-        padding: 1rem 1rem 0;
-    }
-    & .element--two{
-        font-size: 1.2rem;
-        grid-row: 2 / 3;
-        padding: 1rem;
-        & > p {
-            margin: 0;
-        }
-    }
+.poland :nth-child(1) > .container-front,
+.germany :nth-child(1) > .container-front,
+.czechia :nth-child(1) > .container-front {
+	grid-template-columns: 1fr;
+	grid-template-rows: 3fr 1fr;
+	& .element--one {
+		grid-row: 1 / 2;
+		grid-column: 1 / 2;
+		font-size: 2rem;
+		color: $second-font;
+		padding: 1rem 1rem 0;
+	}
+	& .element--two {
+		font-size: 1.2rem;
+		grid-row: 2 / 3;
+		grid-column: 1 / 2;
+		padding: 1rem;
+		& > p {
+			margin: 0;
+		}
+	}
 }
-.poland :nth-child(1)> .container > .element--one > span{
-    background: url('./assets/imgs/small/ck.jpg');
-    background-size: cover;
-    background-position: center;
+.poland :nth-child(1) > .container > .element--one > span {
+	background: url('./assets/imgs/small/ck.jpg');
+	background-size: cover;
+	background-position: center;
 }
-.germany :nth-child(1)> .container > .element--one > span{
-    background: url('./assets/imgs/small/ck.jpg');
-    background-size: cover;
-    background-position: center;
+.germany :nth-child(1) > .container > .element--one > span {
+	background: url('./assets/imgs/small/ck.jpg');
+	background-size: cover;
+	background-position: center;
 }
-.czechia :nth-child(1)> .container > .element--one > span{
-    background: url('./assets/imgs/small/ck.jpg');
-    background-size: cover;
-    background-position: center;
+.czechia :nth-child(1) > .container > .element--one > span {
+	background: url('./assets/imgs/small/ck.jpg');
+	background-size: cover;
+	background-position: center;
 }
 .poland :nth-child(2) > .container-middle,
 .germany :nth-child(2) > .container-middle,
 .czechia :nth-child(2) > .container-middle {
-    height: fit-content;
-    grid-template-rows: none;
-    grid-template-columns: 100%;
-    grid-auto-rows: minmax(25vh, 30vh);
-    @media (orientation: landscape) {
-        grid-auto-rows: 100vh;
-    }
-    & > * {
-        @media (orientation: landscape) {
-            min-height: 100vh;
-        }
-        background: $second-bkg;
-        color: $main-font;
-        padding: .5em;
-        display: flex;
-        grid-row: auto;
-    }
+	height: fit-content;
+	grid-template-rows: none;
+	grid-template-columns: 100%;
+	grid-auto-rows: minmax(35vh, 40vh);
+	@media (orientation: landscape) {
+		grid-auto-rows: 100vh;
+		@media (min-width: 52rem) {
+			grid-auto-rows: minmax((35vh, 45vh));
+		}
+	}
+	& > article {
+		background: $second-bkg;
+		color: $main-font;
+		padding: .5em;
+		display: flex;
+		grid-row: auto;
+	}
 }
 
 @media (pointer: fine) and (min-width: 52rem) {
-    .poland > .main__page--one,
-    .germany > .main__page--one,
-    .czechia > .main__page--one {
-        width: 100vw;
-    }
-    .poland > .main__page--one > .container-front,
-    .germany > .main__page--one > .container-front,
-    .czechia > .main__page--one > .container-front {
-        width: 100vw;
-        grid-template-columns: 2fr 1fr;
-        grid-template-rows: 100%;
-        & .element--one {
-            grid-column: 1 / 2;
-            grid-row: 1 / 2;
-            padding: 3.5rem 2rem 2rem 2rem;
-        }
-        & .element--two {
-            grid-column: 2 / 3;
-            grid-row: 1 / 2;
-            padding: 3.5rem 2rem 2rem 0;
-        }
-    }
-    .poland :nth-child(2) > .container-middle,
-    .germany :nth-child(2) > .container-middle,
-    .czechia :nth-child(2) > .container-middle {
-        height: 100vh;
-        width: fit-content;
-        grid-auto-rows: unset;
-        grid-template-rows: 100%;
-        grid-template-columns: unset;
-        grid-auto-columns: minmax(30vw, 33vw);
-        & > article {
-            background: $second-bkg;
-            color: $main-font;
-            grid-row: 1 / 2;
-        }
-        & > article + article {
-            padding: 3.5rem 0 2rem 2rem;
-        }
-        & > :nth-child(1) {
-            padding: 3.5rem 0 2rem 2rem;
-        }
-        & > :nth-last-child(1) {
-            padding: 3.5rem 0 2rem 2rem;
-        }
-        & > :nth-child(1) {
-            z-index: 10;
-        }
-        & > :nth-child(2) {
-            z-index: 9;
-        }
-        & > :nth-child(3) {
-            z-index: 8;
-        }
-        & > :nth-child(4) {
-            z-index: 7;
-        }
-        & > :nth-child(5) {
-            z-index: 6;
-        }
-        & > :nth-child(6) {
-            z-index: 5;
-        }
-        & > :nth-child(7) {
-            z-index: 4;
-        }
-        & > :nth-child(8) {
-            z-index: 3;
-        }
-        & > :nth-child(9) {
-            z-index: 2;
-        }
-        & > :nth-child(10) {
-            z-index: 1;
-        }
-
-    }
-    .poland ~ footer,
-    .germany ~ footer,
-    .czechia ~ footer {
-        margin-left: 2rem;
-    }
+	.poland > .main__page--one,
+	.germany > .main__page--one,
+	.czechia > .main__page--one {
+		width: 100vw;
+	}
+	.poland > .main__page--one > .container-front,
+	.germany > .main__page--one > .container-front,
+	.czechia > .main__page--one > .container-front {
+		width: 100vw;
+		grid-template-columns: 2fr 1fr;
+		grid-template-rows: 100%;
+		& .element--one {
+			grid-column: 1 / 2;
+			grid-row: 1 / 2;
+			padding: 3.5rem 2rem 2rem 2rem;
+		}
+		& .element--two {
+			grid-column: 2 / 3;
+			grid-row: 1 / 2;
+			padding: 3.5rem 2rem 2rem 0;
+		}
+	}
+	.poland :nth-child(2) > .container-middle,
+	.germany :nth-child(2) > .container-middle,
+	.czechia :nth-child(2) > .container-middle {
+		height: 100vh;
+		width: fit-content;
+		grid-auto-rows: unset;
+		grid-template-rows: 100%;
+		grid-template-columns: unset;
+		grid-auto-columns: minmax(30vw, 33vw);
+		& > article {
+			background: $second-bkg;
+			color: $main-font;
+			grid-row: 1 / 2;
+		}
+		& > article + article {
+			padding: 3.5rem 0 2rem 2rem;
+		}
+		& > :nth-child(1) {
+			padding: 3.5rem 0 2rem 2rem;
+		}
+		& > :nth-last-child(1) {
+			padding: 3.5rem 0 2rem 2rem;
+		}
+		& > :nth-child(1) {
+			z-index: 10;
+		}
+		& > :nth-child(2) {
+			z-index: 9;
+		}
+		& > :nth-child(3) {
+			z-index: 8;
+		}
+		& > :nth-child(4) {
+			z-index: 7;
+		}
+		& > :nth-child(5) {
+			z-index: 6;
+		}
+		& > :nth-child(6) {
+			z-index: 5;
+		}
+		& > :nth-child(7) {
+			z-index: 4;
+		}
+		& > :nth-child(8) {
+			z-index: 3;
+		}
+		& > :nth-child(9) {
+			z-index: 2;
+		}
+		& > :nth-child(10) {
+			z-index: 1;
+		}
+	}
+	.poland ~ footer,
+	.germany ~ footer,
+	.czechia ~ footer {
+		margin-left: 2rem;
+	}
 }

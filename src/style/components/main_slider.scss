@@ -2,173 +2,179 @@
 @import '../variables/variables.scss';
 @import '../mixins/general_arrow_btn.scss';
 
-.slide.title {
-    text-align: center;
-    max-width: 50%;
-    opacity: 0;
-    position: relative;
-    transition: 2s all;
-    z-index: 0;
-    left: -2rem;
-    color: $second-font;
-    font-size: 2.4rem;
-    @media (min-width: 52rem) {
-        font-size: 1.4rem;
-    }
+a.slide.title {
+	&,
+	&:active,
+	&:focus,
+	&:visited,
+	&:link {
+		text-align: center;
+		max-width: 50%;
+		opacity: 0;
+		position: relative;
+		transition: 2s all;
+		z-index: 0;
+		left: -2rem;
+		color: $second-font;
+		font-size: 2.2rem;
+		@media (min-width: 52rem) {
+			font-size: 1.4rem;
+		}
+	}
 }
 
-.slide.title.active{
-    opacity: 1;
-    z-index: 1;
-    left: 0;
+a.slide.title.active {
+	opacity: 1;
+	z-index: 1;
+	left: 0;
 }
 .slider {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    box-shadow: $shadow-box;
-    background-color: #fff;
-    z-index: 1;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	box-shadow: $shadow-box;
+	background-color: #fff;
+	z-index: 1;
 }
 .slider-slides-cnt > .slider-slide > .slide.title,
 .slider-slides-cnt > .slider-slide > .slide.title > .reveal {
-    background: transparent;
+	background: transparent;
 }
 
 .slider-slides-cnt :nth-child(1) {
-    background: url('./assets/imgs/small/ck.jpg');
-    background-size: cover;
-    background-position: center;
+	background: url('./assets/imgs/small/ck.jpg');
+	background-size: cover;
+	background-position: center;
 }
 .slider-slides-cnt :nth-child(2) {
-    background: url('./assets/imgs/small/castle.jpg');
-    background-size: cover;
-    background-position: center;
+	background: url('./assets/imgs/small/castle.jpg');
+	background-size: cover;
+	background-position: center;
 }
 .slider-slides-cnt :nth-child(3) {
-    background: url('./assets/imgs/small/rocks.jpg');
-    background-size: cover;
-    background-position: center;
+	background: url('./assets/imgs/small/rocks.jpg');
+	background-size: cover;
+	background-position: center;
 }
 .slider-slides-cnt :nth-child(4) {
-    background: url('./assets/imgs/small/main_image.jpg');
-    background-size: cover;
-    background-position: center;
+	background: url('./assets/imgs/small/main_image.jpg');
+	background-size: cover;
+	background-position: center;
 }
 .slider-slides-cnt :nth-child(5) {
-    background: url('./assets/imgs/small/main_image.jpg');
-    background-size: cover;
-    background-position: center;
+	background: url('./assets/imgs/small/main_image.jpg');
+	background-size: cover;
+	background-position: center;
 }
 /* kontener dla wszystkich slajdów */
 .slider-slides-cnt {
-    height:100%;
-    position: relative;
+	height: 100%;
+	position: relative;
 }
 /* pojedynczy slide */
 .slider-slide {
-    position: absolute;
-    left:0;
-    top:0;
-    margin: 0;
-    width:100%;
-    height:100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    opacity:0;
-    z-index: 0;
-    transition: all 2s ease-in-out;
+	position: absolute;
+	left: 0;
+	top: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	opacity: 0;
+	z-index: 0;
+	transition: all 2s ease-in-out;
 }
 /* slide aktywny */
 .slider-slide-active {
-    opacity: 1;
-    z-index: 1;
+	opacity: 1;
+	z-index: 1;
 }
 
 .slider-button-next {
-    right: 1rem;
-    @media (min-width: 52rem) {
-        right: -2rem;
-    }
-    left: auto;
-    &.arrow-class {
-        &:active,
-         :focus {
-            transform: translateY(-50%) scale(.9);
-        }
-    }
+	right: 1rem;
+	@media (min-width: 52rem) {
+		right: -2rem;
+	}
+	left: auto;
+	&.arrow-class {
+		&:active,
+		:focus {
+			transform: translateY(-50%) scale(.9);
+		}
+	}
 }
 .slider-button-prev {
-    left: 1rem;
-    @media (min-width: 52rem) {
-        left: -2rem;
-    }
-    right: auto;
-    &.arrow-class {
-        transform: translateY(-50%) rotate(180deg);
-        &:active,
-         :focus {
-             transform: translateY(-50%) rotate(180deg) scale(.9);
-         }
-    }
+	left: 1rem;
+	@media (min-width: 52rem) {
+		left: -2rem;
+	}
+	right: auto;
+	&.arrow-class {
+		transform: translateY(-50%) rotate(180deg);
+		&:active,
+		:focus {
+			transform: translateY(-50%) rotate(180deg) scale(.9);
+		}
+	}
 }
 @media (min-width: 52rem) {
-    .slider-button-next {
-        margin-right: 1.2rem;
-    }
-    .slider-button-prev {
-        margin-left: 1.2rem;
-    }
+	.slider-button-next {
+		margin-right: 1.2rem;
+	}
+	.slider-button-prev {
+		margin-left: 1.2rem;
+	}
 }
 //fix difference between center arrow in buttons caused by transform: rotate)
 .slider-button-prev.arrow-class {
-    > .arrow-class {
-        &--top,
-        &--bottom {
-            margin-top: -.1rem;
-            @media (min-width: 52rem) {
-                margin-top: -.06rem;
-            }
-        }
-    }
+	> .arrow-class {
+		&--top,
+		&--bottom {
+			margin-top: -.1rem;
+			@media (min-width: 52rem) {
+				margin-top: -.06rem;
+			}
+		}
+	}
 }
 .slider-button-prev,
 .slider-button-next {
-    @include general_arrow_btn($font-hover, $main-bkg);
-    > .arrow-class {
-        &--top,
-        &--bottom {
-            background: $main-bkg;
-            width: 1.5rem;
-            left: .6rem;
-        }
-    }
-    @media (min-width: 52rem) {
-        > .arrow-class {
-            &--top,
-            &--bottom {
-                background: $font-hover;
-                left: .4rem;
-                height: .08rem;
-                width: 1rem;
-            }
-        }
-    }
-    width: 3rem;
-    height: 3rem;
-    z-index: 2;
-    position: absolute;
-    overflow:hidden;
-    background: $alt-hover-btn;
-    @media (min-width: 52rem) {
-        background: $second-bkg;
-    }
-    top: 50%;
-    transform: translateY(-50%);
-    @media (min-width: 52rem) {
-        width: 2rem;
-        height: 2rem;
-    }
+	@include general_arrow_btn($font-hover, $main-bkg);
+	> .arrow-class {
+		&--top,
+		&--bottom {
+			background: $main-bkg;
+			width: 1.5rem;
+			left: .6rem;
+		}
+	}
+	@media (min-width: 52rem) {
+		> .arrow-class {
+			&--top,
+			&--bottom {
+				background: $font-hover;
+				left: .4rem;
+				height: .08rem;
+				width: 1rem;
+			}
+		}
+	}
+	width: 3rem;
+	height: 3rem;
+	z-index: 2;
+	position: absolute;
+	overflow: hidden;
+	background: $alt-hover-btn;
+	@media (min-width: 52rem) {
+		background: $second-bkg;
+	}
+	top: 50%;
+	transform: translateY(-50%);
+	@media (min-width: 52rem) {
+		width: 2rem;
+		height: 2rem;
+	}
 }

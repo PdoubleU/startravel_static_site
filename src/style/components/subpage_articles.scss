@@ -3,40 +3,63 @@
 @import '../mixins/general_btn.scss';
 
 article.element > span {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    font-size: 1rem;
-    width: 100%;
-    border: $border-width solid $main-bkg;
-    background: $second-bkg;
-    box-shadow: $shadow-box;
-    & > h4 {
-        font-size: 1.4rem;
-        max-width: 80%;
-        margin-top: -1rem;
-        background: $second-bkg;
-        padding: .2rem .8rem;
-    }
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	font-size: 1rem;
+	width: 100%;
+	border: $border-width solid $main-bkg;
+	background: $second-bkg;
+	box-shadow: $shadow-box;
+	& > h4 {
+		font-size: 1.4rem;
+		max-width: 80%;
+		margin-top: -1rem;
+		background: $second-bkg;
+		padding: .2rem .8rem;
+	}
 }
-article.element > span >  button.description {
-    @include general_btn($second-bkg, $alt-hover-bkg, $main-font, $second-font, $main-border, $shadow-color-main);
-    font-size: 1.4rem;
-    @media (min-width: 52rem) {
-        font-size: 1rem;
-    }
-    margin-bottom: 1rem;
-    min-height: 2rem;
+article.element > span > .frame {
+	max-width: 90%;
+	max-height: 75%;
+	padding: 1rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	& > img {
+		margin-right: 1em;
+	}
+}
+article.element > span > button.description {
+	@include general_btn($second-bkg, $alt-hover-bkg, $main-font, $second-font, $main-border, $shadow-color-main);
+	font-size: 1.4rem;
+	@media (min-width: 52rem) {
+		font-size: 1rem;
+	}
+	margin-bottom: 1rem;
+	min-height: 2rem;
 }
 
 @media (pointer: fine) and (min-width: 52rem) {
-    article.element > span {
-        border-width: $border-width-desktop;
-    }
-    article.element > span >  button.description {
-        margin-bottom: -1rem;
-        min-height: 2rem;
-    }
+	article.element > span {
+		border-width: $border-width-desktop;
+	}
+	article.element > span > .frame {
+		max-width: 90%;
+		max-height: 80%;
+		padding: 2rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		& > img {
+			width: fit-content;
+			align-self: center;
+		}
+	}
+	article.element > span > button.description {
+		margin-bottom: -1rem;
+		min-height: 2rem;
+	}
 }

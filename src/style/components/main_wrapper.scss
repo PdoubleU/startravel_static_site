@@ -279,11 +279,17 @@ body::-webkit-scrollbar {
 	.main__page--two,
 	.main__page--three {
 		@include main__page($main-bkg, 100vh);
+		@media (orientation: portrait) and (hover: none) {
+			height: 50vh;
+		}
 	}
 	.outer-wrapper {
-		width: 100vh;
-		height: 100vw;
+		width: 100vw;
+		height: 100vh;
 		@media (pointer: fine) {
+			//checking if user has ie. tablet with high resolution screen or computer/laptop and can use pointing device like touchpad or mouse
+			width: 100vh;
+			height: 100vw;
 			transform: rotate(-90deg) translateX(-100vh);
 			transform-origin: top left;
 			overflow-y: scroll;

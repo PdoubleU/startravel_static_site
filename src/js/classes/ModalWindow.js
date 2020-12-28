@@ -26,21 +26,28 @@ export class ModalWindow {
 		this.formIsHidden = this.options.formIsHidden;
 		this.language = window.localStorage.getItem('language');
 
-		this.generateHTMLTags();
+		this.generateHTMLTags(); // generates frame of modal window and after that other methods puts correct content into
 
 		if (this.content == 'form' || this.content == 'gdpr') {
+			// create simple modal window with form or gdpr info
 			this.loadData(this.generateContent);
 		}
 		if (this.content == 'description') {
+			// create modal window with description and hidden form
 			this.loadDescription();
 			this.loadData(this.generateContent);
 		}
 		if (this.actionBtn) {
+			// executes method responsible for launching proper function after hitting button on the screen
 			this.action_btn();
 		}
 	}
+	// below method is responsible for create all content inside modal window - effects depend on provided parameters
+	generateContent(response, language, formClassName, isHidden, aux_btn, aux_function) {
+		function hideForm(formElem) {
+			formElem.style.height == '110%' ? (formElem.style.height = '0%') : (formElem.style.height = '110%');
+		}
 
-	generateContent(response, language, formClassName, isHidden, aux_btn) {
 		let grip = document.getElementsByTagName('body')[0];
 		const MODAL_CONTENT = document.createElement('div');
 		MODAL_CONTENT.classList.add('content-container');
@@ -49,9 +56,13 @@ export class ModalWindow {
 		grip.lastChild.children[0].lastChild.appendChild(MODAL_CONTENT);
 		let elem = document.getElementsByClassName('content-container form')[0];
 		let auxiliary_btn = document.getElementsByClassName('auxiliary_btn')[0];
+
 		isHidden ? (elem.style.height = '0%') : { return: 1 };
 		aux_btn ? (auxiliary_btn.style.display = 'relative') : (auxiliary_btn.style.display = 'none');
+
+		auxiliary_btn.onclick = () => hideForm(elem);
 	}
+	// below method creates frame of modal window and action button which is responsible for further actions with modal window
 	generateHTMLTags() {
 		let grip = document.getElementsByTagName('body');
 		const MODAL_ARTICLE = document.createElement('article');
@@ -91,10 +102,10 @@ export class ModalWindow {
 			CLOSE_BTN.onclick = () => MODAL_ARTICLE.remove();
 		}
 	}
+
+	// this method is called when tapping action button - switch statement filter choosen action for button
 	action_btn() {
 		const ACTION_BTN = document.getElementsByClassName('action_btn');
-		const AUX_BTN = document.getElementsByClassName('modal')[0].nodeList;
-		console.log(AUX_BTN);
 
 		const ACTION = () => {
 			switch (this.action) {
@@ -121,7 +132,7 @@ export class ModalWindow {
 		};
 		ACTION_BTN[0].onclick = ACTION;
 	}
-
+	// this method fetches json file with particular response from choosen path and takes callback function which is responsible for creating modal window's content based on fetched data
 	loadData(callback) {
 		let xhr = new XMLHttpRequest();
 		let isSubpage = document.getElementById('main_page') ? true : false;
@@ -139,7 +150,7 @@ export class ModalWindow {
 		};
 		xhr.send(null);
 	}
-
+	// this one is executed only if option called contet is set to 'description' and put inside modal window's frame price details and info about product
 	loadDescription() {
 		let grip = document.getElementsByTagName('body');
 		const MODAL_CONTENT = document.createElement('div');

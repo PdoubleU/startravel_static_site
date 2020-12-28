@@ -2,63 +2,62 @@
 @import '../variables/variables.scss';
 
 .modal_body.description {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 3fr 1fr .3fr;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 3fr 1fr .3fr;
 }
 
 .content-container.description {
-    grid-row: 1 / 2;
-    display: flex;
-    justify-content: center;
-    font-size: 1.2rem;
+	grid-row: 1 / 2;
+	display: flex;
+	justify-content: center;
+	font-size: 1.2rem;
 }
 .price-container {
-    grid-row: 2 / 3;
-    display: flex;
-    justify-content: center;
+	grid-row: 2 / 3;
+	display: flex;
+	justify-content: center;
 }
 .action_btn.description {
-    font-size: 1.2rem;
-    grid-row: 3 / 4;
-    z-index: 500;
-    margin-bottom: 4em;
+	font-size: 1.2rem;
+	grid-row: 3 / 4;
+	margin-bottom: 4em;
 }
 .cost {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 2rem;
 }
 .cost > span {
-    margin-top: 0;
+	margin-top: 0;
 }
 .cost-currency {
-    font-size: 1.2rem;
+	font-size: 1.2rem;
 }
 .cost-integer {
-    font-size: 2.2rem;
+	font-size: 2.2rem;
 }
 .cost-decimal {
-    font-size: 1.2rem;
-    align-self: flex-start;
+	font-size: 1.2rem;
+	align-self: flex-start;
 }
 .modal_body.description > .content-container.form {
-    display: flex;
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    background-color: grey;
-    top: calc(100%-110%);
-    width: 100%;
-    height: 0%;
-    transition: height .6s ease-in-out;
-    overflow: hidden;
+	display: flex;
+	position: absolute;
+	align-items: center;
+	justify-content: center;
+	background-color: grey;
+	top: calc(100%-110%);
+	width: 100%;
+	height: 0%;
+	transition: height .6s ease-in-out;
+	overflow: hidden;
 }
 
 @media (min-width: 37.71rem) {
-    .action_btn.description {
-        font-size: 1rem;
-        margin-bottom: 1em;
-    }
+	.action_btn.description {
+		font-size: .8rem;
+		margin-bottom: 1em;
+	}
 }

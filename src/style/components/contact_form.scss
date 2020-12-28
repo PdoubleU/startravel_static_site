@@ -3,62 +3,63 @@
 @import '../mixins/general_btn.scss';
 
 .contact_form_header {
-    font-size: 1.3rem;
-    margin-top: 0;
+	font-size: 1.3rem;
+	margin-top: 0;
 }
 
 .contact_form {
-    width: 65vw;
-    display: flex;
-    flex-direction: column;
-    font-size: 1.1rem;
-    margin-bottom: 0;
-    & > .sub_btn {
-        @include general_btn($second-bkg, $alt-hover-bkg, $main-font, $second-font, $main-border, $shadow-color-main);
-    }
+	width: 65vw;
+	display: flex;
+	flex-direction: column;
+	font-size: 1.1rem;
+	margin-bottom: 0;
+	& > .sub_btn {
+		@include general_btn($second-bkg, $alt-hover-bkg, $main-font, $second-font, $main-border, $shadow-color-main);
+	}
 }
 label {
-    margin-top: .8em;
-    margin-bottom: .2em;
+	margin-top: .8em;
+	margin-bottom: .2em;
 }
 
 textarea {
-    width: 100%;
-    min-height: 4em;
-    resize: vertical;
-    font-size: inherit;
-    font-family: inherit;
-    border: $form-border solid $main-font;
-    margin-bottom: 1em;
-    &:hover,
-    &:focus {
-         border-width: .08rem;
-     }
+	width: 100%;
+	min-height: 4em;
+	resize: vertical;
+	font-size: inherit;
+	font-family: inherit;
+	border: $form-border solid $main-font;
+	margin-bottom: 1em;
+	&:hover,
+	&:focus {
+		border-width: .08rem;
+	}
 }
 input {
-    min-height: 2em;
-    font-size: inherit;
-    appearance: none;
-    border: $form-border solid $main-font;
-    &:hover,
-    &:focus {
-        border-width: .08rem;
-    }
-    &.sub_btn {
-        min-height: 1rem;
-    }
+	min-height: 2em;
+	font-size: inherit;
+	appearance: none;
+	border: $form-border solid $main-font;
+	&:hover,
+	&:focus {
+		border-width: .08rem;
+	}
+	&.sub_btn {
+		min-height: 1rem;
+		font-size: 1rem;
+	}
 }
 
-@media (min-width:  37.71rem){
-    .contact_form {
-        width: 50vw;
-        font-size: 1rem;
-    }
-    textarea {
-        width: 100%;
-    }
-    input.sub_btn {
-        min-height: 1rem;
-        font-size: 1rem;
-    }
+@media (min-width: 37.71rem) {
+	.contact_form {
+		width: 50vw;
+		font-size: 1rem;
+	}
+	textarea {
+		width: 100%;
+	}
+	input.sub_btn {
+		min-height: 1rem;
+		font-size: .8rem;
+	}
 }

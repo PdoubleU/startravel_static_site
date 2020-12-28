@@ -2,126 +2,130 @@
 @import '../mixins/general_btn.scss';
 
 .modal {
-    display: flex;
-    position: relative;
-    z-index: $modal_window_index;
+	display: flex;
+	position: relative;
+	z-index: $modal_window_index;
 }
 
 .modal_backdrop {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: hsla(200, 50, 10, 0.5);
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: hsla(200, 50, 10, 0.5);
 }
 
 .modal_body {
-    display: flex;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 100%;
-    width: 100%;
-    text-align: center;
-    flex-direction: column-reverse;
-    justify-content: center;
-    padding: 1.5em 1em;
-    background-color:white;
-    overflow: auto;
+	display: flex;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	flex-direction: column-reverse;
+	justify-content: center;
+	padding: 1.5em 1em;
+	background-color: white;
+	overflow: auto;
 }
 .modal_body.gdpr_info {
-    & h3 {
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
-    }
-    & h4 {
-        font-size: 1rem;
-    }
-    & p {
-        font-size: .8rem;
-    }
-    @media (min-width: 52rem) {
-        & h3 {
-            font-size: 1rem;
-        }
-        & h4 {
-            font-size: .8rem;
-        }
-        & p {
-            font-size: .6rem;
-        }
-    }
+	& h3 {
+		font-size: 1.2rem;
+		margin-bottom: 1rem;
+	}
+	& h4 {
+		font-size: 1rem;
+	}
+	& p {
+		font-size: .8rem;
+	}
+	@media (min-width: 52rem) {
+		& h3 {
+			font-size: 1rem;
+		}
+		& h4 {
+			font-size: .8rem;
+		}
+		& p {
+			font-size: .6rem;
+		}
+	}
 }
 .modal_close {
-    display: flex;
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 3rem;
-    width: 3rem;
-    padding: 0;
-    background: transparent;
-    border: none;
-    cursor: pointer;
+	display: flex;
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 3rem;
+	width: 3rem;
+	padding: 0;
+	background: transparent;
+	border: none;
+	cursor: pointer;
 }
 .modal_close::before {
-    position: absolute;
-    top: 30%;
-    left: 60%;
-    margin-top: -1rem;
-    margin-left: -1.2rem;
-    content: '\2716';
-    font-size: 2rem;
-    text-align: center;
+	position: absolute;
+	top: 30%;
+	left: 60%;
+	margin-top: -1rem;
+	margin-left: -1.2rem;
+	content: '\2716';
+	font-size: 2rem;
+	text-align: center;
 }
 .content-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: .675rem;
-    padding: 1em 1.2em;
-    overflow-y: scroll;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: .675rem;
+	padding: 1em 1.2em;
+	overflow-y: scroll;
 }
-.action_btn {
-    align-self: center;
-    justify-self: center;
-    font-size: 1rem;
-    @include general_btn($second-bkg, $alt-hover-bkg, $main-font, $second-font, $main-border, $shadow-color-main);
-    &.gdpr_info {
-        padding: .8rem 1.2rem;
-    }
-    margin-top: .6em;
+.action_btn,
+.auxiliary_btn {
+	align-self: center;
+	justify-self: center;
+	font-size: 1rem;
+	line-height: 1.2;
+	@include general_btn($second-bkg, $alt-hover-bkg, $main-font, $second-font, $main-border, $shadow-color-main);
+	&.gdpr_info {
+		padding: .8rem 1.2rem;
+	}
+	margin-top: .6em;
 }
-
 
 @media (min-width: 37.71rem) {
-    .modal_body {
-        padding: 2em 3em;
-    }
-    .content-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-size: .8rem;
-        padding: 1.5em 2em;
-        overflow-y: scroll;
-    }
+	.modal_body {
+		padding: 2em 3em;
+	}
+	.content-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		font-size: .8rem;
+		padding: 1.5em 2em;
+		overflow-y: scroll;
+	}
 }
 @media (min-width: 52rem) {
-    .modal_body{
-        height: 90vh;
-        width: 80vw;
-    }
-    .modal_close::before {
-        font-size: 1.2rem;
-        top: 40%;
-        left: 90%;
-        margin-top: -1rem;
-        margin-left: -1.2rem;
-    }
-    .action_btn {
-        font-size: .8rem;
-    }
+	.modal_body {
+		height: 90vh;
+		width: 80vw;
+	}
+	.modal_close::before {
+		font-size: 1.2rem;
+		top: 40%;
+		left: 90%;
+		margin-top: -1rem;
+		margin-left: -1.2rem;
+	}
+	.action_btn,
+	.auxiliary_btn {
+		font-size: .8rem;
+		min-height: 1rem;
+		margin-top: 1rem;
+	}
 }

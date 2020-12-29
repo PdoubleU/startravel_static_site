@@ -53,6 +53,9 @@
 	height: 0%;
 	transition: height .6s ease-in-out;
 	overflow: hidden;
+	& > h2.contact_form_header {
+		margin-top: 3rem;
+	}
 }
 
 @media (min-width: 37.71rem) {

@@ -56,10 +56,10 @@
 	grid-template-rows: none;
 	grid-template-columns: 100%;
 	grid-auto-rows: minmax(35vh, 40vh);
-	@media (orientation: landscape) {
+	@media (orientation: landscape) and (hover: none) {
 		grid-auto-rows: 100vh;
 		@media (min-width: 52rem) {
-			grid-auto-rows: minmax((35vh, 45vh));
+			grid-auto-rows: minmax(40vh, 60vh);
 		}
 	}
 	& > article {
@@ -98,11 +98,11 @@
 	.germany :nth-child(2) > .container-middle,
 	.czechia :nth-child(2) > .container-middle {
 		height: 100vh;
-		width: fit-content;
+		width: auto;
 		grid-auto-rows: unset;
 		grid-template-rows: 100%;
 		grid-template-columns: unset;
-		grid-auto-columns: minmax(30vw, 33vw);
+		grid-auto-columns: minmax(40vh, 70vh);
 		& > article {
 			background: $second-bkg;
 			color: $main-font;

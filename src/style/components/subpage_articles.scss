@@ -24,12 +24,13 @@ article.element > span {
 article.element > span > .frame {
 	max-width: 90%;
 	max-height: 75%;
-	padding: 1rem;
+	padding: 1.3rem;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	& > img {
 		margin-right: 1em;
+		max-width: 100%;
 	}
 }
 article.element > span > button.description {
@@ -49,12 +50,12 @@ article.element > span > button.description {
 	article.element > span > .frame {
 		max-width: 90%;
 		max-height: 80%;
-		padding: 2rem;
+		padding: 1rem;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		& > img {
-			width: fit-content;
+		& > img.frame_image {
+			object-fit: contain;
 			align-self: center;
 			margin-right: 0;
 		}

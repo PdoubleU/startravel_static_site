@@ -267,9 +267,8 @@ body::-webkit-scrollbar {
 	}
 	.main {
 		position: relative;
-		width: fit-content;
 		height: fit-content;
-		@media (pointer: fine) {
+		@media (pointer: fine) and (orientation: landscape) {
 			flex-direction: row;
 			grid-column: 1 / 2;
 			grid-row: 1 / 2;
@@ -279,14 +278,14 @@ body::-webkit-scrollbar {
 	.main__page--two,
 	.main__page--three {
 		@include main__page($main-bkg, 100vh);
-		@media (orientation: portrait) and (hover: none) {
+		@media (orientation: portrait) and (hover: none), (orientation: portrait) {
 			height: 50vh;
 		}
 	}
 	.outer-wrapper {
 		width: 100vw;
 		height: 100vh;
-		@media (pointer: fine) {
+		@media (pointer: fine) and (orientation: landscape) {
 			//checking if user has ie. tablet with high resolution screen or computer/laptop and can use pointing device like touchpad or mouse
 			width: 100vh;
 			height: 100vw;
@@ -302,7 +301,7 @@ body::-webkit-scrollbar {
 		}
 	}
 	.inner-wrapper {
-		@media (pointer: fine) {
+		@media (pointer: fine) and (orientation: landscape) {
 			display: grid;
 			grid-template-rows: 100%;
 			grid-template-columns: 75% 25%;
@@ -398,7 +397,7 @@ body::-webkit-scrollbar {
 			grid-column: 1;
 			grid-row: 1;
 			padding: 0 .5rem 2rem 2rem;
-			@media (pointer: fine) {
+			@media (pointer: fine) and (orientation: landscape) {
 				padding: 3.5rem 2rem 2rem 0;
 				margin-right: 0;
 			}
@@ -422,7 +421,7 @@ body::-webkit-scrollbar {
 			grid-column: 2;
 			grid-row: 1;
 			padding: 0 1.25rem 2rem 1.25rem;
-			@media (pointer: fine) {
+			@media (pointer: fine) and (orientation: landscape) {
 				padding: 3.5rem 2rem 2rem 0;
 			}
 		}
@@ -445,7 +444,7 @@ body::-webkit-scrollbar {
 			grid-column: 3;
 			grid-row: 1;
 			padding: 0 2rem 2rem .5rem;
-			@media (pointer: fine) {
+			@media (pointer: fine) and (orientation: landscape) {
 				padding: 3.5rem 2rem 2rem 0;
 			}
 		}
@@ -488,7 +487,7 @@ body::-webkit-scrollbar {
 			grid-column: 1;
 			grid-row: 1;
 			padding: 0 .5rem 2rem 2rem;
-			@media (pointer: fine) {
+			@media (pointer: fine) and (orientation: landscape) {
 				padding: 3.5rem 2rem 2rem 0;
 			}
 		}
@@ -496,7 +495,7 @@ body::-webkit-scrollbar {
 			grid-column: 2;
 			grid-row: 1;
 			padding: 0 1.25rem 2rem 1.25rem;
-			@media (pointer: fine) {
+			@media (pointer: fine) and (orientation: landscape) {
 				padding: 3.5rem 2rem 2rem 0;
 			}
 		}
@@ -505,7 +504,7 @@ body::-webkit-scrollbar {
 			grid-row: 1;
 			padding: 0 2rem 2rem .5rem;
 			margin-bottom: 0;
-			@media (pointer: fine) {
+			@media (pointer: fine) and (orientation: landscape) {
 				padding: 3.5rem 2rem 2rem 0;
 			}
 		}

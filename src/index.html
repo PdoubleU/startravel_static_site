@@ -3,11 +3,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!--this part set html display: none to prevent FOUC event-->
+    <!--this part checks if browser is internet explorer and if yes, set style for webpage-->
+    <style type="text/css">html{display:none;}@mediascreen\0 {.header,aside,img,.outer-wrapper{display:none;}.no-support {box-sizing:border-box;padding:2rem 4rem;font-size:1rem;position:absolute;display:flexbox;text-align:center;text-justify:centerbackground:black;color:white;width:100%;min-height:100%;}}hr{margin:1em 0;}h2.no-support-txt{position:absolute;top:50%;left:0;margin: 0 3rem;line-height:1.4;transform:translateY(-50%);align-self:center;}
+    </style>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Encode+Sans+Expanded:wght@300;400;800&family=Josefin+Sans:ital,wght@0,300;0,400;0,700;1,500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Blinker:wght@300;600&family=Encode+Sans+Expanded:wght@300;400;800&family=Josefin+Sans:ital,wght@0,300;0,400;0,700;1,500&display=swap" rel="stylesheet">
 </head>
 <body id='main_page'>
+    <div class="no-support">
+    <h2 class="no-support-txt">We always provide highest service. This browser does not support most modern solutions for websites, thus we do not focus on Internet Explorer. Please visit us through other browsers: Chrome, Firefox, Opera or Microsoft Edge. See you soon!<hr>Zawsze dbamy o najwyższy poziom usług. Ta przeglądarka nie wspiera najnowszych rozwiązań dla stron internetowych dlatego nie udostępniamy tutaj naszej witryny. Zapraszamy do innych przeglądarek: Chrome, Firefox, Opera lub Microsoft Edge. Do zobaczenia!</h2>
+    </div>
     <header class="header_top">
         <div class="nav-mobile">
             <div class="logo text"><span><img src='./assets/logo-star.svg' alt='Logo firmy'/></span></div>

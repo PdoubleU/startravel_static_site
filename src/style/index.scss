@@ -12,8 +12,9 @@
 @import './components/reveal_txt.scss';
 @import './components/contact_form.scss';
 @import './components/description_modal_window.scss';
-//root style block has box-sizing set to border-box to avoid unexpected behaviour for box elements:
+@import './mixins/edge_ie_style.scss';
 
+//root style block has box-sizing set to border-box to avoid unexpected behaviour for box elements:
 :root {
 	box-sizing: border-box;
 	font-family: $text-font, 'Huelvetica', sans-serif;
@@ -80,5 +81,21 @@ button {
 	&::-moz-focus-inner {
 		border: 0;
 		padding: 0;
+	}
+}
+
+//below rules apply if the browser not support mentioned in brackets, which is characteristic only for IE and EDGE version <=44
+@media screen\9 {
+	@include edge_ie_style;
+	.nav-desktop {
+		background: $second-bkg;
+		box-shadow: $shadow-box;
+	}
+}
+@media screen\0 {
+	@include edge_ie_style;
+	.nav-desktop {
+		background: $second-bkg;
+		box-shadow: $shadow-box;
 	}
 }

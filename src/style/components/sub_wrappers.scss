@@ -10,6 +10,7 @@
 .germany > .main__page--two,
 .czechia > .main__page--two {
 	height: fit-content;
+	width: fit-content;
 }
 
 .poland :nth-child(1) > .container-front,
@@ -53,13 +54,17 @@
 .germany :nth-child(2) > .container-middle,
 .czechia :nth-child(2) > .container-middle {
 	height: fit-content;
-	grid-template-rows: none;
+	width: fit-content;
+	grid-template-rows: unset;
 	grid-template-columns: 100%;
-	grid-auto-rows: minmax(35vh, 40vh);
+	grid-auto-rows: minmax 100vh;
+	@media (min-width: 37rem) {
+		grid-auto-rows: minmax(30vh, 60vh);
+	}
 	@media (orientation: landscape) and (hover: none) {
 		grid-auto-rows: 100vh;
 		@media (min-width: 52rem) {
-			grid-auto-rows: minmax(40vh, 60vh);
+			grid-auto-rows: minmax(45vh, 60vh);
 		}
 	}
 	& > article {
@@ -68,6 +73,7 @@
 		padding: .5em;
 		display: flex;
 		grid-row: auto;
+		grid-column: auto;
 	}
 }
 //below rules apply if the browser not support mentioned in brackets, which is characteristic only for IE and EDGE version <=44
@@ -77,6 +83,9 @@
 		.germany > .main__page--one,
 		.czechia > .main__page--one {
 			width: 100vw;
+			@media (orientation: portrait) {
+				height: 50vh;
+			}
 		}
 		.poland > .main__page--one > .container-front,
 		.germany > .main__page--one > .container-front,
@@ -98,25 +107,50 @@
 		.poland :nth-child(2) > .container-middle,
 		.germany :nth-child(2) > .container-middle,
 		.czechia :nth-child(2) > .container-middle {
-			height: 100vh;
-			width: auto;
-			grid-auto-rows: unset;
-			grid-template-rows: 100%;
-			grid-template-columns: unset;
-			grid-auto-columns: minmax(40vh, 70vh);
+			height: fit-content;
+			width: fit-content;
+			grid-template-rows: unset;
+			grid-template-columns: 100%;
+			grid-auto-rows: minmax(35vh, 40vh);
+			@media (orientation: landscape) and (hover: none) {
+				grid-auto-rows: 100vh;
+				@media (min-width: 52rem) {
+					grid-auto-rows: minmax(40vh, 60vh);
+				}
+			}
+			@media (pointer: fine) and (orientation: landscape) {
+				height: 100vh;
+				width: fit-content;
+				grid-auto-rows: unset;
+				grid-template-rows: 100%;
+				grid-template-columns: unset;
+				grid-auto-columns: minmax(35vw, 45vw);
+			}
 			& > article {
 				background: $second-bkg;
 				color: $main-font;
-				grid-row: 1 / 2;
+				grid-row: auto;
+				@media (pointer: fine) and (orientation: landscape) {
+					grid-row: 1 / 2;
+				}
 			}
 			& > article + article {
-				padding: 3.5rem 0 2rem 2rem;
+				padding: 2rem 2rem 0 2rem;
+				@media (pointer: fine) and (orientation: landscape) {
+					padding: 3.5rem 0 2rem 2rem;
+				}
 			}
 			& > :nth-child(1) {
-				padding: 3.5rem 0 2rem 2rem;
+				padding: 2rem 2rem 0 2rem;
+				@media (pointer: fine) and (orientation: landscape) {
+					padding: 3.5rem 0 2rem 2rem;
+				}
 			}
 			& > :nth-last-child(1) {
-				padding: 3.5rem 0 2rem 2rem;
+				padding: 2rem 2rem 0 2rem;
+				@media (pointer: fine) and (orientation: landscape) {
+					padding: 3.5rem 0 2rem 2rem;
+				}
 			}
 			& > :nth-child(1) {
 				z-index: 10;
@@ -152,7 +186,10 @@
 		.poland ~ footer,
 		.germany ~ footer,
 		.czechia ~ footer {
-			margin-left: 2rem;
+			margin-top: 2rem;
+			@media (pointer: fine) and (orientation: landscape) {
+				margin-left: 2rem;
+			}
 		}
 	}
 }

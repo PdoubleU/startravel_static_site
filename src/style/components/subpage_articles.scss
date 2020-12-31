@@ -26,11 +26,25 @@ article.element > span > .frame {
 	max-height: 75%;
 	padding: 1.3rem;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
+	@media (min-width: 37rem) {
+		flex-direction: row;
+	}
 	justify-content: space-between;
-	& > img {
-		margin-right: 1em;
-		max-width: 100%;
+	& > img.frame_image {
+		margin-right: 0;
+		max-height: 80%;
+		object-fit: cover;
+		object-position: center;
+		@media (min-width: 37rem) {
+			margin-right: 1rem;
+			max-height: unset;
+		}
+	}
+	& > p.frame_content {
+		@media (min-width: 37rem) {
+			align-self: center;
+		}
 	}
 }
 article.element > span > button.description {
@@ -53,11 +67,20 @@ article.element > span > button.description {
 		padding: 1rem;
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		@media (orientation: portrait) {
+			flex-direction: row;
+		}
 		justify-content: space-between;
 		& > img.frame_image {
 			object-fit: contain;
 			align-self: center;
 			margin-right: 0;
+			@media (orientation: portrait) {
+				flex-direction: row;
+				margin-right: 1rem;
+			}
 		}
 	}
 	article.element > span > button.description {

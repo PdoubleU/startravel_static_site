@@ -45,11 +45,12 @@
 				text-align: center;
 			}
 		}
-		& > * > img {
+		& > * > img.icon {
 			filter: invert(1);
 			width: 2.2rem;
 			height: 2.2rem;
 			margin-bottom: .8em;
+			margin-top: .8em;
 		}
 	}
 	& > article {
@@ -96,6 +97,9 @@
 			min-height: unset;
 			width: 100vw;
 			height: 100vh;
+			@media (orientation: portrait) {
+				height: 50vh;
+			}
 			@media (pointer: fine) {
 				grid-row: 1 / 2;
 				grid-column: 2 / 3;

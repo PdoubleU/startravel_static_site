@@ -83,6 +83,51 @@ button {
 		padding: 0;
 	}
 }
-.no-support {
-	display: none;
+.hidden_header {
+	width: 0;
+	height: 0;
+	padding: 0;
+	margin: 0;
+	visibility: hidden;
+}
+@media not screen\0 {
+	.no-support {
+		display: none;
+	}
+}
+//this part checks if browser is internet explorer and if yes, set style for webpage
+@media screen\0 {
+	html {
+		display: block;
+	}
+	.header,
+	aside,
+	img,
+	.outer-wrapper {
+		display: none;
+	}
+	.no-support {
+		z-index: 9999;
+		box-sizing: border-box;
+		border: 1rem solid yellow;
+		font-size: 1rem;
+		padding-top: 8rem;
+		position: absolute;
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+		text-justify: center;
+		background: black;
+		color: white;
+		width: 100%;
+		min-height: 100%;
+		> hr {
+			margin: 2rem 0;
+			width: 60%;
+		}
+		> h2.no-support-txt {
+			margin-top: 5rem;
+			min-height: 100%;
+		}
+	}
 }

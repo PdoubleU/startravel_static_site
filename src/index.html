@@ -1,28 +1,28 @@
-<!DOCTYPE html lang="en">
+<!DOCTYPE html lang="pl">
 <head>
+    <span id="placeholder-injected-css"></span>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!--this part set html display: none to prevent FOUC event-->
-    <!--this part checks if browser is internet explorer and if yes, set style for webpage-->
-    <style type="text/css">html{display:none;}@mediascreen\0 {.header,aside,img,.outer-wrapper{display:none;}.no-support {box-sizing:border-box;padding:2rem 4rem;font-size:1rem;position:absolute;display:flexbox;text-align:center;text-justify:centerbackground:black;color:white;width:100%;min-height:100%;}}hr{margin:1em 0;}h2.no-support-txt{position:absolute;top:50%;left:0;margin: 0 3rem;line-height:1.4;transform:translateY(-50%);align-self:center;}
-    </style>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Encode+Sans+Expanded:wght@300;400;800&family=Josefin+Sans:ital,wght@0,300;0,400;0,700;1,500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Blinker:wght@300;600&family=Encode+Sans+Expanded:wght@300;400;800&family=Josefin+Sans:ital,wght@0,300;0,400;0,700;1,500&display=swap" rel="stylesheet">
+    <!--this part set html display: none to prevent FOUC event-->
+    <style>html{display:none;}</style>
 </head>
 <body id='main_page'>
     <div class="no-support">
-    <h2 class="no-support-txt">We always provide highest service. This browser does not support most modern solutions for websites, thus we do not focus on Internet Explorer. Please visit us through other browsers: Chrome, Firefox, Opera or Microsoft Edge. See you soon!<hr>Zawsze dbamy o najwyższy poziom usług. Ta przeglądarka nie wspiera najnowszych rozwiązań dla stron internetowych dlatego nie udostępniamy tutaj naszej witryny. Zapraszamy do innych przeglądarek: Chrome, Firefox, Opera lub Microsoft Edge. Do zobaczenia!</h2>
+        <div><h2 class="no-support-txt">We always provide highest service. This browser does not support most modern solutions for websites, thus we do not focus on Internet Explorer. Please visit us through other browsers: Chrome, Firefox, Opera or Microsoft Edge. See you soon!</h2><hr><h2 class="no-support-txt">Zawsze dbamy o najwyższy poziom usług. Ta przeglądarka nie wspiera najnowszych rozwiązań dla stron internetowych dlatego nie udostępniamy tutaj naszej witryny. Zapraszamy do innych przeglądarek: Chrome, Firefox, Opera lub Microsoft Edge. Do zobaczenia!</h2>
+        </div>
     </div>
     <header class="header_top">
         <div class="nav-mobile">
             <div class="logo text"><span><img src='./assets/logo-star.svg' alt='Logo firmy'/></span></div>
-            <input type="checkbox" class="menu-open" name="menu-open" id="menu-open" href="#" aria-label="Otwiera menu główne" title="otwiera menu główne" tabindex="0"></input>
+            <input type="checkbox" class="menu-open" name="menu-open" id="menu-open" aria-label="Otwiera menu główne" title="otwiera menu główne" tabindex="0"></input>
             <label class="menu-btn" for="menu-open">
-                <p class="text"><span class="menu-btn__box">
+                <span class="text"><span class="menu-btn__box">
                     <span class="menu-btn__inner"></span></span>
-                </p>
+                </span>
             </label>
             <nav class="top-nav">
                 <div><a class="top-nav__button mobile" href='#home' id='go_home' tabindex="0"><p class="text"><span>Strona&nbsp;Główna</span></p></a></div>
@@ -35,10 +35,10 @@
         <div class="nav-desktop">
             <div class="logo--dskt text"><span><img src='./assets/logo.png' alt='Logo firmy'/></span></div>
             <nav class="top-nav--dskt">
-                <div class="background-transparent"><a class="top-nav__button" href='#home' id='go_home' tabindex="0"><div class="background-roll-down"></div><p class="text"><span>Strona&nbsp;Główna</span></p></a></div>
-                <div class="background-transparent"><a class="top-nav__button" href='#destinations' id='go_destinations' tabindex="0"><div class="background-roll-down"></div><p class="text"><span>Kierunki</span></p></a></div>
-                <div class="background-transparent"><a class="top-nav__button" href='#info' id='go_info' tabindex="0"><div class="background-roll-down"></div><p class="text" ><span>Informacje</span></p></a></div>
-                <div class="background-transparent"><a class="top-nav__button" href='#about_us' id='go_about' tabindex="0"><div class="background-roll-down"></div><p class="text"><span>O nas</span></p></a></div>
+                <div class="background-transparent"><a class="top-nav__button" href='#home' id='go_home_dskt' tabindex="0"><div class="background-roll-down"></div><p class="text"><span>Strona&nbsp;Główna</span></p></a></div>
+                <div class="background-transparent"><a class="top-nav__button" href='#destinations' id='go_destinations_dskt' tabindex="0"><div class="background-roll-down"></div><p class="text"><span>Kierunki</span></p></a></div>
+                <div class="background-transparent"><a class="top-nav__button" href='#info' id='go_info_dskt' tabindex="0"><div class="background-roll-down"></div><p class="text" ><span>Informacje</span></p></a></div>
+                <div class="background-transparent"><a class="top-nav__button" href='#about_us' id='go_about_dskt' tabindex="0"><div class="background-roll-down"></div><p class="text"><span>O nas</span></p></a></div>
             </nav>
         </div>
     </header>
@@ -54,63 +54,66 @@
     <div class="outer-wrapper">
         <div class="inner-wrapper">
             <main class="main">
-                <article class="main__page--one" id="home">
+                <section class="main__page--one main-section" id="home">
                     <div class="container container-front">
-                        <div class="element--one"><span><h1 class="text"><span>Main background picture with company's logo</span></h1></div></span>
+                        <div class="element--one"><div><h1 class="text"><span>Star Travel Wroclaw</span></h1></div></div>
                         <div class="element--two">
-                            <div class="container-inner">
-                                <h3 class="text"><span>Skontaktuj sie z nami</span></h3>
+                            <section class="container-inner social-media-section">
+                                <h2 class="text"><span>Skontaktuj sie z nami</span></h2>
 
                                 <div class="social_media_box">
-                                    <a href='#' class="social_media"><img class="icon" src="assets/imgs/icons/facebook.svg"></a>
-                                    <a href='#' class="social_media"><img class="icon" src="assets/imgs/icons/instagram.svg"></a>
-                                    <a href='#' class="social_media"><img class="icon" src="assets/imgs/icons/arroba.svg"></a>
-                                    <a href='#' class="social_media"><img class="icon" src="assets/imgs/icons/whatsapp.svg"></a>
+                                    <a href='#' class="social_media"><img class="icon" src="assets/imgs/icons/facebook.svg" alt="Icon representing Facebook logo"></a>
+                                    <a href='#' class="social_media"><img class="icon" src="assets/imgs/icons/instagram.svg" alt="Icon representing Instagram logo"></a>
+                                    <a href='#' class="social_media"><img class="icon" src="assets/imgs/icons/arroba.svg" alt="Icon representing email logo"></a>
+                                    <a href='#' class="social_media"><img class="icon" src="assets/imgs/icons/whatsapp.svg" alt="Icon representing Whatspapp logo"></a>
                                     <button class="arrow-class .get-contact" id="contact_us" onclick="location.href='./index.html#contact'" tabindex="0" type="button" title="Przenieś do sekcji kontakt" aria-label="Przenosi do sekcji zawierające informacje kontaktowe z firmą">
-                                        <div class="arrow-class--top"></div>
-                                        <div class="arrow-class--bottom"></div>
+                                        <span class="arrow-class--top"></span>
+                                        <span class="arrow-class--bottom"></span>
                                     </button>
                                 </div>
-                            </div>
+                            </section>
                         </div>
                         <div class="element--three">
                             <div class="elements-list" id="slider"></div>
                         </div>
                     </div>
-                </article>
-                <article class="main__page--two" id="destinations">
+                </section>
+                <section class="main__page--two destination-section" id="destinations">
+                    <h2 class="hidden_header">Wybierz interesujący Ciebie kraj</h2>
                     <div class="container container-middle" id='test'>
-                        <span class="element--one desktop"><a href='subpages/poland.html'><h3 class="text"><span>Poland</span></h3></a></span>
-                        <span class="element--two desktop"><a href='subpages/czechia.html'><h3 class="text"><span>Czechia</span></h3></a></span>
-                        <span class="element--three desktop"><a href='subpages/germany.html'><h3 class="text"><span>Germany</span></h3></a></span>
+                        <span class="element--one desktop"><a href='subpages/poland.html'><span class="text"><span>Polska</span></span></a></span>
+                        <span class="element--two desktop"><a href='subpages/czechia.html'><span class="text"><span>Czechy</span></span></a></span>
+                        <span class="element--three desktop"><a href='subpages/germany.html'><span class="text"><span>Niemcy</span></span></a></span>
                     </div>
-                </article>
-                <article class="main__page--three" id="info">
+                </section>
+                <section class="main__page--three about-us-section" id="info">
+                    <h2 class="hidden_header">Dowiedz się więcej o nas</h2>
                     <div class="container container-end">
-                        <div class="element--one"><span><h3 class="text"><span>How do we prepare trips</span></h3></div></span>
-                        <div class="element--two"><span><h3 class="text"><span>Be safe during journey</span></h3></div></span>
-                        <div class="element--three"><span><h3 class="text"><span>Transportation services</span></h3></div></span>
+                        <div class="element--one"><div><p class="text"><span>Jak przygotowujemy wyjazdy</span></p></div></div>
+                        <div class="element--two"><div><p class="text"><span>Bezpieczeństwo podczas podróży</span></p></div></div>
+                        <div class="element--three"><div><p class="text"><span>Usługi transportowe</span></p></div></div>
                     </div>
                 </article>
             </main>
             <footer class="footer" id="about_us">
-                <div class="footer-content">
+                <section class="footer-content footer-section">
+                    <h2 class="hidden_header">Stopka witryny</h2>
                     <div class="footer-content--inner">
-                        <article class="footer-art"><img class="icon" src="assets/imgs/icons/phone-call.svg"><br><p class="text"><span>Some sample content here.</span></p></article>
-                        <article class="footer-art"><img class="icon" src="assets/imgs/icons/clock.svg"><br><p class="text"><span>Some sample content here.</span></p></article>
-                        <article class="footer-art"><img class="icon" src="assets/imgs/icons/shield.svg"><br><p class="text"><span>Some sample content here.</span></p></article>
-                        <article class="footer-art"><img class="icon" src="assets/imgs/icons/location.svg"><br><p class="text"><span>Some sample content here.</span></p></article>
+                        <article class="footer-art"><img class="icon" src="assets/imgs/icons/phone-call.svg" alt="Icon representing phone picture"><br><p class="text"><span>Oddzwonimy w ciągu 12 godzin</span></p></article>
+                        <article class="footer-art"><img class="icon" src="assets/imgs/icons/clock.svg" alt="Icon representing representing analog clock"><br><p class="text"><span>Some sample content here.</span></p></article>
+                        <article class="footer-art"><img class="icon" src="assets/imgs/icons/shield.svg" alt="Icon representing shield"><br><p class="text"><span>Nasi klienci są ubezpieczeni</span></p></article>
+                        <article class="footer-art"><img class="icon" src="assets/imgs/icons/location.svg" alt="Icon representing location pointer"><br><p class="text"><span>Działamy we Wrocławiu</span></p></article>
                     </div>
                     <hr>
-                    <article class="footer-art">
-                        <div class="art-container"><p class="text"><span>Some sample content here. Some sample content here.</span></p><br>
-                            <p class="text"><span>Some sample content here. Some sample content here.</span></p></div>
+                    <article class="footer-art address">
+                        <div class="art-container"><p class="text"><span>Star Cab<br>Klaudia Dzawidzinska<br>ul. Polna 28A<br>52-116 Iwiny<br>NIP 751 10 74 693</span></p><br>
+                            <p class="text"><span>Telefon +48 605 434 141<br>E-mail info@startravel.wroclaw.pl</span></p></div>
                     </article>
                     <hr>
                     <article class="footer-art" id="contact">
-                        <button class='open-form' tabindex="0" title="Otwórz formularz kontaktowy" aria-label="Otwiera formularz kontaktowy"><p class="text"><span>Skontaktuj się z nami</span></p></button>
+                        <button class='open-form' tabindex="0" title="Otwórz formularz kontaktowy" aria-label="Otwiera formularz kontaktowy"><span class="text"><span>Skontaktuj się z nami</span></span></button>
                     </article>
-                </div>
+                </section>
                 <div class="signature">
                     <p class="text"><span>Website author: Piotr Witasik / PdoubleU &copy; 2020</span></p>
                     <p class="contriubution">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></p>

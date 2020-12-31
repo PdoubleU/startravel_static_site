@@ -35,17 +35,17 @@
 		}
 	}
 }
-.poland :nth-child(1) > .container > .element--one > span {
+.poland :nth-child(1) > .container > .element--one > div {
 	background: url('./assets/imgs/small/ck.jpg');
 	background-size: cover;
 	background-position: center;
 }
-.germany :nth-child(1) > .container > .element--one > span {
+.germany :nth-child(1) > .container > .element--one > div {
 	background: url('./assets/imgs/small/ck.jpg');
 	background-size: cover;
 	background-position: center;
 }
-.czechia :nth-child(1) > .container > .element--one > span {
+.czechia :nth-child(1) > .container > .element--one > div {
 	background: url('./assets/imgs/small/ck.jpg');
 	background-size: cover;
 	background-position: center;
@@ -186,7 +186,6 @@
 		.poland ~ footer,
 		.germany ~ footer,
 		.czechia ~ footer {
-			margin-top: 2rem;
 			@media (pointer: fine) and (orientation: landscape) {
 				margin-left: 2rem;
 			}

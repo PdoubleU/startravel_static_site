@@ -67,7 +67,7 @@ body::-webkit-scrollbar {
 		padding: 1rem;
 		grid-row: 1 / 2;
 	}
-	& > .element--one > span {
+	& > .element--one > div {
 		width: 100%;
 		height: 100%;
 		padding: 0 .05rem .05rem 0;
@@ -231,7 +231,7 @@ body::-webkit-scrollbar {
 	grid-template-rows: repeat(3, 1fr);
 	font-size: 1.8rem;
 	background: $second-bkg;
-	& > div > span {
+	& > div > div {
 		height: 100%;
 		width: 100%;
 		display: flex;
@@ -239,7 +239,7 @@ body::-webkit-scrollbar {
 		align-items: flex-end;
 		border: $border-width solid $main-bkg;
 		box-shadow: $shadow-box;
-		& > h3 {
+		& > p {
 			font-size: 2rem;
 			padding: .2rem .8rem;
 			margin-bottom: -1rem;
@@ -327,7 +327,7 @@ body::-webkit-scrollbar {
 				grid-row: 1 / 3;
 				padding: 3.5rem 0 2rem 2rem;
 			}
-			& > .element--one > span {
+			& > .element--one > div {
 				background: url('./assets/imgs/large/main_image.jpg');
 				background-size: cover;
 				background-position: center;
@@ -390,7 +390,7 @@ body::-webkit-scrollbar {
 			& > span {
 				background: $second-bkg;
 				color: $main-font;
-				& > a > h3 {
+				& > a > span {
 					font-size: 2rem;
 				}
 			}
@@ -469,14 +469,14 @@ body::-webkit-scrollbar {
 			@include main_container;
 			grid-template-rows: 1fr;
 			grid-template-columns: repeat(3, 1fr);
-			& > div > span {
+			& > div > div {
 				height: 100%;
 				width: 100%;
 				display: flex;
 				justify-content: center;
 				align-items: flex-end;
 				border-width: $border-width-desktop;
-				& > h3 {
+				& > p {
 					font-size: 1.4rem;
 					width: 80%;
 					text-align: center;

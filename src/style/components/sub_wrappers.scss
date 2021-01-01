@@ -5,6 +5,9 @@
 .germany > .main__page--one,
 .czechia > .main__page--one {
 	height: 100vh;
+	@media (orientation: landscape) {
+		height: calc(100vh * 1.24);
+	}
 }
 .poland > .main__page--two,
 .germany > .main__page--two,
@@ -57,7 +60,7 @@
 	width: fit-content;
 	grid-template-rows: unset;
 	grid-template-columns: 100%;
-	grid-auto-rows: minmax 100vh;
+	grid-auto-rows: auto;
 	@media (min-width: 37rem) {
 		grid-auto-rows: minmax(30vh, 60vh);
 	}
@@ -186,8 +189,10 @@
 		.poland ~ footer,
 		.germany ~ footer,
 		.czechia ~ footer {
+			margin-top: 2rem;
 			@media (pointer: fine) and (orientation: landscape) {
 				margin-left: 2rem;
+				margin-top: 0;
 			}
 		}
 	}

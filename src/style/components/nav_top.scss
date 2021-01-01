@@ -60,10 +60,10 @@ input.menu-open {
 	align-items: center;
 	justify-content: center;
 	top: 50%;
-	margin-top: -2rem;
+	margin-top: -2.4rem;
 	right: 1rem;
-	width: 3rem;
-	height: 3rem;
+	width: 4rem;
+	height: 4rem;
 	z-index: $mobile-menu-sgl-btn;
 }
 .menu-btn__box {
@@ -230,10 +230,13 @@ input.menu-open {
 	}
 	.logo--dskt {
 		display: inline;
-		font-size: .8rem;
-		& img {
-			max-width: 11vw;
-			height: auto;
+		& > span {
+			max-height: 2.4rem;
+			& > img {
+				max-height: 2.4rem;
+				height: auto;
+				align-self: center;
+			}
 		}
 	}
 	.top-nav--dskt {

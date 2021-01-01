@@ -58,7 +58,6 @@ body::-webkit-scrollbar {
 	@media (orientation: landscape) {
 		grid-template-rows: 40% 40% 20%;
 	}
-	font-size: 3rem;
 	& > * {
 		background-color: $second-bkg;
 		display: flex;
@@ -73,16 +72,21 @@ body::-webkit-scrollbar {
 		padding: 0 .05rem .05rem 0;
 		background: url('./assets/imgs/small/main_image.jpg');
 		background-size: cover;
-		color: $second-font;
 		background-position: center;
 		box-shadow: $shadow-box;
 		z-index: 10;
-		& > div {
-			background: $second-bkg;
-			& > h1 {
-				background-clip: text;
-				color: transparent;
-			}
+		display: flex;
+		align-items: flex-end;
+		justify-content: flex-start;
+		& > h1 {
+			font-size: 3rem;
+			max-width: 80%;
+			margin: 0 0 1rem 1rem;
+			font-weight: normal;
+			color: $second-font;
+			background-color: transparent;
+			width: fit-content;
+			padding: .2rem .8rem;
 		}
 	}
 	& > .element--two {
@@ -164,15 +168,16 @@ body::-webkit-scrollbar {
 .container-middle {
 	@include main_container;
 	grid-template-rows: repeat(3, 1fr);
-	color: $second-font;
 	& > span {
 		background: $second-bkg;
 	}
 	& > span > a > span {
-		font-size: 3rem;
+		font-size: 2.2rem;
 		padding: .2rem .8rem;
 		background: $second-bkg;
 		color: $main-font;
+		font-weight: normal;
+		font-family: $header-font;
 	}
 	& > :nth-child(1) {
 		grid-row: 1 / 2;
@@ -329,7 +334,6 @@ body::-webkit-scrollbar {
 			grid-template-rows: 1fr 1fr;
 			& > * {
 				background: $second-bkg;
-				color: $main-font;
 				display: flex;
 			}
 			& > .element--one,
@@ -342,6 +346,9 @@ body::-webkit-scrollbar {
 				background: url('./assets/imgs/large/main_image.jpg');
 				background-size: cover;
 				background-position: center;
+				> h1 {
+					font-size: 2rem;
+				}
 			}
 			& > .element--two {
 				grid-column: 2 / 3;
@@ -366,7 +373,7 @@ body::-webkit-scrollbar {
 							}
 						}
 						& > .arrow-class {
-							margin-top: 1rem;
+							margin-top: .2rem;
 							grid-column: 1 / 3;
 							transform: rotate(0deg);
 							&:active,
@@ -402,7 +409,7 @@ body::-webkit-scrollbar {
 				background: $second-bkg;
 				color: $main-font;
 				& > a > span {
-					font-size: 2rem;
+					font-size: 1.6rem;
 					background: $second-bkg;
 					color: $main-font;
 				}

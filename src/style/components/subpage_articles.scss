@@ -4,7 +4,11 @@
 
 article.element > span {
 	display: flex;
-	justify-content: space-between;
+	position: relative;
+	justify-content: flex-start;
+	@media (orientation: portrait) {
+		justify-content: center;
+	}
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
@@ -14,9 +18,10 @@ article.element > span {
 	background: $second-bkg;
 	box-shadow: $shadow-box;
 	& > h4 {
+		position: absolute;
 		font-size: 1.4rem;
 		max-width: 80%;
-		margin-top: -1rem;
+		top: -1rem;
 		background: $second-bkg;
 		padding: .2rem .8rem;
 	}
@@ -25,6 +30,7 @@ article.element > span > .frame {
 	max-width: 90%;
 	max-height: 75%;
 	padding: 1.3rem;
+	margin-top: 1rem;
 	display: flex;
 	flex-direction: column;
 	@media (min-width: 37rem) {
@@ -50,6 +56,8 @@ article.element > span > .frame {
 article.element > span > button.description {
 	@include general_btn($second-bkg, $alt-hover-bkg, $main-font, $second-font, $main-border, $shadow-color-main);
 	font-size: 1.4rem;
+	position: absolute;
+	bottom: 1rem;
 	@media (min-width: 52rem) {
 		font-size: 1rem;
 	}
@@ -60,6 +68,10 @@ article.element > span > button.description {
 @media (pointer: fine) and (min-width: 52rem) {
 	article.element > span {
 		border-width: $border-width-desktop;
+		justify-content: flex-end;
+		@media (orientation: portrait) {
+			justify-content: center;
+		}
 	}
 	article.element > span > .frame {
 		max-width: 90%;
@@ -72,7 +84,6 @@ article.element > span > button.description {
 		@media (orientation: portrait) {
 			flex-direction: row;
 		}
-		justify-content: space-between;
 		& > img.frame_image {
 			object-fit: contain;
 			align-self: center;
@@ -84,6 +95,7 @@ article.element > span > button.description {
 		}
 	}
 	article.element > span > button.description {
+		position: static;
 		margin-bottom: -1rem;
 		min-height: 2rem;
 	}

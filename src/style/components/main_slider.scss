@@ -16,9 +16,10 @@ a.slide.title {
 		z-index: 0;
 		left: -2rem;
 		color: $main-font;
-		font-size: 2.2rem;
+		font-size: 2rem;
+		font-family: $header-font;
 		@media (min-width: 52rem) {
-			font-size: 1.4rem;
+			font-size: 1.2rem;
 		}
 	}
 }

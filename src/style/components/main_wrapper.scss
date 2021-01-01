@@ -77,6 +77,13 @@ body::-webkit-scrollbar {
 		background-position: center;
 		box-shadow: $shadow-box;
 		z-index: 10;
+		& > div {
+			background: $second-bkg;
+			& > h1 {
+				background-clip: text;
+				color: transparent;
+			}
+		}
 	}
 	& > .element--two {
 		position: relative;
@@ -161,9 +168,11 @@ body::-webkit-scrollbar {
 	& > span {
 		background: $second-bkg;
 	}
-	& > span > a > h3 {
+	& > span > a > span {
 		font-size: 3rem;
 		padding: .2rem .8rem;
+		background: $second-bkg;
+		color: $main-font;
 	}
 	& > :nth-child(1) {
 		grid-row: 1 / 2;
@@ -244,6 +253,8 @@ body::-webkit-scrollbar {
 			padding: .2rem .8rem;
 			margin-bottom: -1rem;
 			background: $second-bkg;
+			text-align: center;
+			width: 85%;
 		}
 	}
 	& > .element--one {
@@ -392,6 +403,8 @@ body::-webkit-scrollbar {
 				color: $main-font;
 				& > a > span {
 					font-size: 2rem;
+					background: $second-bkg;
+					color: $main-font;
 				}
 			}
 			& > .element--one.desktop {
@@ -408,11 +421,14 @@ body::-webkit-scrollbar {
 				&:hover {
 					--bkgUrl: url('./assets/imgs/large/castle.jpg');
 					background: var(--bkgUrl);
-					color: $second-font;
 					animation: animatedBackground .6s linear;
 					transition: background .6s;
 					background-size: cover;
 					background-position: center;
+					& > span {
+						background: $main-bkg;
+						color: $second-font;
+					}
 				}
 				&:hover:active {
 					transform: scale(.99);
@@ -431,11 +447,14 @@ body::-webkit-scrollbar {
 				&:hover {
 					--bkgUrl: url('./assets/imgs/large/ck.jpg');
 					background: var(--bkgUrl);
-					color: $second-font;
 					animation: animatedBackground .6s linear;
 					transition: background .6s, color .6s;
 					background-size: cover;
 					background-position: center;
+					& > span {
+						background: $main-bkg;
+						color: $second-font;
+					}
 				}
 				&:hover:active {
 					transform: scale(.99);
@@ -454,11 +473,14 @@ body::-webkit-scrollbar {
 				&:hover {
 					--bkgUrl: url('./assets/imgs/large/ksiaz.jpg');
 					background: var(--bkgUrl);
-					color: $second-font;
 					animation: animatedBackground .6s linear;
 					transition: background .6s;
 					background-size: cover;
 					background-position: center;
+					& > span {
+						background: $main-bkg;
+						color: $second-font;
+					}
 				}
 				&:hover:active {
 					transform: scale(.99);

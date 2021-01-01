@@ -15,7 +15,7 @@ a.slide.title {
 		transition: 2s all;
 		z-index: 0;
 		left: -2rem;
-		color: $second-font;
+		color: $main-font;
 		font-size: 2.2rem;
 		@media (min-width: 52rem) {
 			font-size: 1.4rem;
@@ -40,28 +40,32 @@ a.slide.title.active {
 .slider-slides-cnt > .slider-slide > .slide.title > .reveal {
 	background: transparent;
 }
+.txt-background {
+	background: $second-bkg;
+	color: $main-font;
+}
 
-.slider-slides-cnt :nth-child(1) {
+.slider-slides-cnt > :nth-child(1) {
 	background: url('./assets/imgs/small/ck.jpg');
 	background-size: cover;
 	background-position: center;
 }
-.slider-slides-cnt :nth-child(2) {
+.slider-slides-cnt > :nth-child(2) {
 	background: url('./assets/imgs/small/castle.jpg');
 	background-size: cover;
 	background-position: center;
 }
-.slider-slides-cnt :nth-child(3) {
+.slider-slides-cnt > :nth-child(3) {
 	background: url('./assets/imgs/small/rocks.jpg');
 	background-size: cover;
 	background-position: center;
 }
-.slider-slides-cnt :nth-child(4) {
+.slider-slides-cnt > :nth-child(4) {
 	background: url('./assets/imgs/small/main_image.jpg');
 	background-size: cover;
 	background-position: center;
 }
-.slider-slides-cnt :nth-child(5) {
+.slider-slides-cnt > :nth-child(5) {
 	background: url('./assets/imgs/small/main_image.jpg');
 	background-size: cover;
 	background-position: center;

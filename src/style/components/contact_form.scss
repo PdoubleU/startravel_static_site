@@ -3,18 +3,19 @@
 @import '../mixins/general_btn.scss';
 
 .contact_form_header {
-	font-size: 1.3rem;
+	font-size: 1.8rem;
 	margin-top: 0;
 }
 
 .contact_form {
-	width: 65vw;
+	width: 80vw;
 	display: flex;
 	flex-direction: column;
-	font-size: 1.1rem;
+	font-size: 1.6rem;
 	margin-bottom: 0;
 	& > .sub_btn {
 		@include general_btn($second-bkg, $alt-hover-bkg, $main-font, $second-font, $main-border, $shadow-color-main);
+		font-size: 1.6rem;
 	}
 }
 label {
@@ -51,14 +52,28 @@ input {
 }
 
 @media (min-width: 37.71rem) {
+	.contact_form_header {
+		font-size: 1.6rem;
+		margin-top: 0;
+	}
 	.contact_form {
 		width: 50vw;
-		font-size: 1rem;
+		font-size: 1.4rem;
 	}
 	textarea {
 		width: 100%;
 	}
-	input.sub_btn {
+}
+@media (min-width: 52rem) {
+	.contact_form_header {
+		font-size: 1.2rem;
+		margin-top: 0;
+	}
+	.contact_form {
+		width: 50vw;
+		font-size: 1rem;
+	}
+	.contact_form > .sub_btn {
 		min-height: 1rem;
 		font-size: .8rem;
 	}

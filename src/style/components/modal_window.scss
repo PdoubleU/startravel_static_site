@@ -29,7 +29,7 @@
 	justify-content: center;
 	padding: 1.5em 1em;
 	background-color: white;
-	overflow: auto;
+	overflow: hidden;
 }
 .modal_body.gdpr_info {
 	& h3 {
@@ -80,7 +80,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	font-size: .675rem;
+	font-size: 1.2rem;
 	padding: 1em 1.2em;
 	overflow-y: scroll;
 }
@@ -88,7 +88,7 @@
 .auxiliary_btn {
 	align-self: center;
 	justify-self: center;
-	font-size: 1rem;
+	font-size: 1.6rem;
 	line-height: 1.2;
 	@include general_btn($second-bkg, $alt-hover-bkg, $main-font, $second-font, $main-border, $shadow-color-main);
 	&.gdpr_info {
@@ -105,7 +105,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		font-size: .8rem;
+		font-size: 2rem;
 		padding: 1.5em 2em;
 		overflow-y: scroll;
 	}

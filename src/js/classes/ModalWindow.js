@@ -45,7 +45,7 @@ export class ModalWindow {
 	// below method is responsible for create all content inside modal window - effects depend on provided parameters
 	generateContent(response, language, formClassName, isHidden, aux_btn, aux_function) {
 		function hideForm(formElem) {
-			formElem.style.height == '120%' ? (formElem.style.height = '0%') : (formElem.style.height = '120%');
+			formElem.style.height == '110%' ? (formElem.style.height = '0%') : (formElem.style.height = '110%');
 		}
 
 		let grip = document.getElementsByTagName('body')[0];
@@ -122,7 +122,7 @@ export class ModalWindow {
 
 				case 'contact':
 					let elem = document.getElementsByClassName('content-container form')[0];
-					elem.style.height == '120%' ? (elem.style.height = '0%') : (elem.style.height = '120%');
+					elem.style.height == '110%' ? (elem.style.height = '0%') : (elem.style.height = '110%');
 					break;
 
 				default:

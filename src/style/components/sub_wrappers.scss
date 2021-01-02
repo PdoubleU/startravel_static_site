@@ -86,6 +86,7 @@
 		.germany > .main__page--one,
 		.czechia > .main__page--one {
 			width: 100vw;
+			height: 100vh;
 			@media (orientation: portrait) {
 				height: 50vh;
 			}

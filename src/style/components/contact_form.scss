@@ -8,7 +8,7 @@
 }
 
 .contact_form {
-	width: 80vw;
+	width: 80%;
 	display: flex;
 	flex-direction: column;
 	font-size: 1.6rem;
@@ -97,6 +97,10 @@ input {
 	&:focus {
 		border-width: .08rem;
 	}
+	&.sub_btn:hover,
+	&.sub_btn:focus {
+		border-width: $btn-border-width;
+	}
 }
 
 @media (min-width: 37.71rem) {
@@ -109,17 +113,18 @@ input {
 	}
 }
 @media (min-width: 52rem) {
-	.contact_form_header {
-		font-size: 1.2rem;
-		margin-top: 0;
-	}
 	.contact_form.grid-section {
-		width: 50vw;
+		width: 80%;
+		height: auto;
 		font-size: 1rem;
 		display: flex;
 		& > input.sub_btn {
 			min-height: 1rem;
 			font-size: .8rem;
 		}
+	}
+	.contact_form_header {
+		font-size: 1.2rem;
+		margin-top: 0;
 	}
 }

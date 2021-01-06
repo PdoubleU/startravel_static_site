@@ -2,6 +2,7 @@
 
 @mixin general_btn ($bkg_color, $hover_color_bkg, $font_color, $hover_color_font, $border_color, $alt-border) {
 	cursor: pointer;
+	outline: none;
 	font-weight: lighter;
 	display: flex;
 	align-self: center;

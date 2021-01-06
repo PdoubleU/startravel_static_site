@@ -129,11 +129,14 @@ body::-webkit-scrollbar {
 				gap: 3rem 3rem;
 				margin-top: 0rem;
 				& > a {
+					display: flex;
+					justify-content: center;
+					align-items: center;
 					overflow: visible;
 					width: 3.2rem;
 					height: 3.2rem;
 					& > .icon {
-						width: 2.9rem;
+						width: 2.8rem;
 					}
 				}
 				& > .arrow-class {

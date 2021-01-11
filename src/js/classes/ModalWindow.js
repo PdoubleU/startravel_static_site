@@ -26,7 +26,8 @@ export class ModalWindow {
 		this.formIsHidden = this.options.formIsHidden;
 		this.language = window.localStorage.getItem('language');
 
-		this.generateHTMLTags(); // generates frame of modal window and after that other methods puts correct content into
+		// generates frame of modal window and after that other methods puts correct content into
+		this.generateHTMLTags();
 
 		if (this.content == 'form' || this.content == 'gdpr') {
 			// create simple modal window with form or gdpr info
@@ -119,12 +120,10 @@ export class ModalWindow {
 					}, 1000);
 					window.localStorage.setItem('gdpr', 'confirmed');
 					break;
-
 				case 'contact':
 					let elem = document.getElementsByClassName('content-container form')[0];
 					elem.style.height == '110%' ? (elem.style.height = '0%') : (elem.style.height = '110%');
 					break;
-
 				default:
 					void 0;
 					break;

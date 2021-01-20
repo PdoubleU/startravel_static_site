@@ -12,39 +12,40 @@ article.element > span {
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
+	text-justify: auto;
 	font-size: 1rem;
 	width: 100%;
 	border: $border-width solid $main-bkg;
 	background: $second-bkg;
 	box-shadow: $shadow-box;
-	& > h4 {
-		position: absolute;
+	& > h4.title {
+		position: static;
 		font-size: 1.4rem;
 		max-width: 80%;
-		top: -1rem;
+		margin-top: -1rem;
 		background: $second-bkg;
 		padding: .2rem .8rem;
 	}
 }
 article.element > span > .frame {
-	max-width: 90%;
-	max-height: 75%;
-	padding: 1.3rem;
-	margin-top: 1rem;
-	display: flex;
-	flex-direction: column;
-	@media (min-width: 37rem) {
+	max-width: 100%;
+	height: 40vh;
+	@media (orientation: landscape) and (min-width: 37rem) {
+		min-height: 80%;
 		flex-direction: row;
 	}
-	justify-content: space-between;
+	padding: 1rem 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
 	& > img.frame_image {
-		margin-right: 0;
-		max-height: 80%;
+		height: 75%;
+		width: 100%;
 		object-fit: cover;
 		object-position: center;
-		@media (min-width: 37rem) {
-			margin-right: 1rem;
-			max-height: unset;
+		@media (orientation: landscape) and (min-width: 37rem) {
+			height: 100%;
+			min-width: 70%;
 		}
 	}
 	& > p.frame_content {
@@ -56,27 +57,36 @@ article.element > span > .frame {
 article.element > span > button.description {
 	@include general_btn($second-bkg, $alt-hover-bkg, $main-font, $second-font, $main-border, $shadow-color-main);
 	font-size: 1.4rem;
-	position: absolute;
-	bottom: 1rem;
+	position: static;
 	@media (min-width: 52rem) {
 		font-size: 1rem;
 	}
-	margin-bottom: 1rem;
 	min-height: 2rem;
+	margin-bottom: 1rem;
 }
 
 @media (pointer: fine) and (min-width: 52rem) {
 	article.element > span {
+		position: relative;
 		border-width: $border-width-desktop;
 		justify-content: flex-end;
 		@media (orientation: portrait) {
 			justify-content: center;
 		}
+		& > h4.title {
+			position: absolute;
+			font-size: 1.4rem;
+			max-width: 80%;
+			margin-top: 0;
+			top: -1rem;
+			background: $second-bkg;
+			padding: .2rem .8rem;
+		}
 	}
 	article.element > span > .frame {
 		max-width: 90%;
-		max-height: 80%;
-		padding: 1rem;
+		max-height: 90%;
+		padding: 1rem 1rem 3rem 1rem;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -85,9 +95,11 @@ article.element > span > button.description {
 			flex-direction: row;
 		}
 		& > img.frame_image {
-			object-fit: contain;
+			min-height: 100%;
+			max-width: 90%;
+			object-fit: cover;
 			align-self: center;
-			margin-right: 0;
+			margin: auto;
 			@media (orientation: portrait) {
 				flex-direction: row;
 				margin-right: 1rem;

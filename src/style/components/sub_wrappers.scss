@@ -57,17 +57,23 @@
 .germany :nth-child(2) > .container-middle,
 .czechia :nth-child(2) > .container-middle {
 	height: fit-content;
-	width: fit-content;
+	width: 100vw;
 	grid-template-rows: unset;
 	grid-template-columns: 100%;
 	grid-auto-rows: auto;
 	@media (min-width: 37rem) {
 		grid-auto-rows: minmax(30vh, 60vh);
+		@media (orientation: portrait) {
+			grid-auto-rows: minmax(30vh, auto);
+		}
 	}
 	@media (orientation: landscape) and (hover: none) {
 		grid-auto-rows: 100vh;
-		@media (min-width: 52rem) {
-			grid-auto-rows: minmax(45vh, 60vh);
+	}
+	@media (min-width: 52rem) {
+		grid-auto-rows: minmax(30vh, auto);
+		@media (orientation: landscape) {
+			grid-auto-rows: minmax(auto, 100vh);
 		}
 	}
 	& > article {

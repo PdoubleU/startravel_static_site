@@ -18,9 +18,14 @@ a.slide.title {
 		color: $main-font;
 		font-size: 2rem;
 		font-family: $header-font;
+		padding: .8rem .2rem;
 		@media (min-width: 52rem) {
 			font-size: 1.2rem;
 		}
+	}
+	& > .reveal {
+		position: relative;
+		background: transparent;
 	}
 }
 
@@ -36,11 +41,6 @@ a.slide.title.active {
 	box-shadow: $shadow-box;
 	background-color: #fff;
 	z-index: 1;
-}
-.slider-slides-cnt > .slider-slide > .slide.title,
-.slider-slides-cnt > .slider-slide > .slide.title > .reveal {
-	position: relative;
-	background: transparent;
 }
 .txt-background {
 	position: relative;
@@ -78,6 +78,7 @@ a.slide.title.active {
 .slider-slides-cnt {
 	height: 100%;
 	position: relative;
+	z-index: -1;
 }
 /* pojedynczy slide */
 .slider-slide {

@@ -2,50 +2,47 @@
 @import '../mixins/general_btn.scss';
 
 .bar_gdpr {
-    position: fixed;
-    display: flex;
-    opacity: 0;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    align-items: center;
-    padding: .8rem 1.2rem;
-    left: auto;
-    bottom: 2.2rem;
-    width: 100%;
-    background: $second-bkg;
-    color: $main-font;
-    font-size: 1rem;
-    box-shadow: 0em -.04em .09em $main-bkg;
-    transform: translateY(50%);
-    transition: opacity .5s linear;
-    z-index: $index_top_navabr;
-    & > p {
-        margin:  .5em .5em;
-    }
-    & * + * {
-        margin: 0em 0em 1em;
-    }
+	position: fixed;
+	display: flex;
+	opacity: 0;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	padding: .8rem 1.2rem;
+	left: auto;
+	bottom: 2.2rem;
+	width: 100%;
+	background: $second-bkg;
+	color: $main-font;
+	font-size: 1rem;
+	box-shadow: 0em -.04em .09em $main-bkg;
+	transform: translateY(50%);
+	transition: opacity .5s linear;
+	z-index: $index_top_navabr;
+	& > p {
+		margin: .5em .5em;
+	}
+	& * + * {
+		margin: 0em 0em 1em;
+	}
 }
 .bar_gdpr--active {
-    transition: opacity 1s linear;
-    opacity: 1;
+	transition: opacity 1s linear;
+	opacity: 1;
 }
 .button_gdpr {
-    @include general_btn($second-bkg, $alt-hover-bkg, $main-font, $second-font, $main-border, $shadow-color-main);
-    font-size: .8rem;
-    padding: .2rem 1.2rem;
-    margin: 0;
-    &:hover {
-        transition: .2s ease-in-out;
-    }
-    button {
-        appearance: none;
-    }
+	@include general_btn($second-bkg, $alt-hover-bkg, $main-font, $second-font, $main-border, $shadow-color-main);
+	font-size: .8rem;
+	padding: .2rem 1.2rem;
+	margin: 0;
+	&:hover {
+		transition: .2s ease-in-out;
+	}
 }
 
-@media (min-width: 37.71rem) {
-    .bar_gdpr {
-        bottom: 1.6rem;
-    }
+@media (min-width: 37rem) {
+	.bar_gdpr {
+		bottom: 1.6rem;
+	}
 }

@@ -15,7 +15,6 @@
 	height: fit-content;
 	width: fit-content;
 }
-
 .poland :nth-child(1) > .container-front,
 .germany :nth-child(1) > .container-front,
 .czechia :nth-child(1) > .container-front {
@@ -38,20 +37,18 @@
 		}
 	}
 }
-.poland :nth-child(1) > .container > .element--one > div {
-	background: url('./assets/imgs/small/ck.jpg');
+.element--one > div {
 	background-size: cover;
 	background-position: center;
+}
+.poland :nth-child(1) > .container > .element--one > div {
+	background-image: url('./assets/imgs/small/ck.jpg');
 }
 .germany :nth-child(1) > .container > .element--one > div {
-	background: url('./assets/imgs/small/ck.jpg');
-	background-size: cover;
-	background-position: center;
+	background-image: url('./assets/imgs/small/ck.jpg');
 }
 .czechia :nth-child(1) > .container > .element--one > div {
-	background: url('./assets/imgs/small/ck.jpg');
-	background-size: cover;
-	background-position: center;
+	background-image: url('./assets/imgs/small/ck.jpg');
 }
 .poland :nth-child(2) > .container-middle,
 .germany :nth-child(2) > .container-middle,

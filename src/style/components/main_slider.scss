@@ -13,7 +13,7 @@ a.slide.title {
 		opacity: 0;
 		position: relative;
 		transition: 2s all;
-		z-index: 0;
+		z-index: 1;
 		left: -2rem;
 		color: $main-font;
 		font-size: 2rem;
@@ -40,39 +40,28 @@ a.slide.title.active {
 	height: 100%;
 	box-shadow: $shadow-box;
 	background-color: #fff;
-	z-index: 1;
+	z-index: 0;
 }
 .txt-background {
-	position: relative;
 	background: $second-bkg;
 	color: $main-font;
 	z-index: 0;
 }
 
 .slider-slides-cnt > :nth-child(1) {
-	background: url('./assets/imgs/small/ck.jpg');
-	background-size: cover;
-	background-position: center;
+	background-image: url('./assets/imgs/small/ck.jpg');
 }
 .slider-slides-cnt > :nth-child(2) {
-	background: url('./assets/imgs/small/castle.jpg');
-	background-size: cover;
-	background-position: center;
+	background-image: url('./assets/imgs/small/castle.jpg');
 }
 .slider-slides-cnt > :nth-child(3) {
-	background: url('./assets/imgs/small/rocks.jpg');
-	background-size: cover;
-	background-position: center;
+	background-image: url('./assets/imgs/small/rocks.jpg');
 }
 .slider-slides-cnt > :nth-child(4) {
-	background: url('./assets/imgs/small/main_image.jpg');
-	background-size: cover;
-	background-position: center;
+	background-image: url('./assets/imgs/small/main_image.jpg');
 }
 .slider-slides-cnt > :nth-child(5) {
-	background: url('./assets/imgs/small/main_image.jpg');
-	background-size: cover;
-	background-position: center;
+	background-image: url('./assets/imgs/small/main_image.jpg');
 }
 /* kontener dla wszystkich slajdów */
 .slider-slides-cnt {
@@ -93,8 +82,10 @@ a.slide.title.active {
 	align-items: center;
 	flex-direction: column;
 	opacity: 0;
-	z-index: -10;
+	z-index: -2;
 	transition: all 2s ease-in-out;
+	background-size: cover;
+	background-position: center;
 }
 /* slide aktywny */
 .slider-slide-active {
@@ -175,7 +166,6 @@ a.slide.title.active {
 	}
 	width: 3rem;
 	height: 3rem;
-	z-index: 2;
 	position: absolute;
 	overflow: hidden;
 	background: $alt-hover-btn;

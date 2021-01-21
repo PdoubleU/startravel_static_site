@@ -23,9 +23,6 @@
 	scrollbar-width: none;
 	background: $second-bkg;
 }
-body::-webkit-scrollbar {
-	display: none;
-}
 .main__page--one {
 	@include main__page($second-bkg, 200vh);
 }
@@ -175,7 +172,6 @@ body::-webkit-scrollbar {
 	}
 	& > .element--three,
 	.element--three:active {
-		position: relative;
 		grid-row: 2 / 3;
 		background: $second-bkg;
 		padding: 0 1rem 1rem;
@@ -335,6 +331,8 @@ body::-webkit-scrollbar {
 			}
 		}
 		.inner-wrapper {
+			position: relative;
+			z-index: -1;
 			@media (pointer: fine) and (orientation: landscape) {
 				display: grid;
 				grid-template-rows: 100%;

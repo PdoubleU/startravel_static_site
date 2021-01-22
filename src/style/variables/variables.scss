@@ -1,18 +1,13 @@
 @import '../../../node_modules/normalize-scss/sass/_normalize.scss';
-
 //list of variables used in project:
-
-//fonts"
-
+//fonts:
 $header-font: 'Encode Sans Expanded', 'Huelvetica', sans-serif;
 $text-font: 'Blinker', 'Huelvetica', sans-serif;
-
 //z-index list:
 $index_top_navabr: 100;
 $mobile-menu-sgl-btn: 90;
 $modal_window_index: 9999;
-
-//colours:
+//colors:
 $main-bkg: hsl(0, 0, 0);
 $second-bkg: hsl(90, 10, 95);
 $hover-bkg: hsl(90, 10, 75);
@@ -29,12 +24,12 @@ $second-border: hsl(90, 10, 95);
 $shadow-color-main: hsl(0, 0, 0);
 $shadow-color-second: hsl(90, 10, 95);
 
+$modal-bckg: hsla(200, 50, 10, 0.5);
+
 $color-mobile-menu-bkg-btn: hsla(40, 40, 90, .8);
 $border-menu-btn-hoover: hsl(0, 10, 35);
-
 //shadow-box:
 $shadow-box: none;
-
 //paddings and margins:
 $border-width: .1rem;
 $border-width-desktop: .06rem;

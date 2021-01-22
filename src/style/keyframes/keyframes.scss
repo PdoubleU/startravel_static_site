@@ -1,58 +1,58 @@
 @import '../variables/variables.scss';
 
+// this animation is used for top nav buttons on hover event:
 @keyframes backgroundRollDown {
-    from {
-        width: 0%;
-    }
-    to {
-        width: calc(100% + .4rem);
-    }
-}
-
+	from {
+		width: 0%;
+	}
+	to {
+		width: calc(100% + .4rem);
+	}
+} // animation added to all headers, main paragraphs or buttons' inner text - this is executed thanks to JS when page is loaded
 @keyframes animatedBackground {
-    from {
-        color: $second-font;
-        background: var(--bkgUrl);
-        background-size: cover;
-        background-position: center;
-        z-index: 2;
-        opacity: 0;
-    }
-    40% {
-        filter: grayscale(100%);
-        opacity: .5;
-        transform: scale(1.02);
-        z-index: 2;
-        color: $second-font;
-    }
-    to {
-        opacity: 1;
-        background-position: center;
-        z-index: 2;
-        filter: grayscale(0%);
-    }
+	from {
+		color: $second-font;
+		background: var(--bkgUrl);
+		background-size: cover;
+		background-position: center;
+		z-index: 2;
+		opacity: 0;
+	}
+	40% {
+		filter: grayscale(100%);
+		opacity: .5;
+		transform: scale(1.02);
+		z-index: 2;
+		color: $second-font;
+	}
+	to {
+		opacity: 1;
+		background-position: center;
+		z-index: 2;
+		filter: grayscale(0%);
+	}
 }
-
+// shake button executes when scroll up button appears in the right-down corner of screen
 @keyframes shake_btn {
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-    10%,
-    30%,
-    50%,
-    70% {
-        transform: translateY(-0.3em);
-    }
-    20%,
-    40%,
-    60% {
-        transform: translateY(0);
-    }
-    80% {
-        transform: translateY(0);
-    }
-    90% {
-        transform: translateY(-0.2em);
-    }
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	10%,
+	30%,
+	50%,
+	70% {
+		transform: translateY(-0.3em);
+	}
+	20%,
+	40%,
+	60% {
+		transform: translateY(0);
+	}
+	80% {
+		transform: translateY(0);
+	}
+	90% {
+		transform: translateY(-0.2em);
+	}
 }

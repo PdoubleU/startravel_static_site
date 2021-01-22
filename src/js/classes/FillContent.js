@@ -18,7 +18,7 @@ export class FillContent {
 	}
 	generateHTMLTags(counter, objJSON, selector, country, loadModal) {
 		for (let i = 0; i < counter; i++) {
-			let DESCRIPTION_BTN = document.getElementsByClassName('description');
+			let DESCRIPTION_BTN = document.getElementsByClassName('description_show');
 			let title = objJSON[country][i].title;
 			let content = objJSON[country][i].content;
 			let price = objJSON[country][i].price;
@@ -51,7 +51,7 @@ export class FillContent {
 			grip.children[i].children[0].appendChild(INNER_FRAME);
 
 			const CONTENT_TEXT = document.createElement('button');
-			CONTENT_TEXT.classList.add('description');
+			CONTENT_TEXT.classList.add('description_show');
 			window.localStorage.getItem('language') == 'polish'
 				? (CONTENT_TEXT.innerHTML = 'Sprawdź szczegóły')
 				: (CONTENT_TEXT.innerHTML = 'Read more');

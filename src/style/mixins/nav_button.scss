@@ -21,38 +21,39 @@
 //
 //Styleguide Mixins.Elements
 
+// this is the blueprint for the top nav button used on mobile navigation:
 @mixin top-nav-btn-model($bkg_color, $hover_color_bkg, $font_color, $hover_color_font, $border_color, $shadow_color) {
-    font-family: $header-font;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    background: $bkg_color;
-    color: $font_color;
-    border: solid $btn-border-width $border_color;
-    outline: none;
-    &:active{
-        transform: scale(0.98);
-        transition: transform .2s linear;
-        }
-    & > a,
-        a:active,
-        a:visited,
-        a:link,
-        a:visited:active,
-        a:link:active,
-        button {
-            margin: 0 .2rem;
-            width: 100%;
-            @media (min-width: 37.71rem) {
-                min-width: 9vw;
-            }
-            background: none;
-            box-shadow: none;
-            font-weight: normal;
-            position: relative;
-    }
+	font-family: $header-font;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	background: $bkg_color;
+	color: $font_color;
+	border: solid $btn-border-width $border_color;
+	outline: none;
+	&:active {
+		transform: scale(0.98);
+		transition: transform .2s linear;
+	}
+	& > a,
+	a:active,
+	a:visited,
+	a:link,
+	a:visited:active,
+	a:link:active,
+	button {
+		margin: 0 .2rem;
+		width: 100%;
+		@media (min-width: 37.71rem) {
+			min-width: 9vw;
+		}
+		background: none;
+		box-shadow: none;
+		font-weight: normal;
+		position: relative;
+	}
 }
 
 .button-model {
-    @include top-nav-btn-model($main-bkg, $hover-bkg, $main-font, $font-hover, $border-menu-btn-hoover, $shadow-color-main);
+	@include top-nav-btn-model($main-bkg, $hover-bkg, $main-font, $font-hover, $border-menu-btn-hoover, $shadow-color-main);
 }

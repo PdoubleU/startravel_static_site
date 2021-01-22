@@ -4,33 +4,29 @@
 .poland > .main__page--one,
 .germany > .main__page--one,
 .czechia > .main__page--one {
-	height: 100vh;
-	@media (orientation: landscape) {
-		height: calc(100vh * 1.24);
-	}
+	height: fit-content;
 }
 .poland > .main__page--two,
 .germany > .main__page--two,
 .czechia > .main__page--two {
 	height: fit-content;
-	width: fit-content;
+	width: 100%;
 }
 .poland :nth-child(1) > .container-front,
 .germany :nth-child(1) > .container-front,
 .czechia :nth-child(1) > .container-front {
-	grid-template-columns: 1fr;
-	grid-template-rows: 3fr 1fr;
+	display: flex;
+	flex-direction: column;
+	height: fit-content;
 	& .element--one {
-		grid-row: 1 / 2;
-		grid-column: 1 / 2;
+		height: 100vh;
 		font-size: 2rem;
 		color: $second-font;
-		padding: 1rem 1rem 0;
+		padding: 1rem 1rem;
 	}
 	& .element--two {
+		height: fit-content;
 		font-size: 1.2rem;
-		grid-row: 2 / 3;
-		grid-column: 1 / 2;
 		padding: 1rem;
 		& > p {
 			margin: 0;
@@ -54,7 +50,7 @@
 .germany :nth-child(2) > .container-middle,
 .czechia :nth-child(2) > .container-middle {
 	height: fit-content;
-	width: 100vw;
+	width: 100%;
 	grid-template-rows: unset;
 	grid-template-columns: 100%;
 	grid-auto-rows: auto;
@@ -65,7 +61,7 @@
 		}
 	}
 	@media (orientation: landscape) and (hover: none) {
-		grid-auto-rows: 100vh;
+		grid-auto-rows: minmax(100vh, 110vh);
 	}
 	@media (min-width: 52rem) {
 		grid-auto-rows: minmax(30vh, auto);
@@ -80,6 +76,7 @@
 		display: flex;
 		grid-row: auto;
 		grid-column: auto;
+		min-width: 100%;
 	}
 }
 //below rules apply if the browser not support mentioned in brackets, which is characteristic only for IE and EDGE version <=44
@@ -98,17 +95,17 @@
 		.germany > .main__page--one > .container-front,
 		.czechia > .main__page--one > .container-front {
 			width: 100vw;
-			grid-template-columns: 2fr 1fr;
-			grid-template-rows: 100%;
+			height: 100%;
+			flex-direction: row;
 			& .element--one {
-				grid-column: 1 / 2;
-				grid-row: 1 / 2;
 				padding: 3.5rem 2rem 2rem 2rem;
+				height: 100%;
+				width: 70%;
 			}
 			& .element--two {
-				grid-column: 2 / 3;
-				grid-row: 1 / 2;
 				padding: 3.5rem 2rem 2rem 0;
+				height: 100%;
+				width: 30%;
 			}
 		}
 		.poland :nth-child(2) > .container-middle,

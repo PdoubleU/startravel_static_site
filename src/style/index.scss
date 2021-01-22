@@ -31,6 +31,8 @@ body {
 	//removes from body initial margin and padding
 	margin: 0;
 	padding: 0;
+	position: relative;
+	z-index: 0;
 }
 body::-webkit-scrollbar {
 	display: none;
@@ -72,17 +74,17 @@ button {
 	overflow: visible;
 	background: transparent;
 	outline: none;
-	/* inherit font & color from ancestor */
+	//inherit font & color from ancestor
 	color: inherit;
 	font: inherit;
-	/* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+	//Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+
 	line-height: normal;
-	/* Corrects font smoothing for webkit */
+	//Corrects font smoothing for webkit
 	-webkit-font-smoothing: inherit;
 	-moz-osx-font-smoothing: inherit;
-	/* Corrects inability to style clickable `input` types in iOS */
+	//Corrects inability to style clickable `input` types in iOS
 	appearance: none;
-	/* Remove excess padding and border in Firefox 4+ */
+	//Remove excess padding and border in Firefox 4+
 	cursor: pointer;
 	&::-moz-focus-inner {
 		border: 0;

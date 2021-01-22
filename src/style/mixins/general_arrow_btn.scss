@@ -1,8 +1,8 @@
 @import '../../../node_modules/normalize-scss/sass/_normalize.scss';
 @import '../variables/variables.scss';
 
+// styled arrow used inside some functional buttons (ie. scroll up or quick jump to contact section):
 @mixin general_arrow_btn($main-bkg, $second-bkg) {
-	position: relative;
 	height: 2rem;
 	width: 2rem;
 	> .arrow-class {

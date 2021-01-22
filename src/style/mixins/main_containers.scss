@@ -1,5 +1,6 @@
 @import '../../../node_modules/normalize-scss/sass/_normalize.scss';
 
+// main container describes the style for main containers located on the website
 @mixin main_container {
 	display: grid;
 	width: 100vw;

@@ -5,13 +5,13 @@
 	position: fixed;
 	display: flex;
 	opacity: 0;
-	flex-direction: row;
+	flex-direction: column;
 	flex-wrap: nowrap;
 	justify-content: space-around;
 	align-items: center;
 	padding: .8rem 1.2rem;
 	left: auto;
-	bottom: 2.2rem;
+	bottom: 4rem;
 	width: 100%;
 	background: $second-bkg;
 	color: $main-font;
@@ -23,9 +23,6 @@
 	& > p {
 		margin: .5em .5em;
 	}
-	& * + * {
-		margin: 0em 0em 1em;
-	}
 }
 .bar_gdpr--active {
 	transition: opacity 1s linear;
@@ -33,9 +30,9 @@
 }
 .button_gdpr {
 	@include general_btn($second-bkg, $alt-hover-bkg, $main-font, $second-font, $main-border, $shadow-color-main);
-	font-size: .8rem;
-	padding: .2rem 1.2rem;
-	margin: 0;
+	font-size: 1rem;
+	margin-bottom: .5rem;
+	width: 60%;
 	&:hover {
 		transition: .2s ease-in-out;
 	}
@@ -44,5 +41,11 @@
 @media (min-width: 37rem) {
 	.bar_gdpr {
 		bottom: 1.6rem;
+		flex-direction: row;
+	}
+	.button_gdpr {
+		font-size: .8rem;
+		width: fit-content;
+		margin: 0;
 	}
 }

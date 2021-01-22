@@ -1,6 +1,6 @@
 @import '../../../node_modules/normalize-scss/sass/_normalize.scss';
 
-// general button used in many places on the website:
+// general button used in many places on the website
 @mixin general_btn ($bkg_color, $hover_color_bkg, $font_color, $hover_color_font, $border_color, $alt-border) {
 	cursor: pointer;
 	outline: none;
@@ -8,7 +8,7 @@
 	display: flex;
 	align-self: center;
 	padding: .2rem 1.2rem;
-	min-height: 1.4rem;
+	min-height: 1rem;
 	width: fit-content;
 	justify-content: center;
 	align-items: center;

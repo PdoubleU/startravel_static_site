@@ -20,8 +20,8 @@
 		@include general_arrow_btn($font-hover, $main-bkg);
 		height: .5rem;
 		width: .5rem;
-		left: .2rem;
-		bottom: .2rem;
+		margin-left: .2rem;
+		margin-bottom: .2rem;
 		transform: rotate(-90deg);
 		&:active,
 		:focus {

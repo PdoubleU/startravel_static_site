@@ -16,11 +16,6 @@ export class Slider {
 		this.prev = null;
 		this.next = null;
 
-		//check if the currently loaded subpage has correct identifier - if not, stop the code
-		if (document.querySelector(this.sliderSelector) == undefined) {
-			return 0;
-		}
-
 		this.loadData(this.generateListOfSlides);
 		this.generateSlider();
 		this.changeSlide(this.currentSlide);

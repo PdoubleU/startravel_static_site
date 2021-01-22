@@ -45,7 +45,7 @@
 	font-size: 1.2rem;
 	align-self: flex-start;
 }
-.modal_body.description > .content-container.form {
+.modal_body.description > #form {
 	display: flex;
 	position: absolute;
 	align-items: center;
@@ -114,7 +114,7 @@
 }
 
 @media (min-width: 52rem) {
-	.modal_body.description > .content-container.form {
+	.modal_body.description > #form {
 		& > .grid-section {
 			display: flex;
 			width: 50vw;

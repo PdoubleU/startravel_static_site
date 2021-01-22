@@ -69,7 +69,7 @@ export class FillContent {
 			buttonNamePl: 'Zarezerwuj!',
 			buttonNameEn: 'Book!',
 			action: 'contact',
-			aux_btn: true,
+			isAuxBtn: true,
 			_path: '/json/form_content.json',
 			formIsHidden: true
 		});

@@ -18,13 +18,12 @@ export class FillContent {
 	}
 	generateHTMLTags(counter, objJSON, selector, country, loadModal) {
 		for (let i = 0; i < counter; i++) {
-			let DESCRIPTION_BTN = document.getElementsByClassName('description_show');
 			let title = objJSON[country][i].title;
 			let content = objJSON[country][i].content;
 			let price = objJSON[country][i].price;
-			let frame_cont = objJSON[country][i].frame_description;
-			let frame_img = objJSON[country][i].frame_img;
-			let grip = document.getElementById(selector);
+			let frameCont = objJSON[country][i].frame_description;
+			let frameImg = objJSON[country][i].frame_img;
+			let grip = document.querySelector(selector);
 
 			const CONTENT_CONTAINER = document.createElement('article');
 			const SPAN = document.createElement('span');
@@ -44,8 +43,8 @@ export class FillContent {
 			INNER_FRAME.classList.add('frame');
 			INNER_IMG.classList.add('frame_image');
 			INNER_CONT.classList.add('frame_content');
-			INNER_IMG.src = frame_img;
-			INNER_CONT.innerHTML = frame_cont;
+			INNER_IMG.src = frameImg;
+			INNER_CONT.innerHTML = frameCont;
 			INNER_FRAME.appendChild(INNER_IMG);
 			INNER_FRAME.appendChild(INNER_CONT);
 			grip.children[i].children[0].appendChild(INNER_FRAME);
@@ -57,6 +56,7 @@ export class FillContent {
 				: (CONTENT_TEXT.innerHTML = 'Read more');
 			grip.children[i].children[0].appendChild(CONTENT_TEXT);
 
+			let DESCRIPTION_BTN = document.querySelectorAll('.description_show');
 			DESCRIPTION_BTN[i].onclick = () => loadModal(content, price);
 		}
 	}

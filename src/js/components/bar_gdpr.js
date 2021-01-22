@@ -16,7 +16,7 @@ export const HIDE_GDPR_BAR = () => {
 };
 
 export const OPEN_GDPR = () => {
-	new ModalWindow('gdpr_info', {
+	new ModalWindow('#gdpr_info', {
 		content: 'gdpr',
 		closeBtn: false,
 		action: 'accept',

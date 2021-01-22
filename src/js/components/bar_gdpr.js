@@ -1,19 +1,17 @@
 import { ModalWindow } from '../classes/ModalWindow.js';
 
-const OPEN_GDPR_BTN = document.getElementById('gdpr_read');
-const ACCEPT_GDPR_BTN = document.getElementById('gdpr_accept');
+const OPEN_GDPR_BTN = document.querySelector('#gdpr_read');
+const ACCEPT_GDPR_BTN = document.querySelector('#gdpr_accept');
 
 export const SHOW_GDPR_BAR = () => {
-	window.localStorage.getItem('gdpr') === 'unconfirmed'
-		? document.getElementById('bar_gdpr').classList.toggle('bar_gdpr--active')
-		: (document.getElementById('bar_gdpr').style.display = 'none');
+	document.querySelector('#bar_gdpr').classList.toggle('bar_gdpr--active');
 };
 
 export const HIDE_GDPR_BAR = () => {
-	document.getElementById('bar_gdpr').classList.remove('bar_gdpr--active');
+	document.querySelector('#bar_gdpr').classList.remove('bar_gdpr--active');
 	window.localStorage.setItem('gdpr', 'confirmed');
 	setTimeout(() => {
-		document.getElementById('bar_gdpr').remove();
+		document.querySelector('#bar_gdpr').remove();
 	}, 1000);
 };
 
@@ -29,7 +27,11 @@ export const OPEN_GDPR = () => {
 };
 
 window.addEventListener('load', () => {
-	setTimeout(SHOW_GDPR_BAR, 3000);
+	if (window.localStorage.getItem('gdpr') === 'unconfirmed') {
+		setTimeout(SHOW_GDPR_BAR, 3000);
+	} else {
+		document.querySelector('#bar_gdpr').remove();
+	}
 });
 OPEN_GDPR_BTN.onclick = OPEN_GDPR;
 ACCEPT_GDPR_BTN.onclick = HIDE_GDPR_BAR;

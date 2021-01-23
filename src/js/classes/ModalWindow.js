@@ -43,7 +43,7 @@ export class ModalWindow {
 		}
 	}
 	executeSetDescription(condition) {
-		if (this.content == 'description') {
+		if (condition == 'description') {
 			this.loadDescription();
 			this.loadData(this.generateContent);
 		}
@@ -57,7 +57,9 @@ export class ModalWindow {
 
 	// below method is responsible for create all content inside modal window - effects depend on provided parameters
 	generateContent(response, language, isHidden, isAuxBtn, bodySel) {
+		console.log(document.querySelector('.gdpr_info'));
 		let modalCont = document.querySelector('.content-container');
+		console.log(modalCont);
 		modalCont.innerHTML = response[language];
 		bodySel.lastChild.children[0].lastChild.appendChild(modalCont);
 
@@ -79,27 +81,22 @@ export class ModalWindow {
 		const MODAL_SECTION = document.createElement('article');
 		MODAL_SECTION.id = 'modal_' + this.id;
 		this.bodySelector.appendChild(MODAL_SECTION);
-
 		const MODAL_CONTAINER = document.createElement('div');
 		MODAL_CONTAINER.classList.add('modal');
 		MODAL_CONTAINER.classList.add(this.id);
 		this.bodySelector.lastChild.appendChild(MODAL_CONTAINER);
-
 		const MODAL_BACKDROP = document.createElement('div');
 		MODAL_BACKDROP.classList.add('modal_backdrop');
 		MODAL_BACKDROP.classList.add(this.id);
 		this.bodySelector.lastChild.children[0].appendChild(MODAL_BACKDROP);
-
 		const MODAL_BODY = document.createElement('div');
 		MODAL_BODY.classList.add('modal_body');
 		MODAL_BODY.classList.add(this.id);
 		this.bodySelector.lastChild.children[0].appendChild(MODAL_BODY);
-
 		const MODAL_CONTENT = document.createElement('div');
 		MODAL_CONTENT.classList.add('content-container');
 		MODAL_CONTENT.id = this.content == 'description' ? 'form' : '';
 		this.bodySelector.lastChild.children[0].lastChild.appendChild(MODAL_CONTENT);
-
 		if (this.isActionBtn) {
 			const ACTION_BTN = document.createElement('button');
 			ACTION_BTN.classList.add('action_btn');
@@ -152,6 +149,7 @@ export class ModalWindow {
 		let isAuxBtn = this.isAuxBtn;
 		let bodySel = this.bodySelector;
 		xhr.open('GET', _path, true);
+		console.log(document.querySelector('.gdpr_info'));
 		xhr.onload = () => {
 			if (xhr.status === 200) {
 				let response = JSON.parse(xhr.responseText);

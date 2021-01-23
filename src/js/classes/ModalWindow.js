@@ -56,12 +56,11 @@ export class ModalWindow {
 	}
 
 	// below method is responsible for create all content inside modal window - effects depend on provided parameters
-	generateContent(response, language, contentId, isHidden, isAuxBtn, bodySel) {
-		const MODAL_CONTENT = document.createElement('div');
-		MODAL_CONTENT.classList.add('content-container');
-		MODAL_CONTENT.id = contentId;
-		MODAL_CONTENT.innerHTML = response[language];
-		bodySel.lastChild.children[0].lastChild.appendChild(MODAL_CONTENT);
+	generateContent(response, language, isHidden, isAuxBtn, bodySel) {
+		let modalCont = document.querySelector('.content-container');
+		modalCont.innerHTML = response[language];
+		bodySel.lastChild.children[0].lastChild.appendChild(modalCont);
+
 		let elem = document.querySelector('#form');
 		let auxBtn = document.querySelector('.auxiliary_btn');
 
@@ -77,7 +76,7 @@ export class ModalWindow {
 	}
 	// below method creates frame of modal window and action button which is responsible for further actions with modal window
 	generateHTMLTags() {
-		const MODAL_SECTION = document.createElement('section');
+		const MODAL_SECTION = document.createElement('article');
 		MODAL_SECTION.id = 'modal_' + this.id;
 		this.bodySelector.appendChild(MODAL_SECTION);
 
@@ -96,6 +95,11 @@ export class ModalWindow {
 		MODAL_BODY.classList.add(this.id);
 		this.bodySelector.lastChild.children[0].appendChild(MODAL_BODY);
 
+		const MODAL_CONTENT = document.createElement('div');
+		MODAL_CONTENT.classList.add('content-container');
+		MODAL_CONTENT.id = this.content == 'description' ? 'form' : '';
+		this.bodySelector.lastChild.children[0].lastChild.appendChild(MODAL_CONTENT);
+
 		if (this.isActionBtn) {
 			const ACTION_BTN = document.createElement('button');
 			ACTION_BTN.classList.add('action_btn');
@@ -104,6 +108,7 @@ export class ModalWindow {
 				document.createTextNode(this.language == 'polish' ? this.btnNamePl : this.btnNameEn)
 			);
 			this.bodySelector.lastChild.children[0].lastChild.appendChild(ACTION_BTN);
+			ACTION_BTN.addEventListener('click', this.actionBtn.bind(this));
 		}
 
 		if (this.isCloseBtn) {
@@ -117,37 +122,32 @@ export class ModalWindow {
 
 	// this method is called when tapping action button - switch statement filter choosen action for button
 	actionBtn() {
-		const ACTION_BTN = document.querySelector('.action_btn');
-
-		const ACTION = () => {
-			switch (this.action) {
-				case 'submit':
-					break;
-				case 'accept':
-					document.querySelector('#modal_' + this.id).remove();
-					document.querySelector('#bar_gdpr').classList.remove('bar_gdpr--active');
-					setTimeout(() => {
-						document.querySelector('#bar_gdpr').remove();
-					}, 1000);
-					window.localStorage.setItem('gdpr', 'confirmed');
-					break;
-				case 'contact':
-					let elem = document.querySelector('#form');
-					elem.style.height == '110%' ? (elem.style.height = '0%') : (elem.style.height = '110%');
-					break;
-				default:
-					void 0;
-					break;
-			}
-		};
-		ACTION_BTN.onclick = ACTION;
+		switch (this.action) {
+			case 'submit':
+				// TODO: send form on the server//
+				break;
+			case 'accept':
+				document.querySelector('#modal_' + this.id).remove();
+				document.querySelector('#bar_gdpr').classList.remove('bar_gdpr--active');
+				setTimeout(() => {
+					document.querySelector('#bar_gdpr').remove();
+				}, 1000);
+				window.localStorage.setItem('gdpr', 'confirmed');
+				break;
+			case 'contact':
+				let elem = document.querySelector('#form');
+				elem.style.height == '110%' ? (elem.style.height = '0%') : (elem.style.height = '110%');
+				break;
+			default:
+				void 0;
+				break;
+		}
 	}
 	// this method fetches json file with particular response from choosen path and takes callback function which is responsible for creating modal window's content based on fetched data
 	loadData(callback) {
 		let xhr = new XMLHttpRequest();
-		let _path = isSubpage == null ? '..' + this.path : '.' + this.path;
+		let _path = this.isSubpage == null ? '..' + this.path : '.' + this.path;
 		let language = this.language;
-		let contentId = this.content == 'description' ? 'form' : '';
 		let isHidden = this.formIsHidden;
 		let isAuxBtn = this.isAuxBtn;
 		let bodySel = this.bodySelector;
@@ -155,7 +155,7 @@ export class ModalWindow {
 		xhr.onload = () => {
 			if (xhr.status === 200) {
 				let response = JSON.parse(xhr.responseText);
-				return callback(response, language, contentId, isHidden, isAuxBtn, bodySel);
+				return callback(response, language, isHidden, isAuxBtn, bodySel);
 			}
 		};
 		xhr.send(null);

@@ -1,37 +1,34 @@
 @import '../../../node_modules/normalize-scss/sass/_normalize.scss';
 //list of variables used in project:
 //fonts:
-$header-font: 'Encode Sans Expanded', 'Huelvetica', sans-serif;
-$text-font: 'Blinker', 'Huelvetica', sans-serif;
+$header_font: 'Encode Sans Expanded', 'Huelvetica', sans-serif;
+$text_font: 'Blinker', 'Huelvetica', sans-serif;
 //z-index list:
-$index_top_navabr: 100;
-$mobile-menu-sgl-btn: 90;
-$modal_window_index: 9999;
-//colors:
-$main-bkg: hsl(0, 0, 0);
-$second-bkg: hsl(90, 10, 95);
-$hover-bkg: hsl(90, 10, 75);
-$alt-hover-bkg: hsl(0, 0, 0);
-$alt-hover-btn: hsla(90, 10, 95, .6);
-
-$main-font: hsl(0, 0, 0);
-$second-font: hsl(90, 10, 95);
-$font-hover: hsl(0, 5, 20);
-
-$main-border: hsl(0, 0, 0);
-$second-border: hsl(90, 10, 95);
-
-$shadow-color-main: hsl(0, 0, 0);
-$shadow-color-second: hsl(90, 10, 95);
-
-$modal-bckg: hsla(200, 50, 10, 0.5);
-
-$color-mobile-menu-bkg-btn: hsla(40, 40, 90, .8);
-$border-menu-btn-hoover: hsl(0, 10, 35);
-//shadow-box:
-$shadow-box: none;
-//paddings and margins:
-$border-width: .1rem;
-$border-width-desktop: .06rem;
-$btn-border-width: .06rem;
-$form-border: .06rem;
+$zidx_top_navbar: 100;
+$zidx_mob_menu_sgl_btn: 90;
+$zidx_mod_win: 9999;
+//colors for general backgrounds, hover backgrounds:
+$main_bkg: hsl(0, 0, 0);
+$second_bkg: hsl(90, 10, 95);
+$hover_bkg: hsl(90, 10, 75);
+$mob_menu__sgl_btn: hsla(40, 40, 90, .8);
+$alt_hover_bkg: hsl(0, 0, 0);
+$alt_hover_btn: hsla(90, 10, 95, .6);
+$modal_bkg: hsla(200, 50, 10, 0.5);
+// fonts colours:
+$main_font: hsl(0, 0, 0);
+$second_font: hsl(90, 10, 95);
+$font_hover: hsl(0, 5, 20);
+// borders colours:
+$main_brd: hsl(0, 0, 0);
+$second_brd: hsl(90, 10, 95);
+$menu_btn_hover_brd: hsl(0, 10, 35);
+// borders width:
+$width_brd: .08rem;
+$width_brd-dskt: .06rem;
+$width_btn_brd: .06rem;
+$form-brd: .06rem;
+// shadows colours:
+$main_shdw: hsl(0, 0, 0);
+$second_shdw: hsl(90, 10, 95);
+$shadow_box: none;

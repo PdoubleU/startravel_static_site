@@ -4,20 +4,20 @@
 @import '../mixins/general_arrow_btn.scss';
 
 .scroll_btn {
-	@include general_btn($second-bkg, $second-bkg, $main-font, $hover-bkg, $main-border, $shadow-color-main);
+	@include general_btn($second_bkg, $second_bkg, $main_font, $hover_bkg, $main_brd, $main_shdw);
 	position: fixed;
 	display: none;
 	width: 3rem;
 	height: 3rem;
 	bottom: 1rem;
 	right: 1rem;
-	z-index: $mobile-menu-sgl-btn;
+	z-index: $zidx_mob_menu_sgl_btn;
 	&:active {
 		transform: none;
 	}
 
 	& > .arrow-class {
-		@include general_arrow_btn($font-hover, $main-bkg);
+		@include general_arrow_btn($font_hover, $main_bkg);
 		height: .5rem;
 		width: .5rem;
 		margin-left: .2rem;

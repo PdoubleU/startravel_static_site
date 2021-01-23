@@ -2,19 +2,19 @@
 @import '../variables/variables.scss';
 
 // styled arrow used inside some functional buttons (ie. scroll up or quick jump to contact section):
-@mixin general_arrow_btn($main-bkg, $second-bkg) {
+@mixin general_arrow_btn($main_bkg, $second_bkg) {
 	height: 2rem;
 	width: 2rem;
 	> .arrow-class {
 		&--top,
 		&--bottom {
 			position: absolute;
-			background: $main-bkg;
+			background: $main_bkg;
 			height: .15rem;
 			width: 100%;
 			left: -.4rem;
 			&:after {
-				background-color: $second-bkg;
+				background-color: $second_bkg;
 				content: '';
 				height: 100%;
 				position: absolute;

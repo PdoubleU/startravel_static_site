@@ -13,13 +13,13 @@
 	left: auto;
 	bottom: 4rem;
 	width: 100%;
-	background: $second-bkg;
-	color: $main-font;
+	background: $second_bkg;
+	color: $main_font;
 	font-size: 1rem;
-	box-shadow: 0em -.04em .09em $main-bkg;
+	box-shadow: 0em -.04em .09em $main_bkg;
 	transform: translateY(50%);
 	transition: opacity .5s linear;
-	z-index: $index_top_navabr;
+	z-index: $zidx_top_navbar;
 	& > p {
 		margin: .5em .5em;
 	}
@@ -29,7 +29,7 @@
 	opacity: 1;
 }
 .button_gdpr {
-	@include general_btn($second-bkg, $alt-hover-bkg, $main-font, $second-font, $main-border, $shadow-color-main);
+	@include general_btn($second_bkg, $alt_hover_bkg, $main_font, $second_font, $main_brd, $main_shdw);
 	font-size: 1rem;
 	margin-bottom: .5rem;
 	width: 60%;

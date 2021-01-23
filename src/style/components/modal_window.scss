@@ -4,7 +4,7 @@
 .modal {
 	display: flex;
 	position: relative;
-	z-index: $modal_window_index;
+	z-index: $zidx_mod_win;
 }
 
 .modal_backdrop {
@@ -13,7 +13,7 @@
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background-color: $modal-bckg;
+	background-color: $modal_bkg;
 }
 
 .modal_body {
@@ -98,7 +98,7 @@ button.modal_close {
 	justify-self: center;
 	font-size: 1.6rem;
 	line-height: 1.2;
-	@include general_btn($second-bkg, $alt-hover-bkg, $main-font, $second-font, $main-border, $shadow-color-main);
+	@include general_btn($second_bkg, $alt_hover_bkg, $main_font, $second_font, $main_brd, $main_shdw);
 	min-width: 40vw;
 	@media (orientation: landscape) {
 		font-size: 1rem;

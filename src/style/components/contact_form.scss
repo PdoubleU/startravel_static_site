@@ -63,7 +63,7 @@
 }
 
 input.sub_btn {
-	@include general_btn($second-bkg, $alt-hover-bkg, $main-font, $second-font, $main-border, $shadow-color-main);
+	@include general_btn($second_bkg, $alt_hover_bkg, $main_font, $second_font, $main_brd, $main_shdw);
 	font-size: 1.6rem;
 	height: auto;
 	min-width: 40vw;
@@ -84,25 +84,25 @@ textarea {
 	resize: vertical;
 	font-size: inherit;
 	font-family: inherit;
-	border: $form-border solid $main-font;
+	border: $form-brd solid $main_font;
 	margin-bottom: 1em;
 	&:hover,
 	&:focus {
-		border-width: .08rem;
+		width_brd: .08rem;
 	}
 }
 input {
 	height: 2em;
 	font-size: inherit;
 	appearance: none;
-	border: $form-border solid $main-font;
+	border: $form-brd solid $main_font;
 	&:hover,
 	&:focus {
-		border-width: .08rem;
+		width_brd: .08rem;
 	}
 	&.sub_btn:hover,
 	&.sub_btn:focus {
-		border-width: $btn-border-width;
+		width_brd: $width_btn_brd;
 	}
 }
 

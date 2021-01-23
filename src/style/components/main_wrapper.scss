@@ -25,27 +25,27 @@
 	display: flex;
 	flex-direction: column;
 	scrollbar-width: none;
-	background: $second-bkg;
+	background: $second_bkg;
 }
 .main__page--one {
-	@include main__page($second-bkg, 200vh);
+	@include main__page($second_bkg, 200vh);
 }
 .main__page--two,
 .main__page--three {
-	@include main__page($second-bkg, 100vh);
+	@include main__page($second_bkg, 100vh);
 }
 @media (min-width: 37rem) and (orientation: portrait) {
 	.main__page--one {
-		@include main__page($second-bkg, 200vh);
+		@include main__page($second_bkg, 200vh);
 	}
 }
 @media (orientation: landscape) {
 	.main__page--one {
-		@include main__page($second-bkg, 250vh);
+		@include main__page($second_bkg, 250vh);
 	}
 	.main__page--two,
 	.main__page--three {
-		@include main__page($second-bkg, 200vh);
+		@include main__page($second_bkg, 200vh);
 	}
 }
 
@@ -60,7 +60,7 @@
 		grid-template-rows: 40% 40% 20%;
 	}
 	& > * {
-		background-color: $second-bkg;
+		background-color: $second_bkg;
 		display: flex;
 	}
 	& > .element--one {
@@ -74,7 +74,7 @@
 		background: url('./assets/imgs/small/main_image.jpg');
 		background-size: cover;
 		background-position: center;
-		box-shadow: $shadow-box;
+		box-shadow: $shadow_box;
 		display: flex;
 		align-items: flex-end;
 		justify-content: flex-start;
@@ -83,7 +83,7 @@
 			max-width: 80%;
 			margin: 0 0 1rem 1rem;
 			font-weight: normal;
-			color: $second-font;
+			color: $second_font;
 			background-color: transparent;
 			width: fit-content;
 			padding: .2rem .8rem;
@@ -92,7 +92,7 @@
 	& > .element--two {
 		position: relative;
 		grid-row: 3 / 4;
-		background: $second-bkg;
+		background: $second_bkg;
 		display: flex;
 		align-items: flex-end;
 		justify-content: center;
@@ -103,14 +103,14 @@
 			align-items: center;
 			width: 100%;
 			height: 100%;
-			border: $border-width solid $main-bkg;
-			box-shadow: $shadow-box;
+			border: $width_brd solid $main_bkg;
+			box-shadow: $shadow_box;
 			z-index: 9;
 			& > .text {
 				font-size: 2rem;
 				margin-bottom: -1rem;
 				margin-top: 1rem;
-				background: $second-bkg;
+				background: $second_bkg;
 				padding: .2rem .8rem;
 				text-align: center;
 			}
@@ -160,7 +160,7 @@
 						grid-column: 5 / 6;
 					}
 
-					@include general_arrow_btn($font-hover, $main-bkg);
+					@include general_arrow_btn($font_hover, $main_bkg);
 					transform: rotate(90deg);
 					&:active,
 					:focus {
@@ -178,7 +178,7 @@
 		position: relative;
 		z-index: 0;
 		grid-row: 2 / 3;
-		background: $second-bkg;
+		background: $second_bkg;
 		padding: 0 1rem 1rem;
 	}
 }
@@ -187,15 +187,15 @@
 	@include main_container;
 	grid-template-rows: repeat(3, 1fr);
 	& > span {
-		background: $second-bkg;
+		background: $second_bkg;
 	}
 	& > span > a > span {
 		font-size: 2.2rem;
 		padding: .2rem .8rem;
-		background: $second-bkg;
-		color: $main-font;
+		background: $second_bkg;
+		color: $main_font;
 		font-weight: normal;
-		font-family: $header-font;
+		font-family: $header_font;
 	}
 	& > :nth-child(1) {
 		grid-row: 1 / 2;
@@ -211,7 +211,7 @@
 		background: url('./assets/imgs/small/castle.jpg');
 		background-size: cover;
 		background-position: center;
-		box-shadow: $shadow-box;
+		box-shadow: $shadow_box;
 		&:active {
 			filter: grayscale(100%);
 		}
@@ -230,7 +230,7 @@
 		background: url('./assets/imgs/small/ck.jpg');
 		background-size: cover;
 		background-position: center;
-		box-shadow: $shadow-box;
+		box-shadow: $shadow_box;
 		z-index: 9;
 		&:active {
 			filter: grayscale(100%);
@@ -250,7 +250,7 @@
 		background: url('./assets/imgs/small/ksiaz.jpg');
 		background-size: cover;
 		background-position: center;
-		box-shadow: $shadow-box;
+		box-shadow: $shadow_box;
 		z-index: 8;
 		&:active {
 			filter: grayscale(100%);
@@ -261,20 +261,20 @@
 	@include main_container;
 	grid-template-rows: repeat(3, 1fr);
 	font-size: 1.8rem;
-	background: $second-bkg;
+	background: $second_bkg;
 	& > div > div {
 		height: 100%;
 		width: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: flex-end;
-		border: $border-width solid $main-bkg;
-		box-shadow: $shadow-box;
+		border: $width_brd solid $main_bkg;
+		box-shadow: $shadow_box;
 		& > p {
 			font-size: 2rem;
 			padding: .2rem .8rem;
 			margin-bottom: -1rem;
-			background: $second-bkg;
+			background: $second_bkg;
 			text-align: center;
 			width: 85%;
 		}
@@ -307,7 +307,7 @@
 		.main__page--one,
 		.main__page--two,
 		.main__page--three {
-			@include main__page($main-bkg, 100vh);
+			@include main__page($main_bkg, 100vh);
 			@media (orientation: portrait) and (hover: none), (orientation: portrait) {
 				height: 50vh;
 			}
@@ -335,7 +335,7 @@
 				display: grid;
 				grid-template-rows: 100%;
 				grid-template-columns: 75% 25%;
-				background-color: $second-bkg;
+				background-color: $second_bkg;
 				width: fit-content;
 				transform: rotate(90deg) translateY(-100vh);
 				transform-origin: top left;
@@ -346,7 +346,7 @@
 			grid-template-columns: 2fr 1fr;
 			grid-template-rows: 1fr 1fr;
 			& > * {
-				background: $second-bkg;
+				background: $second_bkg;
 				display: flex;
 			}
 			& > .element--one,
@@ -366,10 +366,10 @@
 			& > .element--two {
 				grid-column: 2 / 3;
 				grid-row: 1 / 2;
-				color: $main-font;
+				color: $main_font;
 				padding: 3.5rem 2rem 0 2rem;
 				& > .container-inner {
-					border-width: $border-width-desktop;
+					width_brd: $width_brd-dskt;
 					& > .text span {
 						font-size: 1rem;
 					}
@@ -416,19 +416,19 @@
 			@include main_container;
 			grid-template-rows: 1fr;
 			grid-template-columns: 1fr 1fr 1fr;
-			background: $second-bkg;
-			color: $main-font;
+			background: $second_bkg;
+			color: $main_font;
 			& > span {
-				background: $second-bkg;
-				color: $main-font;
+				background: $second_bkg;
+				color: $main_font;
 				& > a > span {
 					font-size: 1.6rem;
-					background: $second-bkg;
-					color: $main-font;
+					background: $second_bkg;
+					color: $main_font;
 				}
 			}
 			& > .element--one.desktop {
-				background: $second-bkg;
+				background: $second_bkg;
 				grid-column: 1;
 				grid-row: 1;
 				padding: 0 .5rem 2rem 2rem;
@@ -446,8 +446,8 @@
 					background-size: cover;
 					background-position: center;
 					& > span {
-						background: $main-bkg;
-						color: $second-font;
+						background: $main_bkg;
+						color: $second_font;
 					}
 				}
 				&:hover:active {
@@ -455,7 +455,7 @@
 				}
 			}
 			& > .element--two.desktop {
-				background: $second-bkg;
+				background: $second_bkg;
 				grid-column: 2;
 				grid-row: 1;
 				padding: 0 1.25rem 2rem 1.25rem;
@@ -472,8 +472,8 @@
 					background-size: cover;
 					background-position: center;
 					& > span {
-						background: $main-bkg;
-						color: $second-font;
+						background: $main_bkg;
+						color: $second_font;
 					}
 				}
 				&:hover:active {
@@ -481,7 +481,7 @@
 				}
 			}
 			& > .element--three.desktop {
-				background: $second-bkg;
+				background: $second_bkg;
 				grid-column: 3;
 				grid-row: 1;
 				padding: 0 2rem 2rem .5rem;
@@ -498,8 +498,8 @@
 					background-size: cover;
 					background-position: center;
 					& > span {
-						background: $main-bkg;
-						color: $second-font;
+						background: $main_bkg;
+						color: $second_font;
 					}
 				}
 				&:hover:active {
@@ -517,14 +517,14 @@
 				display: flex;
 				justify-content: center;
 				align-items: flex-end;
-				border-width: $border-width-desktop;
+				width_brd: $width_brd-dskt;
 				& > p {
 					font-size: 1.4rem;
 					width: 80%;
 					text-align: center;
 					padding: .2rem .8rem;
 					margin-bottom: -1rem;
-					background: $second-bkg;
+					background: $second_bkg;
 				}
 			}
 			& > .element--one {

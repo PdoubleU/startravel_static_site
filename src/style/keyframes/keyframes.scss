@@ -11,7 +11,7 @@
 } // animation added to all headers, main paragraphs or buttons' inner text - this is executed thanks to JS when page is loaded
 @keyframes animatedBackground {
 	from {
-		color: $second-font;
+		color: $second_font;
 		background: var(--bkgUrl);
 		background-size: cover;
 		background-position: center;
@@ -23,7 +23,7 @@
 		opacity: .5;
 		transform: scale(1.02);
 		z-index: 2;
-		color: $second-font;
+		color: $second_font;
 	}
 	to {
 		opacity: 1;

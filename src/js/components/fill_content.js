@@ -3,7 +3,7 @@ import { FillContent } from '../classes/FillContent.js';
 if (document.getElementById('sub_page') == undefined) {
 	void 0;
 } else {
-	let element = document.querySelector('.container-middle');
+	let element = document.querySelector('.contMiddle');
 	switch (element.id) {
 		case 'content-de':
 			new FillContent('#content-de', {

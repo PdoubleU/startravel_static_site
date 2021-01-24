@@ -33,7 +33,6 @@ export class ModalWindow {
 		// this auxiliary functions takes as argument this.content value and accordingly executes set of methods to render appropriate content
 		this.executeSetFormAndGdpr(this.content);
 		this.executeSetDescription(this.content);
-		this.executeActionBtn(this.actionBtn);
 	}
 
 	// set of three auxiliary methods
@@ -48,18 +47,10 @@ export class ModalWindow {
 			this.loadData(this.generateContent);
 		}
 	}
-	executeActionBtn(condition) {
-		if (this.isActionBtn) {
-			// executes method responsible for launching proper function after hitting button on the screen
-			this.actionBtn();
-		}
-	}
 
 	// below method is responsible for create all content inside modal window - effects depend on provided parameters
 	generateContent(response, language, isHidden, isAuxBtn, bodySel) {
-		console.log(document.querySelector('.gdpr_info'));
 		let modalCont = document.querySelector('.content-container');
-		console.log(modalCont);
 		modalCont.innerHTML = response[language];
 		bodySel.lastChild.children[0].lastChild.appendChild(modalCont);
 
@@ -149,7 +140,6 @@ export class ModalWindow {
 		let isAuxBtn = this.isAuxBtn;
 		let bodySel = this.bodySelector;
 		xhr.open('GET', _path, true);
-		console.log(document.querySelector('.gdpr_info'));
 		xhr.onload = () => {
 			if (xhr.status === 200) {
 				let response = JSON.parse(xhr.responseText);

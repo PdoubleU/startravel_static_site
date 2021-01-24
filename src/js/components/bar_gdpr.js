@@ -15,7 +15,7 @@ export const HIDE_GDPR_BAR = () => {
 	}, 1000);
 };
 
-export default OPEN_GDPR_BTN.addEventListener('click', () => {
+export const OPEN_GDPR = () => {
 	new ModalWindow('gdpr_info', {
 		content: 'gdpr',
 		isCloseBtn: false,
@@ -24,7 +24,7 @@ export default OPEN_GDPR_BTN.addEventListener('click', () => {
 		buttonNameEn: 'Accept all',
 		_path: '/json/gdpr_content.json'
 	});
-});
+};
 
 window.addEventListener('load', () => {
 	if (window.localStorage.getItem('gdpr') === 'unconfirmed') {
@@ -33,5 +33,5 @@ window.addEventListener('load', () => {
 		document.querySelector('#bar_gdpr').remove();
 	}
 });
-
+OPEN_GDPR_BTN.onclick = OPEN_GDPR;
 ACCEPT_GDPR_BTN.onclick = HIDE_GDPR_BAR;

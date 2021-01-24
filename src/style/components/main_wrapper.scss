@@ -9,8 +9,6 @@
 	width: 100%;
 	height: auto;
 	scrollbar-width: none;
-	position: relative;
-	z-index: -1;
 	&_inner {
 		display: flex;
 		flex-direction: column;
@@ -26,7 +24,6 @@
 	flex-direction: column;
 	scrollbar-width: none;
 	background: $second_bkg;
-
 	&_one,
 	&_two,
 	&_three {
@@ -36,13 +33,7 @@
 .contFront {
 	@include main_container;
 	grid-template-columns: 100%;
-	grid-template-rows: 50% 30% 20%;
-	@media (min-width: 37rem) and (orientation: portrait) {
-		grid-template-rows: 50% 35% 15%;
-	}
-	@media (orientation: landscape) {
-		grid-template-rows: 40% 40% 20%;
-	}
+	grid-template-rows: repeat(3, auto);
 	&_one {
 		padding: 1rem;
 		grid-row: 1 / 2;
@@ -71,18 +62,15 @@
 		}
 	}
 	&_two {
-		position: relative;
 		height: fit-content;
 		grid-row: 3 / 4;
-		display: flex;
-		align-items: flex-end;
-		justify-content: center;
 		padding: 0 1rem 1rem;
 		&--socialMedia {
+			position: relative;
 			display: flex;
-			flex-direction: column-reverse;
 			align-items: center;
-			padding: 2rem 1rem 0;
+			justify-content: center;
+			padding: 2rem 1rem 2.5rem;
 			width: 100%;
 			height: 100%;
 			border: $width_brd solid $main_bkg;
@@ -90,9 +78,9 @@
 			z-index: 9;
 			& .socialMediaBox {
 				&_hdr {
+					position: absolute;
 					font-size: 2rem;
-					margin-bottom: -1rem;
-					margin-top: 1rem;
+					bottom: -1rem;
 					background: $second_bkg;
 					padding: .2rem .8rem;
 					text-align: center;
@@ -120,10 +108,8 @@
 					height: 3.2rem;
 					&--icon {
 						width: 2.8rem;
-						height: 2.8rem;
 					}
 				}
-
 				& > .arrowBox {
 					@include general_arrow_btn($font_hover, $main_bkg);
 					transform: rotate(90deg);
@@ -148,14 +134,11 @@
 			}
 		}
 	}
-	&_two.sub {
-		font-size: 1.8rem;
-	}
 	&_three,
 	&_three:active {
 		position: relative;
 		height: 50vh;
-		@media (orientation: landscape) {
+		@media (orientation: landscape) and (max-width: 52rem) {
 			height: 100vh;
 		}
 		z-index: 0;
@@ -164,7 +147,6 @@
 		padding: 0 1rem 1rem;
 	}
 }
-
 .contMiddle {
 	@include main_container;
 	height: 100vh;
@@ -201,25 +183,22 @@
 		}
 		&--one {
 			grid-row: 1 / 2;
-			padding: 0 1rem 0 1rem;
-			& > a,
-			&:active > a {
+			padding: 0 1rem 1rem 1rem;
+			& > a {
 				background-image: url('./assets/imgs/small/castle.jpg');
 			}
 		}
 		&--two {
 			grid-row: 2 / 3;
-			padding: 1rem 1rem 0 1rem;
-			& > a,
-			&:active > a {
+			padding: 0 1rem 1rem 1rem;
+			& > a {
 				background-image: url('./assets/imgs/small/ck.jpg');
 			}
 		}
 		&--three {
 			grid-row: 3 / 4;
-			padding: 1rem 1rem 0;
-			& > a,
-			&:active > a {
+			padding: 0 1rem 1rem;
+			& > a {
 				background-image: url('./assets/imgs/small/ksiaz.jpg');
 			}
 		}
@@ -229,23 +208,35 @@
 	@include main_container;
 	grid-template-rows: repeat(3, 1fr);
 	font-size: 1rem;
+	@media (min-width: 37rem) {
+		font-size: 1.2rem;
+	}
 	&_one,
 	&_two,
 	&_three {
 		& > div {
-			height: 100%;
+			height: 50vh;
+			@media (min-width: 37rem) and (orientation: portrait) {
+				height: 30vh;
+			}
+			@media (min-width: 37rem) and (orientation: landscape),
+				only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
+				height: min(90vh);
+			}
+			position: relative;
 			width: 100%;
-			padding: 1.2rem 1rem 0;
+			padding: 2rem 2rem 2.5rem;
 			display: flex;
 			flex-direction: column-reverse;
-			justify-content: space-between;
+			justify-content: center;
 			align-items: center;
 			border: $width_brd solid $main_bkg;
 			box-shadow: $shadow_box;
 			& > h3 {
+				position: absolute;
 				font-size: 1.6rem;
 				padding: .2rem .8rem;
-				margin-bottom: -1rem;
+				bottom: -1rem;
 				background: $second_bkg;
 				text-align: center;
 				width: 85%;
@@ -258,14 +249,16 @@
 		}
 	}
 	&_one {
-		padding: 1rem 1rem 0;
+		grid-row: 1 / 2;
+		padding: 0 1rem 1rem;
 	}
 	&_two {
-		padding: 1rem 1rem 0;
+		grid-row: 2 / 3;
+		padding: 0 1rem 1rem;
 	}
 	&_three {
-		padding: 1rem 1rem 0;
-		margin-bottom: 1rem;
+		grid-row: 3 / 4;
+		padding: 0 1rem 1rem;
 	}
 }
 //below rules apply if the browser not support mentioned in brackets, which is characteristic only for IE and EDGE version <=44
@@ -324,6 +317,7 @@
 				grid-column: 1 / 2;
 				grid-row: 1 / 3;
 				padding: 3.5rem 0 2rem 2rem;
+				height: 100%;
 				& > div {
 					background-image: url('./assets/imgs/large/main_image.jpg');
 					& > h1 {
@@ -334,9 +328,12 @@
 			&_two {
 				grid-column: 2 / 3;
 				grid-row: 1 / 2;
-				height: 50vh;
 				color: $main_font;
 				padding: 3.5rem 2rem 0 2rem;
+				height: 50vh;
+				@media (orientation: portrait) and (hover: none), (orientation: portrait) {
+					height: 25vh;
+				}
 				&--socialMedia {
 					border-width: $width_brd-dskt;
 					& .socialMediaBox {
@@ -373,123 +370,114 @@
 			}
 			&_three,
 			&_three:active {
+				@media (orientation: portrait) and (hover: none), (orientation: portrait) {
+					height: 25vh;
+				}
 				grid-column: 2 / 3;
-				grid-row: 2 / 3;
 				padding: 2rem 2rem 2rem 2rem;
-				height: 50vh;
 			}
 		}
 		.contMiddle {
 			@include main_container;
-			height: 100vh;
-			grid-template-rows: 1fr;
-			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-rows: 100%;
+			grid-template-columns: repeat(3, 1fr);
 			font-size: 1.6rem;
 			&_inner {
 				&--one--desktop,
 				&--two--desktop,
 				&--three--desktop {
-					grid-row: none;
+					grid-row: 1 / 2;
 					padding: 3.5rem 1rem 2rem 1rem;
-					height: 100vh;
-					& > a,
-					&:active > a {
+					min-height: 100%;
+					& a {
+						min-height: 100%;
 						> span {
 							padding: .2rem .8rem;
 							background: $second_bkg;
 						}
+						&:hover {
+							transition: background .6s, color .6s;
+							background-size: cover;
+							background-position: center;
+							> span {
+								background: $main_bkg;
+								color: $second_font;
+							}
+						}
+						&:active {
+							transform: scale(.99);
+						}
 					}
 				}
-
 				&--one--desktop {
 					padding: 0 .5rem 2rem 2rem;
 					@media (pointer: fine) and (orientation: landscape) {
 						padding: 3.5rem 2rem 2rem 0;
 						margin-right: 0;
 					}
-					& > a {
-						&:hover {
-							--bkgUrl: url('./assets/imgs/large/castle.jpg');
-							background-image: var(--bkgUrl);
-							animation: animatedBackground .6s linear;
-							transition: background .6s, color .6s;
-							background-size: cover;
-							background-position: center;
-						}
-						&:hover:active {
-							transform: scale(.99);
-						}
+					& > a:hover {
+						--bkgUrl: url('./assets/imgs/large/castle.jpg');
+						background-image: var(--bkgUrl);
+						animation: animatedBackground .6s linear;
 					}
-					&--two--desktop {
-						padding: 0 1.25rem 2rem 1.25rem;
-						@media (pointer: fine) and (orientation: landscape) {
-							padding: 3.5rem 2rem 2rem 0;
-						}
+				}
+				&--two--desktop {
+					padding: 0 1.25rem 2rem 1.25rem;
+					@media (pointer: fine) and (orientation: landscape) {
+						padding: 3.5rem 2rem 2rem 0;
 					}
-					&--two--desktop > a {
+					& > a:hover {
 						--bkgUrl: url('./assets/imgs/large/ck.jpg');
 						background-image: var(--bkgUrl);
-
-						&:hover:active {
-							transform: scale(.99);
-						}
+						animation: animatedBackground .6s linear;
 					}
-					&--three--desktop {
-						padding: 0 2rem 2rem .5rem;
-						@media (pointer: fine) and (orientation: landscape) {
-							padding: 3.5rem 2rem 2rem 0;
-						}
+				}
+				&--three--desktop {
+					padding: 0 2rem 2rem .5rem;
+					@media (pointer: fine) and (orientation: landscape) {
+						padding: 3.5rem 2rem 2rem 0;
 					}
-					&--three--desktop > a {
+					& > a:hover {
 						--bkgUrl: url('./assets/imgs/large/ksiaz.jpg');
 						background-image: var(--bkgUrl);
-
-						&:hover:active {
-							transform: scale(.99);
-						}
+						animation: animatedBackground .6s linear;
 					}
 				}
 			}
 		}
 		.contEnd {
 			@include main_container;
-			grid-template-rows: 1fr;
+			grid-template-rows: 100%;
 			grid-template-columns: repeat(3, 1fr);
-			& > div > div {
+			font-size: .8rem;
+			&_one,
+			&_two,
+			&_three {
+				grid-row: 1 / 2;
 				height: 100%;
-				width: 100%;
-				display: flex;
-				justify-content: center;
-				align-items: flex-end;
-				width_brd: $width_brd-dskt;
-				& > p {
-					font-size: 1.4rem;
-					width: 80%;
-					text-align: center;
-					padding: .2rem .8rem;
-					margin-bottom: -1rem;
-					background: $second_bkg;
+				& > div {
+					border-width: $width_brd-dskt;
+					height: 100%;
+					& > h3 {
+						font-size: 1.2rem;
+						padding: .2rem .8rem;
+						background: $second_bkg;
+					}
 				}
 			}
-			& > .element--one {
-				grid-column: 1;
-				grid-row: 1;
+			&_one {
 				padding: 0 .5rem 2rem 2rem;
 				@media (pointer: fine) and (orientation: landscape) {
 					padding: 3.5rem 2rem 2rem 0;
 				}
 			}
-			& > .element--two {
-				grid-column: 2;
-				grid-row: 1;
+			&_two {
 				padding: 0 1.25rem 2rem 1.25rem;
 				@media (pointer: fine) and (orientation: landscape) {
 					padding: 3.5rem 2rem 2rem 0;
 				}
 			}
-			& > .element--three {
-				grid-column: 3;
-				grid-row: 1;
+			&_three {
 				padding: 0 2rem 2rem .5rem;
 				margin-bottom: 0;
 				@media (pointer: fine) and (orientation: landscape) {

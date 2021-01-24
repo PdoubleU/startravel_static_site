@@ -1,7 +1,7 @@
 @import '../../../node_modules/normalize-scss/sass/_normalize.scss';
 
 // mixin for the main page general layout:
-@mixin main__page($bkg_color, $height) {
+@mixin main_page($bkg_color, $height) {
 	display: flex;
 	position: relative;
 	z-index: 0;

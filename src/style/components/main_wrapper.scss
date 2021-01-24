@@ -5,20 +5,20 @@
 @import '../keyframes/keyframes.scss';
 @import '../mixins/general_arrow_btn.scss';
 
-.outer-wrapper {
+.wrapper {
 	width: 100%;
 	height: auto;
 	scrollbar-width: none;
 	position: relative;
 	z-index: -1;
-}
-.inner-wrapper {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	scrollbar-width: none;
-	position: relative;
-	z-index: -1;
+	&_inner {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		scrollbar-width: none;
+		position: relative;
+		z-index: -1;
+	}
 }
 .main {
 	width: auto;
@@ -26,30 +26,30 @@
 	flex-direction: column;
 	scrollbar-width: none;
 	background: $second_bkg;
-}
-.main__page--one {
-	@include main__page($second_bkg, 200vh);
-}
-.main__page--two,
-.main__page--three {
-	@include main__page($second_bkg, 100vh);
-}
-@media (min-width: 37rem) and (orientation: portrait) {
-	.main__page--one {
-		@include main__page($second_bkg, 200vh);
-	}
-}
-@media (orientation: landscape) {
-	.main__page--one {
-		@include main__page($second_bkg, 250vh);
-	}
-	.main__page--two,
-	.main__page--three {
-		@include main__page($second_bkg, 200vh);
-	}
-}
 
-.container-front {
+	&_one {
+		@include main_page($second_bkg, 200vh);
+	}
+	&_two,
+	&_three {
+		@include main_page($second_bkg, 100vh);
+	}
+	@media (min-width: 37rem) and (orientation: portrait) {
+		&_one {
+			@include main_page($second_bkg, 200vh);
+		}
+	}
+	@media (orientation: landscape) {
+		&_one {
+			@include main_page($second_bkg, 250vh);
+		}
+		&_two,
+		&_three {
+			@include main_page($second_bkg, 200vh);
+		}
+	}
+}
+.contFront {
 	@include main_container;
 	grid-template-columns: 100%;
 	grid-template-rows: 50% 30% 20%;
@@ -59,45 +59,40 @@
 	@media (orientation: landscape) {
 		grid-template-rows: 40% 40% 20%;
 	}
-	& > * {
-		background-color: $second_bkg;
-		display: flex;
-	}
-	& > .element--one {
+	&_one {
 		padding: 1rem;
 		grid-row: 1 / 2;
-	}
-	& > .element--one > div {
-		width: 100%;
-		height: 100%;
-		padding: 0 .05rem .05rem 0;
-		background: url('./assets/imgs/small/main_image.jpg');
-		background-size: cover;
-		background-position: center;
-		box-shadow: $shadow_box;
-		display: flex;
-		align-items: flex-end;
-		justify-content: flex-start;
-		& > h1 {
-			font-size: 3rem;
-			max-width: 80%;
-			margin: 0 0 1rem 1rem;
-			font-weight: normal;
-			color: $second_font;
-			background-color: transparent;
-			width: fit-content;
-			padding: .2rem .8rem;
+		& > div {
+			width: 100%;
+			height: 100%;
+			padding: 0 .05rem .05rem 0;
+			background: url('./assets/imgs/small/main_image.jpg');
+			background-size: cover;
+			background-position: center;
+			box-shadow: $shadow_box;
+			display: flex;
+			align-items: flex-end;
+			justify-content: flex-start;
+			& > h1 {
+				font-size: 3rem;
+				max-width: 80%;
+				margin: 0 0 1rem 1rem;
+				font-weight: normal;
+				color: $second_font;
+				background-color: transparent;
+				width: fit-content;
+				padding: .2rem .8rem;
+			}
 		}
 	}
-	& > .element--two {
+	&_two {
 		position: relative;
 		grid-row: 3 / 4;
-		background: $second_bkg;
 		display: flex;
 		align-items: flex-end;
 		justify-content: center;
 		padding: 0 1rem 1rem;
-		& > .container-inner {
+		&--socialMedia {
 			display: flex;
 			flex-direction: column-reverse;
 			align-items: center;
@@ -106,15 +101,15 @@
 			border: $width_brd solid $main_bkg;
 			box-shadow: $shadow_box;
 			z-index: 9;
-			& > .text {
-				font-size: 2rem;
-				margin-bottom: -1rem;
-				margin-top: 1rem;
-				background: $second_bkg;
-				padding: .2rem .8rem;
-				text-align: center;
-			}
-			& > .social_media_box {
+			& .socialMediaBox {
+				&_hdr {
+					font-size: 2rem;
+					margin-bottom: -1rem;
+					margin-top: 1rem;
+					background: $second_bkg;
+					padding: .2rem .8rem;
+					text-align: center;
+				}
 				position: absolute;
 				top: 50%;
 				left: 50%;
@@ -134,18 +129,20 @@
 
 				gap: 3rem 3rem;
 				margin-top: 0rem;
-				& > a {
+				&_link {
 					display: flex;
 					justify-content: center;
 					align-items: center;
 					overflow: visible;
 					width: 3.2rem;
 					height: 3.2rem;
-					& > .icon {
+					&--icon {
 						width: 2.8rem;
+						height: 2.8rem;
 					}
 				}
-				& > .arrow-class {
+
+				& > .arrowBox {
 					justify-self: center;
 					align-self: center;
 					grid-row: 3 / 4;
@@ -170,11 +167,11 @@
 			}
 		}
 	}
-	& > .element--two.sub {
+	&_two.sub {
 		font-size: 1.8rem;
 	}
-	& > .element--three,
-	& > .element--three:active {
+	&_three,
+	&_three:active {
 		position: relative;
 		z-index: 0;
 		grid-row: 2 / 3;
@@ -183,114 +180,103 @@
 	}
 }
 
-.container-middle {
+.contMiddle {
 	@include main_container;
 	grid-template-rows: repeat(3, 1fr);
-	& > span {
-		background: $second_bkg;
-	}
-	& > span > a > span {
-		font-size: 2.2rem;
-		padding: .2rem .8rem;
-		background: $second_bkg;
-		color: $main_font;
-		font-weight: normal;
-		font-family: $header_font;
-	}
-	& > :nth-child(1) {
-		grid-row: 1 / 2;
-		padding: 0 1rem 0 1rem;
-	}
-	& > .element--one > a,
-	& > .element--one:active > a {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		width: 100%;
-		height: 100%;
-		background: url('./assets/imgs/small/castle.jpg');
-		background-size: cover;
-		background-position: center;
-		box-shadow: $shadow_box;
-		&:active {
-			filter: grayscale(100%);
+	font-size: 2.2rem;
+	color: $main_font;
+	font-weight: normal;
+	font-family: $header_font;
+	&_inner {
+		&--one,
+		&--two,
+		&--three {
+			& > a,
+			&:active > a {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+				height: 100%;
+				background-size: cover;
+				background-position: center;
+				box-shadow: $shadow_box;
+				> span {
+					padding: .2rem .8rem;
+					background: $second_bkg;
+				}
+			}
+			&:active {
+				filter: grayscale(100%);
+			}
 		}
-	}
-	& > :nth-child(2) {
-		grid-row: 2 / 3;
-		padding: 1rem 1rem 0 1rem;
-	}
-	& > .element--two > a,
-	> .element--two:active > a {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		width: 100%;
-		height: 100%;
-		background: url('./assets/imgs/small/ck.jpg');
-		background-size: cover;
-		background-position: center;
-		box-shadow: $shadow_box;
-		z-index: 9;
-		&:active {
-			filter: grayscale(100%);
+		&--one {
+			grid-row: 1 / 2;
+			padding: 0 1rem 0 1rem;
+			& > a,
+			&:active > a {
+				background-image: url('./assets/imgs/small/castle.jpg');
+			}
 		}
-	}
-	& > :nth-child(3) {
-		grid-row: 3 / 4;
-		padding: 1rem 1rem 0;
-	}
-	& > .element--three > a,
-	> .element--three:active > a {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		width: 100%;
-		height: 100%;
-		background: url('./assets/imgs/small/ksiaz.jpg');
-		background-size: cover;
-		background-position: center;
-		box-shadow: $shadow_box;
-		z-index: 8;
-		&:active {
-			filter: grayscale(100%);
+		&--two {
+			grid-row: 2 / 3;
+			padding: 1rem 1rem 0 1rem;
+			& > a,
+			&:active > a {
+				background-image: url('./assets/imgs/small/ck.jpg');
+			}
+		}
+		&--three {
+			grid-row: 3 / 4;
+			padding: 1rem 1rem 0;
+			& > a,
+			&:active > a {
+				background-image: url('./assets/imgs/small/ksiaz.jpg');
+			}
 		}
 	}
 }
-.container-end {
+.contEnd {
 	@include main_container;
 	grid-template-rows: repeat(3, 1fr);
-	font-size: 1.8rem;
-	background: $second_bkg;
-	& > div > div {
-		height: 100%;
-		width: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: flex-end;
-		border: $width_brd solid $main_bkg;
-		box-shadow: $shadow_box;
-		& > p {
-			font-size: 2rem;
-			padding: .2rem .8rem;
-			margin-bottom: -1rem;
-			background: $second_bkg;
-			text-align: center;
-			width: 85%;
+	font-size: 1rem;
+	&_one,
+	&_two,
+	&_three {
+		& > div {
+			height: 100%;
+			width: 100%;
+			padding: 1.2rem 1rem 0;
+			display: flex;
+			flex-direction: column-reverse;
+			justify-content: space-between;
+			align-items: center;
+			border: $width_brd solid $main_bkg;
+			box-shadow: $shadow_box;
+			& > h3 {
+				font-size: 1.6rem;
+				padding: .2rem .8rem;
+				margin-bottom: -1rem;
+				background: $second_bkg;
+				text-align: center;
+				width: 85%;
+			}
+			& > p {
+				margin: 0;
+				text-justify: center;
+				text-align: center;
+			}
 		}
 	}
-	& > .element--one {
+	&_one {
 		padding: 1rem 1rem 0;
-		grid-row: 1 / 2;
 	}
-	& > .element--two {
+	&_two {
 		padding: 1rem 1rem 0;
-		grid-row: 2 / 3;
 	}
-	& > .element--three {
+	&_three {
 		padding: 1rem 1rem 0;
 		margin-bottom: 1rem;
-		grid-row: 3 / 4;
 	}
 }
 //below rules apply if the browser not support mentioned in brackets, which is characteristic only for IE and EDGE version <=44
@@ -307,12 +293,12 @@
 		.main__page--one,
 		.main__page--two,
 		.main__page--three {
-			@include main__page($main_bkg, 100vh);
+			@include main_page($main_bkg, 100vh);
 			@media (orientation: portrait) and (hover: none), (orientation: portrait) {
 				height: 50vh;
 			}
 		}
-		.outer-wrapper {
+		.wrapper {
 			width: 100vw;
 			height: 100vh;
 			@media (pointer: fine) and (orientation: landscape) {
@@ -329,18 +315,19 @@
 			&::-webkit-scrollbar {
 				display: none;
 			}
-		}
-		.inner-wrapper {
-			@media (pointer: fine) and (orientation: landscape) {
-				display: grid;
-				grid-template-rows: 100%;
-				grid-template-columns: 75% 25%;
-				background-color: $second_bkg;
-				width: fit-content;
-				transform: rotate(90deg) translateY(-100vh);
-				transform-origin: top left;
+			&_inner {
+				@media (pointer: fine) and (orientation: landscape) {
+					display: grid;
+					grid-template-rows: 100%;
+					grid-template-columns: 75% 25%;
+					background-color: $second_bkg;
+					width: fit-content;
+					transform: rotate(90deg) translateY(-100vh);
+					transform-origin: top left;
+				}
 			}
 		}
+
 		.container-front {
 			@include main_container;
 			grid-template-columns: 2fr 1fr;

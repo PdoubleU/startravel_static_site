@@ -5,7 +5,7 @@
 @mixin general_arrow_btn($main_bkg, $second_bkg) {
 	height: 2rem;
 	width: 2rem;
-	> .arrow-class {
+	> .arrowClass {
 		&--top,
 		&--bottom {
 			position: absolute;

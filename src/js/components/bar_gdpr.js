@@ -4,11 +4,11 @@ const OPEN_GDPR_BTN = document.querySelector('#gdpr_read');
 const ACCEPT_GDPR_BTN = document.querySelector('#gdpr_accept');
 
 export const SHOW_GDPR_BAR = () => {
-	document.querySelector('#bar_gdpr').classList.toggle('bar_gdpr--active');
+	document.querySelector('#bar_gdpr').classList.toggle('bar--active');
 };
 
 export const HIDE_GDPR_BAR = () => {
-	document.querySelector('#bar_gdpr').classList.remove('bar_gdpr--active');
+	document.querySelector('#bar_gdpr').classList.remove('bar--active');
 	window.localStorage.setItem('gdpr', 'confirmed');
 	setTimeout(() => {
 		document.querySelector('#bar_gdpr').remove();

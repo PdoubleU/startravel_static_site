@@ -1,7 +1,7 @@
 @import '../variables/variables.scss';
 @import '../mixins/general_btn.scss';
 
-.bar_gdpr {
+.bar {
 	position: fixed;
 	display: flex;
 	opacity: 0;
@@ -20,32 +20,32 @@
 	transform: translateY(50%);
 	transition: opacity .5s linear;
 	z-index: $zidx_top_navbar;
-	& > p {
+	&--active {
+		transition: opacity 1s linear;
+		opacity: 1;
+	}
+	&_title {
+		font-size: 1rem;
 		margin: .5em .5em;
 	}
-}
-.bar_gdpr--active {
-	transition: opacity 1s linear;
-	opacity: 1;
-}
-.button_gdpr {
-	@include general_btn($second_bkg, $alt_hover_bkg, $main_font, $second_font, $main_brd, $main_shdw);
-	font-size: 1rem;
-	margin-bottom: .5rem;
-	width: 60%;
-	&:hover {
-		transition: .2s ease-in-out;
+	&_button {
+		@include general_btn($second_bkg, $alt_hover_bkg, $main_font, $second_font, $main_brd, $main_shdw);
+		font-size: 1rem;
+		margin-bottom: .5rem;
+		width: 60%;
+		&:hover {
+			transition: .2s ease-in-out;
+		}
 	}
 }
-
 @media (min-width: 37rem) {
-	.bar_gdpr {
+	.bar {
 		bottom: 1.6rem;
 		flex-direction: row;
-	}
-	.button_gdpr {
-		font-size: .8rem;
-		width: fit-content;
-		margin: 0;
+		&_button {
+			font-size: .8rem;
+			width: fit-content;
+			margin: 0;
+		}
 	}
 }

@@ -116,7 +116,7 @@ export class ModalWindow {
 				break;
 			case 'accept':
 				document.querySelector('#modal_' + this.id).remove();
-				document.querySelector('#bar_gdpr').classList.remove('bar_gdpr--active');
+				document.querySelector('#bar_gdpr').classList.remove('bar--active');
 				setTimeout(() => {
 					document.querySelector('#bar_gdpr').remove();
 				}, 1000);

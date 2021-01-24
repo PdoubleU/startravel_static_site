@@ -33,7 +33,6 @@ export class ModalWindow {
 		// this auxiliary functions takes as argument this.content value and accordingly executes set of methods to render appropriate content
 		this.executeSetFormAndGdpr(this.content);
 		this.executeSetDescription(this.content);
-		this.executeActionBtn(this.actionBtn);
 	}
 
 	// set of three auxiliary methods
@@ -43,15 +42,9 @@ export class ModalWindow {
 		}
 	}
 	executeSetDescription(condition) {
-		if (this.content == 'description') {
+		if (condition == 'description') {
 			this.loadDescription();
 			this.loadData(this.generateContent);
-		}
-	}
-	executeActionBtn(condition) {
-		if (this.isActionBtn) {
-			// executes method responsible for launching proper function after hitting button on the screen
-			this.actionBtn();
 		}
 	}
 
@@ -79,27 +72,22 @@ export class ModalWindow {
 		const MODAL_SECTION = document.createElement('article');
 		MODAL_SECTION.id = 'modal_' + this.id;
 		this.bodySelector.appendChild(MODAL_SECTION);
-
 		const MODAL_CONTAINER = document.createElement('div');
 		MODAL_CONTAINER.classList.add('modal');
 		MODAL_CONTAINER.classList.add(this.id);
 		this.bodySelector.lastChild.appendChild(MODAL_CONTAINER);
-
 		const MODAL_BACKDROP = document.createElement('div');
 		MODAL_BACKDROP.classList.add('modal_backdrop');
 		MODAL_BACKDROP.classList.add(this.id);
 		this.bodySelector.lastChild.children[0].appendChild(MODAL_BACKDROP);
-
 		const MODAL_BODY = document.createElement('div');
 		MODAL_BODY.classList.add('modal_body');
 		MODAL_BODY.classList.add(this.id);
 		this.bodySelector.lastChild.children[0].appendChild(MODAL_BODY);
-
 		const MODAL_CONTENT = document.createElement('div');
 		MODAL_CONTENT.classList.add('content-container');
 		MODAL_CONTENT.id = this.content == 'description' ? 'form' : '';
 		this.bodySelector.lastChild.children[0].lastChild.appendChild(MODAL_CONTENT);
-
 		if (this.isActionBtn) {
 			const ACTION_BTN = document.createElement('button');
 			ACTION_BTN.classList.add('action_btn');
@@ -128,7 +116,7 @@ export class ModalWindow {
 				break;
 			case 'accept':
 				document.querySelector('#modal_' + this.id).remove();
-				document.querySelector('#bar_gdpr').classList.remove('bar_gdpr--active');
+				document.querySelector('#bar_gdpr').classList.remove('bar--active');
 				setTimeout(() => {
 					document.querySelector('#bar_gdpr').remove();
 				}, 1000);

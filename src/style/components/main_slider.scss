@@ -15,9 +15,9 @@ a.slide.title {
 		transition: 2s all;
 		z-index: 0;
 		left: -2rem;
-		color: $main-font;
+		color: $main_font;
 		font-size: 2rem;
-		font-family: $header-font;
+		font-family: $header_font;
 		padding: .8rem .2rem;
 		@media (min-width: 52rem) {
 			font-size: 1.2rem;
@@ -38,13 +38,13 @@ a.slide.title.active {
 	position: relative;
 	width: 100%;
 	height: 100%;
-	box-shadow: $shadow-box;
+	box-shadow: $shadow_box;
 	background-color: #fff;
 	z-index: 0;
 }
 .txt-background {
-	background: $second-bkg;
-	color: $main-font;
+	background: $second_bkg;
+	color: $main_font;
 	z-index: 0;
 }
 
@@ -141,12 +141,12 @@ a.slide.title.active {
 }
 .slider-button-prev,
 .slider-button-next {
-	@include general_arrow_btn($font-hover, $main-bkg);
+	@include general_arrow_btn($font_hover, $main_bkg);
 	z-index: 1;
 	> .arrow-class {
 		&--top,
 		&--bottom {
-			background: $main-bkg;
+			background: $main_bkg;
 			width: 1.5rem;
 			left: .6rem;
 		}
@@ -155,7 +155,7 @@ a.slide.title.active {
 		> .arrow-class {
 			&--top,
 			&--bottom {
-				background: $font-hover;
+				background: $font_hover;
 				left: .4rem;
 				height: .08rem;
 				width: 1rem;
@@ -166,9 +166,9 @@ a.slide.title.active {
 	height: 3rem;
 	position: absolute;
 	overflow: hidden;
-	background: $alt-hover-btn;
+	background: $alt_hover_btn;
 	@media (min-width: 52rem) {
-		background: $second-bkg;
+		background: $second_bkg;
 	}
 	top: 50%;
 	transform: translateY(-50%);

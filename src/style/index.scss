@@ -16,9 +16,9 @@
 //root style block has box-sizing set to border-box to avoid unexpected behaviour for box elements:
 :root {
 	box-sizing: border-box;
-	font-family: $text-font, 'Huelvetica', sans-serif;
+	font-family: $text_font, 'Huelvetica', sans-serif;
 	font-weight: lighter;
-	//calc() method in font size assures that the font size will be respond on each window size change
+	//calc() method in font size guarantees that the font size will be responding to each window size change
 	font-size: calc(.5rem + 1vw);
 	line-height: 1.2;
 }
@@ -27,7 +27,6 @@ html {
 	display: block;
 }
 body {
-	//background-color: $primary-bkg-color;
 	//removes from body initial margin and padding
 	margin: 0;
 	padding: 0;
@@ -45,7 +44,7 @@ h5,
 h6 {
 	padding: 0;
 	margin: 0;
-	font-family: $header-font;
+	font-family: $header_font;
 	font-size: 1.4rem;
 	font-weight: bolder;
 }
@@ -54,18 +53,16 @@ h6 {
 *::after {
 	box-sizing: inherit;
 }
-
 a,
 a:visited,
 a:link,
 a:link:active,
 a:visited:active {
-	all: unset;
+	text-decoration: none;
 	color: inherit;
 	cursor: pointer;
 	outline: none;
 }
-
 button {
 	border: none;
 	margin: 0;
@@ -98,12 +95,13 @@ button {
 	margin: 0;
 	visibility: hidden;
 }
+//this part checks if browser is internet explorer and if no just set the display: none for alert window
 @media not screen\0 {
 	.no-support {
 		display: none;
 	}
 }
-//this part checks if browser is internet explorer and if yes, set style for webpage
+//this part checks if browser is internet explorer and if yes, set style for webpage and show alert for users to move on another browser:
 @media screen\0 {
 	html {
 		display: block;

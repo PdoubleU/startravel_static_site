@@ -18,8 +18,8 @@
 	grid-template-columns: 100%;
 	width: 100%;
 	height: 100%;
-	background: $main-bkg;
-	color: $second-font;
+	background: $main_bkg;
+	color: $second_font;
 	padding: 1em;
 	font-weight: bold;
 	justify-content: center;
@@ -74,13 +74,13 @@
 	}
 }
 .footer hr {
-	border-top: $border-width solid $main-bkg;
+	border-top: $width_brd solid $main_bkg;
 	width: 90%;
 	margin: 0 auto;
 	height: 0;
 }
 .open-form {
-	@include general_btn($second-bkg, $alt-hover-bkg, $main-font, $second-font, $main-border, $second-border);
+	@include general_btn($second_bkg, $alt_hover_bkg, $main_font, $second_font, $main_brd, $second_brd);
 	padding: .4rem 1.2rem;
 	font-size: 1.2rem;
 	& > p {
@@ -90,7 +90,7 @@
 .signature {
 	width: 100%;
 	text-align: center;
-	background: $second-bkg;
+	background: $second_bkg;
 	font-size: 1rem;
 }
 //below rules apply if the browser not support mentioned in brackets, which is characteristic only for IE and EDGE version <=44
@@ -155,7 +155,7 @@
 					height: 100%;
 					margin: auto;
 					flex-direction: row;
-					background: $main-bkg;
+					background: $main_bkg;
 					width: 100%;
 					& > * {
 						font-size: 0.8rem;
@@ -176,8 +176,8 @@
 		.signature {
 			width: 100%;
 			text-align: center;
-			color: $main-font;
-			background: $second-bkg;
+			color: $main_font;
+			background: $second_bkg;
 			font-size: .5rem;
 		}
 	}

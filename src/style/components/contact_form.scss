@@ -1,90 +1,45 @@
 @import '../../../node_modules/normalize-scss/sass/_normalize.scss';
 @import '../variables/variables.scss';
 @import '../mixins/general_btn.scss';
+@import '../mixins/grid_section.scss';
 
 .contact_form_header {
-	font-size: 1.8rem;
-	margin-top: 0;
+	font-size: 1.6rem;
 }
-
 .contact_form {
-	width: 80%;
+	width: 90%;
 	display: flex;
 	flex-direction: column;
-	font-size: 1.6rem;
+	font-size: 1.4rem;
 	justify-content: center;
 }
 @media (orientation: landscape) {
 	.contact_form.grid-section {
-		font-size: 1rem;
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: repeat(6, 1fr);
-		gap: 0 1rem;
-		margin-bottom: 1rem;
-		& > .grid-section-left-1 {
-			grid-row: 1 / 2;
-			grid-column: 1 / 2;
-		}
-		& > .grid-section-left-2 {
-			grid-row: 2 / 3;
-			grid-column: 1 / 2;
-		}
-		& > .grid-section-left-3 {
-			grid-row: 3 / 4;
-			grid-column: 1 / 2;
-		}
-		& > .grid-section-left-4 {
-			grid-row: 4 / 5;
-			grid-column: 1 / 2;
-		}
-		& > .grid-section-left-5 {
-			grid-row: 5 / 6;
-			grid-column: 1 / 2;
-		}
-		& > .grid-section-left-6 {
-			grid-row: 6 / 7;
-			grid-column: 1 / 2;
-		}
-		& > .grid-section-right-1 {
-			grid-row: 1 / 2;
-			grid-column: 2 / 3;
-		}
-		& > .grid-section-right-2 {
-			grid-row: 2 / 5;
-			grid-column: 2 / 3;
-		}
-		& > .grid-section-right-3 {
-			justify-self: center;
-			grid-row: 5 / 7;
-			grid-column: 2 / 3;
-		}
+		@include grid_section_form;
 	}
 }
-
 input.sub_btn {
-	@include general_btn($second-bkg, $alt-hover-bkg, $main-font, $second-font, $main-border, $shadow-color-main);
-	font-size: 1.6rem;
+	@include general_btn($second_bkg, $alt_hover_bkg, $main_font, $second_font, $main_brd, $main_shdw);
+	font-size: 1.4rem;
 	height: auto;
 	min-width: 40vw;
+	align-self: center;
 	@media (orientation: landscape) {
 		font-size: 1rem;
 		min-width: 20vw;
 	}
 }
-
 label {
 	margin-top: .8em;
 	margin-bottom: .2em;
 }
-
 textarea {
 	width: 100%;
 	min-height: 4em;
 	resize: vertical;
 	font-size: inherit;
 	font-family: inherit;
-	border: $form-border solid $main-font;
+	border: $form-brd solid $main_font;
 	margin-bottom: 1em;
 	&:hover,
 	&:focus {
@@ -95,24 +50,14 @@ input {
 	height: 2em;
 	font-size: inherit;
 	appearance: none;
-	border: $form-border solid $main-font;
+	border: $form-brd solid $main_font;
 	&:hover,
 	&:focus {
 		border-width: .08rem;
 	}
 	&.sub_btn:hover,
 	&.sub_btn:focus {
-		border-width: $btn-border-width;
-	}
-}
-
-@media (min-width: 37.71rem) {
-	.contact_form_header {
-		font-size: 1.6rem;
-		margin-top: 0;
-	}
-	textarea {
-		width: 100%;
+		border-width: $width_btn_brd;
 	}
 }
 @media (min-width: 52rem) {

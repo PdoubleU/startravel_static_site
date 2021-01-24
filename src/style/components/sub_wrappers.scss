@@ -21,7 +21,7 @@
 	& .element--one {
 		height: 100vh;
 		font-size: 2rem;
-		color: $second-font;
+		color: $second_font;
 		padding: 1rem 1rem;
 	}
 	& .element--two {
@@ -70,8 +70,8 @@
 		}
 	}
 	& > article {
-		background: $second-bkg;
-		color: $main-font;
+		background: $second_bkg;
+		color: $main_font;
 		padding: 1rem;
 		display: flex;
 		grid-row: auto;
@@ -131,8 +131,8 @@
 				grid-auto-columns: minmax(35vw, 45vw);
 			}
 			& > article {
-				background: $second-bkg;
-				color: $main-font;
+				background: $second_bkg;
+				color: $main_font;
 				grid-row: auto;
 				@media (pointer: fine) and (orientation: landscape) {
 					grid-row: 1 / 2;

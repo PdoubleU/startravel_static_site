@@ -15,15 +15,15 @@ article.element > span {
 	text-justify: auto;
 	font-size: 1rem;
 	min-width: 100%;
-	border: $border-width solid $main-bkg;
-	background: $second-bkg;
-	box-shadow: $shadow-box;
+	border: $width_brd solid $main_bkg;
+	background: $second_bkg;
+	box-shadow: $shadow_box;
 	& > h4.title {
 		position: static;
 		font-size: 1.4rem;
 		max-width: 80%;
 		margin-top: -1rem;
-		background: $second-bkg;
+		background: $second_bkg;
 		padding: .2rem .8rem;
 	}
 }
@@ -63,7 +63,7 @@ article.element > span > .frame {
 	}
 }
 button.description_show {
-	@include general_btn($second-bkg, $alt-hover-bkg, $main-font, $second-font, $main-border, $shadow-color-main);
+	@include general_btn($second_bkg, $alt_hover_bkg, $main_font, $second_font, $main_brd, $main_shdw);
 	font-size: 1.4rem;
 	width: calc(100% - 4rem);
 	position: static;
@@ -77,7 +77,7 @@ button.description_show {
 @media (pointer: fine) and (min-width: 52rem) {
 	article.element > span {
 		position: relative;
-		border-width: $border-width-desktop;
+		width_brd: $width_brd-dskt;
 		justify-content: center;
 		& > h4.title {
 			position: absolute;
@@ -85,7 +85,7 @@ button.description_show {
 			max-width: 80%;
 			margin-top: 0;
 			top: -1rem;
-			background: $second-bkg;
+			background: $second_bkg;
 			padding: .2rem .8rem;
 		}
 	}

@@ -1,12 +1,12 @@
 @import '../../../node_modules/normalize-scss/sass/_normalize.scss';
 @import '../variables/variables.scss';
+@import '../mixins/grid_section.scss';
 
 .modal_body.description {
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: 3fr 1fr .3fr;
+	grid-template-rows: 4fr 1fr .5fr;
 }
-
 .content-container.description {
 	grid-row: 1 / 2;
 	display: flex;
@@ -16,13 +16,10 @@
 	grid-row: 2 / 3;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
 }
 .action_btn.description {
-	font-size: 1.6rem;
-	@media (orientation: landscape) {
-		font-size: 1rem;
-	}
+	font-size: 1.4rem;
 	grid-row: 3 / 4;
 	align-self: center;
 }
@@ -31,9 +28,9 @@
 	justify-content: center;
 	align-items: center;
 	height: 2rem;
-}
-.cost > span {
-	margin-top: 0;
+	& > span {
+		margin-top: 0;
+	}
 }
 .cost-currency {
 	font-size: 1.2rem;
@@ -50,76 +47,38 @@
 	position: absolute;
 	align-items: center;
 	justify-content: center;
-	background-color: grey;
+	background-color: $main_bkg;
+	color: $second_font;
 	top: -10%;
 	width: 100%;
 	height: 0%;
 	transition: height .6s ease-in-out;
 	overflow-y: scroll;
 	padding: 0 2em;
-	& > h2.contact_form_header {
-		margin-top: 10%;
+	& > .contact_form_header {
+		margin-top: 12%;
 	}
 	@media (orientation: landscape) {
-		& > h2.contact_form_header {
-			margin-top: 5%;
+		& > .contact_form_header {
+			margin-top: 8%;
 		}
 		& > .grid-section {
-			font-size: 1rem;
-			width: 90vw;
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			grid-template-rows: repeat(6, 1fr);
-			gap: 0 1rem;
-			margin-bottom: 1rem;
-			& > .grid-section-left-1 {
-				grid-row: 1 / 2;
-				grid-column: 1 / 2;
-			}
-			& > .grid-section-left-2 {
-				grid-row: 2 / 3;
-				grid-column: 1 / 2;
-			}
-			& > .grid-section-left-3 {
-				grid-row: 3 / 4;
-				grid-column: 1 / 2;
-			}
-			& > .grid-section-left-4 {
-				grid-row: 4 / 5;
-				grid-column: 1 / 2;
-			}
-			& > .grid-section-left-5 {
-				grid-row: 5 / 6;
-				grid-column: 1 / 2;
-			}
-			& > .grid-section-left-6 {
-				grid-row: 6 / 7;
-				grid-column: 1 / 2;
-			}
-			& > .grid-section-right-1 {
-				grid-row: 1 / 2;
-				grid-column: 2 / 3;
-			}
-			& > .grid-section-right-2 {
-				grid-row: 2 / 5;
-				grid-column: 2 / 3;
-			}
-			& > .grid-section-right-3 {
-				justify-self: center;
-				grid-row: 5 / 7;
-				grid-column: 2 / 3;
-			}
+			@include grid_section_form;
+		}
+	}
+	.sub_btn,
+	.auxiliary_btn {
+		&:hover {
+			border: $width_btn_brd solid $second_brd;
 		}
 	}
 }
-
 @media (min-width: 52rem) {
 	.modal_body.description > #form {
 		& > .grid-section {
 			display: flex;
 			width: 50vw;
 		}
-		overflow-y: hidden;
 	}
 	.action_btn.description {
 		font-size: 1rem;

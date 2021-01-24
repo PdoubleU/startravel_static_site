@@ -31,7 +31,7 @@
 	left: 100%;
 	margin-top: -1.5em;
 	margin-left: -4em;
-	z-index: $mobile-menu-sgl-btn;
+	z-index: $zidx_mob_menu_sgl_btn;
 }
 .nav-mobile > .logo {
 	position: fixed;
@@ -54,7 +54,7 @@ input.menu-open {
 	background: transparent;
 }
 .menu-btn {
-	@include general_btn($second-bkg, $second-bkg, $main-font, $hover-bkg, $main-border, $shadow-color-main);
+	@include general_btn($second_bkg, $second_bkg, $main_font, $hover_bkg, $main_brd, $main_shdw);
 	position: fixed;
 	display: flex;
 	align-items: center;
@@ -64,7 +64,7 @@ input.menu-open {
 	right: 1rem;
 	width: 4rem;
 	height: 4rem;
-	z-index: $mobile-menu-sgl-btn;
+	z-index: $zidx_mob_menu_sgl_btn;
 }
 .menu-btn__box {
 	width: 2em;
@@ -80,7 +80,7 @@ input.menu-open {
 	height: 0.2rem;
 	margin: 0;
 	padding: 0;
-	background: $main-bkg;
+	background: $main_bkg;
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
@@ -93,7 +93,7 @@ input.menu-open {
 	width: 100%;
 	padding: 0;
 	height: 0.2rem;
-	background-color: $main-bkg;
+	background-color: $main_bkg;
 	position: absolute;
 	transition: transform .1s .05s ease-in-out;
 }
@@ -127,7 +127,7 @@ input.menu-open {
 	font-size: 1rem;
 	transition-timing-function: cubic-bezier(0.8, 0, 0.64, 1.9);
 	& > :nth-child(1) {
-		@include top-nav-btn-model($second-bkg, $hover-bkg, $main-font, $font-hover, $main-border, $shadow-color-main);
+		@include top-nav-btn-model($second_bkg, $hover_bkg, $main_font, $font_hover, $main_brd, $main_shdw);
 		top: 50%;
 		left: 100%;
 		margin-top: -1.5rem;
@@ -136,7 +136,7 @@ input.menu-open {
 		transform: translate3d(0, 2.9rem, 0);
 	}
 	& > :nth-child(2) {
-		@include top-nav-btn-model($second-bkg, $hover-bkg, $main-font, $font-hover, $main-border, $shadow-color-main);
+		@include top-nav-btn-model($second_bkg, $hover_bkg, $main_font, $font_hover, $main_brd, $main_shdw);
 		top: 50%;
 		left: 100%;
 		margin-top: -1.5rem;
@@ -145,7 +145,7 @@ input.menu-open {
 		transform: translate3d(0, -3.6rem, 0);
 	}
 	& > :nth-child(3) {
-		@include top-nav-btn-model($second-bkg, $hover-bkg, $main-font, $font-hover, $main-border, $shadow-color-main);
+		@include top-nav-btn-model($second_bkg, $hover_bkg, $main_font, $font_hover, $main_brd, $main_shdw);
 		top: 50%;
 		left: 100%;
 		margin-top: -1.5rem;
@@ -154,7 +154,7 @@ input.menu-open {
 		transform: translate3d(0, -10.2rem, 0);
 	}
 	& > :nth-child(4) {
-		@include top-nav-btn-model($second-bkg, $hover-bkg, $main-font, $font-hover, $main-border, $shadow-color-main);
+		@include top-nav-btn-model($second_bkg, $hover_bkg, $main_font, $font_hover, $main_brd, $main_shdw);
 		margin-top: -1.5rem;
 		margin-left: 8rem;
 		transition-duration: 210ms;
@@ -211,7 +211,7 @@ input.menu-open {
 		margin: 0;
 		top: auto;
 		left: auto;
-		z-index: $mobile-menu-sgl-btn;
+		z-index: $zidx_mob_menu_sgl_btn;
 	}
 	.menu-btn {
 		display: none;
@@ -226,7 +226,7 @@ input.menu-open {
 		padding: 0 2rem;
 		width: 100%;
 		background-color: transparent;
-		z-index: $index_top_navabr;
+		z-index: $zidx_top_navbar;
 	}
 	.logo--dskt {
 		display: inline;
@@ -249,7 +249,7 @@ input.menu-open {
 			font-size: .6rem;
 		}
 		& > div {
-			@include top-nav-btn-model($second-bkg, $hover-bkg, $main-font, $font-hover, $main-border, $shadow-color-main);
+			@include top-nav-btn-model($second_bkg, $hover_bkg, $main_font, $font_hover, $main_brd, $main_shdw);
 			position: relative;
 			transition: all 300ms linear;
 			min-width: 6rem;
@@ -258,13 +258,13 @@ input.menu-open {
 				height: 100%;
 				width: 0%;
 				margin-left: -.2rem;
-				background: $second-bkg;
+				background: $second_bkg;
 				transition: all 300ms;
 			}
 			&:hover {
-				color: $second-font;
+				color: $second_font;
 				& .background-roll-down {
-					background: $main-bkg;
+					background: $main_bkg;
 					animation: backgroundRollDown 300ms ease-in;
 					width: calc(100% + .4rem);
 				}

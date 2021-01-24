@@ -64,7 +64,7 @@ export class FillContent {
 	loadModalWindow(content, price) {
 		new ModalWindow('description', {
 			content: 'description',
-			actionBtn: true,
+			isActionBtn: true,
 			description: [ content, price ],
 			buttonNamePl: 'Zarezerwuj!',
 			buttonNameEn: 'Book!',

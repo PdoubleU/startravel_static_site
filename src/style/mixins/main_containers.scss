@@ -1,18 +1,10 @@
 @import '../../../node_modules/normalize-scss/sass/_normalize.scss';
+@import '../variables/variables.scss';
 
 // main container describes the style for main containers located on the website
 @mixin main_container {
 	display: grid;
 	width: 100vw;
 	height: 100%;
-	& > .element--one,
-	.element--two,
-	.element--three,
-	.element--one:active,
-	.element--two:active,
-	.element--three:active {
-		align-items: flex-end;
-		justify-content: flex-start;
-		display: flex;
-	}
+	background: $second_bkg;
 }

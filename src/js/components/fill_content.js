@@ -3,11 +3,7 @@ import { FillContent } from '../classes/FillContent.js';
 if (document.querySelector('.mainSubpage') == undefined) {
 	void 0;
 } else {
-<<<<<<< HEAD
-	let element = document.querySelector('.contMiddle');
-=======
 	let element = document.querySelector('.contMiddle--sub');
->>>>>>> refactorcss
 	switch (element.id) {
 		case 'content-de':
 			new FillContent('#content-de', {

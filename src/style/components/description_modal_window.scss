@@ -2,86 +2,88 @@
 @import '../variables/variables.scss';
 @import '../mixins/grid_section.scss';
 
-.modal_body.description {
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: 4fr 1fr .5fr;
+.modal_body {
+	&.description {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 4fr 1fr .5fr;
+		> #form {
+			display: flex;
+			position: absolute;
+			align-items: center;
+			justify-content: center;
+			background-color: $main_bkg;
+			color: $second_font;
+			top: -10%;
+			width: 100%;
+			height: 0%;
+			transition: height .6s ease-in-out;
+			overflow-y: scroll;
+			padding: 0 2em;
+			& > .contactForm {
+				&_header {
+					margin-top: 12%;
+					@media (orientation: landscape) {
+						margin-top: 8%;
+					}
+				}
+				@media (orientation: landscape) {
+					&_gridSection {
+						@include grid_section_form;
+					}
+				}
+			}
+		}
+	}
+	&--actionBtn.description {
+		font-size: 1.4rem;
+		grid-row: 3 / 4;
+		align-self: center;
+	}
+	&--priceContainer {
+		grid-row: 2 / 3;
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		.cost {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 2rem;
+			& > span {
+				margin-top: 0;
+			}
+		}
+		.cost-currency {
+			font-size: 1.2rem;
+		}
+		.cost-integer {
+			font-size: 2.2rem;
+		}
+		.cost-decimal {
+			font-size: 1.2rem;
+			align-self: flex-start;
+		}
+	}
 }
-.content-container.description {
+#description.modalContainer {
 	grid-row: 1 / 2;
 	display: flex;
 	justify-content: center;
 }
-.price-container {
-	grid-row: 2 / 3;
-	display: flex;
-	justify-content: center;
-	align-items: flex-start;
-}
-.action_btn.description {
-	font-size: 1.4rem;
-	grid-row: 3 / 4;
-	align-self: center;
-}
-.cost {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 2rem;
-	& > span {
-		margin-top: 0;
-	}
-}
-.cost-currency {
-	font-size: 1.2rem;
-}
-.cost-integer {
-	font-size: 2.2rem;
-}
-.cost-decimal {
-	font-size: 1.2rem;
-	align-self: flex-start;
-}
-.modal_body.description > #form {
-	display: flex;
-	position: absolute;
-	align-items: center;
-	justify-content: center;
-	background-color: $main_bkg;
-	color: $second_font;
-	top: -10%;
-	width: 100%;
-	height: 0%;
-	transition: height .6s ease-in-out;
-	overflow-y: scroll;
-	padding: 0 2em;
-	& > .contact_form_header {
-		margin-top: 12%;
-	}
-	@media (orientation: landscape) {
-		& > .contact_form_header {
-			margin-top: 8%;
-		}
-		& > .grid-section {
-			@include grid_section_form;
-		}
-	}
-	.sub_btn,
-	.auxiliary_btn {
-		&:hover {
-			border: $width_btn_brd solid $second_brd;
-		}
-	}
-}
 @media (min-width: 52rem) {
-	.modal_body.description > #form {
-		& > .grid-section {
-			display: flex;
-			width: 50vw;
+	.modal_body {
+		&.description > #form {
+			& > .contactForm {
+				&_gridSection {
+					display: flex;
+					width: 50vw;
+				}
+			}
 		}
-	}
-	.action_btn.description {
-		font-size: 1rem;
-		margin-bottom: 1rem;
+		&--actionBtn.description {
+			font-size: 1rem;
+			margin-bottom: 1rem;
+		}
 	}
 }

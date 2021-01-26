@@ -1,9 +1,9 @@
 import { FillContent } from '../classes/FillContent.js';
 //if statement below checks if user is on the main page or subpage:
-if (document.getElementById('sub_page') == undefined) {
+if (document.querySelector('.mainSubpage') == undefined) {
 	void 0;
 } else {
-	let element = document.querySelector('.container-middle');
+	let element = document.querySelector('.contMiddle--sub');
 	switch (element.id) {
 		case 'content-de':
 			new FillContent('#content-de', {

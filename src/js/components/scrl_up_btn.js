@@ -26,19 +26,20 @@ export const CREATE_BUTTON = () => {
 	if (window.innerWidth <= 780) {
 		isButtonActive = true;
 		let scrlBtn = document.createElement('button');
-		let arrowTop = document.createElement('div');
-		let arrowBot = document.createElement('div');
-		let arrowCont = document.createElement('div');
-		arrowTop.className = 'arrow-class--top';
-		arrowBot.className = 'arrow-class--bottom';
-		arrowCont.className = 'arrow-class';
+		let arrowTop = document.createElement('span');
+		let arrowBot = document.createElement('span');
+		let arrowClass = document.createElement('span');
+		let arrowBox = document.createElement('span');
+		arrowTop.className = 'arrowBox--top';
+		arrowBot.className = 'arrowBox--bottom';
+		arrowBox.className = 'arrowBox';
 		scrlBtn.className = 'scroll_btn';
 		scrlBtn.setAttribute('aria-label', 'Przewiń do góry');
 		scrlBtn.setAttribute('tabindex', '0');
 		scrlBtn.setAttribute('title', 'Przewiń do góry');
-		arrowCont.appendChild(arrowTop);
-		arrowCont.appendChild(arrowBot);
-		scrlBtn.appendChild(arrowCont);
+		arrowBox.appendChild(arrowTop);
+		arrowBox.appendChild(arrowBot);
+		scrlBtn.appendChild(arrowBox);
 		GRIP.appendChild(scrlBtn);
 	}
 };

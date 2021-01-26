@@ -3,9 +3,10 @@
 
 // styled arrow used inside some functional buttons (ie. scroll up or quick jump to contact section):
 @mixin general_arrow_btn($main_bkg, $second_bkg) {
+	display: block;
 	height: 2rem;
 	width: 2rem;
-	> .arrowClass {
+	.arrowBox {
 		&--top,
 		&--bottom {
 			position: absolute;
@@ -40,9 +41,7 @@
 				transition-delay: .1s;
 			}
 		}
-	}
-	&:hover {
-		> .arrow-class {
+		&:hover {
 			&--top:after {
 				border: transparent;
 				left: 0;
@@ -54,9 +53,9 @@
 				transition-delay: 0s;
 			}
 		}
-	}
-	&:active,
-	&:focus {
-		outline: none;
+		&:active,
+		&:focus {
+			outline: none;
+		}
 	}
 }

@@ -1,121 +1,128 @@
 @import '../../../node_modules/normalize-scss/sass/_normalize.scss';
 @import '../variables/variables.scss';
 
-.poland > .main__page--one,
-.germany > .main__page--one,
-.czechia > .main__page--one {
-	height: fit-content;
-}
-.poland > .main__page--two,
-.germany > .main__page--two,
-.czechia > .main__page--two {
+.mainSubpage_one,
+.mainSubpage_two,
+.contMiddle--sub {
 	height: fit-content;
 	width: 100%;
+	background: $second_bkg;
 }
-.poland :nth-child(1) > .container-front,
-.germany :nth-child(1) > .container-front,
-.czechia :nth-child(1) > .container-front {
-	display: flex;
-	flex-direction: column;
-	height: fit-content;
-	& .element--one {
+// set different background images according to choosen destination country and user's device (in that case mobile device):
+#poland .mainSubpage_one > .contFront--sub > .contFront_one--sub {
+	background-image: url('./assets/imgs/small/ck.jpg');
+}
+#germany .mainSubpage_one > .contFront--sub > .contFront_one--sub {
+	background-image: url('./assets/imgs/small/ck.jpg');
+}
+#czechia .mainSubpage_one > .contFront--sub > .contFront_one--sub {
+	background-image: url('./assets/imgs/small/ck.jpg');
+}
+.contFront {
+	&--sub {
+		display: flex;
+		flex-direction: column;
+		padding: 1rem 1rem 0;
 		height: 100vh;
+		@media (orientation: landscape) {
+			height: auto;
+		}
+	}
+	&_one--sub {
 		font-size: 2rem;
 		color: $second_font;
-		padding: 1rem 1rem;
+		align-items: center;
+		justify-content: center;
+		background-size: cover;
+		background-position: center;
+		display: flex;
+		height: 100%;
+		@media (orientation: landscape) {
+			height: calc(100vh - 2rem);
+		}
+		& h1 {
+			font-size: 3rem;
+		}
 	}
-	& .element--two {
+	&_two--sub {
 		height: fit-content;
 		font-size: 1.2rem;
-		padding: 1rem;
-		& > p {
-			margin: 0;
-		}
 	}
 }
-.element--one > div {
-	background-size: cover;
-	background-position: center;
-}
-.poland :nth-child(1) > .container > .element--one > div {
-	background-image: url('./assets/imgs/small/ck.jpg');
-}
-.germany :nth-child(1) > .container > .element--one > div {
-	background-image: url('./assets/imgs/small/ck.jpg');
-}
-.czechia :nth-child(1) > .container > .element--one > div {
-	background-image: url('./assets/imgs/small/ck.jpg');
-}
-.poland :nth-child(2) > .container-middle,
-.germany :nth-child(2) > .container-middle,
-.czechia :nth-child(2) > .container-middle {
-	height: fit-content;
-	width: 100%;
+.contMiddle--sub {
+	display: grid;
 	grid-template-rows: unset;
 	grid-template-columns: 100%;
-	grid-auto-rows: auto;
-	@media (min-width: 37rem) {
-		grid-auto-rows: minmax(30vh, 60vh);
-		@media (orientation: portrait) {
-			grid-auto-rows: minmax(30vh, auto);
-		}
-	}
-	@media (orientation: landscape) and (hover: none) {
-		grid-auto-rows: minmax(100vh, 110vh);
-	}
+	grid-auto-rows: unset;
 	@media (min-width: 52rem) {
 		grid-auto-rows: minmax(30vh, auto);
 		@media (orientation: landscape) {
 			grid-auto-rows: minmax(auto, 100vh);
 		}
 	}
-	& > article {
-		background: $second_bkg;
-		color: $main_font;
-		padding: 1rem;
-		display: flex;
-		grid-row: auto;
-		grid-column: auto;
-		min-width: 100%;
-	}
 }
 //below rules apply if the browser not support mentioned in brackets, which is characteristic only for IE and EDGE version <=44
 @supports not (-ms-ime-align: auto) {
 	@media (pointer: fine) and (min-width: 52rem) {
-		.poland > .main__page--one,
-		.germany > .main__page--one,
-		.czechia > .main__page--one {
-			width: 100vw;
-			height: 100vh;
-			@media (orientation: portrait) {
-				height: 50vh;
+		.mainSubpage {
+			display: flex;
+			height: fit-content;
+			width: fit-content;
+			flex-direction: column;
+			@media (pointer: fine) and (orientation: landscape) {
+				flex-direction: row;
+				grid-column: 1 / 2;
+				grid-row: 1 / 2;
+			}
+			&_one {
+				width: 100vw;
+				height: 100vh;
+				@media (orientation: portrait) {
+					height: 50vh;
+				}
+			}
+			&_two {
+				width: fit-content;
+				display: flex;
 			}
 		}
-		.poland > .main__page--one > .container-front,
-		.germany > .main__page--one > .container-front,
-		.czechia > .main__page--one > .container-front {
-			width: 100vw;
-			height: 100%;
-			flex-direction: row;
-			& .element--one {
-				padding: 3.5rem 2rem 2rem 2rem;
+		// set different background images according to choosen destination country and user's device (in that case desktop or tablet):
+		#poland .mainSubpage_one > .contFront--sub > .contFront_one--sub {
+			background-image: url('./assets/imgs/small/ck.jpg');
+		}
+		#germany .mainSubpage_one > .contFront--sub > .contFront_one--sub {
+			background-image: url('./assets/imgs/small/ck.jpg');
+		}
+		#czechia .mainSubpage_one > .contFront--sub > .contFront_one--sub {
+			background-image: url('./assets/imgs/small/ck.jpg');
+		}
+		.contFront {
+			&--sub {
+				width: 100vw;
+				height: 100%;
+				flex-direction: row;
+				padding: 3.5rem 2rem 2rem;
+			}
+			&_one--sub {
 				height: 100%;
 				width: 70%;
 			}
-			& .element--two {
-				padding: 3.5rem 2rem 2rem 0;
+			&_two--sub {
+				display: flex;
 				height: 100%;
 				width: 30%;
+				align-items: flex-end;
+				> p {
+					margin: 0 0 0 1rem;
+				}
 			}
 		}
-		.poland :nth-child(2) > .container-middle,
-		.germany :nth-child(2) > .container-middle,
-		.czechia :nth-child(2) > .container-middle {
+		.contMiddle--sub {
 			height: fit-content;
 			width: fit-content;
-			grid-template-rows: unset;
-			grid-template-columns: 100%;
+			grid-template-columns: unset;
 			grid-auto-rows: minmax(35vh, 40vh);
+			grid-auto-columns: 100%;
 			@media (orientation: landscape) and (hover: none) {
 				grid-auto-rows: 100vh;
 				@media (min-width: 52rem) {
@@ -124,67 +131,40 @@
 			}
 			@media (pointer: fine) and (orientation: landscape) {
 				height: 100vh;
-				width: fit-content;
 				grid-auto-rows: unset;
 				grid-template-rows: 100%;
 				grid-template-columns: unset;
 				grid-auto-columns: minmax(35vw, 45vw);
-			}
-			& > article {
-				background: $second_bkg;
-				color: $main_font;
-				grid-row: auto;
-				@media (pointer: fine) and (orientation: landscape) {
-					grid-row: 1 / 2;
+				& > :nth-child(1) {
+					z-index: 10;
 				}
-			}
-			& > article + article {
-				padding: 2rem 2rem 0 2rem;
-				@media (pointer: fine) and (orientation: landscape) {
-					padding: 3.5rem 0 2rem 2rem;
+				& > :nth-child(2) {
+					z-index: 9;
 				}
-			}
-			& > :nth-child(1) {
-				padding: 2rem 2rem 0 2rem;
-				@media (pointer: fine) and (orientation: landscape) {
-					padding: 3.5rem 0 2rem 2rem;
+				& > :nth-child(3) {
+					z-index: 8;
 				}
-			}
-			& > :nth-last-child(1) {
-				padding: 2rem 2rem 0 2rem;
-				@media (pointer: fine) and (orientation: landscape) {
-					padding: 3.5rem 0 2rem 2rem;
+				& > :nth-child(4) {
+					z-index: 7;
 				}
-			}
-			& > :nth-child(1) {
-				z-index: 10;
-			}
-			& > :nth-child(2) {
-				z-index: 9;
-			}
-			& > :nth-child(3) {
-				z-index: 8;
-			}
-			& > :nth-child(4) {
-				z-index: 7;
-			}
-			& > :nth-child(5) {
-				z-index: 6;
-			}
-			& > :nth-child(6) {
-				z-index: 5;
-			}
-			& > :nth-child(7) {
-				z-index: 4;
-			}
-			& > :nth-child(8) {
-				z-index: 3;
-			}
-			& > :nth-child(9) {
-				z-index: 2;
-			}
-			& > :nth-child(10) {
-				z-index: 1;
+				& > :nth-child(5) {
+					z-index: 6;
+				}
+				& > :nth-child(6) {
+					z-index: 5;
+				}
+				& > :nth-child(7) {
+					z-index: 4;
+				}
+				& > :nth-child(8) {
+					z-index: 3;
+				}
+				& > :nth-child(9) {
+					z-index: 2;
+				}
+				& > :nth-child(10) {
+					z-index: 1;
+				}
 			}
 		}
 		.poland ~ footer,

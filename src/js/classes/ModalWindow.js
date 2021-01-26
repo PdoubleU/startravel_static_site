@@ -50,12 +50,12 @@ export class ModalWindow {
 
 	// below method is responsible for create all content inside modal window - effects depend on provided parameters
 	generateContent(response, language, isHidden, isAuxBtn, bodySel) {
-		let modalCont = document.querySelector('.content-container');
+		let modalCont = document.querySelector('.modalContainer');
 		modalCont.innerHTML = response[language];
 		bodySel.lastChild.children[0].lastChild.appendChild(modalCont);
 
 		let elem = document.querySelector('#form');
-		let auxBtn = document.querySelector('.auxiliary_btn');
+		let auxBtn = document.querySelector('.modalContainer--auxBtn');
 
 		isHidden ? (elem.style.height = '0%') : { return: 1 };
 		isAuxBtn ? (auxBtn.style.display = 'relative') : (auxBtn.style.display = 'none');
@@ -85,12 +85,12 @@ export class ModalWindow {
 		MODAL_BODY.classList.add(this.id);
 		this.bodySelector.lastChild.children[0].appendChild(MODAL_BODY);
 		const MODAL_CONTENT = document.createElement('div');
-		MODAL_CONTENT.classList.add('content-container');
+		MODAL_CONTENT.classList.add('modalContainer');
 		MODAL_CONTENT.id = this.content == 'description' ? 'form' : '';
 		this.bodySelector.lastChild.children[0].lastChild.appendChild(MODAL_CONTENT);
 		if (this.isActionBtn) {
 			const ACTION_BTN = document.createElement('button');
-			ACTION_BTN.classList.add('action_btn');
+			ACTION_BTN.classList.add('modal_body--actionBtn');
 			ACTION_BTN.classList.add(this.id);
 			ACTION_BTN.appendChild(
 				document.createTextNode(this.language == 'polish' ? this.btnNamePl : this.btnNameEn)
@@ -101,7 +101,7 @@ export class ModalWindow {
 
 		if (this.isCloseBtn) {
 			const CLOSE_BTN = document.createElement('button');
-			CLOSE_BTN.classList.add('modal_close');
+			CLOSE_BTN.classList.add('modal_body--close');
 			CLOSE_BTN.classList.add(this.id);
 			this.bodySelector.lastChild.children[0].lastChild.appendChild(CLOSE_BTN);
 			CLOSE_BTN.onclick = () => MODAL_SECTION.remove();
@@ -152,10 +152,10 @@ export class ModalWindow {
 	loadDescription() {
 		const MODAL_CONTENT = document.createElement('div');
 		const MODAL_PRICE = document.createElement('div');
-		MODAL_CONTENT.classList.add('content-container');
-		MODAL_CONTENT.classList.add('description');
+		MODAL_CONTENT.classList.add('modalContainer');
+		MODAL_CONTENT.id = 'description';
 		MODAL_CONTENT.innerHTML = this.description[0];
-		MODAL_PRICE.classList.add('price-container');
+		MODAL_PRICE.classList.add('modal_body--priceContainer');
 		MODAL_PRICE.innerHTML = this.description[1];
 
 		this.bodySelector.lastChild.children[0].lastChild.appendChild(MODAL_CONTENT);

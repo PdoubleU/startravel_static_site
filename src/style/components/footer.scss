@@ -10,88 +10,92 @@
 	@media (orientation: landscape) {
 		height: 200vh;
 	}
-}
-.footer-content {
-	display: grid;
-	margin: auto;
-	grid-template-rows: 1% 47% 1% 25% 1% 25%;
-	grid-template-columns: 100%;
-	width: 100%;
-	height: 100%;
-	background: $main_bkg;
-	color: $second_font;
-	padding: 1em;
-	font-weight: bold;
-	justify-content: center;
-	align-content: center;
-	& > .footer-content--inner {
-		display: grid;
+	&_signature {
 		width: 100%;
-		min-height: 100%;
-		padding: 1rem;
-		grid-template-rows: 50% 50%;
-		grid-template-columns: 50% 50%;
-		margin-top: 1rem;
-		& > .footer-art {
-			font-size: 1.2rem;
-			position: relative;
-			padding: .5em;
-			display: flex;
-			flex-direction: column;
-			justify-content: baseline;
-			align-items: center;
-			height: 100%;
-			& > * {
-				font-size: 1.2rem;
-				text-align: center;
-			}
-		}
-		& > * > img.icon {
-			filter: invert(1);
-			width: 2.2rem;
-			height: 2.2rem;
-			margin-bottom: .8em;
-		}
+		text-align: center;
+		background: $second_bkg;
+		color: $main_font;
+		font-size: 1rem;
 	}
-	.art-container {
+	&_section {
+		display: grid;
+		margin: auto;
+		grid-template-rows: 1% 55% 1% 27% 1% 15%;
+		grid-template-columns: 100%;
 		width: 100%;
 		height: 100%;
-		display: flex;
-		flex-direction: row;
-		justify-content: space-evenly;
-		align-items: center;
-	}
-
-	& > article {
-		display: flex;
-		flex-direction: column;
-		height: auto;
-		margin: 0;
-		padding: .5em;
-		align-items: center;
-		justify-content: space-around;
+		background: $main_bkg;
+		color: $second_font;
+		padding: 1em;
+		font-weight: bold;
+		justify-content: center;
 		align-content: center;
+		&--box,
+		&--address {
+			display: flex;
+			flex-direction: column;
+			height: auto;
+			margin: 0;
+			padding: .5em;
+			align-items: center;
+			justify-content: space-around;
+			align-content: center;
+		}
+		&--box {
+			display: grid;
+			width: 100%;
+			min-height: 100%;
+			padding: 1rem;
+			grid-template-rows: 50% 50%;
+			grid-template-columns: 50% 50%;
+			&-art {
+				font-size: 1.2rem;
+				position: relative;
+				padding: 1.5em .5em .5em;
+				display: flex;
+				flex-direction: column;
+				justify-content: baseline;
+				align-items: center;
+				height: 100%;
+				background: $main_bkg;
+				& > img.icon {
+					filter: invert(1);
+					width: 2.2rem;
+					height: 2.2rem;
+					margin-bottom: .8em;
+				}
+				& > p {
+					font-size: 1.2rem;
+					text-align: center;
+				}
+			}
+		}
+		&--address-art {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-evenly;
+			align-items: center;
+			background: $main_bkg;
+		}
+		&--contact {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			&-open {
+				@include general_btn($second_bkg, $alt_hover_bkg, $main_font, $second_font, $main_brd, $second_brd);
+				padding: .4rem 1.2rem;
+				font-size: 1.2rem;
+			}
+		}
 	}
-}
-.footer hr {
-	border-top: $width_brd solid $main_bkg;
-	width: 90%;
-	margin: 0 auto;
-	height: 0;
-}
-.open-form {
-	@include general_btn($second_bkg, $alt_hover_bkg, $main_font, $second_font, $main_brd, $second_brd);
-	padding: .4rem 1.2rem;
-	font-size: 1.2rem;
-	& > p {
-		margin: 0;
+	hr {
+		border-top: $width_brd solid $main_bkg;
+		width: 90%;
+		margin: 0 auto;
+		height: 0;
 	}
-}
-.signature {
-	width: 100%;
-	text-align: center;
-	background: $second_bkg;
-	font-size: 1rem;
 }
 //below rules apply if the browser not support mentioned in brackets, which is characteristic only for IE and EDGE version <=44
 @supports not (-ms-ime-align: auto) {
@@ -100,8 +104,8 @@
 			height: 100vh;
 		}
 	}
+	//set rules for ipad's devices with high resolution and no pointing device
 	@media (min-width: 52rem) and (pointer: none) {
-		//set rules for ipad's devices with high resolution and no pointing device
 		.footer {
 			height: 50vw;
 		}
@@ -117,68 +121,54 @@
 				grid-row: 1 / 2;
 				grid-column: 2 / 3;
 			}
-		}
-		.footer-content {
-			display: flex;
-			flex-direction: column;
-			flex-wrap: nowrap;
-			margin: auto;
-			width: 100%;
-			height: 100%;
-			padding: 1em;
-			font-weight: bold;
-			align-items: stretch;
-			justify-content: space-around;
-			& > .footer-content--inner {
-				display: grid;
-				min-height: auto;
-				margin: 4em 0 2em;
-				padding: 0;
-				grid-template-columns: repeat(4, 25%);
-				grid-template-rows: 100%;
-				justify-content: center;
-				align-content: center;
-				& > * > img {
-					width: 1.8rem;
-					height: 1.8rem;
-					margin: 0 1em;
+			&_signature {
+				font-size: .5rem;
+			}
+			&_section {
+				display: flex;
+				flex-direction: column;
+				flex-wrap: nowrap;
+				padding: 1em;
+				align-items: stretch;
+				justify-content: space-around;
+				&--box {
+					min-height: auto;
+					margin: 3em 0 2em;
+					padding: 0;
+					grid-template-columns: repeat(4, 25%);
+					grid-template-rows: 100%;
+					justify-content: center;
+					align-content: center;
+					&-art {
+						display: flex;
+						flex-direction: column;
+						justify-self: center;
+						margin: auto;
+						flex-direction: row;
+						width: 100%;
+						& > img.icon {
+							width: 1.8rem;
+							height: 1.8rem;
+							margin: 0 1em;
+						}
+						& > p {
+							font-size: 0.8rem;
+						}
+					}
 				}
-				& > .footer-art.address {
-					display: flexbox;
-					flex-direction: row;
-				}
-				& > .footer-art {
-					font-size: .8rem;
-					display: flex;
+				&--address-art {
 					flex-direction: column;
 					justify-self: center;
-					height: 100%;
 					margin: auto;
 					flex-direction: row;
-					background: $main_bkg;
-					width: 100%;
-					& > * {
+					& > p {
 						font-size: 0.8rem;
 					}
 				}
-				& ~ article::before {
-					content: none;
-				}
-				& ~ article.footer-art > .art-container {
-					font-size: 0.8rem;
+				&--contact-open {
+					font-size: .8rem;
 				}
 			}
-		}
-		.open-form {
-			font-size: .8rem;
-		}
-
-		.signature {
-			width: 100%;
-			text-align: center;
-			color: $main_font;
-			background: $second_bkg;
-			font-size: .5rem;
 		}
 	}
 }

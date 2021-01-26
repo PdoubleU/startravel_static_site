@@ -27,22 +27,23 @@ export class FillContent {
 
 			const CONTENT_CONTAINER = document.createElement('article');
 			const SPAN = document.createElement('span');
-			CONTENT_CONTAINER.classList = 'element';
+			SPAN.classList = 'generatedElem_span';
+			CONTENT_CONTAINER.classList = 'generatedElem';
 			CONTENT_CONTAINER.id = title.toLowerCase();
 			CONTENT_CONTAINER.appendChild(SPAN);
 			grip.appendChild(CONTENT_CONTAINER);
 
 			const CONTENT_TITLE = document.createElement('h4');
-			CONTENT_TITLE.classList.add('title');
+			CONTENT_TITLE.classList.add('generatedElem_span--title');
 			CONTENT_TITLE.innerHTML = title;
 			grip.children[i].children[0].appendChild(CONTENT_TITLE);
 
 			const INNER_FRAME = document.createElement('div');
 			const INNER_IMG = document.createElement('img');
 			const INNER_CONT = document.createElement('p');
-			INNER_FRAME.classList.add('frame');
-			INNER_IMG.classList.add('frame_image');
-			INNER_CONT.classList.add('frame_content');
+			INNER_FRAME.classList.add('generatedInnerFrame');
+			INNER_IMG.classList.add('generatedInnerFrame_img');
+			INNER_CONT.classList.add('generatedInnerFrame_content');
 			INNER_IMG.src = frameImg;
 			INNER_CONT.innerHTML = frameCont;
 			INNER_FRAME.appendChild(INNER_IMG);
@@ -50,13 +51,13 @@ export class FillContent {
 			grip.children[i].children[0].appendChild(INNER_FRAME);
 
 			const CONTENT_TEXT = document.createElement('button');
-			CONTENT_TEXT.classList.add('description_show');
+			CONTENT_TEXT.classList.add('generatedElem_span--button');
 			window.localStorage.getItem('language') == 'polish'
 				? (CONTENT_TEXT.innerHTML = 'Sprawdź szczegóły')
 				: (CONTENT_TEXT.innerHTML = 'Read more');
 			grip.children[i].children[0].appendChild(CONTENT_TEXT);
 
-			let DESCRIPTION_BTN = document.querySelectorAll('.description_show');
+			let DESCRIPTION_BTN = document.querySelectorAll('.generatedElem_span--button');
 			DESCRIPTION_BTN[i].onclick = () => loadModal(content, price);
 		}
 	}

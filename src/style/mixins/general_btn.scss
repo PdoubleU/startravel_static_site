@@ -3,6 +3,7 @@
 // general button used in many places on the website
 @mixin general_btn ($bkg_color, $hover_color_bkg, $font_color, $hover_color_font, $border_color, $alt-border) {
 	cursor: pointer;
+	line-height: 1.2;
 	outline: none;
 	font-weight: lighter;
 	display: flex;
@@ -11,6 +12,8 @@
 	width: fit-content;
 	justify-content: center;
 	align-items: center;
+	align-self: center;
+	justify-self: center;
 	border: solid $width_btn_brd $border_color;
 	background: $bkg_color;
 	color: $font_color;
@@ -19,6 +22,7 @@
 		background-color: $hover_color_bkg;
 		color: $hover_color_font;
 		border-color: $alt-border;
+		border-width: $width_btn_brd;
 	}
 	&:active {
 		background-color: $bkg_color;

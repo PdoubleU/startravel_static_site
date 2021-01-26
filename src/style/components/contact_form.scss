@@ -3,77 +3,75 @@
 @import '../mixins/general_btn.scss';
 @import '../mixins/grid_section.scss';
 
-.contact_form_header {
-	font-size: 1.6rem;
-}
-.contact_form {
-	width: 90%;
-	display: flex;
-	flex-direction: column;
-	font-size: 1.4rem;
-	justify-content: center;
-}
-@media (orientation: landscape) {
-	.contact_form.grid-section {
-		@include grid_section_form;
+.contactForm {
+	&_header {
+		font-size: 1.6rem;
 	}
-}
-input.sub_btn {
-	@include general_btn($second_bkg, $alt_hover_bkg, $main_font, $second_font, $main_brd, $main_shdw);
-	font-size: 1.4rem;
-	height: auto;
-	min-width: 40vw;
-	align-self: center;
-	@media (orientation: landscape) {
-		font-size: 1rem;
-		min-width: 20vw;
-	}
-}
-label {
-	margin-top: .8em;
-	margin-bottom: .2em;
-}
-textarea {
-	width: 100%;
-	min-height: 4em;
-	resize: vertical;
-	font-size: inherit;
-	font-family: inherit;
-	border: $form-brd solid $main_font;
-	margin-bottom: 1em;
-	&:hover,
-	&:focus {
-		border-width: .08rem;
-	}
-}
-input {
-	height: 2em;
-	font-size: inherit;
-	appearance: none;
-	border: $form-brd solid $main_font;
-	&:hover,
-	&:focus {
-		border-width: .08rem;
-	}
-	&.sub_btn:hover,
-	&.sub_btn:focus {
-		border-width: $width_btn_brd;
+	&_gridSection {
+		width: 90%;
+		display: flex;
+		flex-direction: column;
+		font-size: 1.4rem;
+		justify-content: center;
+		@media (orientation: landscape) {
+			@include grid_section_form;
+		}
+		label {
+			margin-top: .8em;
+			margin-bottom: .2em;
+		}
+		textarea {
+			width: 100%;
+			min-height: 4em;
+			resize: vertical;
+			font-size: inherit;
+			font-family: inherit;
+			border: $form-brd solid $main_font;
+			margin-bottom: 1em;
+			&:hover,
+			&:focus {
+				border-width: .08rem;
+			}
+		}
+		input {
+			height: 2em;
+			font-size: inherit;
+			appearance: none;
+			border: $form-brd solid $main_font;
+			&:hover,
+			&:focus {
+				border-width: .08rem;
+			}
+			&.sub_btn {
+				@include general_btn($second_bkg, $alt_hover_bkg, $main_font, $second_font, $main_brd, $second_brd);
+				font-size: 1.4rem;
+				height: auto;
+				min-width: 40vw;
+				align-self: center;
+				@media (orientation: landscape) {
+					font-size: 1rem;
+					min-width: 20vw;
+				}
+			}
+		}
 	}
 }
 @media (min-width: 52rem) {
-	.contact_form.grid-section {
-		width: 80%;
-		height: auto;
-		font-size: 1rem;
-		display: flex;
-		& > input.sub_btn {
-			min-width: 20vw;
-			min-height: 1rem;
-			font-size: 1rem;
+	.contactForm {
+		&_header {
+			font-size: 1.2rem;
+			margin-top: 0;
 		}
-	}
-	.contact_form_header {
-		font-size: 1.2rem;
-		margin-top: 0;
+		&_gridSection {
+			width: 80%;
+			height: auto;
+			font-size: 1rem;
+			display: flex;
+			input.sub_btn {
+				min-width: 20vw;
+				min-height: 1rem;
+				font-size: 1rem;
+			}
+		}
 	}
 }

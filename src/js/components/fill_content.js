@@ -1,9 +1,13 @@
 import { FillContent } from '../classes/FillContent.js';
 //if statement below checks if user is on the main page or subpage:
-if (document.getElementById('sub_page') == undefined) {
+if (document.querySelector('.mainSubpage') == undefined) {
 	void 0;
 } else {
+<<<<<<< HEAD
 	let element = document.querySelector('.contMiddle');
+=======
+	let element = document.querySelector('.contMiddle--sub');
+>>>>>>> refactorcss
 	switch (element.id) {
 		case 'content-de':
 			new FillContent('#content-de', {

@@ -25,11 +25,10 @@
 	display: flex;
 	flex-direction: column;
 	scrollbar-width: none;
-	background: $second_bkg;
 	&_one,
 	&_two,
 	&_three {
-		@include main_page($main_bkg, auto);
+		@include main_page($second_bkg, auto);
 	}
 }
 .contFront {
@@ -290,6 +289,7 @@
 					grid-template-columns: 75% 25%;
 					background-color: $second_bkg;
 					width: fit-content;
+					height: 100vh;
 					transform: rotate(90deg) translateY(-100vh);
 					transform-origin: top left;
 				}
@@ -306,6 +306,7 @@
 			&_two,
 			&_three {
 				@include main_page($main_bkg, 100vh);
+				width: fit-content;
 				@media (orientation: portrait) and (hover: none), (orientation: portrait) {
 					height: 50vh;
 				}
@@ -350,21 +351,19 @@
 								width: 1.9rem;
 							}
 						}
-						& > .arrowBox {
+						& .arrowBox {
 							margin-top: .2rem;
 							grid-column: 1 / 3;
 							transform: rotate(0deg);
+							.arrowBox--top,
+							.arrowBox--bottom {
+								height: .08rem;
+								width: 1rem;
+								left: .4rem;
+							}
 							&:active,
 							&:focus {
 								transform: rotate(0deg) scale(.9);
-							}
-							> .arrowClass {
-								&--top,
-								&--bottom {
-									height: .08rem;
-									width: 1rem;
-									left: .4rem;
-								}
 							}
 						}
 					}

@@ -28,6 +28,43 @@
 	padding: 1.5rem 1rem;
 	background-color: white;
 	overflow: hidden;
+	&--close {
+		display: flex;
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 3rem;
+		width: 3rem;
+		padding: 0;
+		background: transparent;
+		border: none;
+		cursor: pointer;
+		&::before {
+			position: absolute;
+			top: 30%;
+			left: 60%;
+			margin-top: -1rem;
+			margin-left: -1.2rem;
+			content: '\2716';
+			font-size: 2rem;
+			text-align: center;
+		}
+	}
+	&--actionBtn {
+		@include general_btn($second_bkg, $alt_hover_bkg, $main_font, $second_font, $main_brd, $second_brd);
+		font-size: 1.6rem;
+		min-width: 40vw;
+		margin-top: .6rem;
+		@media (orientation: landscape) {
+			font-size: 1rem;
+			min-width: 20vw;
+		}
+		&.gdpr_info {
+			margin-top: .5rem;
+			min-height: fit-content;
+			font-size: 1rem;
+		}
+	}
 }
 .modal_body.gdpr_info {
 	& h3 {
@@ -52,29 +89,7 @@
 		}
 	}
 }
-button.modal_close {
-	display: flex;
-	position: absolute;
-	top: 0;
-	right: 0;
-	height: 3rem;
-	width: 3rem;
-	padding: 0;
-	background: transparent;
-	border: none;
-	cursor: pointer;
-	&::before {
-		position: absolute;
-		top: 30%;
-		left: 60%;
-		margin-top: -1rem;
-		margin-left: -1.2rem;
-		content: '\2716';
-		font-size: 2rem;
-		text-align: center;
-	}
-}
-.content-container {
+.modalContainer {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -84,44 +99,41 @@ button.modal_close {
 	@media (orientation: landscape) {
 		font-size: 1rem;
 	}
-}
-.action_btn.gdpr_info {
-	margin-top: .5rem;
-	min-height: fit-content;
-	font-size: 1rem;
-}
-.action_btn,
-.auxiliary_btn {
-	align-self: center;
-	justify-self: center;
-	font-size: 1.6rem;
-	line-height: 1.2;
-	@include general_btn($second_bkg, $alt_hover_bkg, $main_font, $second_font, $main_brd, $main_shdw);
-	min-width: 40vw;
-	margin-top: .6rem;
-	@media (orientation: landscape) {
-		font-size: 1rem;
-		min-width: 20vw;
+	&--auxBtn {
+		@include general_btn($second_bkg, $alt_hover_bkg, $main_font, $second_font, $main_brd, $second_brd);
+		font-size: 1.6rem;
+		min-width: 40vw;
+		margin-top: .6rem;
+		@media (orientation: landscape) {
+			font-size: 1rem;
+			min-width: 20vw;
+		}
 	}
 }
-
 @media (min-width: 52rem) {
 	.modal_body {
 		height: 90vh;
 		width: 80vw;
+		&--close::before {
+			font-size: 1.2rem;
+			top: 40%;
+			left: 90%;
+			margin-top: -1rem;
+			margin-left: -1.2rem;
+		}
+		&--action_btn {
+			font-size: 1rem;
+			min-height: 1rem;
+			margin-top: 1rem;
+			min-width: 20vw;
+		}
 	}
-	button.modal_close::before {
-		font-size: 1.2rem;
-		top: 40%;
-		left: 90%;
-		margin-top: -1rem;
-		margin-left: -1.2rem;
-	}
-	.action_btn,
-	.auxiliary_btn {
-		font-size: 1rem;
-		min-height: 1rem;
-		margin-top: 1rem;
-		min-width: 20vw;
+	.modalContainer {
+		&--auxBtn {
+			font-size: 1rem;
+			min-height: 1rem;
+			margin-top: 1rem;
+			min-width: 20vw;
+		}
 	}
 }

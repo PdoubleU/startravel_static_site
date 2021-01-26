@@ -15,8 +15,7 @@
 	&:active {
 		transform: none;
 	}
-
-	& > .arrow-class {
+	& > .arrowBox {
 		@include general_arrow_btn($font_hover, $main_bkg);
 		height: .5rem;
 		width: .5rem;
@@ -24,17 +23,15 @@
 		margin-bottom: .2rem;
 		transform: rotate(-90deg);
 		&:active,
-		:focus {
+		&:focus {
 			transform: rotate(-90deg);
 		}
 	}
-
 	@media (min-width: 52rem) and (pointer: fine) {
 		height: 2rem;
 		width: 2rem;
 	}
 }
-
 .scroll_btn--active {
 	display: inline-block;
 	animation: shake_btn 2s linear;

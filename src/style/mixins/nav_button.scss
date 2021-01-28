@@ -1,27 +1,6 @@
 @import '../../../node_modules/normalize-scss/sass/_normalize.scss';
 @import '../variables/variables.scss';
 
-//Button - top navigation
-//
-//Custom navigation button, can be used in other parts on website.
-//
-//Usage:
-//
-//* `@include top-nav-btn-model($bkg_color, $font_color);`
-//
-//Parameters:
-//
-//* `$bkg_color`  - color for the button's background
-//* `$font_color` - color for the font inside the button
-//
-//~
-//
-//Markup:
-//<li class="button-model"><a href='#home'>Strona główna</a></li>
-//
-//Styleguide Mixins.Elements
-
-// this is the blueprint for the top nav button used on mobile navigation:
 @mixin top-nav-btn-model($bkg_color, $hover_color_bkg, $font_color, $hover_color_font, $border_color, $shadow_color) {
 	font-family: $header_font;
 	display: flex;
@@ -52,8 +31,4 @@
 		font-weight: normal;
 		position: relative;
 	}
-}
-
-.button-model {
-	@include top-nav-btn-model($main_bkg, $hover_bkg, $main_font, $font_hover, $menu_btn_hover_brd, $main_shdw);
 }

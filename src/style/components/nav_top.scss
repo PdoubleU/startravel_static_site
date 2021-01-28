@@ -4,24 +4,6 @@
 @import '../mixins/general_btn.scss';
 @import '../keyframes/keyframes.scss';
 
-//Button menu - mobile devices
-//
-//**This button shows only on smaller screens. It looks like a rounded burger-button.**
-//**Animation coded only in css. Below example shows item in absoulute position as is used in project.**
-//
-//Markup:
-//        <input type="checkbox" class="menu-open" name="menu-open" id="menu-open" href="#" aria-label="open menu"></input>
-//          <label class="menu-btn kss" for="menu-open">
-//               <span class="menu-btn__box">
-//                   <span class="menu-btn__inner"></span>
-//              </span>
-//         </label>
-//
-//Styleguide Buttons.Menu button
-.nav-desktop {
-	display: none;
-}
-
 .header_top {
 	position: fixed;
 	display: flex;
@@ -33,245 +15,235 @@
 	margin-left: -4em;
 	z-index: $zidx_mob_menu_sgl_btn;
 }
-.nav-mobile > .logo {
-	position: fixed;
-	font-size: 1rem;
-	top: 1em;
-	right: .8em;
-	& img {
-		max-width: 4rem;
-		height: auto;
+.topNav {
+	&--dskt {
+		display: none;
 	}
-}
-input.menu-open {
-	border: none;
-	height: 0rem;
-	width: 0rem;
-	margin: 0rem;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	background: transparent;
-}
-.menu-btn {
-	@include general_btn($second_bkg, $second_bkg, $main_font, $hover_bkg, $main_brd, $main_shdw);
-	position: fixed;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	top: 50%;
-	margin-top: -2.4rem;
-	right: 1rem;
-	width: 4rem;
-	height: 4rem;
-	z-index: $zidx_mob_menu_sgl_btn;
-}
-.menu-btn__box {
-	width: 2em;
-	height: 2em;
-	display: flex;
-	position: relative;
-	float: right;
-	background: transparent;
-	padding: 0;
-}
-.menu-btn__inner {
-	width: 100%;
-	height: 0.2rem;
-	margin: 0;
-	padding: 0;
-	background: $main_bkg;
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	left: 0;
-	transition: background-color .1s .08s ease-in-out;
-}
-.menu-btn__inner::before,
-.menu-btn__inner::after {
-	content: '';
-	width: 100%;
-	padding: 0;
-	height: 0.2rem;
-	background-color: $main_bkg;
-	position: absolute;
-	transition: transform .1s .05s ease-in-out;
-}
-.menu-btn__inner::before {
-	top: -.5em;
-	left: 0;
-}
-.menu-btn__inner::after {
-	top: .5em;
-	left: 0;
-}
-.menu-open:checked + .menu-btn .menu-btn__inner::before {
-	transform: translateY(.5em) rotate(45deg);
-}
-.menu-open:checked + .menu-btn .menu-btn__inner::after {
-	transform: translateY(-.5em) rotate(-45deg);
-}
-.menu-open:checked + .menu-btn .menu-btn__inner {
-	background: transparent;
-}
-.menu-open:checked ~ .top-nav {
-	display: flex;
-	flex-direction: column;
-	position: absolute;
-}
-.menu-open:checked ~ .menu-btn {
-	transform: scale(.8);
-}
-.top-nav {
-	height: 1rem;
-	font-size: 1rem;
-	transition-timing-function: cubic-bezier(0.8, 0, 0.64, 1.9);
-	& > :nth-child(1) {
-		@include top-nav-btn-model($second_bkg, $hover_bkg, $main_font, $font_hover, $main_brd, $main_shdw);
-		top: 50%;
-		left: 100%;
-		margin-top: -1.5rem;
-		margin-left: 8rem;
-		transition-duration: 150ms;
-		transform: translate3d(0, 2.9rem, 0);
-	}
-	& > :nth-child(2) {
-		@include top-nav-btn-model($second_bkg, $hover_bkg, $main_font, $font_hover, $main_brd, $main_shdw);
-		top: 50%;
-		left: 100%;
-		margin-top: -1.5rem;
-		margin-left: 8rem;
-		transition-duration: 100ms;
-		transform: translate3d(0, -3.6rem, 0);
-	}
-	& > :nth-child(3) {
-		@include top-nav-btn-model($second_bkg, $hover_bkg, $main_font, $font_hover, $main_brd, $main_shdw);
-		top: 50%;
-		left: 100%;
-		margin-top: -1.5rem;
-		margin-left: 8rem;
-		transition-duration: 170ms;
-		transform: translate3d(0, -10.2rem, 0);
-	}
-	& > :nth-child(4) {
-		@include top-nav-btn-model($second_bkg, $hover_bkg, $main_font, $font_hover, $main_brd, $main_shdw);
-		margin-top: -1.5rem;
-		margin-left: 8rem;
-		transition-duration: 210ms;
-		transform: translate3d(0, .9rem, 0);
-	}
-}
-.menu-open:checked ~ .top-nav {
-	font-size: 1rem;
-	transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
-	& > :nth-child(1) {
-		margin-left: -9em;
-		transition-duration: 150ms;
-		transform: translate3d(.8em, 2.9rem, 0);
-		&:active {
-			transform: translate3d(.8em, 2.9rem, 0) scale(.98);
+	&_logo {
+		&--mobile {
+			position: fixed;
+			font-size: 1rem;
+			top: 1em;
+			right: .8em;
+			& img {
+				max-width: 4rem;
+				height: auto;
+			}
 		}
 	}
-	& > :nth-child(2) {
-		margin-left: -9em;
-		transition-duration: 100ms;
-		transform: translate3d(.8em, -3.6rem, 0);
-		&:active {
-			transform: translate3d(.8em, -3.6rem, 0) scale(.98);
+	&_open {
+		border: none;
+		height: 0rem;
+		width: 0rem;
+		margin: 0rem;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		background: transparent;
+		&:checked ~ .topNav_openLabel .topNav_openLabel_box .box_inner::before {
+			transform: translateY(.5em) rotate(45deg);
+		}
+		&:checked ~ .topNav_openLabel .topNav_openLabel_box .box_inner::after {
+			transform: translateY(-.5em) rotate(-45deg);
+		}
+		&:checked ~ .topNav_openLabel .topNav_openLabel_box .box_inner {
+			background: transparent;
+		}
+		&:checked ~ .topNav_items--mobile {
+			display: flex;
+			flex-direction: column;
+			position: absolute;
+		}
+		&:checked ~ .topNav_openLabel {
+			transform: scale(.8);
+		}
+		&:checked ~ .topNav_items--mobile {
+			font-size: 1rem;
+			transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
+			& > div {
+				margin-left: -9em;
+			}
+			& > :nth-child(1) {
+				transition-duration: 150ms;
+				transform: translate3d(.8em, 2.9rem, 0);
+				&:active {
+					transform: translate3d(.8em, 2.9rem, 0) scale(.98);
+				}
+			}
+			& > :nth-child(2) {
+				transition-duration: 100ms;
+				transform: translate3d(.8em, -3.6rem, 0);
+				&:active {
+					transform: translate3d(.8em, -3.6rem, 0) scale(.98);
+				}
+			}
+			& > :nth-child(3) {
+				transition-duration: 170ms;
+				transform: translate3d(.8em, -10.2rem, 0);
+				&:active {
+					transform: translate3d(.8em, -10.2rem, 0) scale(.98);
+				}
+			}
+			& > :nth-child(4) {
+				transition-duration: 180ms;
+				transform: translate3d(.8em, .9rem, 0);
+				&:active {
+					transform: translate3d(.8em, .9rem, 0) scale(.98);
+				}
+			}
 		}
 	}
-	& > :nth-child(3) {
-		margin-left: -9em;
-		transition-duration: 170ms;
-		transform: translate3d(.8em, -10.2rem, 0);
-		&:active {
-			transform: translate3d(.8em, -10.2rem, 0) scale(.98);
+	&_openLabel {
+		@include general_btn($second_bkg, $second_bkg, $main_font, $hover_bkg, $main_brd, $main_shdw);
+		position: fixed;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		top: 50%;
+		margin-top: -2.4rem;
+		right: 1rem;
+		width: 4rem;
+		height: 4rem;
+		z-index: $zidx_mob_menu_sgl_btn;
+		&_box {
+			width: 2em;
+			height: 2em;
+			display: flex;
+			position: relative;
+			float: right;
+			background: transparent;
+			padding: 0;
+			.box_inner {
+				width: 100%;
+				height: 0.2rem;
+				margin: 0;
+				padding: 0;
+				background: $main_bkg;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				left: 0;
+				transition: background-color .1s .08s ease-in-out;
+				&::before,
+				&::after {
+					content: '';
+					width: 100%;
+					padding: 0;
+					height: 0.2rem;
+					background-color: $main_bkg;
+					position: absolute;
+					transition: transform .1s .05s ease-in-out;
+				}
+				&::before {
+					top: -.5em;
+					left: 0;
+				}
+				&::after {
+					top: .5em;
+					left: 0;
+				}
+			}
 		}
 	}
-	& > :nth-child(4) {
-		margin-left: -9em;
-		transition-duration: 180ms;
-		transform: translate3d(.8em, .9rem, 0);
-		&:active {
-			transform: translate3d(.8em, .9rem, 0) scale(.98);
+	&_items--mobile {
+		height: 1rem;
+		font-size: 1rem;
+		transition-timing-function: cubic-bezier(0.8, 0, 0.64, 1.9);
+		& > div {
+			@include top-nav-btn-model($second_bkg, $hover_bkg, $main_font, $font_hover, $main_brd, $main_shdw);
+			top: 50%;
+			left: 100%;
+			margin-top: -1.5rem;
+			margin-left: 8rem;
+		}
+		& > :nth-child(1) {
+			transition-duration: 150ms;
+			transform: translate3d(0, 2.9rem, 0);
+		}
+		& > :nth-child(2) {
+			transition-duration: 100ms;
+			transform: translate3d(0, -3.6rem, 0);
+		}
+		& > :nth-child(3) {
+			transition-duration: 170ms;
+			transform: translate3d(0, -10.2rem, 0);
+		}
+		& > :nth-child(4) {
+			transition-duration: 210ms;
+			transform: translate3d(0, .9rem, 0);
 		}
 	}
 }
 
 @media (min-width: 37.71rem) {
-	.nav-mobile {
-		display: none;
-	}
 	.header_top {
-		background-color: transparent;
-		position: fixed;
 		display: inline;
-		align-items: center;
-		justify-content: center;
 		margin: 0;
 		top: auto;
 		left: auto;
-		z-index: $zidx_mob_menu_sgl_btn;
 	}
-	.menu-btn {
-		display: none;
-	}
-	.nav-desktop {
-		position: fixed;
-		display: flex;
-		flex-direction: row;
-		flex-wrap: nowrap;
-		justify-content: space-between;
-		align-items: center;
-		padding: 0 2rem;
-		width: 100%;
-		background-color: transparent;
-		z-index: $zidx_top_navbar;
-	}
-	.logo--dskt {
-		display: inline;
-		& > span {
-			max-height: 2.4rem;
-			& > img {
+	.topNav {
+		&--mobile,
+		&_openLabel,
+		&_open {
+			display: none;
+		}
+		&--dskt {
+			position: fixed;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			align-items: center;
+			padding: 0 2rem;
+			width: 100%;
+			background-color: transparent;
+			z-index: $zidx_top_navbar;
+		}
+		&_logo--dskt {
+			display: inline;
+			& > span {
 				max-height: 2.4rem;
-				height: auto;
-				align-self: center;
-			}
-		}
-	}
-	.top-nav--dskt {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: nowrap;
-		margin: .6em 0;
-		font-size: .8rem;
-		@media (min-width: 52rem) {
-			font-size: .6rem;
-		}
-		& > div {
-			@include top-nav-btn-model($second_bkg, $hover_bkg, $main_font, $font_hover, $main_brd, $main_shdw);
-			position: relative;
-			transition: all 300ms linear;
-			min-width: 6rem;
-			& .background-roll-down {
-				position: absolute;
-				height: 100%;
-				width: 0%;
-				margin-left: -.2rem;
-				background: $second_bkg;
-				transition: all 300ms;
-			}
-			&:hover {
-				color: $second_font;
-				& .background-roll-down {
-					background: $main_bkg;
-					animation: backgroundRollDown 300ms ease-in;
-					width: calc(100% + .4rem);
+				& > img {
+					max-height: 2.4rem;
+					align-self: center;
 				}
 			}
 		}
-		& > div + div {
-			margin: 0 0 0 1em;
+		&_items--dskt {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			margin: .6em 0;
+			font-size: .8rem;
+			@media (min-width: 52rem) {
+				font-size: .6rem;
+			}
+			& > div {
+				@include top-nav-btn-model($second_bkg, $hover_bkg, $main_font, $font_hover, $main_brd, $main_shdw);
+				position: relative;
+				transition: all 300ms linear;
+				min-width: 6rem;
+				& .background-roll-down {
+					position: absolute;
+					height: 100%;
+					width: 0%;
+					margin-left: -.2rem;
+					background: $second_bkg;
+					transition: all 300ms;
+				}
+				&:hover {
+					color: $second_font;
+					& .background-roll-down {
+						background: $main_bkg;
+						animation: backgroundRollDown 300ms ease-in;
+						width: calc(100% + .4rem);
+					}
+				}
+				& + div {
+					margin: 0 0 0 1em;
+				}
+			}
 		}
 	}
 }

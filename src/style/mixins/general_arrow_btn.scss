@@ -6,6 +6,24 @@
 	display: block;
 	height: 2rem;
 	width: 2rem;
+	&:hover {
+		.arrowBox {
+			&--top:after {
+				border: transparent;
+				left: 0;
+				transition-delay: .1s;
+			}
+			&--bottom:after {
+				border: transparent;
+				right: 0;
+				transition-delay: 0s;
+			}
+		}
+	}
+	&:active,
+	&:focus {
+		outline: none;
+	}
 	.arrowBox {
 		&--top,
 		&--bottom {
@@ -40,22 +58,6 @@
 				right: 100%;
 				transition-delay: .1s;
 			}
-		}
-		&:hover {
-			&--top:after {
-				border: transparent;
-				left: 0;
-				transition-delay: .1s;
-			}
-			&--bottom:after {
-				border: transparent;
-				right: 0;
-				transition-delay: 0s;
-			}
-		}
-		&:active,
-		&:focus {
-			outline: none;
 		}
 	}
 }

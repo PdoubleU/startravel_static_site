@@ -2,14 +2,15 @@ export class Slider {
 	constructor(elemSelector, opts) {
 		const DEFAULT_OPTS = {
 			pauseTime: 8000,
-			generatePrevNext: true
+			generatePrevNext: true,
+			noOfAvailableOffers: 5 //should be same as offers generated on subpages!!
 		};
 		this.options = Object.assign({}, DEFAULT_OPTS, opts);
 		this.sliderSelector = elemSelector;
 		this.currentSlide = 0;
 		this.time = null;
 		this.slider = null;
-		this.elem = null;
+		this.slidesLng = this.options.noOfAvailableOffers;
 		this.slides = null;
 		this.language = window.localStorage.getItem('language');
 
@@ -25,17 +26,18 @@ export class Slider {
 		let xhr = new XMLHttpRequest();
 		let _path = this.language == 'polish' ? './json/offer-pl.json' : './json/offer-en.json';
 		let sliderSel = this.sliderSelector;
+		let listLenght = this.slidesLng;
 		xhr.open('GET', _path, false);
 		xhr.onload = () => {
 			if (xhr.status === 200) {
 				let response = JSON.parse(xhr.responseText);
-				return callback(response, sliderSel);
+				return callback(response, sliderSel, listLenght);
 			}
 		};
 		xhr.send(null);
 	}
 
-	generateListOfSlides(objJSON, sliderSel) {
+	generateListOfSlides(objJSON, sliderSel, listLenght) {
 		function getRandomInt(min, max) {
 			min = Math.ceil(min);
 			max = Math.floor(max);
@@ -43,17 +45,19 @@ export class Slider {
 		}
 		let country = [ 'poland', 'germany', 'czechia' ];
 		let grip = document.querySelector(sliderSel);
-		for (let i = 0; i < 5; i++) {
+		for (let i = 0; i < listLenght; i++) {
 			let randomCountry = country[getRandomInt(0, 2)];
 			let title = objJSON[randomCountry][i].title;
+			let img_path = objJSON[randomCountry][i].frame_img;
 			const SLIDE_ARTCL = document.createElement('article');
-			SLIDE_ARTCL.classList.add('element');
+			SLIDE_ARTCL.classList.add('sliderBox_cnt_slide');
+			SLIDE_ARTCL.style.backgroundImage = `url(${img_path.replace('..', '.')})`;
 			const SLIDE_CONT = document.createElement('a');
 			const SPAN = document.createElement('span');
 			const TXT_BKG = document.createElement('span');
-			TXT_BKG.classList.add('txt-background');
+			TXT_BKG.classList.add('txt');
 			SLIDE_CONT.href = 'subpages/' + randomCountry + '.html';
-			SLIDE_CONT.classList.add('slide', 'title', 'text');
+			SLIDE_CONT.classList.add('sliderBox_cnt_slide--link');
 			let name = document.createTextNode(title);
 			TXT_BKG.appendChild(name);
 			SPAN.appendChild(TXT_BKG);
@@ -65,15 +69,14 @@ export class Slider {
 
 	generateSlider() {
 		this.slider = document.querySelector(this.sliderSelector);
-		this.slider.classList.add('slider');
+		this.slider.classList.add('sliderBox');
 		const SLIDES_CNT = document.createElement('div');
-		SLIDES_CNT.classList.add('slider-slides-cnt');
+		SLIDES_CNT.classList.add('sliderBox_cnt');
 		this.slides = this.slider.children;
 		while (this.slides.length) {
-			this.slides[0].classList.add('slider-slide');
 			SLIDES_CNT.appendChild(this.slides[0]);
 		}
-		this.slides = SLIDES_CNT.querySelectorAll('.slider-slide');
+		this.slides = SLIDES_CNT.querySelectorAll('.sliderBox_cnt_slide');
 		this.slider.appendChild(SLIDES_CNT);
 
 		if (this.options.generatePrevNext) this.createPrevNext();
@@ -96,12 +99,12 @@ export class Slider {
 
 	changeSlide(i) {
 		this.slides.forEach((slide) => {
-			slide.classList.remove('slider-slide-active');
+			slide.classList.remove('active');
 			slide.children[0].classList.remove('active');
 			slide.setAttribute('aria-hidden', true);
 		});
 
-		this.slides[i].classList.add('slider-slide-active');
+		this.slides[i].classList.add('active');
 		this.slides[i].children[0].classList.add('active');
 		this.slides[i].setAttribute('aria-hidden', false);
 
@@ -116,8 +119,8 @@ export class Slider {
 	createPrevNext() {
 		this.innerTop = document.createElement('div');
 		this.innerBottom = document.createElement('div');
-		this.innerTop.classList.add('arrow-class--top');
-		this.innerBottom.classList.add('arrow-class--bottom');
+		this.innerTop.classList.add('arrowBox--top');
+		this.innerBottom.classList.add('arrowBox--bottom');
 		this.cpyTopOne = this.innerTop.cloneNode(true);
 		this.cpyBottomOne = this.innerBottom.cloneNode(true);
 		this.cpyTopTwo = this.innerTop.cloneNode(true);
@@ -125,25 +128,21 @@ export class Slider {
 
 		this.prev = document.createElement('button');
 		this.prev.type = 'button';
-		this.prev.classList.add('slider-button');
-		this.prev.classList.add('slider-button-prev');
-		this.prev.classList.add('arrow-class');
+		this.prev.classList.add('sliderBox_nav_button--prev', 'arrowBox');
 		this.prev.appendChild(this.cpyTopTwo);
 		this.prev.appendChild(this.cpyBottomTwo);
 		this.prev.addEventListener('click', this.slidePrev.bind(this));
 
 		this.next = document.createElement('button');
 		this.next.type = 'button';
-		this.next.classList.add('slider-button');
-		this.next.classList.add('slider-button-next');
-		this.next.classList.add('arrow-class');
+		this.next.classList.add('sliderBox_nav_button--next', 'arrowBox');
 		this.next.appendChild(this.cpyTopOne);
 		this.next.appendChild(this.cpyBottomOne);
 		this.next.addEventListener('click', this.slideNext.bind(this));
 
 		const NAV = document.createElement('div');
-		NAV.classList.add('slider-nav');
-		NAV.setAttribute('aria-label', 'slider prev next');
+		NAV.classList.add('sliderBox_nav');
+		NAV.setAttribute('aria-label', 'Slider buttons left and right');
 		NAV.appendChild(this.prev);
 		NAV.appendChild(this.next);
 		this.slider.appendChild(NAV);

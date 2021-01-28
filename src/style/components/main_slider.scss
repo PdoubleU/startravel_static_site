@@ -2,178 +2,141 @@
 @import '../variables/variables.scss';
 @import '../mixins/general_arrow_btn.scss';
 
-a.slide.title {
-	&,
-	&:active,
-	&:focus,
-	&:visited,
-	&:link {
-		text-align: center;
-		max-width: 50%;
-		opacity: 0;
-		position: relative;
-		transition: 2s all;
-		z-index: 0;
-		left: -2rem;
-		color: $main_font;
-		font-size: 2rem;
-		font-family: $header_font;
-		padding: .8rem .2rem;
-		@media (min-width: 52rem) {
-			font-size: 1.2rem;
-		}
-	}
-	& > .reveal {
-		position: relative;
-		background: transparent;
-	}
-}
-
-a.slide.title.active {
-	opacity: 1;
-	z-index: 1;
-	left: 0;
-}
-.slider {
+.sliderBox {
 	position: relative;
 	width: 100%;
 	height: 100%;
 	box-shadow: $shadow_box;
 	background-color: #fff;
 	z-index: 0;
-}
-.txt-background {
-	background: $second_bkg;
-	color: $main_font;
-	z-index: 0;
-}
-
-.slider-slides-cnt > :nth-child(1) {
-	background-image: url('./assets/imgs/small/ck.jpg');
-}
-.slider-slides-cnt > :nth-child(2) {
-	background-image: url('./assets/imgs/small/castle.jpg');
-}
-.slider-slides-cnt > :nth-child(3) {
-	background-image: url('./assets/imgs/small/rocks.jpg');
-}
-.slider-slides-cnt > :nth-child(4) {
-	background-image: url('./assets/imgs/small/main_image.jpg');
-}
-.slider-slides-cnt > :nth-child(5) {
-	background-image: url('./assets/imgs/small/main_image.jpg');
-}
-/* kontener dla wszystkich slajdów */
-.slider-slides-cnt {
-	height: 100%;
-	position: relative;
-	z-index: -100;
-}
-/* pojedynczy slide */
-.slider-slide {
-	position: absolute;
-	left: 0;
-	top: 0;
-	margin: 0;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	opacity: 0;
-	transition: all 2s ease-in-out;
-	background-size: cover;
-	background-position: center;
-}
-/* slide aktywny */
-.slider-slide-active {
-	position: relative;
-	opacity: 1;
-}
-
-.slider-button-next {
-	right: 1rem;
-	@media (min-width: 52rem) {
-		right: -2rem;
-	}
-	left: auto;
-	&.arrow-class {
-		&:active,
-		:focus {
-			transform: translateY(-50%) scale(.9);
-		}
-	}
-}
-.slider-button-prev {
-	left: 1rem;
-	@media (min-width: 52rem) {
-		left: -2rem;
-	}
-	right: auto;
-	&.arrow-class {
-		transform: translateY(-50%) rotate(180deg);
-		&:active,
-		:focus {
-			transform: translateY(-50%) rotate(180deg) scale(.9);
-		}
-	}
-}
-@media (min-width: 52rem) {
-	.slider-button-next {
-		margin-right: 1.2rem;
-	}
-	.slider-button-prev {
-		margin-left: 1.2rem;
-	}
-}
-//fix difference between center arrow in buttons caused by transform: rotate)
-.slider-button-prev.arrow-class {
-	> .arrow-class {
-		&--top,
-		&--bottom {
-			margin-top: -.1rem;
-			@media (min-width: 52rem) {
-				margin-top: -.06rem;
+	&_cnt {
+		height: 100%;
+		position: relative;
+		z-index: -100;
+		&_slide {
+			position: absolute;
+			left: 0;
+			top: 0;
+			margin: 0;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			opacity: 0;
+			transition: all 2s ease-in-out;
+			background-size: cover;
+			background-position: center;
+			&.active {
+				position: relative;
+				opacity: 1;
+			}
+			&--link {
+				&,
+				&:active,
+				&:focus,
+				&:visited,
+				&:link {
+					text-align: center;
+					max-width: 50%;
+					opacity: 0;
+					position: relative;
+					transition: 2s all;
+					z-index: 0;
+					left: -2rem;
+					color: $main_font;
+					font-size: 2rem;
+					font-family: $header_font;
+					padding: .8rem .2rem;
+					@media (min-width: 52rem) {
+						font-size: 1.2rem;
+					}
+				}
+				&.active {
+					opacity: 1;
+					z-index: 1;
+					left: 0;
+				}
+				& .txt {
+					background: $second_bkg;
+					color: $main_font;
+					z-index: 0;
+				}
 			}
 		}
 	}
-}
-.slider-button-prev,
-.slider-button-next {
-	@include general_arrow_btn($font_hover, $main_bkg);
-	z-index: 1;
-	> .arrow-class {
-		&--top,
-		&--bottom {
-			background: $main_bkg;
-			width: 1.5rem;
-			left: .6rem;
-		}
-	}
-	@media (min-width: 52rem) {
-		> .arrow-class {
-			&--top,
-			&--bottom {
-				background: $font_hover;
-				left: .4rem;
-				height: .08rem;
-				width: 1rem;
+	&_nav {
+		&_button {
+			&--prev,
+			&--next {
+				@include general_arrow_btn($font_hover, $main_bkg);
+				z-index: 1;
+				width: 3rem;
+				height: 3rem;
+				position: absolute;
+				overflow: hidden;
+				background: $alt_hover_btn;
+				top: 50%;
+				transform: translateY(-50%);
+				@media (min-width: 52rem) {
+					background: $second_bkg;
+					width: 2rem;
+					height: 2rem;
+				}
+				> .arrowBox {
+					&--top,
+					&--bottom {
+						background: $main_bkg;
+						width: 1.5rem;
+						left: .6rem;
+						@media (min-width: 52rem) {
+							background: $font_hover;
+							left: .4rem;
+							height: .08rem;
+							width: 1rem;
+						}
+					}
+				}
+			}
+			&--next {
+				right: 1rem;
+				left: auto;
+				@media (min-width: 52rem) {
+					right: -2rem;
+					margin-right: 1.2rem;
+				}
+
+				&.arrowBox {
+					&:active {
+						transform: translateY(-50%) scale(.9);
+					}
+				}
+			}
+			&--prev {
+				left: 1rem;
+				right: auto;
+				@media (min-width: 52rem) {
+					left: -2rem;
+					margin-left: 1.2rem;
+				}
+				&.arrowBox {
+					transform: translateY(-50%) rotate(180deg);
+					&:active {
+						transform: translateY(-50%) rotate(180deg) scale(.9);
+					}
+					//fix difference between center arrow in buttons caused by transform: rotate
+					> .arrowBox {
+						&--top,
+						&--bottom {
+							margin-top: -.1rem;
+							@media (min-width: 52rem) {
+								margin-top: -.06rem;
+							}
+						}
+					}
+				}
 			}
 		}
-	}
-	width: 3rem;
-	height: 3rem;
-	position: absolute;
-	overflow: hidden;
-	background: $alt_hover_btn;
-	@media (min-width: 52rem) {
-		background: $second_bkg;
-	}
-	top: 50%;
-	transform: translateY(-50%);
-	@media (min-width: 52rem) {
-		width: 2rem;
-		height: 2rem;
 	}
 }

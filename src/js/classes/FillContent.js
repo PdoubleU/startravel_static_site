@@ -5,14 +5,14 @@ export class FillContent {
 		const DEFAULT_OPTIONS = {
 			country: 'poland',
 			_path: '../json/offer-pl.json',
-			elementsToGenerate: 5
+			noOfAvailableOffers: 5 //should be same as no of offers generated in silder!!
 		};
 		this.options = Object.assign({}, DEFAULT_OPTIONS, options);
 		this.selector = classNameSelector;
 		this.country = this.options.country;
 		this.path = this.options._path;
 		this.data = null;
-		this.noOfElementsToGenerate = this.options.elementsToGenerate;
+		this.noOfElementsToGenerate = this.options.noOfAvailableOffers;
 
 		this.loadData(this.generateHTMLTags, this.loadModalWindow);
 	}

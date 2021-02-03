@@ -18,15 +18,15 @@ export class FillContent {
 	}
 	generateHTMLTags(counter, objJSON, selector, country, loadModal) {
 		for (let i = 0; i < counter; i++) {
-			let title = objJSON[country][i].title;
-			let content = objJSON[country][i].content;
-			let price = objJSON[country][i].price;
-			let frameCont = objJSON[country][i].frame_description;
-			let frameImg = objJSON[country][i].frame_img;
-			let grip = document.querySelector(selector);
+			let title = objJSON[country][i].title,
+				content = objJSON[country][i].content,
+				price = objJSON[country][i].price,
+				frameCont = objJSON[country][i].frame_description,
+				frameImg = objJSON[country][i].frame_img,
+				grip = document.querySelector(selector);
 
-			const CONTENT_CONTAINER = document.createElement('article');
-			const SPAN = document.createElement('span');
+			const CONTENT_CONTAINER = document.createElement('article'),
+				SPAN = document.createElement('span');
 			SPAN.classList = 'generatedElem_span';
 			CONTENT_CONTAINER.classList = 'generatedElem';
 			CONTENT_CONTAINER.id = title.toLowerCase();
@@ -38,9 +38,9 @@ export class FillContent {
 			CONTENT_TITLE.innerHTML = title;
 			grip.children[i].children[0].appendChild(CONTENT_TITLE);
 
-			const INNER_FRAME = document.createElement('div');
-			const INNER_IMG = document.createElement('img');
-			const INNER_CONT = document.createElement('p');
+			const INNER_FRAME = document.createElement('div'),
+				INNER_IMG = document.createElement('img'),
+				INNER_CONT = document.createElement('p');
 			INNER_FRAME.classList.add('generatedInnerFrame');
 			INNER_IMG.classList.add('generatedInnerFrame_img');
 			INNER_CONT.classList.add('generatedInnerFrame_content');
@@ -77,11 +77,11 @@ export class FillContent {
 	}
 
 	loadData(callback, loadModal) {
-		let xhr = new XMLHttpRequest();
-		let _path = this.path;
-		let selector = this.selector;
-		let country = this.country;
-		let noOfElements = this.noOfElementsToGenerate;
+		let xhr = new XMLHttpRequest(),
+			_path = this.path,
+			selector = this.selector,
+			country = this.country,
+			noOfElements = this.noOfElementsToGenerate;
 		xhr.open('GET', _path, true);
 		xhr.onload = () => {
 			if (xhr.status === 200) {

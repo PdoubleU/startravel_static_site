@@ -1,7 +1,7 @@
 const GRIP = document.querySelector('main');
 let isButtonActive = false;
 
-export const SCROLL = () => {
+export function scroll() {
 	let scrollBtn = document.querySelector('.scroll_btn');
 	if (isButtonActive == false) {
 		return 0;
@@ -18,10 +18,10 @@ export const SCROLL = () => {
 			behavior: 'smooth'
 		});
 	};
-};
-export const CREATE_BUTTON = () => {
+}
+export function createButton() {
 	if (isButtonActive === true) {
-		return 0;
+		return;
 	}
 	if (window.innerWidth <= 780) {
 		isButtonActive = true;
@@ -42,7 +42,7 @@ export const CREATE_BUTTON = () => {
 		scrlBtn.appendChild(arrowBox);
 		GRIP.appendChild(scrlBtn);
 	}
-};
-window.onresize = CREATE_BUTTON;
-window.onload = CREATE_BUTTON;
-window.onscroll = SCROLL;
+}
+
+[ 'resize', 'load' ].forEach((event) => window.addEventListener(event, () => createButton()));
+window.addEventListener('scroll', () => scroll());

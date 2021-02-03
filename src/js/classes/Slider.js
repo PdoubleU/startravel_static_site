@@ -23,10 +23,10 @@ export class Slider {
 	}
 
 	loadData(callback) {
-		let xhr = new XMLHttpRequest();
-		let _path = this.language == 'polish' ? './json/offer-pl.json' : './json/offer-en.json';
-		let sliderSel = this.sliderSelector;
-		let listLenght = this.slidesLng;
+		let xhr = new XMLHttpRequest(),
+			_path = this.language == 'polish' ? './json/offer-pl.json' : './json/offer-en.json',
+			sliderSel = this.sliderSelector,
+			listLenght = this.slidesLng;
 		xhr.open('GET', _path, false);
 		xhr.onload = () => {
 			if (xhr.status === 200) {
@@ -43,18 +43,18 @@ export class Slider {
 			max = Math.floor(max);
 			return Math.floor(Math.random() * (max - min + 1)) + min;
 		}
-		let country = [ 'poland', 'germany', 'czechia' ];
-		let grip = document.querySelector(sliderSel);
+		let country = [ 'poland', 'germany', 'czechia' ],
+			grip = document.querySelector(sliderSel);
 		for (let i = 0; i < listLenght; i++) {
-			let randomCountry = country[getRandomInt(0, 2)];
-			let title = objJSON[randomCountry][i].title;
-			let img_path = objJSON[randomCountry][i].frame_img;
+			let randomCountry = country[getRandomInt(0, 2)],
+				title = objJSON[randomCountry][i].title,
+				img_path = objJSON[randomCountry][i].frame_img;
 			const SLIDE_ARTCL = document.createElement('article');
 			SLIDE_ARTCL.classList.add('sliderBox_cnt_slide');
 			SLIDE_ARTCL.style.backgroundImage = `url(${img_path.replace('..', '.')})`;
-			const SLIDE_CONT = document.createElement('a');
-			const SPAN = document.createElement('span');
-			const TXT_BKG = document.createElement('span');
+			const SLIDE_CONT = document.createElement('a'),
+				SPAN = document.createElement('span'),
+				TXT_BKG = document.createElement('span');
 			TXT_BKG.classList.add('txt');
 			SLIDE_CONT.href = 'subpages/' + randomCountry + '.html';
 			SLIDE_CONT.classList.add('sliderBox_cnt_slide--link');

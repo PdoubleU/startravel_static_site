@@ -1,10 +1,10 @@
-export const CHECK_STORAGE = () => {
+export function checkStorage() {
 	if (window.localStorage.getItem('gdpr') && window.localStorage.getItem('language')) {
 		return 0;
 	} else {
 		window.localStorage.setItem('gdpr', 'unconfirmed');
 		window.localStorage.setItem('language', 'english');
 	}
-};
+}
 
-window.onload = CHECK_STORAGE();
+window.addEventListener('load', () => checkStorage());

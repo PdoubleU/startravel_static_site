@@ -54,8 +54,8 @@ export class ModalWindow {
 		modalCont.innerHTML = response[language];
 		bodySel.lastChild.children[0].lastChild.appendChild(modalCont);
 
-		let elem = document.querySelector('#form');
-		let auxBtn = document.querySelector('.modalContainer--auxBtn');
+		let elem = document.querySelector('#form'),
+			auxBtn = document.querySelector('.modalContainer--auxBtn');
 
 		isHidden ? (elem.style.height = '0%') : { return: 1 };
 		isAuxBtn ? (auxBtn.style.display = 'relative') : (auxBtn.style.display = 'none');
@@ -104,16 +104,13 @@ export class ModalWindow {
 			CLOSE_BTN.classList.add('modal_body--close');
 			CLOSE_BTN.classList.add(this.id);
 			this.bodySelector.lastChild.children[0].lastChild.appendChild(CLOSE_BTN);
-			CLOSE_BTN.onclick = () => MODAL_SECTION.remove();
+			CLOSE_BTN.addEventListener('click', () => MODAL_SECTION.remove());
 		}
 	}
 
 	// this method is called when tapping action button - switch statement filter choosen action for button
 	actionBtn() {
 		switch (this.action) {
-			case 'submit':
-				// TODO: send form on the server//
-				break;
 			case 'accept':
 				document.querySelector('#modal_' + this.id).remove();
 				document.querySelector('#bar_gdpr').classList.remove('bar--active');
@@ -133,12 +130,12 @@ export class ModalWindow {
 	}
 	// this method fetches json file with particular response from choosen path and takes callback function which is responsible for creating modal window's content based on fetched data
 	loadData(callback) {
-		let xhr = new XMLHttpRequest();
-		let _path = this.isSubpage == null ? '..' + this.path : '.' + this.path;
-		let language = this.language;
-		let isHidden = this.formIsHidden;
-		let isAuxBtn = this.isAuxBtn;
-		let bodySel = this.bodySelector;
+		let xhr = new XMLHttpRequest(),
+			_path = this.isSubpage == null ? '..' + this.path : '.' + this.path,
+			language = this.language,
+			isHidden = this.formIsHidden,
+			isAuxBtn = this.isAuxBtn,
+			bodySel = this.bodySelector;
 		xhr.open('GET', _path, true);
 		xhr.onload = () => {
 			if (xhr.status === 200) {
@@ -150,8 +147,8 @@ export class ModalWindow {
 	}
 	// this one is executed only if option called contet is set to 'description' and put inside modal window's frame price details and info about product
 	loadDescription() {
-		const MODAL_CONTENT = document.createElement('div');
-		const MODAL_PRICE = document.createElement('div');
+		const MODAL_CONTENT = document.createElement('div'),
+			MODAL_PRICE = document.createElement('div');
 		MODAL_CONTENT.classList.add('modalContainer');
 		MODAL_CONTENT.id = 'description';
 		MODAL_CONTENT.innerHTML = this.description[0];

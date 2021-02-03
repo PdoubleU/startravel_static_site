@@ -6,7 +6,7 @@ if (document.querySelector('.mainSubpage') == undefined) {
 	let element = document.querySelector('.contMiddle--sub');
 	switch (element.id) {
 		case 'content-de':
-			new FillContent('#content-de', {
+			new FillContent(`#${element.id}`, {
 				country: 'germany',
 				_path: '../json/offer-pl.json',
 				elementsToGenerate: 5
@@ -14,7 +14,7 @@ if (document.querySelector('.mainSubpage') == undefined) {
 			break;
 
 		case 'content-pl':
-			new FillContent('#content-pl', {
+			new FillContent(`#${element.id}`, {
 				country: 'poland',
 				_path: '../json/offer-pl.json',
 				elementsToGenerate: 5
@@ -22,7 +22,7 @@ if (document.querySelector('.mainSubpage') == undefined) {
 			break;
 
 		case 'content-cz':
-			new FillContent('#content-cz', {
+			new FillContent(`#${element.id}`, {
 				country: 'czechia',
 				_path: '../json/offer-pl.json',
 				elementsToGenerate: 5

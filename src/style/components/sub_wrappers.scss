@@ -10,13 +10,13 @@
 }
 // set different background images according to choosen destination country and user's device (in that case mobile device):
 #poland .mainSubpage_one > .contFront--sub > .contFront_one--sub {
-	background-image: url('./assets/imgs/small/ck.jpg');
+	background-image: url('./assets/imgs/small/tyniec-small.jpg');
 }
 #germany .mainSubpage_one > .contFront--sub > .contFront_one--sub {
-	background-image: url('./assets/imgs/small/ck.jpg');
+	background-image: url('./assets/imgs/small/bastei-small.jpg');
 }
 #czechia .mainSubpage_one > .contFront--sub > .contFront_one--sub {
-	background-image: url('./assets/imgs/small/ck.jpg');
+	background-image: url('./assets/imgs/small/nepomuk-small.jpg');
 }
 .contFront {
 	&--sub {
@@ -29,10 +29,9 @@
 		}
 	}
 	&_one--sub {
-		font-size: 2rem;
 		color: $second_font;
-		align-items: center;
-		justify-content: center;
+		align-items: flex-end;
+		justify-content: flex-start;
 		background-size: cover;
 		background-position: center;
 		display: flex;
@@ -41,7 +40,8 @@
 			height: calc(100vh - 2rem);
 		}
 		& h1 {
-			font-size: 3rem;
+			padding: 0 0 1rem 1rem;
+			font-size: 2.2rem;
 		}
 	}
 	&_two--sub {
@@ -88,13 +88,13 @@
 		}
 		// set different background images according to choosen destination country and user's device (in that case desktop or tablet):
 		#poland .mainSubpage_one > .contFront--sub > .contFront_one--sub {
-			background-image: url('./assets/imgs/small/ck.jpg');
+			background-image: url('./assets/imgs/large/tyniec-large.jpg');
 		}
 		#germany .mainSubpage_one > .contFront--sub > .contFront_one--sub {
-			background-image: url('./assets/imgs/small/ck.jpg');
+			background-image: url('./assets/imgs/large/bastei-large.jpg');
 		}
 		#czechia .mainSubpage_one > .contFront--sub > .contFront_one--sub {
-			background-image: url('./assets/imgs/small/ck.jpg');
+			background-image: url('./assets/imgs/large/nepomuk-large.jpg');
 		}
 		.contFront {
 			&--sub {

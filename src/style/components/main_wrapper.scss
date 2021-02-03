@@ -43,7 +43,7 @@
 			width: 100%;
 			height: 100%;
 			padding: 0 .05rem .05rem 0;
-			background-image: url('./assets/imgs/small/main_image.jpg');
+			background-image: url('./assets/imgs/small/mine_small.jpg');
 			background-size: cover;
 			background-position: center;
 			box-shadow: $shadow_box;
@@ -107,13 +107,28 @@
 					overflow: visible;
 					width: 3.2rem;
 					height: 3.2rem;
-					&--icon {
-						width: 2.8rem;
+					filter: invert(13%) sepia(0%) saturate(0%) hue-rotate(109deg) brightness(97%) contrast(82%);
+					background-size: cover;
+					&:hover {
+						filter: none;
 					}
+				}
+				& > :nth-child(1) {
+					background-image: url('./assets/imgs/icons/facebook.svg');
+				}
+				& > :nth-child(2) {
+					background-image: url('./assets/imgs/icons/instagram.svg');
+				}
+				& > :nth-child(3) {
+					background-image: url('./assets/imgs/icons/arroba.svg');
+				}
+				& > :nth-child(4) {
+					background-image: url('./assets/imgs/icons/whatsapp.svg');
 				}
 				& > .arrowBox {
 					@include general_arrow_btn($font_hover, $main_bkg);
 					transform: rotate(90deg);
+					margin-right: 2rem;
 					&:active,
 					&:focus {
 						transform: rotate(90deg) scale(.9);
@@ -125,11 +140,13 @@
 					@media (min-width: 37rem) and (max-width: 51.99rem) {
 						grid-row: 1 / 2;
 						grid-column: 5 / 6;
+						margin-right: 0;
 					}
 					// media for iphone 5/se landscape:
 					@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
 						grid-row: 1 / 2;
 						grid-column: 5 / 6;
+						margin-right: 0;
 					}
 				}
 			}
@@ -156,7 +173,7 @@
 	}
 	grid-template-rows: repeat(3, 1fr);
 	font-size: 2.2rem;
-	color: $main_font;
+	color: $second_font;
 	font-weight: normal;
 	font-family: $header_font;
 	&_inner {
@@ -175,7 +192,6 @@
 				box-shadow: $shadow_box;
 				> span {
 					padding: .2rem .8rem;
-					background: $second_bkg;
 				}
 			}
 			&:active {
@@ -186,21 +202,21 @@
 			grid-row: 1 / 2;
 			padding: 0 1rem 1rem 1rem;
 			& > a {
-				background-image: url('./assets/imgs/small/castle.jpg');
+				background-image: url('./assets/imgs/small/tyniec-small.jpg');
 			}
 		}
 		&--two {
 			grid-row: 2 / 3;
 			padding: 0 1rem 1rem 1rem;
 			& > a {
-				background-image: url('./assets/imgs/small/ck.jpg');
+				background-image: url('./assets/imgs/small/nepomuk-small.jpg');
 			}
 		}
 		&--three {
 			grid-row: 3 / 4;
 			padding: 0 1rem 1rem;
 			& > a {
-				background-image: url('./assets/imgs/small/ksiaz.jpg');
+				background-image: url('./assets/imgs/small/bastei-small.jpg');
 			}
 		}
 	}
@@ -322,7 +338,7 @@
 				padding: 3.5rem 0 2rem 2rem;
 				height: 100%;
 				& > div {
-					background-image: url('./assets/imgs/large/main_image.jpg');
+					background-image: url('./assets/imgs/large/mine_large.jpg');
 					& > h1 {
 						font-size: 2rem;
 					}
@@ -340,6 +356,7 @@
 				&--socialMedia {
 					border-width: $width_brd-dskt;
 					& .socialMediaBox {
+						margin-top: 1rem;
 						&_hdr {
 							font-size: 1rem;
 						}
@@ -352,7 +369,8 @@
 							}
 						}
 						& .arrowBox {
-							margin-top: .2rem;
+							margin-top: 1rem;
+							margin-right: 0;
 							grid-column: 1 / 3;
 							transform: rotate(0deg);
 							.arrowBox--top,
@@ -382,7 +400,7 @@
 			@include main_container;
 			grid-template-rows: 100%;
 			grid-template-columns: repeat(3, 1fr);
-			font-size: 1.6rem;
+			font-size: 2.2rem;
 			&_inner {
 				&--one--desktop,
 				&--two--desktop,
@@ -392,18 +410,9 @@
 					min-height: 100%;
 					& a {
 						min-height: 100%;
-						> span {
-							padding: .2rem .8rem;
-							background: $second_bkg;
-						}
 						&:hover {
-							transition: background .6s, color .6s;
 							background-size: cover;
 							background-position: center;
-							> span {
-								background: $main_bkg;
-								color: $second_font;
-							}
 						}
 						&:active {
 							transform: scale(.99);
@@ -416,10 +425,13 @@
 						padding: 3.5rem 2rem 2rem 0;
 						margin-right: 0;
 					}
-					& > a:hover {
-						--bkgUrl: url('./assets/imgs/large/castle.jpg');
-						background-image: var(--bkgUrl);
-						animation: animatedBackground .6s linear;
+					& > a {
+						background-image: url('./assets/imgs/large/tyniec-large.jpg');
+						&:hover {
+							--bkgUrl: url('./assets/imgs/large/tyniec-large.jpg');
+							background-image: var(--bkgUrl);
+							animation: animatedBackground .6s linear;
+						}
 					}
 				}
 				&--two--desktop {
@@ -427,10 +439,13 @@
 					@media (pointer: fine) and (orientation: landscape) {
 						padding: 3.5rem 2rem 2rem 0;
 					}
-					& > a:hover {
-						--bkgUrl: url('./assets/imgs/large/ck.jpg');
-						background-image: var(--bkgUrl);
-						animation: animatedBackground .6s linear;
+					& > a {
+						background-image: url('./assets/imgs/large/nepomuk-large.jpg');
+						&:hover {
+							--bkgUrl: url('./assets/imgs/large/nepomuk-large.jpg');
+							background-image: var(--bkgUrl);
+							animation: animatedBackground .6s linear;
+						}
 					}
 				}
 				&--three--desktop {
@@ -438,10 +453,13 @@
 					@media (pointer: fine) and (orientation: landscape) {
 						padding: 3.5rem 2rem 2rem 0;
 					}
-					& > a:hover {
-						--bkgUrl: url('./assets/imgs/large/ksiaz.jpg');
-						background-image: var(--bkgUrl);
-						animation: animatedBackground .6s linear;
+					& > a {
+						background-image: url('./assets/imgs/large/bastei-large.jpg');
+						&:hover {
+							--bkgUrl: url('./assets/imgs/large/bastei-large.jpg');
+							background-image: var(--bkgUrl);
+							animation: animatedBackground .6s linear;
+						}
 					}
 				}
 			}

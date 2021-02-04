@@ -11,3 +11,15 @@ import { Slider } from './classes/Slider.js';
 if (document.querySelector('#main_page') !== null) {
 	let MAIN_SLIDER = new Slider('#slider');
 }
+
+function isInViewport(element) {
+	const rect = element.getBoundingClientRect();
+	return (
+		rect.top >= 0 &&
+		rect.left >= 0 &&
+		rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+		rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+	);
+}
+
+window.addEventListener('wheel', () => console.log(document.scrollY));

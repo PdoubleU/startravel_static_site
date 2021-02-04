@@ -9,7 +9,7 @@ if (document.querySelector('.mainSubpage') == undefined) {
 			new FillContent(`#${element.id}`, {
 				country: 'germany',
 				_path: '../json/offer-pl.json',
-				elementsToGenerate: 5
+				noOfAvailableOffers: 6
 			});
 			break;
 
@@ -17,7 +17,7 @@ if (document.querySelector('.mainSubpage') == undefined) {
 			new FillContent(`#${element.id}`, {
 				country: 'poland',
 				_path: '../json/offer-pl.json',
-				elementsToGenerate: 5
+				noOfAvailableOffers: 6
 			});
 			break;
 
@@ -25,7 +25,7 @@ if (document.querySelector('.mainSubpage') == undefined) {
 			new FillContent(`#${element.id}`, {
 				country: 'czechia',
 				_path: '../json/offer-pl.json',
-				elementsToGenerate: 5
+				noOfAvailableOffers: 6
 			});
 			break;
 		default:

@@ -10,9 +10,6 @@
 	grid-row: auto;
 	grid-column: auto;
 	min-width: 100%;
-	@media (orientation: landscape) {
-		height: 100vh;
-	}
 	&_span {
 		display: flex;
 		position: relative;

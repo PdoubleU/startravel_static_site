@@ -55,9 +55,10 @@
 	grid-template-columns: 100%;
 	grid-auto-rows: unset;
 	@media (min-width: 52rem) {
+		grid-template-columns: 50% 50%;
 		grid-auto-rows: minmax(30vh, auto);
 		@media (orientation: landscape) {
-			grid-auto-rows: minmax(auto, 100vh);
+			grid-auto-rows: minmax(auto, 60vh);
 		}
 	}
 }
@@ -124,7 +125,7 @@
 			grid-auto-rows: minmax(35vh, 40vh);
 			grid-auto-columns: 100%;
 			@media (orientation: landscape) and (hover: none) {
-				grid-auto-rows: 100vh;
+				grid-auto-rows: 50vh;
 				@media (min-width: 52rem) {
 					grid-auto-rows: minmax(40vh, 60vh);
 				}

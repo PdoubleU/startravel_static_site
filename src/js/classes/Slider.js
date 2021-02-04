@@ -27,6 +27,8 @@ export class Slider {
 			_path = this.language == 'polish' ? './json/offer-pl.json' : './json/offer-en.json',
 			sliderSel = this.sliderSelector,
 			listLenght = this.slidesLng;
+		// temporary last parameter set to false (synchronous request) - otherwise the changeSlide() is messing around this class
+		// will be rafactor later:
 		xhr.open('GET', _path, false);
 		xhr.onload = () => {
 			if (xhr.status === 200) {

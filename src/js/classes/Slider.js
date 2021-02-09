@@ -50,7 +50,10 @@ export class Slider {
 		for (let i = 0; i < listLenght; i++) {
 			let randomCountry = country[getRandomInt(0, 2)],
 				title = objJSON[randomCountry][i].title,
-				img_path = objJSON[randomCountry][i].frame_img;
+				img_path =
+					window.innerWidth > 820
+						? objJSON[randomCountry][i].frame_img
+						: objJSON[randomCountry][i].frame_img_mobile;
 			const SLIDE_ARTCL = document.createElement('article');
 			SLIDE_ARTCL.classList.add('sliderBox_cnt_slide');
 			SLIDE_ARTCL.style.backgroundImage = `url(${img_path.replace('..', '.')})`;

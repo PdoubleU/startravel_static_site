@@ -17,7 +17,7 @@ if (document.querySelector('.mainSubpage') == undefined) {
 			new FillContent(`#${element.id}`, {
 				country: 'poland',
 				_path: '../json/offer-pl.json',
-				noOfAvailableOffers: 6
+				noOfAvailableOffers: 8
 			});
 			break;
 

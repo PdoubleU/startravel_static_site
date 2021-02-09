@@ -23,6 +23,7 @@ export class FillContent {
 				price = objJSON[country][i].price,
 				frameCont = objJSON[country][i].frame_description,
 				frameImg = objJSON[country][i].frame_img,
+				frameImgMob = objJSON[country][i].frame_img_mobile,
 				grip = document.querySelector(selector);
 
 			const CONTENT_CONTAINER = document.createElement('article'),
@@ -44,7 +45,7 @@ export class FillContent {
 			INNER_FRAME.classList.add('generatedInnerFrame');
 			INNER_IMG.classList.add('generatedInnerFrame_img');
 			INNER_CONT.classList.add('generatedInnerFrame_content');
-			INNER_IMG.src = frameImg;
+			INNER_IMG.src = window.innerWidth > 820 ? frameImg : frameImgMob;
 			INNER_CONT.innerHTML = frameCont;
 			INNER_FRAME.appendChild(INNER_IMG);
 			INNER_FRAME.appendChild(INNER_CONT);

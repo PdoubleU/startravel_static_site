@@ -103,10 +103,9 @@
 				right: 1rem;
 				left: auto;
 				@media (min-width: 52rem) {
-					right: -2rem;
+					right: -1.8rem;
 					margin-right: 1.2rem;
 				}
-
 				&.arrowBox {
 					&:active {
 						transform: translateY(-50%) scale(.9);
@@ -117,7 +116,7 @@
 				left: 1rem;
 				right: auto;
 				@media (min-width: 52rem) {
-					left: -2rem;
+					left: -1.8rem;
 					margin-left: 1.2rem;
 				}
 				&.arrowBox {

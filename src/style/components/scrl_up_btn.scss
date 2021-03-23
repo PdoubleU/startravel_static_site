@@ -32,7 +32,9 @@
 		width: 2rem;
 	}
 }
-.scroll_btn--active {
-	display: inline-block;
-	animation: shake_btn 2s linear;
+@media (max-width: 52rem) {
+	.scroll_btn--active {
+		display: inline-block;
+		animation: shake_btn 2s linear;
+	}
 }

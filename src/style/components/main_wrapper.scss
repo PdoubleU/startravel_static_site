@@ -208,7 +208,7 @@
 	&_two,
 	&_three {
 		& > div {
-			height: fit-content;
+			height: 100%;
 			position: relative;
 			width: 100%;
 			padding: 4rem 3rem 4.5rem;
@@ -291,6 +291,8 @@
 		}
 		.main {
 			height: fit-content;
+			position: relative;
+			z-index: -1;
 			@media (pointer: fine) and (orientation: landscape) {
 				flex-direction: row;
 				grid-column: 1 / 2;
@@ -305,6 +307,7 @@
 			}
 			&_two {
 				@include main_page($main_bkg, 100vh);
+				z-index: -1;
 				width: fit-content;
 				@media (orientation: portrait) and (hover: none), (orientation: portrait) {
 					height: 50vh;
@@ -312,6 +315,7 @@
 			}
 			&_three {
 				@include main_page($main_bkg, 100vh);
+				z-index: -2;
 				width: fit-content;
 				@media (hover: none), (orientation: portrait) {
 					height: fit-content;
@@ -320,6 +324,10 @@
 		}
 		.contFront {
 			@include main_container;
+			margin-right: -2rem;
+			@media (orientation: portrait) and (hover: none), (orientation: portrait) {
+				margin-right: 0;
+			}
 			grid-template-columns: 2fr 1fr;
 			grid-template-rows: 1fr 1fr;
 			&_one {
@@ -367,16 +375,23 @@
 			}
 		}
 		.contMiddle {
+			position: relative;
+			z-index: -1;
 			@include main_container;
 			grid-template-rows: 100%;
 			grid-template-columns: repeat(3, 1fr);
 			font-size: 2.2rem;
+			padding: 0 0 0 2rem;
+			margin-right: -2rem;
+			@media (hover: none), (orientation: portrait) {
+				padding: 0;
+			}
 			&_inner {
 				&--one--desktop,
 				&--two--desktop,
 				&--three--desktop {
 					grid-row: 1 / 2;
-					padding: 3.5rem 1rem 2rem 1rem;
+					padding: 3.5rem 0 2rem 1rem;
 					min-height: 100%;
 					& a {
 						min-height: 100%;
@@ -419,7 +434,10 @@
 					}
 				}
 				&--three--desktop {
-					padding: 0 2rem 2rem .5rem;
+					padding: 0 0 2rem .5rem;
+					@media (hover: none), (orientation: portrait) {
+						padding: 0 2rem 2rem .5rem;
+					}
 					@media (pointer: fine) and (orientation: landscape) {
 						padding: 3.5rem 2rem 2rem 0;
 					}
@@ -439,6 +457,10 @@
 			grid-template-rows: 100%;
 			grid-template-columns: repeat(3, 1fr);
 			font-size: .8rem;
+			padding: 0 0 0 2rem;
+			@media (hover: none), (orientation: portrait) {
+				padding: 0;
+			}
 			&_one,
 			&_two,
 			&_three {

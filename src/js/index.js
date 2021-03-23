@@ -6,6 +6,7 @@ import * as checkStorage from './components/local_storage_settings.js';
 import * as reveal from './components/reveal_txt.js';
 import * as fillContent from './components/fill_content.js';
 import { Slider } from './classes/Slider.js';
+import * as alertFunctions from './components/scroll_horiz_alert.js';
 
 // this statement checks if user is currently in the main page and then call instance of Slider, which appears only on the main page:
 if (document.querySelector('#main_page') !== null) {

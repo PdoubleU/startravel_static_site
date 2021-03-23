@@ -8,7 +8,7 @@ export function showGDPRbar() {
 }
 
 export function hideGDPRbar() {
-	document.querySelector('#bar_gdpr').classList.remove('bar--active');
+	document.querySelector('#bar_gdpr').classList.toggle('bar--active');
 	window.localStorage.setItem('gdpr', 'confirmed');
 	setTimeout(() => {
 		document.querySelector('#bar_gdpr').remove();

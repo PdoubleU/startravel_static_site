@@ -1,4 +1,4 @@
-export class Slider {
+class Slider {
 	constructor(elemSelector, opts) {
 		const DEFAULT_OPTS = {
 			pauseTime: 8000,
@@ -153,3 +153,5 @@ export class Slider {
 		this.slider.appendChild(NAV);
 	}
 }
+
+export let slider = new Slider('#slider');

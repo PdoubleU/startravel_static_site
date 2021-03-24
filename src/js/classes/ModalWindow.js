@@ -92,13 +92,13 @@ export class ModalWindow {
 			const ACTION_BTN = document.createElement('button');
 			ACTION_BTN.classList.add('modal_body--actionBtn');
 			ACTION_BTN.classList.add(this.id);
+			ACTION_BTN.id = this.id == 'description' ? 'open-form' : '';
 			ACTION_BTN.appendChild(
 				document.createTextNode(this.language == 'polish' ? this.btnNamePl : this.btnNameEn)
 			);
 			this.bodySelector.lastChild.children[0].lastChild.appendChild(ACTION_BTN);
 			ACTION_BTN.addEventListener('click', this.actionBtn.bind(this));
 		}
-
 		if (this.isCloseBtn) {
 			const CLOSE_BTN = document.createElement('button');
 			CLOSE_BTN.classList.add('modal_body--close');

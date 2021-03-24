@@ -6,12 +6,15 @@ import * as checkStorage from './components/local_storage_settings.js';
 import * as reveal from './components/reveal_txt.js';
 import * as fillContent from './components/fill_content.js';
 import { Slider } from './classes/Slider.js';
-import * as alertFunctions from './components/scroll_horiz_alert.js';
+import * as submitForm from './components/submit_form.js';
 
-// this statement checks if user is currently in the main page and then call instance of Slider, which appears only on the main page:
-if (document.querySelector('#main_page') !== null) {
-	let MAIN_SLIDER = new Slider('#slider');
-}
+// this statement checks if user is currently in the main page and then call instance of Slider and scroll horizontal alert, which appear only on the main page:
+(async () => {
+	if (document.querySelector('#main_page') !== null) {
+		new Slider('#slider');
+		await import('./components/scroll_horiz_alert.js');
+	}
+})();
 
 function isInViewport(element) {
 	const rect = element.getBoundingClientRect();
@@ -22,5 +25,3 @@ function isInViewport(element) {
 		rect.right <= (window.innerWidth || document.documentElement.clientWidth)
 	);
 }
-
-window.addEventListener('wheel', () => console.log(document.scrollY));

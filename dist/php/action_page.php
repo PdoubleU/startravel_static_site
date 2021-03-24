@@ -11,12 +11,13 @@
 	$email = $_POST['email'];
 	$message = $_POST['message'];
 	$document_root = $_SERVER['DOCUMENT_ROOT'];
-	$output = $fname. "\t".$email. "\t".$message. "\n";				//("$document_root/./data/data_get_form.txt", 'ab') directory for server
-	$wp = fopen("$document_root/startravel.wroclaw.pl/data/data_get_form.txt", 'ab'); //before moving on server check directory!!! it may cause problems with writing/reading file
-
+	$output = $fname. "\t".$email. "\t".$message. "\n";
+	//("$document_root/./data/data_get_form.txt", 'ab') directory for server
+	//before moving on server check directory!!! it may cause problems with writing/reading file
+	$wp = fopen("$document_root/startravel.wroclaw.pl/./data/data_get_form.txt", 'ab');
 	flock($wp, LOCK_EX);
 	fwrite($wp, $output);
 	fclose($wp);
 
-	mail($to, $subject, $msg_details, $header);
+	//mail($to, $subject, $msg_details, $header);
 ?>

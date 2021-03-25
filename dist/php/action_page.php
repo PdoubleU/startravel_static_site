@@ -10,6 +10,7 @@
 	$fname = $_POST['fname'];
 	$email = $_POST['email'];
 	$message = $_POST['message'];
+	$test = $_POST;
 	$document_root = $_SERVER['DOCUMENT_ROOT'];
 	$output = $fname. "\t".$email. "\t".$message. "\n";
 	//("$document_root/./data/data_get_form.txt", 'ab') directory for server

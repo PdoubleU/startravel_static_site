@@ -10,7 +10,8 @@ export class ModalWindow {
 			buttonNameEn: 'Submit',
 			_path: '',
 			description: [],
-			formIsHidden: false
+			formIsHidden: false,
+			messageType: true
 		};
 		this.id = id;
 		this.options = Object.assign({}, DEFAULT_OPTIONS, options);
@@ -27,12 +28,14 @@ export class ModalWindow {
 		this.language = window.localStorage.getItem('language');
 		this.bodySelector = document.querySelector('body');
 		this.isSubpage = document.querySelector('#main_page');
+		this.messageType = this.options.messageType;
 
 		// generates frame of modal window and after that other methods puts correct content into
 		this.generateHTMLTags();
 		// this auxiliary functions takes as argument this.content value and accordingly executes set of methods to render appropriate content
 		this.executeSetFormAndGdpr(this.content);
 		this.executeSetDescription(this.content);
+		this.executeSetSubmitConfirm(this.content);
 	}
 
 	// set of three auxiliary methods
@@ -45,6 +48,11 @@ export class ModalWindow {
 		if (condition == 'description') {
 			this.loadDescription();
 			this.loadData(this.generateContent);
+		}
+	}
+	executeSetSubmitConfirm(condition) {
+		if (condition == 'confirmation') {
+			this.loadSubmitConfirmation();
 		}
 	}
 
@@ -86,7 +94,13 @@ export class ModalWindow {
 		this.bodySelector.lastChild.children[0].appendChild(MODAL_BODY);
 		const MODAL_CONTENT = document.createElement('div');
 		MODAL_CONTENT.classList.add('modalContainer');
-		MODAL_CONTENT.id = this.content == 'description' ? 'form' : '';
+		if (this.content == 'description') {
+			MODAL_CONTENT.id = 'form';
+		} else if (this.content == 'confirmation') {
+			MODAL_CONTENT.id = 'confirmation';
+		} else {
+			MODAL_CONTENT.id = '';
+		}
 		this.bodySelector.lastChild.children[0].lastChild.appendChild(MODAL_CONTENT);
 		if (this.isActionBtn) {
 			const ACTION_BTN = document.createElement('button');
@@ -157,5 +171,27 @@ export class ModalWindow {
 
 		this.bodySelector.lastChild.children[0].lastChild.appendChild(MODAL_CONTENT);
 		this.bodySelector.lastChild.children[0].lastChild.appendChild(MODAL_PRICE);
+	}
+	loadSubmitConfirmation() {
+		let selected = document.querySelector('#confirmation');
+		let name = this.description[0];
+		let successMsg =
+			this.language == 'polish'
+				? `${name}, <br/> formularz został wysłany. <br/><br/>
+                Skontaktujemy się z tobą  w ciągu 24 godzin. <br/><br/>
+                Dziękujęmy!`
+				: `${name}, <br/> form has been sent.<br/><br/>
+                We will contact you within 24h. <br/><br/>
+                Thank You!`;
+		let failMsg =
+			this.language == 'polish'
+				? `${name}, <br/> coś poszło nie tak. <br/><br/>
+                Spróbuj ponownie lub napisz bezpośrednio na nasz adres email: <br/>
+                info@starcab.wroclaw.pl`
+				: `${name}, <br/> something went wrong. <br/><br/>
+                Please, try again later or email us directly: <br/>
+                info@starcab.wroclaw.pl`;
+
+		selected.innerHTML = this.messageType == true ? successMsg : failMsg;
 	}
 }

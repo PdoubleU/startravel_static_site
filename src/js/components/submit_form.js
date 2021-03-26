@@ -6,7 +6,7 @@ export default (function getAllButtons() {
 
 	object.item(0).addEventListener('click', (e) => {
 		if (e.target.id == 'post-data-btn') {
-			e.preventDefault();
+			//e.preventDefault();
 			let formNodes = document.getElementById('form_section').childNodes;
 			let path = './php/action_page.php';
 			let name = null;

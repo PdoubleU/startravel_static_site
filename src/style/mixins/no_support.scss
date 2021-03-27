@@ -1,0 +1,39 @@
+@mixin no_support {
+	html {
+		display: block;
+	}
+	.header,
+	aside,
+	img,
+	.scroll_horiz_alert,
+	.wrapper {
+		display: none;
+	}
+	.no-support {
+		z-index: 9999;
+		box-sizing: border-box;
+		border: 1rem solid black;
+		position: absolute;
+		display: table;
+		background: black;
+		color: white;
+		width: 100%;
+		min-height: 100vh;
+		& > div {
+			text-align: center;
+			display: table-cell;
+			vertical-align: middle;
+		}
+	}
+	hr {
+		margin: 2rem 0;
+		width: 60%;
+	}
+	h2 {
+		width: 70%;
+		margin: 0 auto;
+		font-size: .8rem;
+		line-height: 1.6;
+		min-height: 100%;
+	}
+}

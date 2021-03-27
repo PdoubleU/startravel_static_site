@@ -13,6 +13,7 @@
 @import './components/contact_form.scss';
 @import './components/description_modal_window.scss';
 @import './components/scroll_horiz_alert.scss';
+@import './mixins/no_support.scss';
 
 //root style block has box-sizing set to border-box to avoid unexpected behaviour for box elements:
 :root {
@@ -102,39 +103,11 @@ button {
 		display: none;
 	}
 }
+
 //this part checks if browser is internet explorer and if yes, set style for webpage and show alert for users to move on another browser:
 @media screen\0 {
-	html {
-		display: block;
-	}
-	.header,
-	aside,
-	img,
-	.outer-wrapper {
-		display: none;
-	}
-	.no-support {
-		z-index: 9999;
-		box-sizing: border-box;
-		border: 1rem solid yellow;
-		font-size: 1rem;
-		padding-top: 8rem;
-		position: absolute;
-		display: table-cell;
-		vertical-align: middle;
-		text-align: center;
-		text-justify: center;
-		background: black;
-		color: white;
-		width: 100%;
-		min-height: 100%;
-		> hr {
-			margin: 2rem 0;
-			width: 60%;
-		}
-		> h2.no-support-txt {
-			margin-top: 5rem;
-			min-height: 100%;
-		}
-	}
+	@include no_support;
+}
+@supports (-ms-ime-align: auto) {
+	@include no_support;
 }

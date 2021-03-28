@@ -3,6 +3,17 @@
 //fonts:
 $header_font: 'Encode Sans Expanded', 'Huelvetica', sans-serif;
 $text_font: 'Blinker', 'Huelvetica', sans-serif;
+// font sizes:
+$subpage_state_descr_dskt: .8rem;
+$subpage_state_descr_mob: 1rem;
+$subpage_state_descr_ipad: 1.2rem;
+$subpage_short_descr_dskt: .7rem;
+$subpage_short_descr_mob: 1rem;
+$subpage_short_descr_tab: .8rem;
+$subpage_short_descr_ipad: 1rem;
+$subpage_short_descr_ipad_hrs: 1.2rem;
+$subpage_short_descr_iphone: 1rem;
+$footer_mob_portrait: 1rem;
 //z-index list:
 $zidx_top_navbar: 100;
 $zidx_mob_menu_sgl_btn: 90;
@@ -15,12 +26,12 @@ $mob_menu__sgl_btn: hsla(40, 40, 90, .8);
 $alt_hover_bkg: hsl(0, 0, 0);
 $alt_hover_btn: hsla(90, 10, 95, .6);
 $modal_bkg: hsla(200, 50, 10, 0.5);
-// fonts colours:
+// fonts colors:
 $main_font: hsl(0, 0, 0);
 $second_font: hsl(90, 10, 95);
 $font_hover: hsl(0, 6, 20);
 $font_alert: hsl(17, 100%, 50%);
-// borders colours:
+// borders colors:
 $main_brd: hsl(0, 0%, 40%);
 $second_brd: hsl(90, 10, 95);
 $menu_btn_hover_brd: hsl(0, 10, 35);
@@ -29,7 +40,7 @@ $width_brd: .08rem;
 $width_brd-dskt: .06rem;
 $width_btn_brd: .06rem;
 $form-brd: .06rem;
-// shadows colours:
+// shadows colors:
 $main_shdw: hsl(0, 0, 0);
 $second_shdw: hsl(90, 10, 95);
 $shadow_box: none;

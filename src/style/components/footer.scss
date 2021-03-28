@@ -15,7 +15,7 @@
 		text-align: center;
 		background: $second_bkg;
 		color: $main_font;
-		font-size: 1rem;
+		font-size: .8rem;
 	}
 	&_section {
 		display: grid;
@@ -40,6 +40,9 @@
 			align-items: center;
 			justify-content: space-around;
 			align-content: center;
+			@media (orientation: portrait) {
+				font-size: $footer_mob_portrait;
+			}
 		}
 		&--box {
 			display: grid;
@@ -65,8 +68,11 @@
 					margin-bottom: .8em;
 				}
 				& > p {
-					font-size: 1.2rem;
+					font-size: 1rem;
 					text-align: center;
+					@media (orientation: portrait) {
+						font-size: $footer_mob_portrait;
+					}
 				}
 			}
 		}

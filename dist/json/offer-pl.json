@@ -18,7 +18,7 @@
             "title": "Kościoły Pokoju i Kościoły Łaski",
             "content": "<div class='main-description'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</div>",
             "price": "<div class='cost'><span class='cost-integer'>100</span><span class='cost-decimal'>,00</span><span class='cost-currency'>zł</span></div>",
-            "frame_description": "Ta jednodniówka pozwoli oderwać się od miejskiego zgiełku i zatopić w uroczych zakątkach Karkonoszy.",
+            "frame_description": "Poznasz historię wojny trzydziestoletniej, która na stałe zmieniła Europę. Kościoły, które odwiedzisz, są pomnikiem tamtych czasów.",
             "frame_img": "../assets/imgs/large/swidnica_02.jpg",
             "frame_img_mobile": "../assets/imgs/small/swidnica_02.jpg",
             "additional_info": ""
@@ -27,7 +27,7 @@
             "title": "Zamek Moszna",
             "content": "<div class='main-description'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</div>",
             "price": "<div class='cost'><span class='cost-integer'>100</span><span class='cost-decimal'>,00</span><span class='cost-currency'>zł</span></div>",
-            "frame_description": "Ta jednodniówka pozwoli oderwać się od miejskiego zgiełku i zatopić w uroczych zakątkach Karkonoszy.",
+            "frame_description": "Zamkniem nie jest, choć przypomina. Ten przepiękny pałac warto odwiedzć podczas pięknej pogody, gdyż otoczony jest rozległymi ogrodami",
             "frame_img": "../assets/imgs/large/moszna_03.jpg",
             "frame_img_mobile": "../assets/imgs/small/moszna_03.jpg",
             "additional_info": ""
@@ -36,7 +36,7 @@
             "title": "Perła Baroku",
             "content": "<div class='main-description'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</div>",
             "price": "<div class='cost'><span class='cost-integer'>100</span><span class='cost-decimal'>,00</span><span class='cost-currency'>zł</span></div>",
-            "frame_description": "Ta jednodniówka pozwoli oderwać się od miejskiego zgiełku i zatopić w uroczych zakątkach Karkonoszy.",
+            "frame_description": "Kompleks klasztorny w Krzeszowie to pokaz bogactwa kościoła oraz symbol kontrreformacji. A wszystko okraszone przepięknym, barokowym stylem",
             "frame_img": "../assets/imgs/large/krzeszow_04.jpg",
             "frame_img_mobile": "../assets/imgs/small/krzeszow_04.jpg",
             "additional_info": ""
@@ -45,7 +45,7 @@
             "title": "Zamek Książ",
             "content": "<div class='main-description'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</div>",
             "price": "<div class='cost'><span class='cost-integer'>100</span><span class='cost-decimal'>,00</span><span class='cost-currency'>zł</span></div>",
-            "frame_description": "Ta jednodniówka pozwoli oderwać się od miejskiego zgiełku i zatopić w uroczych zakątkach Karkonoszy.",
+            "frame_description": "Położony na skalistym wzniesieniu przyciąga turystów swoją historią oraz legendami, które wyrosły po upadku nazistowskich niemiec. Dowiedz się, ile w nich prawdy.",
             "frame_img": "../assets/imgs/large/ksiaz_05.jpg",
             "frame_img_mobile": "../assets/imgs/small/ksiaz_05.jpg",
             "additional_info": ""
@@ -54,7 +54,7 @@
             "title": "Kraków i Kopalnia Soli w Wieliczce",
             "content": "<div class='main-description'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</div>",
             "price": "<div class='cost'><span class='cost-integer'>100</span><span class='cost-decimal'>,00</span><span class='cost-currency'>zł</span></div>",
-            "frame_description": "Ta jednodniówka pozwoli oderwać się od miejskiego zgiełku i zatopić w uroczych zakątkach Karkonoszy.",
+            "frame_description": "Sól w średniowieczu była cenna jak złoto. Poznaj kopalnie, których przychody stanowiły nawet 1 / 3 budżetu średniowiecznej Polski.",
             "frame_img": "../assets/imgs/large/krakow_06.jpg",
             "frame_img_mobile": "../assets/imgs/small/krakow_06.jpg",
             "additional_info": ""
@@ -63,7 +63,7 @@
             "title": "Obóz Auschwitz",
             "content": "<div class='main-description'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</div>",
             "price": "<div class='cost'><span class='cost-integer'>100</span><span class='cost-decimal'>,00</span><span class='cost-currency'>zł</span></div>",
-            "frame_description": "Ta jednodniówka pozwoli oderwać się od miejskiego zgiełku i zatopić w uroczych zakątkach Karkonoszy.",
+            "frame_description": "Obóz koncentracyjny w Oświęcimiu to jeden z najwazniejszych pomników ofiar drugiej wojny światowej.",
             "frame_img": "../assets/imgs/large/auschwitz_19.jpg",
             "frame_img_mobile": "../assets/imgs/small/auschwitz_19.jpg",
             "additional_info": ""
@@ -72,7 +72,7 @@
             "title": "Kompleks Riese",
             "content": "<div class='main-description'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</div>",
             "price": "<div class='cost'><span class='cost-integer'>100</span><span class='cost-decimal'>,00</span><span class='cost-currency'>zł</span></div>",
-            "frame_description": "Ta jednodniówka pozwoli oderwać się od miejskiego zgiełku i zatopić w uroczych zakątkach Karkonoszy.",
+            "frame_description": "Nazistowskie Niemcy były gotowe zrobić wszystko, aby wygrać drugą wojnę światową. Dowiedz się, co zamierzano ukryć w Górach Sowich.",
             "frame_img": "../assets/imgs/large/riese_20.jpg",
             "frame_img_mobile": "../assets/imgs/small/riese_20.jpg",
             "additional_info": ""
@@ -84,7 +84,7 @@
             "title": "Adrspach: Skalne Miasto",
             "content": "<div class='main-description'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</div>",
             "price": "<div class='cost'><span class='cost-integer'>100</span><span class='cost-decimal'>,00</span><span class='cost-currency'>zł</span></div>",
-            "frame_description": "Ta jednodniówka pozwoli oderwać się od miejskiego zgiełku i zatopić w uroczych zakątkach Karkonoszy.",
+            "frame_description": "Skalne Miasto to labirynt stworzony ręką natury, który przypomina zatopione w górach miasto krasnoludów.",
             "frame_img": "../assets/imgs/large/adrspach_07.jpg",
             "frame_img_mobile": "../assets/imgs/small/adrspach_07.jpg",
             "additional_info": ""
@@ -93,7 +93,7 @@
             "title": "Czeska Szwajcaria",
             "content": "<div class='main-description'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</div>",
             "price": "<div class='cost'><span class='cost-integer'>100</span><span class='cost-decimal'>,00</span><span class='cost-currency'>zł</span></div>",
-            "frame_description": "Ta jednodniówka pozwoli oderwać się od miejskiego zgiełku i zatopić w uroczych zakątkach Karkonoszy.",
+            "frame_description": "Czeska Szwajcaria to malowniczy zakątek Gór Połabskich, gdzie natura nie pozostawia złudzeń: tylko przyroda jest w stanie stworzyć tak inspirujący krajobraz.",
             "frame_img": "../assets/imgs/large/p_brama_08.jpg",
             "frame_img_mobile": "../assets/imgs/small/p_brama_08.jpg",
             "additional_info": ""
@@ -102,7 +102,7 @@
             "title": "Praga",
             "content": "<div class='main-description'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</div>",
             "price": "<div class='cost'><span class='cost-integer'>100</span><span class='cost-decimal'>,00</span><span class='cost-currency'>zł</span></div>",
-            "frame_description": "Ta jednodniówka pozwoli oderwać się od miejskiego zgiełku i zatopić w uroczych zakątkach Karkonoszy.",
+            "frame_description": "Najpiękniejsza europejska stolica: sprawdźcie sami prawdziwość tej tezy spacerując Mostem Karola czy wędrując uliczkami starej żydowskiej dzielnicy Josefov.",
             "frame_img": "../assets/imgs/large/orloi_09.jpg",
             "frame_img_mobile": "../assets/imgs/small/orloi_09.jpg",
             "additional_info": ""
@@ -111,7 +111,7 @@
             "title": "Harrachov i huta szkła",
             "content": "<div class='main-description'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</div>",
             "price": "<div class='cost'><span class='cost-integer'>100</span><span class='cost-decimal'>,00</span><span class='cost-currency'>zł</span></div>",
-            "frame_description": "Ta jednodniówka pozwoli oderwać się od miejskiego zgiełku i zatopić w uroczych zakątkach Karkonoszy.",
+            "frame_description": "Hutnictwo szkła w Karkonoszach to wielowiekowa tradycja, która kształtowała życie człowieka na tych ziemiach, ale również zmieniała środowisko.",
             "frame_img": "../assets/imgs/large/mumlava_10.jpg",
             "frame_img_mobile": "../assets/imgs/small/mumlava_10.jpg",
             "additional_info": ""
@@ -120,7 +120,7 @@
             "title": "Kutna Hora",
             "content": "<div class='main-description'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</div>",
             "price": "<div class='cost'><span class='cost-integer'>100</span><span class='cost-decimal'>,00</span><span class='cost-currency'>zł</span></div>",
-            "frame_description": "Ta jednodniówka pozwoli oderwać się od miejskiego zgiełku i zatopić w uroczych zakątkach Karkonoszy.",
+            "frame_description": "Kutna Hora to miejscowość, która rozwinęła się dzięki wydobyciu srebra. Jest ciekawym przykładem przemijania: kiedy złoża się wyczerpały, bogactwo odpłynęło.",
             "frame_img": "../assets/imgs/large/kutna_11.jpg",
             "frame_img_mobile": "../assets/imgs/small/kutna_11.jpg",
             "additional_info": ""
@@ -129,7 +129,7 @@
             "title": "Liberec",
             "content": "<div class='main-description'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</div>",
             "price": "<div class='cost'><span class='cost-integer'>100</span><span class='cost-decimal'>,00</span><span class='cost-currency'>zł</span></div>",
-            "frame_description": "Ta jednodniówka pozwoli oderwać się od miejskiego zgiełku i zatopić w uroczych zakątkach Karkonoszy.",
+            "frame_description": "Liberec to przykład, jak bogate były północne Czechy na przełomie XIX i XX wieku, a to za sprawą rozwijającego się tutaj przemysłu.",
             "frame_img": "../assets/imgs/large/liberec_12.jpg",
             "frame_img_mobile": "../assets/imgs/small/liberec_12.jpg",
             "additional_info": ""
@@ -140,7 +140,7 @@
             "title": "Göerlitz",
             "content": "<div class='main-description'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</div>",
             "price": "<div class='cost'><span class='cost-integer'>100</span><span class='cost-decimal'>,00</span><span class='cost-currency'>zł</span></div>",
-            "frame_description": "all the lorem ipsum generators on the internet tend to repeat predefined chunks as necessary, making this the first true generator on the internet",
+            "frame_description": "Niegdyś prężny ośrodek miejski czerpiący garściami z dogodnej lokalizacji na szlaku Via Reggia, dziś nazywany Göerlitzwood - ze względu na ilość zdjęć do filmów kręconych właśnie pośród wielowiekowych zabytków Altstadt.",
             "frame_img": "../assets/imgs/large/gorlitz_13.jpg",
             "frame_img_mobile": "../assets/imgs/small/gorlitz_13.jpg",
             "additional_info": ""
@@ -149,7 +149,7 @@
             "title": "Saksońska Szwajcaria",
             "content": "<div class='main-description'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</div>",
             "price": "<div class='cost'><span class='cost-integer'>100</span><span class='cost-decimal'>,00</span><span class='cost-currency'>zł</span></div>",
-            "frame_description": "all the lorem ipsum generators on the internet tend to repeat predefined chunks as necessary, making this the first true generator on the internet",
+            "frame_description": "Malowniczy krajobraz przełomu Łaby tworzy tutaj urwiska nad rzeką wspinające się na 100 metrów, z których roztacza się zapierający dech w piersiach widok.",
             "frame_img": "../assets/imgs/large/bastei_14.jpg",
             "frame_img_mobile": "../assets/imgs/small/bastei_14.jpg",
             "additional_info": ""
@@ -158,7 +158,7 @@
             "title": "Drezno",
             "content": "<div class='main-description'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</div>",
             "price": "<div class='cost'><span class='cost-integer'>100</span><span class='cost-decimal'>,00</span><span class='cost-currency'>zł</span></div>",
-            "frame_description": "all the lorem ipsum generators on the internet tend to repeat predefined chunks as necessary, making this the first true generator on the internet",
+            "frame_description": "Florencja Północy to doskonale zaplanowane miasto z bogatą barokową architekturą oraz bogatą kolecją dzieł sztuki.",
             "frame_img": "../assets/imgs/large/dresden_15.jpg",
             "frame_img_mobile": "../assets/imgs/small/dresden_15.jpg",
             "additional_info": ""
@@ -167,7 +167,7 @@
             "title": "Park Mużakowski",
             "content": "<div class='main-description'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</div>",
             "price": "<div class='cost'><span class='cost-integer'>100</span><span class='cost-decimal'>,00</span><span class='cost-currency'>zł</span></div>",
-            "frame_description": "all the lorem ipsum generators on the internet tend to repeat predefined chunks as necessary, making this the first true generator on the internet",
+            "frame_description": "Największy kompleks ogrodów angielskich w Europie z przepięknym pałacem w sercu wpisany na listę UNESCO.",
             "frame_img": "../assets/imgs/large/muskauer_16.jpg",
             "frame_img_mobile": "../assets/imgs/small/muskauer_16.jpg",
             "additional_info": ""
@@ -176,7 +176,7 @@
             "title": "Oybin",
             "content": "<div class='main-description'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</div>",
             "price": "<div class='cost'><span class='cost-integer'>100</span><span class='cost-decimal'>,00</span><span class='cost-currency'>zł</span></div>",
-            "frame_description": "all the lorem ipsum generators on the internet tend to repeat predefined chunks as necessary, making this the first true generator on the internet",
+            "frame_description": "Ruiny zamku wraz z pozostałościami gotyckiego kościoła ulokowane na niedostępnej, granitowej skale. Do Oybin dojechać można parową kolejką wąskotorową.",
             "frame_img": "../assets/imgs/large/oybin_17.jpg",
             "frame_img_mobile": "../assets/imgs/small/oybin_17.jpg",
             "additional_info": ""
@@ -185,7 +185,7 @@
             "title": "Moritzburg oraz Meissen",
             "content": "<div class='main-description'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</div>",
             "price": "<div class='cost'><span class='cost-integer'>100</span><span class='cost-decimal'>,00</span><span class='cost-currency'>zł</span></div>",
-            "frame_description": "all the lorem ipsum generators on the internet tend to repeat predefined chunks as necessary, making this the first true generator on the internet",
+            "frame_description": "Jeśli chcesz zobaczyć zagłębie \"białego złota\", to koniecznie odwiedź Misnię, w której wciąż produkuje się przepiękną porcelanę. Po drodze odwiedzisz niesamowity pałac na wodzie w Moritzburgu.",
             "frame_img": "../assets/imgs/large/meissen_18.jpg",
             "frame_img_mobile": "../assets/imgs/small/meissen_18.jpg",
             "additional_info": ""

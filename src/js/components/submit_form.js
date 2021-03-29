@@ -6,9 +6,9 @@ export default (function getAllButtons() {
 
 	object.item(0).addEventListener('click', (e) => {
 		if (e.target.id == 'post-data-btn') {
-			//e.preventDefault();
+			e.preventDefault();
 			let formNodes = document.getElementById('form_section').childNodes;
-			let path = './php/action_page.php';
+			let path = document.getElementById('sub_page') ? '../php/action_page.php' : './php/action_page.php';
 			let name = null;
 			let data = new FormData();
 			for (let value of formNodes.values()) {
@@ -28,7 +28,7 @@ export default (function getAllButtons() {
 				body: data
 			})
 				.then((response) => {
-					if (!response.ok) {
+					if (response.ok) {
 						formNodes.forEach((element) => {
 							element.disabled = true;
 						});

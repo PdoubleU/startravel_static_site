@@ -19,15 +19,10 @@
 	$database = 'startravel_visitors';
 	$db = new mysqli('localhost', $user, $password, $database);
 
-	if (mysqli_connect_errno()) {
-		echo "<p>blad polaczenia z bz</p>";
-		exit;
-	}
-
 	$query = "INSERT INTO visitors_data (name, email, datetime, message)  VALUES(?, ?, ?, ?)";
 	$command = $db->prepare($query);
 	$command->bind_param('ssss', $fname, $email, $datetime, $message);
 	$command->execute();
 
-	//mail($to, $subject, $msg_details, $header);
+	mail($to, $subject, $msg_details, $header);
 ?>

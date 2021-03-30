@@ -57,7 +57,7 @@ export class ModalWindow {
 	}
 
 	// below method is responsible for create all content inside modal window - effects depend on provided parameters
-	generateContent(response, language, isHidden, isAuxBtn, bodySel) {
+	generateContent([ response, language, isHidden, isAuxBtn, bodySel ]) {
 		let modalCont = document.querySelector('.modalContainer');
 		modalCont.innerHTML = response[language];
 		bodySel.lastChild.children[0].lastChild.appendChild(modalCont);
@@ -124,8 +124,9 @@ export class ModalWindow {
 
 	// this method is called when tapping action button - switch statement filter choosen action for button
 	actionBtn() {
+		const ACCEPT = 'accept', CONTACT = 'contact';
 		switch (this.action) {
-			case 'accept':
+			case ACCEPT:
 				document.querySelector('#modal_' + this.id).remove();
 				document.querySelector('#bar_gdpr').classList.remove('bar--active');
 				setTimeout(() => {
@@ -133,7 +134,7 @@ export class ModalWindow {
 				}, 1000);
 				window.localStorage.setItem('gdpr', 'confirmed');
 				break;
-			case 'contact':
+			case CONTACT:
 				let elem = document.querySelector('#form');
 				elem.style.height == '110%' ? (elem.style.height = '0%') : (elem.style.height = '110%');
 				break;
@@ -146,15 +147,12 @@ export class ModalWindow {
 	loadData(callback) {
 		let xhr = new XMLHttpRequest(),
 			_path = this.isSubpage == null ? '..' + this.path : '.' + this.path,
-			language = this.language,
-			isHidden = this.formIsHidden,
-			isAuxBtn = this.isAuxBtn,
-			bodySel = this.bodySelector;
+			params = [this.language, this.formIsHidden, this.isAuxBtn, this.bodySelector];
 		xhr.open('GET', _path, true);
 		xhr.onload = () => {
 			if (xhr.status === 200) {
 				let response = JSON.parse(xhr.responseText);
-				return callback(response, language, isHidden, isAuxBtn, bodySel);
+				return callback([response, ...params]);
 			}
 		};
 		xhr.send(null);
@@ -192,6 +190,6 @@ export class ModalWindow {
                 Please, try again later or email us directly: <br/>
                 info@starcab.wroclaw.pl`;
 
-		selected.innerHTML = this.messageType == true ? successMsg : failMsg;
+		selected.innerHTML = this.messageType ? successMsg : failMsg;
 	}
 }

@@ -3,7 +3,7 @@ let isButtonActive = false;
 
 export function scroll() {
 	let scrollBtn = document.querySelector('.scroll_btn');
-	if (isButtonActive == false) {
+	if (!isButtonActive) {
 		return 0;
 	}
 	if (window.scrollY > 500) {
@@ -20,7 +20,7 @@ export function scroll() {
 	};
 }
 export function createButton() {
-	if (isButtonActive === true) {
+	if (isButtonActive) {
 		return;
 	}
 	if (window.innerWidth <= 780) {

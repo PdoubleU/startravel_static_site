@@ -25,21 +25,20 @@ class Slider {
 	loadData(callback) {
 		let xhr = new XMLHttpRequest(),
 			_path = this.language == 'polish' ? './json/offer-pl.json' : './json/offer-en.json',
-			sliderSel = this.sliderSelector,
-			listLenght = this.slidesLng;
+			params = [this.sliderSelector, this.slidesLng];
 		// temporary last parameter set to false (synchronous request) - otherwise the changeSlide() is messing around this class
 		// will be rafactor later:
 		xhr.open('GET', _path, false);
 		xhr.onload = () => {
 			if (xhr.status === 200) {
 				let response = JSON.parse(xhr.responseText);
-				return callback(response, sliderSel, listLenght);
+				return callback([response, ...params]);
 			}
 		};
 		xhr.send(null);
 	}
 
-	generateListOfSlides(objJSON, sliderSel, listLenght) {
+	generateListOfSlides([ objJSON, sliderSel, listLenght ]) {
 		function getRandomInt(min, max) {
 			min = Math.ceil(min);
 			max = Math.floor(max);

@@ -28,10 +28,9 @@ export function openGDPR() {
 
 window.addEventListener('load', () => {
 	if (window.localStorage.getItem('gdpr') === 'unconfirmed') {
-		setTimeout(showGDPRbar(), 3000);
-	} else {
-		document.querySelector('#bar_gdpr').remove();
+		return setTimeout(showGDPRbar(), 3000);
 	}
+	document.querySelector('#bar_gdpr').remove();
 });
 OPEN_GDPR_BTN.addEventListener('click', () => openGDPR());
 ACCEPT_GDPR_BTN.addEventListener('click', () => hideGDPRbar());

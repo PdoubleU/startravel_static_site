@@ -2,7 +2,7 @@
 	$to = // add email address before moving on server
 	$msg_details = "Otrzymałeś nową wiadomość poprzez stronę Star Travel:\n".
 					$_POST['fname']."\n".$_POST['email']."\n".$_POST['message']."\n";
-	$subject = "Star Cab - powiadomienie!";
+	$subject = "Star Travel - powiadomienie!";
 	$header = "From:". $_POST['email'] ."\nContent-Type:".
 					' text/plain;charset="UTF-8"'.
 					"\nContent-Transfer-Encoding: 8bit";

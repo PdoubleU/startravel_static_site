@@ -9,7 +9,7 @@ import * as submitForm from './components/submit_form.js';
 
 // this statement checks if user is currently in the main page and then call instance of Slider and scroll horizontal alert, which appear only on the main page:
 (async () => {
-	if (document.querySelector('#main_page') !== null) {
+	if (document.querySelector('#main_page')) {
 		await import('./classes/Slider.js').then((module) => module.slider);
 		await import('./components/scroll_horiz_alert.js');
 	}

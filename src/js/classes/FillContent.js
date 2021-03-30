@@ -5,7 +5,7 @@ export class FillContent {
 		const DEFAULT_OPTIONS = {
 			country: 'poland',
 			_path: '../json/offer-pl.json',
-			noOfAvailableOffers: 5 //should be same as no of offers generated in silder!!
+			noOfAvailableOffers: 5 //should be same as number of offers generated in silder!!
 		};
 		this.options = Object.assign({}, DEFAULT_OPTIONS, options);
 		this.selector = classNameSelector;
@@ -16,7 +16,7 @@ export class FillContent {
 
 		this.loadData(this.generateHTMLTags, this.loadModalWindow);
 	}
-	generateHTMLTags(counter, objJSON, selector, country, loadModal) {
+	generateHTMLTags([ objJSON, selector, country, counter, loadModal ]) {
 		for (let i = 0; i < counter; i++) {
 			let title = objJSON[country][i].title,
 				content = objJSON[country][i].content,
@@ -80,14 +80,12 @@ export class FillContent {
 	loadData(callback, loadModal) {
 		let xhr = new XMLHttpRequest(),
 			_path = this.path,
-			selector = this.selector,
-			country = this.country,
-			noOfElements = this.noOfElementsToGenerate;
+			params = [this.selector, this.country, this.noOfElementsToGenerate]
 		xhr.open('GET', _path, true);
 		xhr.onload = () => {
 			if (xhr.status === 200) {
 				let response = JSON.parse(xhr.responseText);
-				callback(noOfElements, response, selector, country, loadModal);
+				callback([ response, ...params, loadModal ]);
 			}
 		};
 		xhr.send(null);

@@ -38,7 +38,7 @@
 	&--actionBtn.description {
 		font-size: 1.4rem;
 		grid-row: 3 / 4;
-		align-self: center;
+		align-self: left;
 	}
 	&--priceContainer {
 		grid-row: 2 / 3;
@@ -69,7 +69,27 @@
 #description.modalContainer {
 	grid-row: 1 / 2;
 	display: flex;
+	text-align: left;
 	justify-content: center;
+	font-size: $subpage_short_descr_mob;
+	@media (orientation: landscape) {
+		font-size: $subpage_short_descr_tab;
+	}
+	& > .main-description {
+		@media (orientation: landscape) {
+			display: flex;
+			flex-direction: row;
+			> p {
+				margin-right: .5rem;
+			}
+		}
+	}
+	& > .main-price-description {
+		list-style: none;
+		& > span {
+			padding: 1rem;
+		}
+	}
 }
 @media (min-width: 52rem) {
 	.modal_body {

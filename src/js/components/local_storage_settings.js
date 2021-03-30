@@ -3,7 +3,7 @@ export function checkStorage() {
 		return 0;
 	} else {
 		window.localStorage.setItem('gdpr', 'unconfirmed');
-		window.localStorage.setItem('language', 'english');
+		window.localStorage.setItem('language', 'polish');
 	}
 }
 

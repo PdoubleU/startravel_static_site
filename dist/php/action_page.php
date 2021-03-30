@@ -1,6 +1,6 @@
 <?php
-	$to = 'piotrwitasik1988@gmail.com';
-	$msg_details = "Otrzymałeś nową wiadomość poprzez stronę Star Cab:\n".
+	$to = // add email address before moving on server
+	$msg_details = "Otrzymałeś nową wiadomość poprzez stronę Star Travel:\n".
 					$_POST['fname']."\n".$_POST['email']."\n".$_POST['message']."\n";
 	$subject = "Star Cab - powiadomienie!";
 	$header = "From:". $_POST['email'] ."\nContent-Type:".
@@ -11,11 +11,10 @@
 	$email = $_POST['email'];
 	$datetime = date('Y-m-d H:i:s');
 	$message = $_POST['message'];
-	$document_root = $_SERVER['DOCUMENT_ROOT'];
 	$output = $fname. "\t".$email. "\t".$message. "\n";
 
 	$user = 'root';
-	$password = '';
+	$password = // add password before moving on server
 	$database = 'startravel_visitors';
 	$db = new mysqli('localhost', $user, $password, $database);
 

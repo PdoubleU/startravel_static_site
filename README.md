@@ -3,7 +3,7 @@
 ![GitHub Logo](/images/startravel.bmp)
 
 
-[Lets go to live preview](startravel.wroclaw.pl)
+[Lets go to live preview](https://startravel.wroclaw.pl)
 
 
 Website presents local tourist company. Provides simple information (adress, services, etc.) and allows to contact with the company owners by form. The form data is send on the server, where the php script save it in the database and on the other had is mailing an alert message to the owner that someone wants to contact. It is available in two languages: polish and english.

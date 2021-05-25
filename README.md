@@ -11,7 +11,7 @@ Website presents local tourist company. Provides simple information (adress, ser
 
 ## Used technologies and approaches
 
-During conceptual works, I have been relying on the Mobile First approach and was inspired by designes with horizontal scroll. The task was hard, I tried many diffirent aproaches to the unusual way of showing the content, and ended up with manipulation in css. Because of that the project was hard to implement for older browsers: IE and Edge older than ver 44 are not supported. When the user is visitin the website on one of unsupported browser he gets the kind advise to use another browser.
+During conceptual works, I have been relying on the Mobile First approach and was inspired by designs with horizontal scroll. The task was hard, I tried many diffirent aproaches to the unusual way of showing the content, and ended up with manipulation in css. Because of that the project was hard to implement for older browsers: IE and Edge older than ver 44 are not supported. When the user is visitin the website on one of unsupported browser he gets the kind advise to use another browser.
 
 I have used following technologies:
 
